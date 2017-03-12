@@ -52,7 +52,7 @@ router.post('/', checkNotLogin, (req, res, next) => {
   password = sha1(password)
 
   // 待写入数据库的用户信息
-  const user = {
+  let user = {
     name: name,
     password: password,
     gender: gender,

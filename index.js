@@ -16,27 +16,30 @@ const app = express()
 // 设置模板目录
 app.set('views', path.join(__dirname, 'views'))
 // 设置模板引擎为 Handlerbars
-app.set('view engine', 'ejs')
-// app.engine('html', require('hbs').__express)
+app.set('view engine', 'hbs')
 
-// const partialsDir = path.join(__dirname, 'views/components')
+const partialsDir = path.join(__dirname, 'views/components')
 
-// let filenames = fs.readdirSync(partialsDir)
+let filenames = fs.readdirSync(partialsDir)
 
-// filenames.forEach((filename) => {
-//   let matches = /^([^.]+).hbs$/.exec(filename)
+filenames.forEach((filename) => {
+  let matches = /^([^.]+).hbs$/.exec(filename)
   
-//   if (!matches) {
-//     return
-//   }
-//   let name = matches[1]
-//   let template = fs.readFileSync(partialsDir + '/' + filename, 'utf8')
-//   console.log(name)
-//   console.log(template)
+  if (!matches) {
+    return
+  }
+  let name = matches[1]
+  let template = fs.readFileSync(partialsDir + '/' + filename, 'utf8')
   
-//   hbs.registerPartial(name, template)
-// })
+  hbs.registerPartial(name, template)
+})
 // hbs.registerPartials(__dirname + '/views/components')
+
+hbs.registerHelper('if_eq', (a, b, opts) => {
+    return a.toString() === b.toString()
+      ? opts.fn(this)
+      : opts.inverse(this)
+})
 
 // 设置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')))
