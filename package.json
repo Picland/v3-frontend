@@ -2,11 +2,12 @@
   "name": "Blog-Backend",
   "version": "0.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "bootstrap": "yarn || npm i",
+    "start": "npm run bootstrap && node app.js",
     "test": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
-    "start": "npm run bootstrap && NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'myblog'"
+    "prod": "npm run bootstrap && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'"
   },
   "author": "muwenzi",
   "description": "Welcome to my blog",
