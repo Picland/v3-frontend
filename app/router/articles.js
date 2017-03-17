@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const checkMiddleware = require('../middleware/check')
+const authorize = require('../middleware/authorize')
 const articleController = require('../controller/articleController')
 const commentController = require('../controller/commentController')
 
@@ -8,27 +8,27 @@ const commentController = require('../controller/commentController')
 router.get('/', articleController.getAllArticles)
 
 // GET /articles/create 发表文章页
-router.get('/create', checkMiddleware.checkLogin, articleController.getCreateArticlePage)
+router.get('/create', authorize.isLogin, articleController.getCreateArticlePage)
 
 // POST /articles 发表一篇文章
-router.post('/', checkMiddleware.checkLogin, articleController.createArticle)
+router.post('/', authorize.isLogin, articleController.createArticle)
 
 // GET /articles/:articleId 单独一篇的文章页
 router.get('/:articleId', articleController.getOneArticle)
 
 // GET /articles/:articleId/edit 更新文章页
-router.get('/:articleId/edit', checkMiddleware.checkLogin, articleController.editArticlePage)
+router.get('/:articleId/edit', authorize.isLogin, articleController.editArticlePage)
 
 // POST /articles/:articleId/edit 更新一篇文章
-router.post('/:articleId/edit', checkMiddleware.checkLogin, articleController.editArticle)
+router.post('/:articleId/edit', authorize.isLogin, articleController.editArticle)
 
 // GET /articles/:articleId/remove 删除一篇文章
-router.get('/:articleId/remove', checkMiddleware.checkLogin, articleController.deleteArticle)
+router.get('/:articleId/remove', authorize.isLogin, articleController.deleteArticle)
 
 // POST /articles/:articleId/comment 创建一条留言
-router.post('/:articleId/comment', checkMiddleware.checkLogin, commentController.createComment)
+router.post('/:articleId/comment', authorize.isLogin, commentController.createComment)
 
 // GET /articles/:articleId/comment/:commentId/remove 删除一条留言
-router.get('/:articleId/comment/:commentId/remove', checkMiddleware.checkLogin, commentController.deleteComment)
+router.get('/:articleId/comment/:commentId/remove', authorize.isLogin, commentController.deleteComment)
 
 module.exports = router
