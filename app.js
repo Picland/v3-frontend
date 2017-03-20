@@ -1,13 +1,13 @@
 const path = require('path')
 const express = require('express')
 const session = require('express-session')
-const MongoStore = require('connect-mongo')(session)
-const flash = require('connect-flash')
-const config = require('config-lite')
+const MongoStore = require('connect-mongo')(session) // 将 session 存储于 mongodb，结合 express-session 使用
+const flash = require('connect-flash') // 页面通知提示的中间件，基于 session 实现
+const config = require('config-lite') // 读取配置文件
 const router = require('./app/router')
 const pkg = require('./package') // package.json
-const winston = require('winston')
-const expressWinston = require('express-winston')
+const winston = require('winston') // 日志
+const expressWinston = require('express-winston') // 基于 winston 的用于 express 的日志中间件
 const hbs = require('hbs')
 const fs = require('fs')
 

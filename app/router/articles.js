@@ -8,7 +8,7 @@ const commentController = require('../controller/commentController')
 router.get('/', articleController.getAllArticles)
 
 // GET /articles/create 发表文章页
-router.get('/create', authorize.isLogin, articleController.getCreateArticlePage)
+router.get('/create', authorize.isLogin, articleController.renderCreateArticlePage)
 
 // POST /articles 发表一篇文章
 router.post('/', authorize.isLogin, articleController.createArticle)
