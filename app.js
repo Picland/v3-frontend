@@ -14,11 +14,11 @@ const fs = require('fs')
 const app = express()
 
 // 设置模板目录
-app.set('views', path.join(__dirname, 'app/view'))
+app.set('views', path.join(__dirname, 'app/view/server'))
 // 设置模板引擎为 Handlerbars
 app.set('view engine', 'hbs')
 
-const partialsDir = path.join(__dirname, 'app/view/partial')
+const partialsDir = path.join(__dirname, 'app/view/server/partial')
 
 let filenames = fs.readdirSync(partialsDir)
 
@@ -42,7 +42,7 @@ hbs.registerHelper('if_eq', (a, b, opts) => {
 })
 
 // 设置静态文件目录
-app.use(express.static(path.join(__dirname, 'app/public')))
+app.use(express.static(path.join(__dirname, 'app/static')))
 // session 中间件
 app.use(session({
   name: config.session.key, // 设置 cookie 中保存 session id 的字段名称
@@ -60,7 +60,7 @@ app.use(session({
 app.use(flash())
 // 处理表单及文件上传的中间件
 app.use(require('express-formidable')({
-  uploadDir: path.join(__dirname, 'app/public/img'), // 上传文件目录
+  uploadDir: path.join(__dirname, 'app/static/img'), // 上传文件目录
   keepExtensions: true // 保留后缀
 }))
 

@@ -4,10 +4,10 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "bootstrap": "yarn || npm i",
-    "start": "npm run bootstrap && node app.js",
+    "boot": "yarn || npm i",
+    "start": "npm run boot && node app.js",
     "test": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
-    "prod": "npm run bootstrap && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'"
+    "prod": "npm run boot && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'"
   },
   "author": "muwenzi",
   "description": "Welcome to my blog",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "istanbul": "0.4.5",
     "mocha": "3.1.2",
-    "supertest": "2.0.1"
+    "supertest": "2.0.1",
+    "yarn": "^0.21.3"
   }
 }

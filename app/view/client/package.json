@@ -1,0 +1,32 @@
+{
+  "scripts": {
+    "boot": "yarn || npm i",
+    "dev": "npm run boot && webpack --watch --config ./build/webpack.dev.config.js",
+    "prod": "webpack --config ./build/webpack.prod.config.js"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "validator": "^7.0.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-import": "^1.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-runtime": "^6.23.0",
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "jsx-loader": "^0.13.2",
+    "less": "^2.7.2",
+    "less-loader": "^3.0.0",
+    "style-loader": "^0.14.1",
+    "webpack": "^2.2.1",
+    "webpack-merge": "^4.1.0",
+    "yarn": "^0.21.3"
+  }
+}
