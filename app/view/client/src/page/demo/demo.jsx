@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './test.less'
+import './demo.less'
 
 class App extends React.Component {
   render() {
     return (
-      <h2>Hello Test!</h2>
+      <h2>This is demo!</h2>
     )
   }
 }
