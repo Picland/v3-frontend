@@ -26,7 +26,7 @@ module.exports = {
         delete user.password
         req.session.user = user
         // 跳转到主页
-        res.redirect('/posts')
+        res.redirect('/articles')
       })
       .catch(next)
   }
