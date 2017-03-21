@@ -6,7 +6,8 @@ const outputPath = path.resolve(__dirname, '../../../static/dist')
 
 module.exports = {
   entry: {
-    test : path.resolve(sourcePath, './page/test.jsx'),
+    test : path.resolve(sourcePath, 'page/test/test.jsx'),
+    login : path.resolve(sourcePath, 'page/login/login.jsx'),
     vendor: ['react', 'react-dom', 'whatwg-fetch']
   },
   output: {
@@ -24,7 +25,11 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        loaders: ['css-loader', 'less-loader']
+        // loaders: ['css-loader', 'less-loader']
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ['css-loader', 'less-loader']
+        })
       }
     ]
   },
@@ -35,8 +40,8 @@ module.exports = {
       'node_modules'
     ],
     alias: {
-      'variable.less': path.resolve(sourcePath, './style/variable/index.less'),
-      'core.less': path.resolve(sourcePath, './style/core.less')
+      'variable.less': path.resolve(sourcePath, 'style/variable/index.less'),
+      'core.less': path.resolve(sourcePath, 'style/core.less')
     }
   },
   plugins: [
