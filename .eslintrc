@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "plugins": [
+    "react",
+    "promise"
+  ],
+  "env": {
+    "browser" : true,
+    "node": true,
+    "es6": true,
+  },
+  "globals": {
+
+  },
+  "rules": {
+    "jsx-quotes": [2, "prefer-single"],
+  }
+}
