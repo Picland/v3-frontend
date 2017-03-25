@@ -1,36 +1,56 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const path = require('path')
 const sourcePath = path.resolve(__dirname, '../src')
-const outputPath = path.resolve(__dirname, '../../../static/dist')
+const outputPath = '/dist/'
 
 module.exports = {
   entry: {
-    demo : path.resolve(sourcePath, 'page/demo/demo.jsx'),
-    login : path.resolve(sourcePath, 'page/login/login.jsx'),
+    demo: [path.resolve(sourcePath, 'entry/demo.jsx')],
+    login: [path.resolve(sourcePath, 'entry/login.jsx')],
     vendor: ['react', 'react-dom', 'whatwg-fetch']
   },
   output: {
     path: outputPath,
-    publicPath: '../dist/',
-    filename: 'js/[name].js',
+    publicPath: outputPath,
+    filename: 'js/[name].js'
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        options: {cacheDirectory: true},
-        include: sourcePath,
+        options: {
+          cacheDirectory: true
+        },
+        include: sourcePath
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader?modules',
+          'postcss-loader'
+        ]
       },
       {
         test: /\.less$/,
-        // loaders: ['css-loader', 'less-loader']
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ['css-loader', 'less-loader']
-        })
+        use: [
+          'style-loader',
+          'css-loader?modules',
+          'postcss-loader',
+          'less-loader'
+        ]
       }
+      // {
+      //   test: /\.less$/,
+      //   // loaders: ['css-loader', 'less-loader']
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: ['css-loader?modules', 'postcss-loader', 'less-loader']
+      //   })
+      // }
     ]
   },
   resolve: {
@@ -51,5 +71,6 @@ module.exports = {
       minChunks: Infinity,
       filename: 'js/[name].js'
     }),
+    new FriendlyErrorsPlugin()
   ]
 }

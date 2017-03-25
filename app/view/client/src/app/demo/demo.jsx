@@ -1,14 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import './demo.less'
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
       <h2>This is demo!</h2>
     )
   }
 }
 
-ReactDOM.render(<App />,
-  document.getElementById('app'))
+export default App
