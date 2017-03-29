@@ -10,8 +10,13 @@ const winston = require('winston') // 日志
 const expressWinston = require('express-winston') // 基于 winston 的用于 express 的日志中间件
 const hbs = require('hbs')
 const fs = require('fs')
+// const favicon = require('serve-favicon')
+const webpack = require('webpack')
+const webpackDevConfig = require('./app/view/client/build/webpack.dev.config')
 
 const app = express()
+
+// app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')))
 
 // 设置模板目录
 app.set('views', path.join(__dirname, 'app/view/server'))
@@ -24,13 +29,13 @@ let filenames = fs.readdirSync(partialsDir)
 
 filenames.forEach((filename) => {
   let matches = /^([^.]+).hbs$/.exec(filename)
-  
+
   if (!matches) {
     return
   }
   let name = matches[1]
   let template = fs.readFileSync(partialsDir + '/' + filename, 'utf8')
-  
+
   hbs.registerPartial(name, template)
 })
 // hbs.registerPartials(__dirname + '/view/components')
@@ -42,7 +47,7 @@ hbs.registerHelper('if_eq', (a, b, opts) => {
 })
 
 // 设置静态文件目录
-app.use(express.static(path.join(__dirname, 'app/static')))
+app.use(express.static(path.join(__dirname, 'static')))
 // session 中间件
 app.use(session({
   name: config.session.key, // 设置 cookie 中保存 session id 的字段名称
@@ -60,7 +65,7 @@ app.use(session({
 app.use(flash())
 // 处理表单及文件上传的中间件
 app.use(require('express-formidable')({
-  uploadDir: path.join(__dirname, 'app/static/img'), // 上传文件目录
+  uploadDir: path.join(__dirname, 'static/img'), // 上传文件目录
   keepExtensions: true // 保留后缀
 }))
 
@@ -91,6 +96,31 @@ app.use(expressWinston.logger({
   ]
 }))
 
+// ------------------------------------
+// Apply Webpack HMR Middleware
+// ------------------------------------
+// console.log('===start===', process.env)
+// if (config.env === 'development') {
+const compiler = webpack(webpackDevConfig)
+console.log('Enable webpack dev and HMR middleware')
+app.use(require('webpack-dev-middleware')(compiler, {
+  // publicPath与webpack.config.js保持一致
+  publicPath: webpackDevConfig.output.publicPath,
+  // contentBase: paths.client(),
+  hot: true,
+  quiet: true,
+  noInfo: true,
+  lazy: false,
+  stats: {
+    chunks: false,
+    chunkModules: false,
+    colors: true,
+    profile: true
+  }
+}))
+app.use(require('webpack-hot-middleware')(compiler))
+// }
+
 // 路由
 router(app)
 
@@ -119,6 +149,6 @@ if (module.parent) {
 } else {
   // 监听端口，启动程序
   app.listen(config.port, () => {
-    console.log(`${pkg.name} listening on port ${config.port}`)
+    console.log(`${pkg.name} listening on http://localhost:${config.port}`)
   })
 }
