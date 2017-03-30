@@ -10,7 +10,7 @@ NodeJS + ReactStack + MongoDB
 
 ## Quick start
 
-If you want to have a try, just clone the project to disk
+If you want to have a try, just clone the project to your disk
 
 * `npm run dev`
 * open `http://localhost:3000`

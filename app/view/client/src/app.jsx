@@ -14,7 +14,7 @@ render()
 // --------------------------------------
 if (module.hot) {
   console.info('React Moudle/Page Replacement for Dev')
-  module.hot.accept('./page/Demo/Demo', () => {
+  module.hot.accept('./page/Login2/Login2', () => {
     render()
   })
   module.hot.accept('./page/Register/Register', () => {

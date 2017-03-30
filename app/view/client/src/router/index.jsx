@@ -1,19 +1,18 @@
 import React from 'react'
-import {
-  HashRouter,
-  Route
-} from 'react-router-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
 
-import Demo from '../page/Demo/Demo'
+import Frame from '../layout/Frame'
+import Login2 from '../page/Login2/Login2'
 import Register from '../page/Register/Register'
 
 const frontendRouter = (
-  <HashRouter>
+  <Router>
     <div>
-      <Route exact path='/' component={Demo} />
+      <Route path='/' component={Frame} />
+      <Route exact path='/' component={Login2} />
       <Route path='/register' component={Register} />
     </div>
-  </HashRouter>
+  </Router>
 )
 
 export default frontendRouter
