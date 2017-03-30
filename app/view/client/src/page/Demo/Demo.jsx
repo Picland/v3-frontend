@@ -1,7 +1,7 @@
 import React from 'react'
-import './demo.less'
+import './Demo.less'
 
-class App extends React.Component {
+class Demo extends React.Component {
   render () {
     return (
       <h2>This is demo!</h2>
@@ -9,4 +9,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default Demo

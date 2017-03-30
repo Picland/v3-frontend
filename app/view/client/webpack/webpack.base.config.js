@@ -7,8 +7,9 @@ const outputPath = '/dist/'
 
 module.exports = {
   entry: {
-    demo: [path.resolve(sourcePath, 'entry/demo.jsx')],
-    login: [path.resolve(sourcePath, 'entry/login.jsx')],
+    app: [path.resolve(sourcePath, 'app.jsx')],
+    // demo: [path.resolve(sourcePath, 'demo.jsx')],
+    login: [path.resolve(sourcePath, 'login.jsx')],
     vendor: ['react', 'react-dom', 'whatwg-fetch']
   },
   output: {

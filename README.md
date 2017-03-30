@@ -1,6 +1,6 @@
 ## 1. NodeJS + MongoDB + Express + React
 
-## 2. 开发的运行：
+## 2. How to use：
 >npm run dev
 
 localhost:3000

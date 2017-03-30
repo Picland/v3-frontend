@@ -12,7 +12,7 @@ const hbs = require('hbs')
 const fs = require('fs')
 // const favicon = require('serve-favicon')
 const webpack = require('webpack')
-const webpackDevConfig = require('./app/view/client/build/webpack.dev.config')
+const webpackDevConfig = require('./app/view/client/webpack/webpack.dev.config')
 
 const app = express()
 
