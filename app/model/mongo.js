@@ -13,13 +13,13 @@ const objectIdToTimestamp = require('objectid-to-timestamp')
 
 // 根据 id 生成创建时间 created_at
 mongolass.plugin('addCreatedAt', {
-  afterFind(results) {
+  afterFind (results) {
     results.forEach((item) => {
       item.created_at = moment(objectIdToTimestamp(item._id)).format('YYYY-MM-DD HH:mm')
     })
     return results
   },
-  afterFindOne(result) {
+  afterFindOne (result) {
     if (result) {
       result.created_at = moment(objectIdToTimestamp(result._id)).format('YYYY-MM-DD HH:mm')
     }
