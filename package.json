@@ -7,7 +7,6 @@
     "boot": "yarn || npm i",
     "start": "npm run boot && node app.js",
     "dev": "npm run boot && NODE_ENV=development && node-dev app.dev.js",
-    "test": "",
     "prod": "npm run boot && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'",
     "precommit": "./eslint.sh"
   },
