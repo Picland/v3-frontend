@@ -11,7 +11,7 @@ class Header extends Component {
           <span styleName='logo'>木纹子印象派</span>
         </div>
         <div styleName='right'>
-          <Button type='ghost'><a href='/register'>注册</a></Button>
+          <a href='/register'><Button styleType='ghost'>注册</Button></a>
         </div>
       </div>
     )

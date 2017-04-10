@@ -8,15 +8,15 @@ class Button extends Component {
   }
 
   static defaultProps = {
-    type: 'default',
-    htmlType: 'submit',
+    styleType: 'default',
+    type: 'submit',
     value: ''
   }
 
   render () {
-    let {type, htmlType, value, children} = this.props
+    let {styleType, type, value, children} = this.props
     return (
-      <button styleName={type} type={htmlType} value={value}>{children}</button>
+      <button styleName={styleType} type={type} value={value}>{children}</button>
     )
   }
 }

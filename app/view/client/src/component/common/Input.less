@@ -1,0 +1,22 @@
+@import '~core';
+
+.input {
+  color: @medium-litest;
+  font-size: @font-size-normal;
+  font-weight: 300;
+}
+
+.default {
+  border-bottom-color: @green-dark;
+}
+
+.line {
+  &:extend(.input);
+  border: 1px transparent solid;
+  border-bottom: 1px @medium-litest solid;
+  padding-bottom: @unit-half;
+  &:hover, &:focus {
+    border-bottom-color: @green-dark;
+    color: @green-dark;
+  }
+}
