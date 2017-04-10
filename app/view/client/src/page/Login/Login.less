@@ -1,8 +1,14 @@
-@import '~variable';
+@import '~core';
 
-h2 {
-  color: @blue-dark;
-}
-h3 {
-  color: @green;
+.contianer {
+  width: 300px;
+  position: relative;
+  top: 200px;
+  margin: 0 auto;
+  text-align: center;
+  & > div:first-child {
+    color: @medium;
+    font-size: 24px;
+    font-weight: 300;
+  }
 }

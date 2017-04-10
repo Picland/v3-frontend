@@ -1,0 +1,36 @@
+@import '~core';
+
+.btn {
+  font-size: 13px;
+}
+
+.default {
+  &:extend(.btn);
+  color: @green-dark;
+  background-color: @green-text;
+}
+
+.ghost {
+  &:extend(.btn);
+  color: @green-dark;
+  border: 2px @green-dark solid;
+  background-color: transparent;
+  padding: 3px 18px;
+  &:hover {
+    color: @green-text;
+    background-color: @green-dark;
+  }
+}
+
+.wide {
+  margin: 0 auto;
+  width: 300px;
+  height: 42px;
+  font-size: 15px;
+  text-align: center;
+  color: @green-text;
+  background-color: @green-dark;
+  &:hover {
+    background-color: @green-darker;
+  }
+}

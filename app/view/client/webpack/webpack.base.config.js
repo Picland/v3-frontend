@@ -39,7 +39,7 @@ module.exports = {
         test: /\.less$/,
         use: [
           'style-loader',
-          'css-loader?modules',
+          'css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]',
           'postcss-loader',
           'less-loader'
         ]

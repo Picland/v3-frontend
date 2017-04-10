@@ -1,27 +1,33 @@
-import React from 'react'
-import './Login.less'
+import React, { Component } from 'react'
+import CSSModules from 'react-css-modules'
+import Header from '../../component/common/Header'
+import Button from '../../component/common/Button'
+import styles from './Login.less'
 
-class App extends React.Component {
+class App extends Component {
   render () {
     return (
-      <div className='ui grid'>
-        <div className='four wide column' />
-        <div className='eight wide column'>
-          <form className='ui form segmeneslint.sht' method='post'>
-            <div className='field required'>
-              <label>用户名</label>
-              <input placeholder='用户名' type='text' name='name' />
-            </div>
-            <div className='field required'>
-              <label>密码</label>
-              <input placeholder='密码' type='password' name='password' />
-            </div>
-            <input type='submit' className='ui button fluid' value='登录' />
-          </form>
+      <div>
+        <Header />
+        <div styleName='contianer'>
+          <div>登录</div>
+          <div>
+            <form method='post'>
+              <div>
+                <label>用户名</label>
+                <input placeholder='用户名' type='text' name='name' />
+              </div>
+              <div>
+                <label>密码</label>
+                <input placeholder='密码' type='password' name='password' />
+              </div>
+              <Button htmlType='submit' value='登录' type='wide'>登录</Button>
+            </form>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default App
+export default CSSModules(App, styles)
