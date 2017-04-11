@@ -10,6 +10,7 @@ module.exports = {
     app: [path.resolve(sourcePath, 'app.jsx')],
     // demo: [path.resolve(sourcePath, 'demo.jsx')],
     login: [path.resolve(sourcePath, 'app/login/index.jsx')],
+    register: [path.resolve(sourcePath, 'app/register/index.jsx')],
     vendor: ['react', 'react-dom', 'whatwg-fetch']
   },
   output: {
