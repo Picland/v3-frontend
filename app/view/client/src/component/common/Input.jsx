@@ -22,7 +22,12 @@ class Input extends Component {
         {label &&
           <label>{label}</label>
         }
-        <input styleName={styleType} type={type} name={name} placeholder={placeholder} />
+        {type === 'password' &&
+          <input styleName={styleType} type={type} name={name} placeholder={placeholder} autoComplete='new-password' />
+        }
+        {type !== 'password' &&
+          <input styleName={styleType} type={type} name={name} placeholder={placeholder} />
+        }
       </div>
     )
   }
