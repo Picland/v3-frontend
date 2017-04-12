@@ -6,7 +6,7 @@ class Frame extends Component {
     return (
       <div className='frame'>
         <section className='header'>
-          <Nav />
+          <Nav logoName='木纹子印象派' buttonLink='/register' buttonName='注册' />
         </section>
         <section className='contianer'>
           {this.props.children}

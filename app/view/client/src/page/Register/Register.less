@@ -1,5 +1,24 @@
-@import '~variable';
+@import '~core';
 
-h2 {
-  color: @red;
+.container {
+  width: 300px;
+  position: relative;
+  top: 200px;
+  margin: 0 auto;
+  text-align: center;
+  & > div:first-child {
+    color: @medium;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: @unit-double;
+  }
+  input {
+    width: 300px;
+    margin-bottom: @unit + @unit-quarter;
+  }
+  button {
+    margin-top: @unit;
+    width: 300px;
+    height: 42px;
+  }
 }
