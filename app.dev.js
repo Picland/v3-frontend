@@ -149,6 +149,6 @@ if (module.parent) {
 } else {
   // 监听端口，启动程序
   app.listen(config.port, () => {
-    console.log(`${pkg.name} listening on http://localhost:${config.port}`)
+    console.log(`----\n==> ✅  ${pkg.name} listening on http://localhost:${config.port}\n----`)
   })
 }

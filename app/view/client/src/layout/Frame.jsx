@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Nav from './Nav'
+import Header from './Header'
 
 class Frame extends Component {
   render () {
     return (
       <div className='frame'>
         <section className='header'>
-          <Nav logoName='木纹子印象派' buttonLink='/register' buttonName='注册' />
+          <Header logoName='木纹子印象派' buttonLink='/register' buttonName='注册' />
         </section>
         <section className='contianer'>
           {this.props.children}
