@@ -1,0 +1,40 @@
+@import '~core';
+
+.input {
+  color: @medium-litest;
+  font-size: @font-size-normal;
+  font-weight: 300;
+  border-color: @white;
+  background-color: @white;
+  -webkit-appearance: none;
+  &:-webkit-autofill {
+    border: 1px solid @white;
+    border-bottom-color: @medium-litest;
+    -webkit-text-fill-color: @medium-litest;
+    -webkit-box-shadow: 0 0 0px 50px @white inset;
+  }
+  &:-webkit-autofill:focus {
+    -webkit-text-fill-color: @theme-dark;
+  }
+}
+
+.default {
+  border-bottom-color: @theme-dark;
+}
+
+.line {
+  &:extend(.input);
+  border: 1px transparent solid;
+  border-bottom: 1px @lite-darker solid;
+  padding-bottom: @unit-half;
+  &:focus {
+    border-bottom-color: @theme-dark;
+    color: @theme-dark;
+  }
+  &::-webkit-input-placeholder {
+    color: @lite-dark;
+  }
+  &:focus::-webkit-input-placeholder {
+    color: @theme-lite;
+  }
+}

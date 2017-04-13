@@ -7,8 +7,10 @@ const outputPath = '/dist/'
 
 module.exports = {
   entry: {
-    demo: [path.resolve(sourcePath, 'entry/demo.jsx')],
-    login: [path.resolve(sourcePath, 'entry/login.jsx')],
+    app: [path.resolve(sourcePath, 'app.jsx')],
+    // demo: [path.resolve(sourcePath, 'demo.jsx')],
+    login: [path.resolve(sourcePath, 'app/login/index.jsx')],
+    register: [path.resolve(sourcePath, 'app/register/index.jsx')],
     vendor: ['react', 'react-dom', 'whatwg-fetch']
   },
   output: {
@@ -38,7 +40,7 @@ module.exports = {
         test: /\.less$/,
         use: [
           'style-loader',
-          'css-loader?modules',
+          'css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]',
           'postcss-loader',
           'less-loader'
         ]

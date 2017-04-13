@@ -2,11 +2,11 @@ const sha1 = require('sha1')
 const userService = require('../service/userService')
 
 module.exports = {
-  renderLoginPage(req, res, next) {
+  renderLoginPage (req, res, next) {
     res.render('login')
   },
 
-  login(req, res, next) {
+  login (req, res, next) {
     let name = req.fields.name
     let password = req.fields.password
 

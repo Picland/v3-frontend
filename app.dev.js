@@ -12,7 +12,7 @@ const hbs = require('hbs')
 const fs = require('fs')
 // const favicon = require('serve-favicon')
 const webpack = require('webpack')
-const webpackDevConfig = require('./app/view/client/build/webpack.dev.config')
+const webpackDevConfig = require('./app/view/client/webpack/webpack.dev.config')
 
 const app = express()
 
@@ -149,6 +149,6 @@ if (module.parent) {
 } else {
   // 监听端口，启动程序
   app.listen(config.port, () => {
-    console.log(`${pkg.name} listening on http://localhost:${config.port}`)
+    console.log(`----\n==> ✅  ${pkg.name} listening on http://localhost:${config.port}\n----`)
   })
 }

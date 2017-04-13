@@ -9,7 +9,7 @@ const reactHMR = [
   'webpack/hot/only-dev-server'
 ]
 
-baseWebpackConfig.entry.demo.push(...reactHMR)
+baseWebpackConfig.entry.app.push(...reactHMR)
 baseWebpackConfig.entry.login.push(...reactHMR)
 
 module.exports = merge(baseWebpackConfig, {
