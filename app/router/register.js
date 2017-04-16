@@ -1,6 +1,8 @@
-const router = require('express').Router()
-const authorize = require('../middleware/authorize')
-const registerController = require('../controller/registerController')
+import express from 'express'
+import authorize from '../middleware/authorize'
+import registerController from '../controller/registerController'
+
+const router = express.Router()
 
 // GET /register 注册页
 router.get('/', authorize.isNotLogin, registerController.renderRegisterPage)
@@ -8,4 +10,4 @@ router.get('/', authorize.isNotLogin, registerController.renderRegisterPage)
 // POST /register 用户注册
 router.post('/', authorize.isNotLogin, registerController.createUser)
 
-module.exports = router
+export default router

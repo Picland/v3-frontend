@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const path = require('path')
-const sourcePath = path.resolve(__dirname, '../src')
+const sourcePath = path.resolve(__dirname, '../app/view/client/src')
 const outputPath = '/dist/'
 
 module.exports = {
@@ -27,14 +27,6 @@ module.exports = {
           cacheDirectory: true
         },
         include: sourcePath
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader?modules',
-          'postcss-loader'
-        ]
       },
       {
         test: /\.less$/,

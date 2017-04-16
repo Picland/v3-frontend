@@ -1,16 +1,18 @@
-const router = require('express').Router()
-// const authorize = require('../middleware/authorize')
-// const loginController = require('../controller/loginController')
+import express from 'express'
+import authorize from '../middleware/authorize'
+import appController from '../controller/appController'
 
-// // GET /login 登录页
-// router.get('/login', authorize.isNotLogin, loginController.renderLoginPage)
-//
-// // POST /login 用户登录
-// router.post('/login', authorize.isNotLogin, loginController.login)
+const router = express.Router()
+
+// GET /login 登录页
+router.get('/login', authorize.isNotLogin, appController.renderLoginPage)
+
+// POST /login 用户登录
+router.post('/login', authorize.isNotLogin, appController.login)
 
 // GET /test 测试页
-router.get('/', (req, res, next) => {
-  res.render('app')
-})
+// router.get('/', (req, res, next) => {
+//   res.render('app')
+// })
 
-module.exports = router
+export default router

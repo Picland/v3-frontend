@@ -1,12 +1,18 @@
-module.exports = function (app) {
+import register from './register'
+import login from './login'
+import logout from './logout'
+import articles from './articles'
+import app1 from './app'
+
+export default function (app) {
   app.get('/', (req, res) => {
     res.redirect('/articles')
   })
-  app.use('/register', require('./register'))
-  app.use('/login', require('./login'))
-  app.use('/logout', require('./logout'))
-  app.use('/articles', require('./articles'))
-  app.use('/app', require('./app'))
+  app.use('/register', register)
+  app.use('/login', login)
+  app.use('/logout', logout)
+  app.use('/articles', articles)
+  app.use('/app', app1)
 
   // 404 page
   app.use((req, res) => {

@@ -1,14 +1,16 @@
-const fs = require('fs')
-const path = require('path')
-const sha1 = require('sha1')
-const userService = require('../service/userService')
+import fs from 'fs'
+import path from 'path'
+import sha1 from 'sha1'
+import userService from '../service/userService'
+import renderService from '../service/renderService'
 
-module.exports = {
-  renderRegisterPage(req, res, next) {
-    res.render('register')
+export default {
+  renderRegisterPage (req, res, next) {
+    // res.render('register')
+    res.status(200).send(renderService(req.url))
   },
 
-  createUser(req, res, next) {
+  createUser (req, res, next) {
     let name = req.fields.name
     let gender = req.fields.gender
     let bio = req.fields.bio

@@ -1,7 +1,9 @@
-const router = require('express').Router()
-const authorize = require('../middleware/authorize')
-const articleController = require('../controller/articleController')
-const commentController = require('../controller/commentController')
+import express from 'express'
+import authorize from '../middleware/authorize'
+import articleController from '../controller/articleController'
+import commentController from '../controller/commentController'
+
+const router = express.Router()
 
 // GET /articles 所有用户或者特定用户的文章页
 // eg: GET /articles?author=xxx
@@ -31,4 +33,4 @@ router.post('/:articleId/comment', authorize.isLogin, commentController.createCo
 // GET /articles/:articleId/comment/:commentId/remove 删除一条留言
 router.get('/:articleId/comment/:commentId/remove', authorize.isLogin, commentController.deleteComment)
 
-module.exports = router
+export default router

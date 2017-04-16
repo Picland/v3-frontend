@@ -1,6 +1,8 @@
-const router = require('express').Router()
-const authorize = require('../middleware/authorize')
-const loginController = require('../controller/loginController')
+import express from 'express'
+import authorize from '../middleware/authorize'
+import loginController from '../controller/loginController'
+
+const router = express.Router()
 
 // GET /login 登录页
 router.get('/', authorize.isNotLogin, loginController.renderLoginPage)
@@ -8,4 +10,4 @@ router.get('/', authorize.isNotLogin, loginController.renderLoginPage)
 // POST /login 用户登录
 router.post('/', authorize.isNotLogin, loginController.login)
 
-module.exports = router
+export default router
