@@ -20,4 +20,7 @@ if (module.hot) {
   module.hot.accept('./page/Register/Register', () => {
     render()
   })
+  module.hot.accept('./layout/Header', () => {
+    render()
+  })
 }

@@ -3,7 +3,7 @@ const path = require('path')
 
 // see this link for more info on what all of this means
 // https://github.com/halt-hammerzeit/webpack-isomorphic-tools
-console.log('ok0000', path.resolve(__dirname, './webpack-assets.json'))
+console.log('==running isomorphic.config==', path.resolve(__dirname, './webpack-assets.json'))
 module.exports = {
   // when adding "js" extension to asset types
   // and then enabling debug mode, it may cause a weird error:
@@ -11,7 +11,7 @@ module.exports = {
   // [0] npm run start-prod exited with code 1
   // Sending SIGTERM to other processes..
   //
-  debug: true,
+  // debug: true,
   webpack_assets_file_path: path.resolve(__dirname, './webpack-assets.json'),
   webpack_stats_file_path: path.resolve(__dirname, './webpack-stats.json'),
   assets: {

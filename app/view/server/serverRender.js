@@ -6,6 +6,7 @@ export default (renderMe) => {
   <head>
     <meta charset="UTF-8">
     <title>木纹子印象派</title>
+    <link rel="stylesheet" href="http://localhost:3001/dist/css/app.css">
   </head>
   <body>
     <div id="app">${renderToString(renderMe)}</div>
