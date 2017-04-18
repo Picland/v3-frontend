@@ -3,6 +3,7 @@ import CSSModules from 'react-css-modules'
 import Button from '../../component/Button/Button'
 import Input from '../../component/Input/Input'
 import CopyRight from '../../component/CopyRight/CopyRight'
+import '../../style/core.less'
 import styles from './Register.less'
 
 class Register extends Component {

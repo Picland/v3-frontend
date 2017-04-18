@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import Button from '../Button/Button'
+import '../../style/core.less'
 import styles from './Header.less'
 
 class Header extends Component {

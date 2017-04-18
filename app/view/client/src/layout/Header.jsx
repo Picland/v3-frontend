@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
 import Button from '../component/Button/Button'
+import '../style/core.less'
 import styles from './Header.less'
 
 class Nav extends Component {

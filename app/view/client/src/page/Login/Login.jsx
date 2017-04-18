@@ -3,6 +3,7 @@ import CSSModules from 'react-css-modules'
 import Button from '../../component/Button/Button'
 import Input from '../../component/Input/Input'
 import CopyRight from '../../component/CopyRight/CopyRight'
+import '../../style/core.less'
 import styles from './Login.less'
 
 class Login extends Component {

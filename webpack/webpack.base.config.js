@@ -30,9 +30,20 @@ module.exports = {
       },
       {
         test: /\.less$/,
+        exclude: path.resolve(__dirname, 'style'),
         use: [
           'style-loader',
           'css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]',
+          'postcss-loader',
+          'less-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        include: path.resolve(__dirname, 'style'),
+        use: [
+          'style-loader',
+          'css-loader',
           'postcss-loader',
           'less-loader'
         ]

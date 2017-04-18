@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
+import '../../style/core.less'
 import styles from './Input.less'
 
 class Input extends Component {
