@@ -11,7 +11,7 @@ const FrontendRouter = (
   <Router>
     <div>
       <Route path='/' component={Frame} />
-      <Route exact path='/login' component={Login} />
+      <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />
     </div>
   </Router>
