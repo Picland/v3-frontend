@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const path = require('path')
-const sourcePath = path.resolve(__dirname, '../app/view/client/src')
+const sourcePath = path.resolve(__dirname, '../app/view')
 const outputPath = '/dist/'
 
 module.exports = {
