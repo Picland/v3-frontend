@@ -28,9 +28,16 @@ mkdir -p data/db
 mongod --dbpath=data/db
 use myblog
 ```
-2. Start node server
+Download RoboMongo
+
+2. Start node debug server
 ```shell
 npm run dev
 ```
 
-3. Open `http://localhost:3000`
+3. Start node main server
+```shell
+node-dev bin/server.js
+```
+
+4. Open `http://localhost:3000`
