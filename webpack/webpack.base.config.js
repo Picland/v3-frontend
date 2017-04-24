@@ -8,7 +8,6 @@ const outputPath = '/dist/'
 module.exports = {
   entry: {
     app: [path.resolve(sourcePath, 'app.jsx')],
-    // demo: [path.resolve(sourcePath, 'demo.jsx')],
     login: [path.resolve(sourcePath, 'app/login/index.jsx')],
     register: [path.resolve(sourcePath, 'app/register/index.jsx')],
     vendor: ['react', 'react-dom', 'whatwg-fetch']
@@ -42,7 +41,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'], // 能够使用户在引入模块时不带扩展
+    extensions: ['.js', '.jsx'],
     modules: [
       sourcePath,
       'node_modules'

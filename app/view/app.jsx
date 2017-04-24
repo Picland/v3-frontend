@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom'
-import FrontendRouter from './router'
+import ViewRouter from './viewRouter'
 
 const render = () => {
-  ReactDOM.render(FrontendRouter,
+  ReactDOM.render(ViewRouter,
     document.getElementById('app')
   )
 }
