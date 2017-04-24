@@ -5,11 +5,11 @@
 
 import config from 'config-lite'
 import Mongolass from 'mongolass'
-const mongolass = new Mongolass()
-mongolass.connect(config.mongodb)
-
 import moment from 'moment'
 import objectIdToTimestamp from 'objectid-to-timestamp'
+
+const mongolass = new Mongolass()
+mongolass.connect(config.mongodb)
 
 // 根据 id 生成创建时间 created_at
 mongolass.plugin('addCreatedAt', {

@@ -11,7 +11,6 @@ const reactHMR = [
 ]
 
 baseWebpackConfig.entry.app.push(...reactHMR)
-baseWebpackConfig.entry.login.push(...reactHMR)
 
 module.exports = merge(baseWebpackConfig, {
   devtool: 'source-map',

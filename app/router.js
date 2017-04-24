@@ -5,7 +5,8 @@ import registerController from './controller/registerController'
 import articleController from './controller/articleController'
 import commentController from './controller/commentController'
 
-export default function (app) {
+export default (app) => {
+  // GET / 首页重定向
   app.get('/', (req, res) => {
     res.redirect('/articles')
   })
