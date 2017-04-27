@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "boot": "yarn || npm i",
-    "start": "npm run boot && node app.js",
-    "server": "webpack --config webpack/webpack.server.config.js",
+    "start": "npm run boot && node bin/server.js",
     "dev": "npm run boot && NODE_ENV=development && node-dev bin/server.dev.js",
+    "server": "npm run boot && node bin/server.js",
     "prod": "npm run boot && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'",
     "precommit": "./eslint.sh"
   },

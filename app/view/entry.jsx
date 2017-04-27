@@ -3,7 +3,7 @@ import ViewRouter from './viewRouter'
 
 const render = () => {
   ReactDOM.render(ViewRouter,
-    document.getElementById('app')
+    document.getElementById('root')
   )
 }
 

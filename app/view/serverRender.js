@@ -9,7 +9,7 @@ export default (renderMe) => {
     <link rel="stylesheet" href="http://localhost:3001/dist/css/app.css">
   </head>
   <body>
-    <div id="app">${renderToString(renderMe)}</div>
+    <div id="root">${renderToString(renderMe)}</div>
     <script src="http://localhost:3001/dist/js/vendor.js"></script>
     <script src="http://localhost:3001/dist/js/app.js"></script>
   </body>
