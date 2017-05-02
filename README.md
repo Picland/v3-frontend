@@ -1,7 +1,7 @@
 <p align="center"><a href="https://github.com/feross/standard" target="_blank"><img width="200"src="https://cdn.rawgit.com/feross/standard/master/badge.svg"></a></p>
 
 <p align="center">
-  <a href="https://travis-ci.org/muwenzi/Blog-Webapp"><img src="https://travis-ci.com/muwenzi/Blog-Webapp.svg?token=65SdnpsEfKTY1qP6fnyh&branch=react-login-register" alt="Build Status"></a>
+  <a href="https://travis-ci.org/muwenzi/Earth"><img src="https://travis-ci.com/muwenzi/Earth.svg?token=65SdnpsEfKTY1qP6fnyh&branch=react-ssr" alt="Build Status"></a>
   <a href="https://github.com/muwenzi/Blog-Webapp/blob/master/LICENSE.md"><img src="https://img.shields.io/pypi/l/Django.svg" alt="License"></a>
   <br>
 </p>
