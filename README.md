@@ -1,13 +1,13 @@
 <p align="center"><a href="https://github.com/feross/standard" target="_blank"><img width="200"src="https://cdn.rawgit.com/feross/standard/master/badge.svg"></a></p>
 
 <p align="center">
-  <a href="https://travis-ci.org/muwenzi/Blog-Webapp"><img src="https://travis-ci.com/muwenzi/Blog-Webapp.svg?token=65SdnpsEfKTY1qP6fnyh&branch=react-login-register" alt="Build Status"></a>
-  <a href="https://github.com/muwenzi/Blog-Webapp/blob/react-login-register/LICENSE.md"><img src="https://img.shields.io/pypi/l/Django.svg" alt="License"></a>
+  <a href="https://travis-ci.org/muwenzi/Earth"><img src="https://travis-ci.com/muwenzi/Earth.svg?token=65SdnpsEfKTY1qP6fnyh&branch=react-ssr" alt="Build Status"></a>
+  <a href="https://github.com/muwenzi/Blog-Webapp/blob/master/LICENSE.md"><img src="https://img.shields.io/pypi/l/Django.svg" alt="License"></a>
   <br>
 </p>
 
-## Intro
-Blog-Webapp is a personal website built by NodeJS, ReactStack and MongoDB
+## Introduction
+Earth(version3-inside) is a photography website built by NodeJS, ReactStack and MongoDB
 
 ## Requirements
 
@@ -19,18 +19,39 @@ Blog-Webapp is a personal website built by NodeJS, ReactStack and MongoDB
 
 If you want to have a try, just clone the project to your disk
 
-1. Init database, run this (on Linux):
+1. Init database, run this :
+
+- Linux
 ```shell
 wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.4.2.tgz
 tar xfz mongodb-linux-x86_64-3.4.2.tgz
 export PATH=`pwd`/mongodb-linux-x86_64-3.4.2/bin:$PATH
-mkdir -p data/db
-mongod --dbpath=data/db
+mkdir -p /data/db
+mongod
 use myblog
 ```
-2. Start node server
+
+- OS X
+```shell
+brew update
+brew install mongodb
+mkdir -p /data/db
+mongod
+use myblog
+
+```
+
+- [More MongoDB Installation](https://docs.mongodb.com/master/administration/install-community/)
+- Download [RoboMongo](https://robomongo.org/)
+
+2. Start node debug server
 ```shell
 npm run dev
 ```
 
-3. Open `http://localhost:3000`
+3. Start node server
+```shell
+npm start
+```
+
+4. Open `http://localhost:3000`

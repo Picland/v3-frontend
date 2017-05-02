@@ -1,9 +1,12 @@
-const sha1 = require('sha1')
-const userService = require('../service/userService')
+import sha1 from 'sha1'
+import userService from '../service/userService'
+import renderService from '../service/renderService'
 
-module.exports = {
+export default {
   renderLoginPage (req, res, next) {
-    res.render('login')
+    // res.render('login')
+    console.log('loginController===', req.url)
+    res.status(200).send(renderService(req.url))
   },
 
   login (req, res, next) {

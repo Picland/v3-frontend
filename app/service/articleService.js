@@ -1,10 +1,10 @@
-const marked = require('marked')
-const Article = require('../model/mongo').Article
-const commentService = require('../service/commentService')
+import marked from 'marked'
+import { Article } from '../model/mongo'
+import commentService from '../service/commentService'
 
 // 给 article 添加留言数 commentsCount
 Article.plugin('addCommentsCount', {
-  afterFind(articles) {
+  afterFind (articles) {
     return Promise.all(articles.map((article) => {
       return commentService.getCommentsCount(article._id).then((commentsCount) => {
         article.commentsCount = commentsCount
@@ -12,7 +12,7 @@ Article.plugin('addCommentsCount', {
       })
     }))
   },
-  afterFindOne(article) {
+  afterFindOne (article) {
     if (article) {
       return commentService.getCommentsCount(article._id).then((count) => {
         article.commentsCount = count
@@ -25,13 +25,13 @@ Article.plugin('addCommentsCount', {
 
 // 将 article 的 content 从 markdown 转换成 html
 Article.plugin('contentToHtml', {
-  afterFind(articles) {
+  afterFind (articles) {
     return articles.map((article) => {
       article.content = marked(article.content)
       return article
     })
   },
-  afterFindOne(article) {
+  afterFindOne (article) {
     if (article) {
       article.content = marked(article.content)
     }
@@ -39,14 +39,14 @@ Article.plugin('contentToHtml', {
   }
 })
 
-module.exports = {
+export default {
   // 创建一篇文章
-  create(article) {
+  create (article) {
     return Article.create(article).exec()
   },
 
   // 通过文章 id 获取一篇文章
-  getArticleById(articleId) {
+  getArticleById (articleId) {
     return Article
       .findOne({ _id: articleId })
       .populate({ path: 'author', model: 'User' })
@@ -57,7 +57,7 @@ module.exports = {
   },
 
   // 按创建时间降序获取所有用户文章或者某个特定用户的所有文章
-  getArticles(author) {
+  getArticles (author) {
     let query = {}
     if (author) {
       query.author = author
@@ -73,14 +73,14 @@ module.exports = {
   },
 
   // 通过文章 id 给 pv 加 1
-  incPv(articleId) {
+  incPv (articleId) {
     return Article
       .update({ _id: articleId }, { $inc: { pv: 1 } })
       .exec()
   },
 
   // 通过文章 id 获取一篇原生文章（编辑文章）
-  getRawArticleById(articleId) {
+  getRawArticleById (articleId) {
     return Article
       .findOne({ _id: articleId })
       .populate({ path: 'author', model: 'User' })
@@ -88,13 +88,14 @@ module.exports = {
   },
 
   // 通过用户 id 和文章 id 更新一篇文章
-  updateArticleById(articleId, author, data) {
+  updateArticleById (articleId, author, data) {
     return Article.update({ author: author, _id: articleId }, { $set: data }).exec()
   },
 
   // 通过用户 id 和文章 id 删除一篇文章
-  delArticleById(articleId, author) {
-    return Article.remove({ author: author, _id: articleId })
+  delArticleById (articleId, author) {
+    return Article
+      .remove({ author: author, _id: articleId })
       .exec()
       .then((res) => {
         // 文章删除后，再删除该文章下的所有留言

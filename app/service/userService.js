@@ -1,13 +1,13 @@
-const User = require('../model/mongo').User
+import { User } from '../model/mongo'
 
-module.exports = {
+export default {
   // 注册一个用户
-  insert(user) {
+  insert (user) {
     return User.insert(user).exec()
   },
 
   // 通过用户名获取用户信息
-  getUserByName(name) {
+  getUserByName (name) {
     return User
       .findOne({ name: name })
       .addCreatedAt()
