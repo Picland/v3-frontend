@@ -9,11 +9,15 @@
     "dev": "npm run boot && NODE_ENV=development && node-dev bin/server.dev.js",
     "server": "npm run boot && node bin/server.js",
     "prod": "npm run boot && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'",
-    "precommit": "./eslint.sh"
+    "check:conflict": "sh ./bin/conflict.sh",
+    "check:eslint": "sh ./bin/eslint.sh"
   },
   "author": "muwenzi",
   "description": "Welcome to my blog",
-  "license": "MIT",
+  "license": "BSD",
+  "pre-commit": [
+    "check:eslint"
+  ],
   "dependencies": {
     "babel-register": "^6.24.1",
     "config-lite": "1.5.0",
@@ -74,6 +78,7 @@
     "mocha": "3.1.2",
     "node-dev": "^3.1.3",
     "postcss-loader": "^1.3.3",
+    "pre-commit": "^1.2.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.15.0",
     "supertest": "2.0.1",
