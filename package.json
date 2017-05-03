@@ -1,14 +1,14 @@
 {
-  "name": "Blog",
+  "name": "Earth",
   "version": "0.0.0",
   "private": true,
   "main": "app.js",
   "scripts": {
-    "boot": "yarn || npm i",
-    "start": "npm run boot && node bin/server.js",
-    "dev": "npm run boot && NODE_ENV=development && node-dev bin/server.dev.js",
-    "server": "npm run boot && node bin/server.js",
-    "prod": "npm run boot && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'",
+    "prestart": "yarn || npm i",
+    "start": "kill -9 $(lsof -t -i:3000); node bin/server.js",
+    "dev": "npm run prestart && kill -9 $(lsof -t -i:3001); NODE_ENV=development && node-dev bin/server.dev.js",
+    "server": "npm run prestart && node bin/server.js",
+    "prod": "npm run prestart && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'",
     "check:conflict": "sh ./bin/conflict.sh",
     "check:eslint": "sh ./bin/eslint.sh"
   },
