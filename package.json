@@ -16,6 +16,7 @@
   "description": "Welcome to my blog",
   "license": "BSD",
   "pre-commit": [
+    "check:conflict",
     "check:eslint"
   ],
   "dependencies": {
