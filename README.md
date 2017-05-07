@@ -44,14 +44,18 @@ use myblog
 - [More MongoDB Installation](https://docs.mongodb.com/master/administration/install-community/)
 - Download [RoboMongo](https://robomongo.org/)
 
-2. Start node debug server
+2. env: development
 ```shell
+# step1 start bulid server for dev
+npm run build:dev
+# step2 start app server for dev
 npm run dev
+# step3 open the browser
+open http://localhost:3000
 ```
 
-3. Start node server
+3. env: production
 ```shell
-npm start
+# only need to run this command
+npm run prod
 ```
-
-4. Open `http://localhost:3000`

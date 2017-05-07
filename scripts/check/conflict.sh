@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Check for merge conflicts
+echo "Step1: check for merge conflicts"
 
 # Tested on Linux and Mac
 
