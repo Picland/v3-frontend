@@ -2,10 +2,13 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 const baseWebpackConfig = require('./webpack.base.config')
+const host = process.env.HOST || 'localhost'
+const port = +process.env.PORT || 3001
+const timeout = +process.env.TIMEOUT || 2000
 
 const reactHMR = [
   'react-hot-loader/patch', // 开启 React 代码的模块热替换(HMR)
-  'webpack-hot-middleware/client?path=http://localhost:3001/__webpack_hmr&timeout=2000&reload=true',
+  `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr&timeout=${timeout}&reload=true`,
   // 为热替换(HMR)打包好代码 only- 意味着只有成功更新运行代码才会执行热替换(HMR)
   'webpack/hot/only-dev-server'
 ]

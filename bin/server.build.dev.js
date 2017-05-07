@@ -3,10 +3,10 @@ const webpack = require('webpack')
 const webpackDevConfig = require('../webpack/webpack.dev.config')
 
 const compiler = webpack(webpackDevConfig)
-const host = 'localhost'
-const port = 3001
+const host = process.env.HOST || 'localhost'
+const port = +process.env.PORT || 3001
 const serverOptions = {
-  contentBase: 'http://' + host + ':' + port,
+  contentBase: `http://${host}:${port}`,
   quiet: true,
   noInfo: true,
   hot: true,

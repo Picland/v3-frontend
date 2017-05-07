@@ -20,7 +20,9 @@
       "command": "npm run boot && kill -9 $(lsof -t -i:3001); node-dev bin/server.build.dev.js",
       "env": {
         "NODE_ENV": "development",
-        "APIPORT": 3001
+        "HOST": "localhost",
+        "PORT": 3001,
+        "TIMEOUT": 2000
       }
     },
     "build:prod": {
@@ -33,14 +35,14 @@
       "command": "npm run boot && kill -9 $(lsof -t -i:3000); node bin/server.dev.js",
       "env": {
         "NODE_ENV": "development",
-        "APIPORT": 3000
+        "PORT": 3000
       }
     },
     "prod": {
       "command": "npm run boot && npm run build:prod && pm2 start bin/server.prod.js --name 'earth'",
       "env": {
         "NODE_ENV": "production",
-        "APIPORT": 3000
+        "PORT": 3000
       }
     }
   },
