@@ -8,27 +8,21 @@
   "license": "BSD-2-Clause",
   "scripts": {
     "boot": "yarn || npm i",
-    "build:dev": "better-npm-run build:dev",
-    "build:prod": "better-npm-run build:prod",
+    "build": "better-npm-run build",
     "dev": "better-npm-run dev",
+    "preprod": "better-npm-run preprod",
     "prod": "better-npm-run prod",
     "check:conflict": "scripty",
     "check:eslint": "scripty"
   },
   "betterScripts": {
-    "build:dev": {
-      "command": "npm run boot && kill -9 $(lsof -t -i:3001); node-dev bin/server.build.dev.js",
+    "build": {
+      "command": "npm run boot && kill -9 $(lsof -t -i:3001); node-dev bin/server.build.js",
       "env": {
         "NODE_ENV": "development",
         "HOST": "localhost",
         "PORT": 3001,
         "TIMEOUT": 2000
-      }
-    },
-    "build:prod": {
-      "command": "webpack --config webpack/webpack.prod.config.js",
-      "env": {
-        "NODE_ENV": "production"
       }
     },
     "dev": {
@@ -38,8 +32,14 @@
         "PORT": 3000
       }
     },
+    "preprod": {
+      "command": "npm run boot && webpack --config webpack/webpack.prod.config.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
     "prod": {
-      "command": "npm run boot && npm run build:prod && pm2 start bin/server.prod.js --name 'earth'",
+      "command": "pm2 start bin/server.prod.js --name 'earth'",
       "env": {
         "NODE_ENV": "production",
         "PORT": 3000
