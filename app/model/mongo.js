@@ -29,6 +29,7 @@ mongolass.plugin('addCreatedAt', {
 
 // User Collection
 let User = mongolass.model('User', {
+  phoneNumber: { type: 'string' },
   name: { type: 'string' },
   password: { type: 'string' },
   avatar: { type: 'string' },
