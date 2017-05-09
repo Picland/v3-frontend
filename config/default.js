@@ -9,8 +9,10 @@
  * @type {{port: number, session: {secret: string, key: string, maxAge: number}, mongodb: string}}
  */
 
+const envPort = +process.env.PORT || 3000
+
 module.exports = {
-  port: 3000,
+  port: envPort,
   session: {
     secret: 'myblog',
     key: 'myblog',

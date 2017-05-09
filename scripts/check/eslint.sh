@@ -11,7 +11,7 @@ fi
 
 STAGED_FILES=($(git diff --cached --name-only --diff-filter=ACM | grep ".js$"))
 
-echo "ESLint'ing ${#STAGED_FILES[@]} files"
+echo "Step2: ESLint check ${#STAGED_FILES[@]} files"
 
 if [[ "$STAGED_FILES" = "" ]]; then
   exit 0

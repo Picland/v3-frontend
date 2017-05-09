@@ -1,19 +1,58 @@
 {
-  "name": "Blog",
+  "name": "Earth",
   "version": "0.0.0",
   "private": true,
-  "main": "app.js",
+  "main": "bin/server.prod.js",
+  "author": "muwenzi",
+  "description": "muwenzi.com version3",
+  "license": "BSD-2-Clause",
   "scripts": {
     "boot": "yarn || npm i",
-    "start": "npm run boot && node bin/server.js",
-    "dev": "npm run boot && NODE_ENV=development && node-dev bin/server.dev.js",
-    "server": "npm run boot && node bin/server.js",
-    "prod": "npm run boot && NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'myblog'",
-    "precommit": "./eslint.sh"
+    "build": "better-npm-run build",
+    "dev": "better-npm-run dev",
+    "preprod": "better-npm-run preprod",
+    "prod": "better-npm-run prod",
+    "check:conflict": "scripty",
+    "check:eslint": "scripty"
   },
-  "author": "muwenzi",
-  "description": "Welcome to my blog",
-  "license": "MIT",
+  "betterScripts": {
+    "build": {
+      "command": "npm run boot && kill -9 $(lsof -t -i:3001); node-dev bin/server.build.js",
+      "env": {
+        "NODE_ENV": "development",
+        "HOST": "localhost",
+        "PORT": 3001,
+        "TIMEOUT": 2000
+      }
+    },
+    "dev": {
+      "command": "npm run boot && kill -9 $(lsof -t -i:3000); node bin/server.dev.js",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": 3000
+      }
+    },
+    "preprod": {
+      "command": "npm run boot && webpack --config webpack/webpack.prod.config.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "prod": {
+      "command": "pm2 start bin/server.prod.js --name 'earth'",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 3000
+      }
+    }
+  },
+  "scripty": {
+    "silent": true
+  },
+  "pre-commit": [
+    "check:conflict",
+    "check:eslint"
+  ],
   "dependencies": {
     "babel-register": "^6.24.1",
     "config-lite": "1.5.0",
@@ -30,6 +69,7 @@
     "moment": "2.15.2",
     "mongolass": "2.4.1",
     "objectid-to-timestamp": "1.3.0",
+    "pm2": "^2.4.6",
     "react": "^15.4.2",
     "react-css-modules": "^4.2.0",
     "react-dom": "^15.4.2",
@@ -55,6 +95,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
     "babel-runtime": "^6.23.0",
+    "better-npm-run": "^0.0.15",
     "css-loader": "^0.27.3",
     "eslint": "^3.18.0",
     "eslint-config-standard": "^7.1.0",
@@ -74,7 +115,9 @@
     "mocha": "3.1.2",
     "node-dev": "^3.1.3",
     "postcss-loader": "^1.3.3",
+    "pre-commit": "^1.2.2",
     "react-hot-loader": "^3.0.0-beta.6",
+    "scripty": "^1.7.1",
     "style-loader": "^0.15.0",
     "supertest": "2.0.1",
     "webpack": "^2.2.1",
