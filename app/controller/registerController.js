@@ -13,9 +13,9 @@ export default {
   createUser (req, res, next) {
     let phoneNumber = req.fields.phoneNumber
     let name = req.fields.name
-    let gender = req.fields.gender
+    let gender = req.fields.gender || 'x'
     let bio = req.fields.bio || ''
-    let avatar = req.files.avatar.path.split(path.sep).pop()
+    let avatar = req.files.avatar
     let password = req.fields.password
     let repassword = req.fields.repassword
     let inviteCode = req.fields.inviteCode
@@ -34,8 +34,11 @@ export default {
       if (!(bio.length >= 0 && bio.length <= 30)) {
         throw new Error('个人简介请限制在 1-30 个字符')
       }
-      if (!req.files.avatar.name) {
-        throw new Error('缺少头像')
+      if (!req.files.avatar) {
+        avatar = 'default_avatar.jpg'
+        // throw new Error('缺少头像')
+      } else {
+        avatar = avatar.path.split(path.sep).pop()
       }
       if (inviteCode !== 'TCAEVu32018') {
         throw new Error('无效的邀请码')
