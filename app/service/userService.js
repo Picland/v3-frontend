@@ -7,9 +7,9 @@ export default {
   },
 
   // 通过用户名获取用户信息
-  getUserByName (name) {
+  getUserByPhone (phoneNumber) {
     return User
-      .findOne({ name: name })
+      .findOne({ phoneNumber: phoneNumber })
       .addCreatedAt()
       .exec()
   }

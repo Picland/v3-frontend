@@ -19,7 +19,7 @@
   },
   "betterScripts": {
     "build": {
-      "command": "npm run boot && kill -9 $(lsof -t -i:3001); node-dev bin/server.build.js",
+      "command": "npm run boot && node-dev bin/server.build.js",
       "env": {
         "NODE_ENV": "development",
         "HOST": "localhost",
@@ -28,7 +28,7 @@
       }
     },
     "dev": {
-      "command": "npm run boot && kill -9 $(lsof -t -i:3000); node bin/server.dev.js",
+      "command": "npm run boot && node bin/server.dev.js",
       "env": {
         "NODE_ENV": "development",
         "PORT": 3000

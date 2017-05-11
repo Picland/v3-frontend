@@ -44,7 +44,7 @@ sudo service mongod start
 - [MongoDB Tutorial](https://www.tutorialspoint.com/mongodb/index.htm)
 - Download [RoboMongo](https://robomongo.org/)
 
-2. ENV: development
+2. ENV: development (feature and dev branch)
 ```shell
 # step0 init project first time
 npm run boot
@@ -56,7 +56,15 @@ npm run dev
 open http://localhost:3000
 ```
 
-3. ENV: production
+3. ENV: sandbox (release branch)
+```shell
+# step0 init project first time
+npm run boot
+# step1 only need to run this command
+npm run sandbox
+```
+
+4. ENV: production (master branch)
 ```shell
 # step0 init project first time
 npm run boot

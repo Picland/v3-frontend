@@ -1,6 +1,6 @@
 const envPort = +process.env.PORT || 3000
 
-const dataBaseName = 'myblog'
+const dataBaseName = 'earth-development'
 
 module.exports = {
   port: envPort,

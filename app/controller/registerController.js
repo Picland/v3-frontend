@@ -51,7 +51,7 @@ export default {
       }
     } catch (e) {
       // 注册失败，异步删除上传的头像
-      fs.unlink(req.files.avatar.path)
+      avatar && avatar.path && fs.unlink(req.files.avatar.path)
       req.flash('error', e.message)
       return res.redirect('/register')
     }
@@ -83,7 +83,7 @@ export default {
       })
       .catch((e) => {
         // 注册失败，异步删除上传的头像
-        fs.unlink(req.files.avatar.path)
+        req.files.avatar && fs.unlink(req.files.avatar.path)
         // 用户名被占用则跳回注册页，而不是错误页
         if (e.message.match('E11000 duplicate key')) {
           req.flash('error', '用户名已被占用')

@@ -6,6 +6,7 @@ const baseWebpackConfig = require('./webpack.base.config')
 const host = process.env.HOST || 'localhost'
 const port = +process.env.PORT || 3001
 const timeout = +process.env.TIMEOUT || 2000
+const outputPath = '/dist/'
 
 const reactHMR = [
   'react-hot-loader/patch', // 开启 React 代码的模块热替换(HMR)
@@ -17,16 +18,22 @@ const reactHMR = [
 baseWebpackConfig.entry.app.push(...reactHMR)
 
 module.exports = merge(baseWebpackConfig, {
+  output: {
+    path: outputPath,
+    publicPath: outputPath
+  },
   devtool: 'source-map',
   plugins: [
-    new FriendlyErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"development"',
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      },
       __CLIENT__: true,
       __SERVER__: false,
       __DEVELOPMENT__: true,
       __DEVTOOLS__: true  // <-------- DISABLE redux-devtools HERE
     }),
+    new FriendlyErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new WebpackIsomorphicToolsPlugin(require('./isomorphic.config.js'))
   ]
