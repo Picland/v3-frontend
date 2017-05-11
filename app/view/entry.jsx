@@ -12,7 +12,7 @@ render()
 // --------------------------------------
 // React Moudle/Page Replacement for Dev
 // --------------------------------------
-if (module.hot) {
+if (process.env.NODE_ENV === 'development' && module.hot) {
   console.info('React Moudle/Page Replacement for Dev')
   module.hot.accept('./page/Login/Login', () => {
     render()

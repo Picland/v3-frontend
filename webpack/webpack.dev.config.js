@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 const baseWebpackConfig = require('./webpack.base.config')
 const host = process.env.HOST || 'localhost'
@@ -18,6 +19,7 @@ baseWebpackConfig.entry.app.push(...reactHMR)
 module.exports = merge(baseWebpackConfig, {
   devtool: 'source-map',
   plugins: [
+    new FriendlyErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"',
       __CLIENT__: true,

@@ -1,9 +1,8 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const path = require('path')
 const sourcePath = path.resolve(__dirname, '../app/view')
-const outputPath = '/dist/'
+const outputPath = path.resolve(__dirname, '../static/dist/')
 
 module.exports = {
   entry: {
@@ -55,7 +54,6 @@ module.exports = {
       names: ['vendor'],
       minChunks: Infinity,
       filename: 'js/[name].js'
-    }),
-    new FriendlyErrorsPlugin()
+    })
   ]
 }

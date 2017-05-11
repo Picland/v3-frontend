@@ -1,7 +1,7 @@
 <p align="center"><a href="https://github.com/feross/standard" target="_blank"><img width="200"src="https://cdn.rawgit.com/feross/standard/master/badge.svg"></a></p>
 
 <p align="center">
-  <a href="https://travis-ci.org/muwenzi/Earth"><img src="https://travis-ci.com/muwenzi/Earth.svg?token=65SdnpsEfKTY1qP6fnyh&branch=dev" alt="Build Status"></a>
+  <a href="https://travis-ci.org/muwenzi/Earth"><img src="https://travis-ci.com/muwenzi/Earth.svg?token=65SdnpsEfKTY1qP6fnyh&branch=master" alt="Build Status"></a>
   <a href="https://github.com/muwenzi/Blog-Webapp/blob/master/LICENSE.md"><img src="https://img.shields.io/pypi/l/Django.svg" alt="License"></a>
   <br>
 </p>
@@ -29,9 +29,6 @@ brew install mongodb
 mkdir -p /data/db
 # start mongodb
 mongod
-# create database
-mongo
-use myblog
 ```
 
 - Linux(CentOS)
@@ -41,9 +38,6 @@ sudo yum install -y mongodb-org
 mkdir -p /data/db
 # start mongodb
 sudo service mongod start
-# create database
-mongo
-use myblog
 ```
 
 - [More MongoDB Installation](https://docs.mongodb.com/master/administration/install-community/)
@@ -52,6 +46,8 @@ use myblog
 
 2. ENV: development
 ```shell
+# step0 init project first time
+npm run boot
 # step1 start bulid server for dev
 npm run build
 # step2 start app server for dev
@@ -62,6 +58,8 @@ open http://localhost:3000
 
 3. ENV: production
 ```shell
-# only need to run this command
+# step0 init project first time
+npm run boot
+# step1 only need to run this command
 npm run prod
 ```
