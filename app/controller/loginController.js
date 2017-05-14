@@ -10,10 +10,10 @@ export default {
   },
 
   login (req, res, next) {
-    let name = req.fields.name
+    let phoneNumber = req.fields.phoneNumber
     let password = req.fields.password
 
-    userService.getUserByName(name)
+    userService.getUserByPhone(phoneNumber)
       .then((user) => {
         if (!user) {
           req.flash('error', '用户不存在')

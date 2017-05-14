@@ -15,7 +15,7 @@ class Login extends Component {
         <div styleName='container'>
           <div>登录</div>
           <form method='post'>
-            <Input styleType='line' placeholder='手机号码' type='text' name='name' />
+            <Input styleType='line' placeholder='手机号码' type='text' name='phoneNumber' />
             <Input styleType='line' placeholder='密码' type='password' name='password' />
             <Button styleType='wide' type='submit' value='登录'>登录</Button>
           </form>

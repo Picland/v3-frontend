@@ -41,6 +41,6 @@ jspm_packages
 .idea
 
 # Project
-app/static/dist
+static/dist
 webpack/webpack-assets.json
 webpack/webpack-stats.json

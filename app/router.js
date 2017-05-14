@@ -28,7 +28,7 @@ export default (app) => {
 
   // GET /articles 所有用户或者特定用户的文章页
   // eg: GET /articles?author=xxx
-  app.get('/articles', articleController.getAllArticles)
+  app.get('/articles', authorize.isLogin, articleController.getAllArticles)
 
   // GET /articles/create 发表文章页
   app.get('/articles/create', authorize.isLogin, articleController.renderCreateArticlePage)

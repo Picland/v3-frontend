@@ -1,6 +1,7 @@
 import path from 'path'
 import express from 'express'
 import session from 'express-session'
+import formidable from 'express-formidable' // 接收表单及文件的上传中间件
 import connectMongo from 'connect-mongo' // 将 session 存储于 mongodb，结合 express-session 使用
 import flash from 'connect-flash' // 页面通知提示的中间件，基于 session 实现
 import config from 'config-lite' // 读取配置文件
@@ -58,6 +59,7 @@ hbs.registerHelper('if_eq', (a, b, opts) => {
 
 // 设置静态文件目录
 app.use(express.static(path.join(__dirname, 'static')))
+
 // session 中间件
 app.use(session({
   name: config.session.key, // 设置 cookie 中保存 session id 的字段名称
@@ -71,10 +73,12 @@ app.use(session({
     url: config.mongodb // mongodb 地址
   })
 }))
+
 // flash 中间价，用来显示通知
 app.use(flash())
+
 // 处理表单及文件上传的中间件
-app.use(require('express-formidable')({
+app.use(formidable({
   uploadDir: path.join(__dirname, 'static/img'), // 上传文件目录
   keepExtensions: true // 保留后缀
 }))
