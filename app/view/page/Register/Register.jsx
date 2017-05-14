@@ -18,7 +18,7 @@ class Register extends Component {
             <Input styleType='line' placeholder='手机号码' type='text' name='phoneNumber' />
             <Input styleType='line' placeholder='昵称' type='text' name='name' />
             <Input styleType='line' placeholder='邀请码' type='text' name='inviteCode' />
-            <Input styleType='line' placeholder='密码' type='password' name='password' />
+            <Input styleType='line' placeholder='密码至少6位' type='password' name='password' />
             <Input styleType='line' placeholder='重复密码' type='password' name='repassword' />
             <Button styleType='wide' type='submit' value='注册'>注册</Button>
           </form>
