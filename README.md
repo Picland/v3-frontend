@@ -1,6 +1,6 @@
 <p align="center"><a href="https://github.com/muwenzi/Earth"><img width="500" src="https://cloud.githubusercontent.com/assets/12554487/26024526/906f3518-3805-11e7-8163-9d18b6ae5292.png"></a></p>
 
-<p align="center"><a href="https://github.com/feross/standard" target="_blank"><img width="200"src="https://cdn.rawgit.com/feross/standard/master/badge.svg"></a></p>
+<p align="center"><a href="https://github.com/feross/standard" target="_blank"><img width="171"src="https://cdn.rawgit.com/feross/standard/master/badge.svg"></a></p>
 
 <p align="center">
   <a href="https://travis-ci.org/muwenzi/Earth"><img src="https://travis-ci.com/muwenzi/Earth.svg?token=65SdnpsEfKTY1qP6fnyh&branch=master" alt="Build Status"></a>

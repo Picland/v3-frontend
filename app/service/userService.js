@@ -6,7 +6,7 @@ export default {
     return User.insert(user).exec()
   },
 
-  // 通过用户名获取用户信息
+  // 通过手机号码获取用户信息
   getUserByPhone (phoneNumber) {
     return User
       .findOne({ phoneNumber: phoneNumber })
