@@ -1,34 +1,47 @@
-const fs = require('fs')
-const path = require('path')
-const sha1 = require('sha1')
-const userService = require('../service/userService')
+import fs from 'fs'
+import path from 'path'
+import sha1 from 'sha1'
+import userService from '../service/userService'
+import renderService from '../service/renderService'
 
-module.exports = {
-  renderRegisterPage(req, res, next) {
-    res.render('register')
+export default {
+  renderRegisterPage (req, res, next) {
+    // res.render('register')
+    res.status(200).send(renderService(req.url))
   },
 
-  createUser(req, res, next) {
+  createUser (req, res, next) {
+    let phoneNumber = req.fields.phoneNumber
     let name = req.fields.name
-    let gender = req.fields.gender
-    let bio = req.fields.bio
-    let avatar = req.files.avatar.path.split(path.sep).pop()
+    let gender = req.fields.gender || 'x'
+    let bio = req.fields.bio || ''
+    let avatar = req.files.avatar
     let password = req.fields.password
     let repassword = req.fields.repassword
+    let inviteCode = req.fields.inviteCode
 
     // 校验参数
     try {
+      if (!(/^1[34578]\d{9}$/.test(phoneNumber))) {
+        throw new Error('请输入正确的手机号码')
+      }
       if (!(name.length >= 1 && name.length <= 10)) {
         throw new Error('名字请限制在 1-10 个字符')
       }
-      if (['m', 'f', 'x'].indexOf(gender) === -1) {
-        throw new Error('性别只能是 m、f 或 x')
+      if (!['m', 'f', 'x'].includes(gender)) {
+        throw new Error('性别只能是男、女或保密')
       }
-      if (!(bio.length >= 1 && bio.length <= 30)) {
+      if (!(bio.length >= 0 && bio.length <= 30)) {
         throw new Error('个人简介请限制在 1-30 个字符')
       }
-      if (!req.files.avatar.name) {
-        throw new Error('缺少头像')
+      if (!avatar) {
+        avatar = 'default_avatar.jpg'
+        // throw new Error('缺少头像')
+      } else {
+        avatar = avatar.path.split(path.sep).pop()
+      }
+      if (inviteCode !== 'TCAEVu32018') {
+        throw new Error('无效的邀请码')
       }
       if (password.length < 6) {
         throw new Error('密码至少 6 个字符')
@@ -38,7 +51,7 @@ module.exports = {
       }
     } catch (e) {
       // 注册失败，异步删除上传的头像
-      fs.unlink(req.files.avatar.path)
+      avatar && avatar.path && fs.unlink(req.files.avatar.path)
       req.flash('error', e.message)
       return res.redirect('/register')
     }
@@ -48,11 +61,12 @@ module.exports = {
 
     // 待写入数据库的用户信息
     let user = {
-      name: name,
-      password: password,
-      gender: gender,
-      bio: bio,
-      avatar: avatar
+      phoneNumber,
+      name,
+      password,
+      gender,
+      bio,
+      avatar
     }
     // 用户信息写入数据库
     userService.insert(user)
@@ -65,11 +79,11 @@ module.exports = {
         // 写入 flash
         req.flash('success', '注册成功')
         // 跳转到首页
-        res.redirect('/posts')
+        res.redirect('/articles')
       })
       .catch((e) => {
         // 注册失败，异步删除上传的头像
-        fs.unlink(req.files.avatar.path)
+        req.files.avatar && fs.unlink(req.files.avatar.path)
         // 用户名被占用则跳回注册页，而不是错误页
         if (e.message.match('E11000 duplicate key')) {
           req.flash('error', '用户名已被占用')

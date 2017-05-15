@@ -1,8 +1,8 @@
-const articleService = require('../service/articleService')
-const commentService = require('../service/commentService')
+import articleService from '../service/articleService'
+import commentService from '../service/commentService'
 
-module.exports = {
-  getAllArticles(req, res, next) {
+export default {
+  getAllArticles (req, res, next) {
     let author = req.query.author
     articleService.getArticles(author)
       .then((articles) => {
@@ -13,11 +13,11 @@ module.exports = {
       .catch(next)
   },
 
-  renderCreateArticlePage(req, res, next) {
+  renderCreateArticlePage (req, res, next) {
     res.render('create')
   },
 
-  createArticle(req, res, next) {
+  createArticle (req, res, next) {
     let author = req.session.user._id
     let title = req.fields.title
     let content = req.fields.content
@@ -53,12 +53,12 @@ module.exports = {
       .catch(next)
   },
 
-  getOneArticle(req, res, next) {
+  getOneArticle (req, res, next) {
     let articleId = req.params.articleId
-    
+
     Promise.all([
-      articleService.getArticleById(articleId),// 获取文章信息
-      commentService.getComments(articleId),// 获取该文章所有留言
+      articleService.getArticleById(articleId), // 获取文章信息
+      commentService.getComments(articleId), // 获取该文章所有留言
       articleService.incPv(articleId)// pv 加 1
     ])
     .then((result) => {
@@ -75,7 +75,7 @@ module.exports = {
     .catch(next)
   },
 
-  editArticlePage(req, res, next) {
+  editArticlePage (req, res, next) {
     let articleId = req.params.articleId
     let author = req.session.user._id
 
@@ -94,7 +94,7 @@ module.exports = {
       .catch(next)
   },
 
-  editArticle(req, res, next) {
+  editArticle (req, res, next) {
     let articleId = req.params.articleId
     let author = req.session.user._id
     let title = req.fields.title
@@ -109,7 +109,7 @@ module.exports = {
       .catch(next)
   },
 
-  deleteArticle(req, res, next) {
+  deleteArticle (req, res, next) {
     let articleId = req.params.articleId
     let author = req.session.user._id
 

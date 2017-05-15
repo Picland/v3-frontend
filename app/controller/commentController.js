@@ -1,7 +1,7 @@
-const commentService = require('../service/commentService')
+import commentService from '../service/commentService'
 
-module.exports = {
-  createComment(req, res, next) {
+export default {
+  createComment (req, res, next) {
     let author = req.session.user._id
     let articleId = req.params.articleId
     let content = req.fields.content
@@ -20,7 +20,7 @@ module.exports = {
       .catch(next)
   },
 
-  deleteComment(req, res, next) {
+  deleteComment (req, res, next) {
     let commentId = req.params.commentId
     let author = req.session.user._id
 

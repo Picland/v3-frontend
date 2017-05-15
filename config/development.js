@@ -1,0 +1,13 @@
+const envPort = +process.env.PORT || 3000
+
+const dataBaseName = 'earth-development'
+
+module.exports = {
+  port: envPort,
+  session: {
+    secret: dataBaseName,
+    key: dataBaseName,
+    maxAge: 2592000000 // 30days
+  },
+  mongodb: `mongodb://localhost:27017/${dataBaseName}`
+}

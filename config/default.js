@@ -9,12 +9,16 @@
  * @type {{port: number, session: {secret: string, key: string, maxAge: number}, mongodb: string}}
  */
 
+const envPort = +process.env.PORT || 3000
+
+const dataBaseName = 'earth-default'
+
 module.exports = {
-  port: 3000,
+  port: envPort,
   session: {
-    secret: 'myblog',
-    key: 'myblog',
+    secret: dataBaseName,
+    key: dataBaseName,
     maxAge: 2592000000
   },
-  mongodb: 'mongodb://localhost:27017/myblog'
+  mongodb: `mongodb://localhost:27017/${dataBaseName}`
 }

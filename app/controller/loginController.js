@@ -1,16 +1,19 @@
-const sha1 = require('sha1')
-const userService = require('../service/userService')
+import sha1 from 'sha1'
+import userService from '../service/userService'
+import renderService from '../service/renderService'
 
-module.exports = {
-  renderLoginPage(req, res, next) {
-    res.render('login')
+export default {
+  renderLoginPage (req, res, next) {
+    // res.render('login')
+    console.log('loginController===', req.url)
+    res.status(200).send(renderService(req.url))
   },
 
-  login(req, res, next) {
-    let name = req.fields.name
+  login (req, res, next) {
+    let phoneNumber = req.fields.phoneNumber
     let password = req.fields.password
 
-    userService.getUserByName(name)
+    userService.getUserByPhone(phoneNumber)
       .then((user) => {
         if (!user) {
           req.flash('error', '用户不存在')
