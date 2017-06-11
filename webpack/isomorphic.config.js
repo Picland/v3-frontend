@@ -16,7 +16,7 @@ module.exports = {
   webpack_stats_file_path: path.resolve(__dirname, './webpack-stats.json'),
   assets: {
     style_modules: {
-      extensions: ['less'],
+      extensions: ['less', 'css'],
       filter: function (module, regex, options, log) {
         // console.log('11', options)
         if (!options.development) {
