@@ -4,8 +4,6 @@ import renderService from '../service/renderService'
 
 export default {
   renderLoginPage (req, res, next) {
-    // res.render('login')
-    console.log('loginController===', req.url)
     res.status(200).send(renderService(req.url))
   },
 

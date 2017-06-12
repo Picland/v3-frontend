@@ -8,18 +8,33 @@ const dist = NODE_ENV === 'development'
   : '/dist'
 
 export default (renderMe) => {
-  console.log('renderMe===', renderMe)
-  return `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>木纹子印象派</title>
-    <link rel="stylesheet" href="${dist}/css/app.css">
-  </head>
-  <body>
-    <div id="root">${renderToString(renderMe)}</div>
-    <script src="${dist}/js/vendor.js"></script>
-    <script src="${dist}/js/app.js"></script>
-  </body>
-</html>`
+  if (NODE_ENV === 'development') {
+    return `<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <title>木纹子印象派</title>
+          <link rel="stylesheet" href="${dist}/css/app.css">
+        </head>
+        <body>
+          <div id="root"></div>
+          <script src="${dist}/js/vendor.js"></script>
+          <script src="${dist}/js/app.js"></script>
+        </body>
+      </html>`
+  } else {
+    return `<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <title>木纹子印象派</title>
+          <link rel="stylesheet" href="${dist}/css/app.css">
+        </head>
+        <body>
+          <div id="root">${renderToString(renderMe)}</div>
+          <script src="${dist}/js/vendor.js"></script>
+          <script src="${dist}/js/app.js"></script>
+        </body>
+      </html>`
+  }
 }

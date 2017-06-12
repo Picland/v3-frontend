@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 const baseWebpackConfig = require('./webpack.base.config')
 const host = process.env.HOST || 'localhost'
 const port = +process.env.PORT || 3001
@@ -34,7 +33,6 @@ module.exports = merge(baseWebpackConfig, {
       __DEVTOOLS__: true  // <-------- DISABLE redux-devtools HERE
     }),
     new FriendlyErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new WebpackIsomorphicToolsPlugin(require('./isomorphic.config.js'))
+    new webpack.HotModuleReplacementPlugin()
   ]
 })
