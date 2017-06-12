@@ -4,6 +4,7 @@ import logoutController from './controller/logoutController'
 import registerController from './controller/registerController'
 import articleController from './controller/articleController'
 import commentController from './controller/commentController'
+import userController from './controller/userController'
 
 export default (app) => {
   // GET / 首页重定向
@@ -53,6 +54,9 @@ export default (app) => {
 
   // GET /articles/:articleId/comment/:commentId/remove 删除一条留言
   app.get('/articles/:articleId/comment/:commentId/remove', authorize.isLogin, commentController.deleteComment)
+
+  // GET /settings/profile 个人资料页
+  app.get('/settings/profile', authorize.isLogin, userController.renderrofilePage)
 
   // 404 page
   app.use((req, res) => {
