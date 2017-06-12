@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Frame extends Component {
   render () {
@@ -13,7 +14,7 @@ class Frame extends Component {
 }
 
 Frame.propTypes = {
-  children: React.PropTypes.node
+  children: PropTypes.node
 }
 
 export default Frame
