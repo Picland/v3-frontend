@@ -2,7 +2,7 @@
   "name": "Earth",
   "version": "0.0.0",
   "private": true,
-  "main": "bin/server.prod.js",
+  "main": "server/server.prod.js",
   "author": "muwenzi",
   "description": "muwenzi.com version3",
   "license": "BSD-3-Clause",
@@ -22,7 +22,7 @@
   },
   "betterScripts": {
     "build": {
-      "command": "npm run boot && node-dev bin/server.build.js",
+      "command": "npm run boot && node-dev server/server.build.js",
       "env": {
         "NODE_ENV": "development",
         "HOST": "localhost",
@@ -31,7 +31,7 @@
       }
     },
     "dev": {
-      "command": "npm run boot && node bin/server.dev.js",
+      "command": "npm run boot && node server/server.dev.js",
       "env": {
         "NODE_ENV": "development",
         "PORT": 3000
@@ -44,7 +44,7 @@
       }
     },
     "sandbox": {
-      "command": "pm2 start bin/server.prod.js --name 'earth-sanbox'",
+      "command": "pm2 start server/server.prod.js --name 'earth-sanbox'",
       "env": {
         "NODE_ENV": "sandbox",
         "PORT": 8890
@@ -57,7 +57,7 @@
       }
     },
     "prod": {
-      "command": "pm2 start bin/server.prod.js --name 'earth-production'",
+      "command": "pm2 start server/server.prod.js --name 'earth-production'",
       "env": {
         "NODE_ENV": "production",
         "PORT": 8892

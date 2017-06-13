@@ -1,8 +1,14 @@
+const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const path = require('path')
 const sourcePath = path.resolve(__dirname, '../app/view')
 const outputPath = path.resolve(__dirname, '../static/dist/')
+
+// -----------------------------------------------------------
+// Find out which loader is causing this deprecation warning
+// https://github.com/webpack/loader-utils/issues/56
+// -----------------------------------------------------------
+// process.traceDeprecation = true
 
 module.exports = {
   entry: {
