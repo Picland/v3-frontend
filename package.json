@@ -5,7 +5,10 @@
   "main": "bin/server.prod.js",
   "author": "muwenzi",
   "description": "muwenzi.com version3",
-  "license": "BSD-2-Clause",
+  "license": "BSD-3-Clause",
+  "engines" : {
+    "node" : ">=6.9.5"
+  },
   "scripts": {
     "boot": "yarn || npm i",
     "build": "better-npm-run build",
@@ -88,7 +91,6 @@
     "express-session": "1.14.2",
     "express-winston": "2.0.0",
     "extract-text-webpack-plugin": "^2.1.0",
-    "fs": "0.0.1-security",
     "hbs": "^4.0.1",
     "isomorphic-style-loader": "^1.1.0",
     "jsx-loader": "^0.13.2",

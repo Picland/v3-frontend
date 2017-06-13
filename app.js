@@ -1,4 +1,5 @@
 import path from 'path'
+import fs from 'fs'
 import express from 'express'
 import session from 'express-session'
 import formidable from 'express-formidable' // 接收表单及文件的上传中间件
@@ -10,7 +11,6 @@ import pkg from './package.json'
 import winston from 'winston' // 日志
 import expressWinston from 'express-winston' // 基于 winston 的用于 express 的日志中间件
 import hbs from 'hbs'
-import fs from 'fs'
 import favicon from 'serve-favicon'
 
 const MongoStore = connectMongo(session)
