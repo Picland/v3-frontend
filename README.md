@@ -62,7 +62,8 @@ mongod
 ```
 
 - [More MongoDB Installation](https://docs.mongodb.com/master/administration/install-community/)
-- [MongoDB Tutorial](https://www.tutorialspoint.com/mongodb/index.htm)
+- [MongoDB Tutorial 1](https://www.tutorialspoint.com/mongodb/index.htm)
+- [MongoDB Tutorial 2](http://www.runoob.com/mongodb/mongodb-tutorial.html)
 - Download [RoboMongo](https://robomongo.org/)
 
 ## Quick start

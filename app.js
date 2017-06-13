@@ -6,28 +6,18 @@ import connectMongo from 'connect-mongo' // 将 session 存储于 mongodb，结�
 import flash from 'connect-flash' // 页面通知提示的中间件，基于 session 实现
 import config from 'config-lite' // 读取配置文件
 import router from './app/router'
-import pkg from './package.json' // package.json
+import pkg from './package.json'
 import winston from 'winston' // 日志
 import expressWinston from 'express-winston' // 基于 winston 的用于 express 的日志中间件
 import hbs from 'hbs'
 import fs from 'fs'
-// import ReactEngine from 'react-engine'
-// import favicon from 'serve-favicon'
+import favicon from 'serve-favicon'
 
 const MongoStore = connectMongo(session)
 
 const app = express()
 
-// app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')))
-
-// create the view engine with `react-engine`
-// let engine = ReactEngine.server.create({
-//   routes: routes,
-//   routesFilePath: join(__dirname, '/public/routes.jsx'),
-//   performanceCollector: function (stats) {
-//     console.log(stats)
-//   }
-// })
+app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')))
 
 // 设置模板目录
 app.set('views', path.join(__dirname, 'app/view/server'))
