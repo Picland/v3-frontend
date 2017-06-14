@@ -4,10 +4,8 @@ import PropTypes from 'prop-types'
 class Frame extends Component {
   render () {
     return (
-      <div className='frame'>
-        <section className='contianer'>
-          {this.props.children}
-        </section>
+      <div>
+        {this.props.children}
       </div>
     )
   }

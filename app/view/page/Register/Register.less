@@ -1,26 +1,28 @@
 @import '~variable';
 
 .container {
-  width: 300px;
-  position: relative;
-  top: 150px;
-  margin: 0 auto;
-  .title {
-    text-align: center;
-  }
-  & > div:first-child {
-    color: @medium;
-    font-size: 24px;
-    font-weight: 300;
-    margin-bottom: @unit-double;
-  }
-  input {
+  .main {
     width: 300px;
-    margin-bottom: @unit + @unit-quarter;
-  }
-  button {
-    margin-top: @unit;
-    width: 300px;
-    height: 42px;
+    position: relative;
+    top: 150px;
+    margin: 0 auto;
+    .title {
+      text-align: center;
+    }
+    & > div:first-child {
+      color: @medium;
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: @unit-double;
+    }
+    input {
+      width: 300px;
+      margin-bottom: @unit + @unit-quarter;
+    }
+    button {
+      margin-top: @unit;
+      width: 300px;
+      height: 42px;
+    }
   }
 }

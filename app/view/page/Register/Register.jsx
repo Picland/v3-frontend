@@ -10,9 +10,9 @@ import styles from './Register.less'
 class Register extends Component {
   render () {
     return (
-      <div>
+      <div styleName='container'>
         <Header logoName='木纹子印象派' buttonLink='/login' buttonName='登录' />
-        <div styleName='container'>
+        <div styleName='main'>
           <div styleName='title'>注册</div>
           <form method='post' encType='multipart/form-data'>
             <Input styleType='line' placeholder='手机号码' type='text' name='phoneNumber' />

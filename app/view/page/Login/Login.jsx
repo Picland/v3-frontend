@@ -10,9 +10,9 @@ import styles from './Login.less'
 class Login extends Component {
   render () {
     return (
-      <div>
+      <div styleName='container'>
         <Header logoName='木纹子印象派' buttonLink='/register' buttonName='注册' />
-        <div styleName='container'>
+        <div styleName='main'>
           <div>登录</div>
           <form method='post'>
             <Input styleType='line' placeholder='手机号码' type='text' name='phoneNumber' />

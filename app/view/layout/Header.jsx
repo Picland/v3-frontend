@@ -19,7 +19,7 @@ class Nav extends Component {
   render () {
     let {logoName, buttonName, buttonLink} = this.props
     return (
-      <nav>
+      <nav styleName='contianer'>
         <div styleName='left'>
           <span styleName='logo'>{logoName}</span>
         </div>

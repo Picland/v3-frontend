@@ -1,7 +1,7 @@
 import { renderToString } from 'react-dom/server'
 
 const NODE_ENV = process.env.NODE_ENV
-const port = (+process.env.PORT) + 1
+const port = +process.env.PORT + 1
 
 const dist = NODE_ENV === 'development'
   ? `http://localhost:${port}/dist`
