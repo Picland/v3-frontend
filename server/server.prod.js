@@ -43,7 +43,7 @@ global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/i
   // .development()
   .server(rootDir, function () {
     console.log('ok')
-    require('../app')
+    require('./main')
   })
 // global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/isomorphic.config'))
 //   .development(global.__DEVELOPMENT__)

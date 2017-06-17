@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const sourcePath = path.resolve(__dirname, '../app/view')
+const sourcePath = path.resolve(__dirname, '../src/view')
 const outputPath = path.resolve(__dirname, '../static/dist/')
 
 // -----------------------------------------------------------

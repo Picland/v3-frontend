@@ -17,4 +17,4 @@ try {
 // Using babel-register to do the runtime compile,
 // to make Node.js support the ES6 module loading.
 require('babel-register')(config)
-require('../app')
+require('./main')
