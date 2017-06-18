@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import '../../../style/core.less'
 import styles from './Profile.less'
 
 class Profile extends Component {

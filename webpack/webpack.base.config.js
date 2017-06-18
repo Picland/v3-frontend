@@ -12,7 +12,7 @@ const outputPath = path.resolve(__dirname, '../static/dist/')
 
 module.exports = {
   entry: {
-    app: [path.resolve(sourcePath, 'entry.jsx')],
+    app: [path.resolve(sourcePath, 'entry.js')],
     vendor: ['react', 'react-dom', 'whatwg-fetch']
   },
   output: {

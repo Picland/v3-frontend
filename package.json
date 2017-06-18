@@ -6,11 +6,11 @@
   "author": "muwenzi",
   "description": "muwenzi.com version3",
   "license": "BSD-3-Clause",
-  "engines" : {
-    "node" : ">=6.9.5"
+  "engines": {
+    "node": "^8.0.0"
   },
   "scripts": {
-    "boot": "yarn || npm i",
+    "boot": "yarn || (npm i -g yarn && yarn)",
     "build": "better-npm-run build",
     "dev": "better-npm-run dev",
     "presandbox": "better-npm-run presandbox",
@@ -126,6 +126,7 @@
     "winston": "2.2.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "eslint": "^3.18.0",
     "eslint-config-standard": "^7.1.0",
     "eslint-config-standard-react": "^4.3.0",

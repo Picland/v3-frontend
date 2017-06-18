@@ -12,14 +12,14 @@ console.log('ViewRouter===')
 const ViewRouter = (
   <Router>
     <div>
-      <Route path='/' render={() =>
+      <Route path="/" render={() =>
         <Frame>
           <Switch>
-            <Route path='/login' component={Login} />
-            <Route path='/register' component={Register} />
-            <Route path='/settings' render={() =>
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/settings" render={() =>
               <Setting>
-                <Route path='/settings/profile' component={Profile} />
+                <Route path="/settings/profile" component={Profile} />
               </Setting>
             } />
           </Switch>

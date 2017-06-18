@@ -6,7 +6,7 @@ import styles from './CopyRight.less'
 class CopyRight extends Component {
   render () {
     return (
-      <div styleName='copyright'>© 2015-2017 苏ICP备15056713号</div>
+      <div styleName="copyright">© 2015-2017 苏ICP备15056713号</div>
     )
   }
 }

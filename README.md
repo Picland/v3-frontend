@@ -12,10 +12,11 @@
 
 Earth(version3-inside) is a photography website built by NodeJS, ReactStack and MongoDB
 
-## Requirements
+## Main Requirements
 
 * react: `^15.5.0`
-* node: `>=6.9.5`
+* react-router: `^4.0.0`
+* node: `^8.0.0`
 * mongodb: `^3.4.2`
 
 ## Init Database
