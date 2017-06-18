@@ -71,10 +71,8 @@ mongod
 
 1. ENV: development (feature and dev branch)
 ```shell
-# step0 init project first time
-npm run boot
-# step1 start bulid server for dev
-npm run build
+# step1 start webpack server for dev
+npm run webpack
 # step2 start app server for dev
 npm run dev
 # step3 open the browser
@@ -83,16 +81,12 @@ open http://localhost:3000
 
 2. ENV: sandbox (release branch)
 ```shell
-# step0 init project first time
-npm run boot
 # step1 only need to run this command
 npm run sandbox
 ```
 
 3. ENV: production (master branch)
 ```shell
-# step0 init project first time
-npm run boot
 # step1 only need to run this command
 npm run prod
 ```

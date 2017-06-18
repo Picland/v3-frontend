@@ -1,6 +1,6 @@
 const express = require('express')
 const webpack = require('webpack')
-const webpackDevConfig = require('../webpack/webpack.dev.config')
+const webpackDevConfig = require('../webpack/webpack.config.dev')
 
 const compiler = webpack(webpackDevConfig)
 const host = process.env.HOST || 'localhost'

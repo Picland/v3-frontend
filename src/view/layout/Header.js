@@ -5,7 +5,12 @@ import CSSModules from 'react-css-modules'
 import Button from '../component/Button/Button'
 import styles from './Header.less'
 
-class Nav extends Component {
+class Header extends Component {
+  static propTypes = {
+    logoName: PropTypes.string,
+    buttonName: PropTypes.string,
+    buttonLink: PropTypes.string
+  }
   static defaultProps = {
     logoName: '',
     buttonName: '',
@@ -15,22 +20,16 @@ class Nav extends Component {
   render () {
     let {logoName, buttonName, buttonLink} = this.props
     return (
-      <nav styleName="contianer">
+      <header styleName="contianer">
         <div styleName="left">
           <span styleName="logo">{logoName}</span>
         </div>
         <div styleName="right">
           <Link to={buttonLink}><Button styleType="ghost">{buttonName}</Button></Link>
         </div>
-      </nav>
+      </header>
     )
   }
 }
 
-Nav.propTypes = {
-  logoName: PropTypes.string,
-  buttonName: PropTypes.string,
-  buttonLink: PropTypes.string
-}
-
-export default CSSModules(Nav, styles)
+export default CSSModules(Header, styles)

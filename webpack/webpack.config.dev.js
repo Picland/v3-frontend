@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-const baseWebpackConfig = require('./webpack.base.config')
+const baseWebpackConfig = require('./webpack.config.base')
 const host = process.env.HOST || 'localhost'
 const port = +process.env.PORT || 3001
 const timeout = +process.env.TIMEOUT || 2000

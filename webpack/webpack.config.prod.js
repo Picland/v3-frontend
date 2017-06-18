@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.config')
+const baseWebpackConfig = require('./webpack.config.base')
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 
 module.exports = merge(baseWebpackConfig, {

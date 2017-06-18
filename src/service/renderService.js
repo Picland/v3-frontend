@@ -1,6 +1,6 @@
 // import React from 'react'
 // import { StaticRouter as Router, Route } from 'react-router'
-import render from '../view/serverRender'
+import render from '../view'
 
 // import Frame from '../view/layout/Frame'
 // import Login from '../view/page/Login/Login'

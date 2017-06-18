@@ -11,7 +11,7 @@
   },
   "scripts": {
     "boot": "yarn || (npm i -g yarn && yarn)",
-    "build": "better-npm-run build",
+    "webpack": "better-npm-run webpack",
     "dev": "better-npm-run dev",
     "presandbox": "better-npm-run presandbox",
     "sandbox": "better-npm-run sandbox",
@@ -21,8 +21,8 @@
     "check:eslint": "scripty"
   },
   "betterScripts": {
-    "build": {
-      "command": "npm run boot && node-dev server/server.build.js",
+    "webpack": {
+      "command": "npm run boot && node-dev server/server.webpack.js",
       "env": {
         "NODE_ENV": "development",
         "HOST": "localhost",

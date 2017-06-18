@@ -10,8 +10,7 @@ let config
 try {
   config = JSON.parse(babelrc)
 } catch (err) {
-  console.error('==> ERROR: Error parsing your .babelrc.')
-  console.error(err)
+  console.error('==> ERROR: Error parsing your .babelrc.\n', err)
 }
 
 // Using babel-register to do the runtime compile,
@@ -43,7 +42,7 @@ global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/i
   // .development()
   .server(rootDir, function () {
     console.log('ok')
-    require('./main')
+    require('./server.base')
   })
 // global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/isomorphic.config'))
 //   .development(global.__DEVELOPMENT__)

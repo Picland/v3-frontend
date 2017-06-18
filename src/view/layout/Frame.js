@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 import '../style/core.less'
 
 class Frame extends Component {
+  static propTypes = {
+    children: PropTypes.node
+  }
+
   render () {
     return (
       <div>
@@ -10,10 +14,6 @@ class Frame extends Component {
       </div>
     )
   }
-}
-
-Frame.propTypes = {
-  children: PropTypes.node
 }
 
 export default Frame
