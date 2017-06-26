@@ -1,7 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const sourcePath = path.resolve(__dirname, '../src/view')
+const sourcePath = path.resolve(__dirname, '../src')
+const viewPath = path.resolve(__dirname, '../src/view')
 const outputPath = path.resolve(__dirname, '../static/dist/')
 
 // -----------------------------------------------------------
@@ -12,7 +13,7 @@ const outputPath = path.resolve(__dirname, '../static/dist/')
 
 module.exports = {
   entry: {
-    app: [path.resolve(sourcePath, 'entry.js')],
+    app: [path.resolve(viewPath, 'entry.js')],
     vendor: ['react', 'react-dom', 'whatwg-fetch']
   },
   output: {
@@ -62,8 +63,8 @@ module.exports = {
       'node_modules'
     ],
     alias: {
-      'variable.less': path.resolve(sourcePath, 'style/variable/index.less'),
-      'core.less': path.resolve(sourcePath, 'style/core.less')
+      'variable.less': path.resolve(viewPath, 'style/variable/index.less'),
+      'core.less': path.resolve(viewPath, 'style/core.less')
     }
   },
   plugins: [

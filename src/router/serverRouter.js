@@ -1,10 +1,10 @@
-import authorize from './middleware/authorize'
-import loginController from './controller/loginController'
-import logoutController from './controller/logoutController'
-import registerController from './controller/registerController'
-import articleController from './controller/articleController'
-import commentController from './controller/commentController'
-import userController from './controller/userController'
+import authorize from '../middleware/authorize'
+import loginController from '../controller/loginController'
+import logoutController from '../controller/logoutController'
+import registerController from '../controller/registerController'
+import articleController from '../controller/articleController'
+import commentController from '../controller/commentController'
+import userController from '../controller/userController'
 
 export default (server) => {
   // GET / 首页重定向
@@ -56,7 +56,8 @@ export default (server) => {
   server.get('/articles/:articleId/comment/:commentId/remove', authorize.isLogin, commentController.deleteComment)
 
   // GET /settings/profile 个人资料页
-  server.get('/settings/profile', authorize.isLogin, userController.renderProfilePage)
+  server.get('/settings/preview', authorize.isLogin, userController.renderProfilePage)
+  server.get('/settings/detail/:id', authorize.isLogin, userController.renderProfilePage)
 
   // 404 page
   server.use((req, res) => {

@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
 import Header from '../../layout/Header'
 import styles from './Setting.less'
 
+@CSSModules(styles)
+
 class Setting extends Component {
+  static propTypes = {
+    children: propTypes.node
+  }
   render () {
     return (
       <div styleName="container">
@@ -15,8 +20,4 @@ class Setting extends Component {
   }
 }
 
-Setting.propTypes = {
-  children: PropTypes.node
-}
-
-export default CSSModules(Setting, styles)
+export default Setting

@@ -6,7 +6,7 @@ import formidable from 'express-formidable' // 接收表单及文件的上传中
 import connectMongo from 'connect-mongo' // 将 session 存储于 mongodb，结合 express-session 使用
 import flash from 'connect-flash' // 页面通知提示的中间件，基于 session 实现
 import config from 'config-lite' // 读取配置文件
-import router from '../src/router'
+import router from '../src/router/serverRouter'
 import pkg from '../package.json'
 import winston from 'winston' // 日志
 import expressWinston from 'express-winston' // 基于 winston 的用于 express 的日志中间件
