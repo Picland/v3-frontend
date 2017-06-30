@@ -6,6 +6,7 @@ import CopyRight from '../../component/CopyRight/CopyRight'
 import Header from '../../layout/Header'
 import styles from './Register.less'
 
+@CSSModules(styles)
 class Register extends Component {
   render () {
     return (
@@ -28,4 +29,4 @@ class Register extends Component {
   }
 }
 
-export default CSSModules(Register, styles)
+export default Register

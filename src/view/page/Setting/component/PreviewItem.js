@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
+import CSSModules from 'react-css-modules'
+import styles from './PreviewItem.less'
 
 @autobind
+@CSSModules(styles)
 class PreviewItem extends React.Component {
   static propTypes = {
     title: PropTypes.string,
@@ -22,14 +25,14 @@ class PreviewItem extends React.Component {
 
   render () {
     return (
-      <article className="article-preview-item">
-        <h1 className="title">
+      <article styleName="article-preview-item">
+        <h1>
           <a href={`detail/${this.props.id}`} onClick={this.handleNavigate.bind(this, this.props.id)}>
             {this.props.title}
           </a>
         </h1>
-        <span className="date">{this.props.date}</span>
-        <p className="desc">{this.props.description}</p>
+        <span>{this.props.date}</span>
+        <p>{this.props.description}</p>
       </article>
     )
   }

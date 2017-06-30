@@ -1,3 +1,7 @@
+/**
+ * 主要暴露出 reducer 函数和 actionCreator 函数
+ */
+
 // 作为previewList这个reducer函数中state的默认值
 // 只是为了初始化Redux并确定每个reducer的结构，只在初始的时候用到
 const initialState = {
@@ -47,11 +51,9 @@ function preview (state = initialState, action) {
 
 // actionCreator, 返回一个 action
 // 格式由 redux-composable-fetch 这个 middleware 定义
-export function loadArticles () {
-  return {
-    types: [LOAD_ARTICLES, LOAD_ARTICLES_SUCCESS, LOAD_ARTICLES_ERROR],
-    url: '/api/articles.json'
-  }
-}
+export const loadArticles = () => ({
+  types: [LOAD_ARTICLES, LOAD_ARTICLES_SUCCESS, LOAD_ARTICLES_ERROR],
+  url: '/api/articles.json'
+})
 
 export default preview

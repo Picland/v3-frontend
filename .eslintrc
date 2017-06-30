@@ -19,5 +19,6 @@
   "rules": {
 //    "strict": 0,
     "jsx-quotes": ["error", "prefer-double"],
+    "react/jsx-no-bind": 0
   }
 }

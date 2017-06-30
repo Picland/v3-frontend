@@ -6,6 +6,7 @@ import CopyRight from '../../component/CopyRight/CopyRight'
 import Header from '../../layout/Header'
 import styles from './Login.less'
 
+@CSSModules(styles)
 class Login extends Component {
   render () {
     return (
@@ -25,4 +26,4 @@ class Login extends Component {
   }
 }
 
-export default CSSModules(Login, styles)
+export default Login
