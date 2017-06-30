@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 
 @autobind
-class Preview extends React.Component {
+class PreviewItem extends React.Component {
   static propTypes = {
     title: PropTypes.string,
     push: PropTypes.func,
@@ -14,7 +14,7 @@ class Preview extends React.Component {
 
   handleNavigate (id, e) {
     // 阻止原生链接跳转
-    // e.preventDefault()
+    e.preventDefault()
 
     // 使用 react-router-redux 提供的方法跳转，以便更新对应的 store
     this.props.push(`detail/${id}`)
@@ -24,7 +24,7 @@ class Preview extends React.Component {
     return (
       <article className="article-preview-item">
         <h1 className="title">
-          <a href={`detail/${this.props.id}`} onClick={this.handleNavigate(this.props.id)}>
+          <a href={`detail/${this.props.id}`} onClick={this.handleNavigate.bind(this, this.props.id)}>
             {this.props.title}
           </a>
         </h1>
@@ -35,4 +35,4 @@ class Preview extends React.Component {
   }
 }
 
-export default Preview
+export default PreviewItem

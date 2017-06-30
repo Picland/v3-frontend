@@ -1,5 +1,5 @@
 import React from 'react'
-import Preview from './Preview'
+import PreviewItem from './PreviewItem'
 import PropTypes from 'prop-types'
 
 class PreviewList extends React.Component {
@@ -29,7 +29,7 @@ class PreviewList extends React.Component {
     return (
       <div>
         {articleList.map(item => {
-          return <Preview {...item} key={item.id} push={this.props.push} />
+          return <PreviewItem {...item} key={item.id} push={this.props.push} />
         })}
       </div>
     )

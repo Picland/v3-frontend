@@ -5,7 +5,6 @@ import Header from '../../layout/Header'
 import styles from './Setting.less'
 
 @CSSModules(styles)
-
 class Setting extends Component {
   static propTypes = {
     children: propTypes.node
