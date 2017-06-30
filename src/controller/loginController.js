@@ -27,7 +27,7 @@ export default {
         delete user.password
         req.session.user = user
         // 跳转到主页
-        res.redirect('/articles')
+        res.redirect('/settings/preview')
       })
       .catch(next)
   }

@@ -1,4 +1,4 @@
-@import 'base.less';
+@import 'variable.less';
 @import 'normalize.less';
 
 html {
@@ -12,8 +12,8 @@ html, body {
 }
 
 body {
-  font-family: @fontstack;
-  font-size: @fontsize-m;
+  font-family: @fontfamily;
+  font-size: @fontsize;
 }
 
 *,
@@ -73,7 +73,6 @@ input:-webkit-autofill:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
   background-color: rgba(0,0,0,.3);
 }
 
@@ -81,6 +80,6 @@ input:-webkit-autofill:focus {
   background-color: @theme-darker;
 }
 
-html, body, #root, div[data-reactroot], div[data-reactroot] > div {
-  height: 100%;
+html, body, body > div, div[data-reactroot], div[data-reactroot] > div {
+  //height: 100%;
 }

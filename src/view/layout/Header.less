@@ -5,28 +5,28 @@
   z-index: @zindex-header;
   top: 0;
   width: 100%;
-  height: @unit-triple;
+  height: @unit-sixfold - @unit-half;
   background-color: @white;
   color: @theme-dark;
   & > div {
-    height: @unit-triple;
+    height: @unit-sixfold - @unit-half;
   }
   .left {
     float: left;
-    margin-left: @unit-plus;
+    margin-left: @unit-triple;
     .logo {
       display: inline-table;
-      height: @unit-triple;
-      line-height: @unit-triple;
+      height: @unit-sixfold - @unit-half;
+      line-height: @unit-sixfold - @unit-half;
       vertical-align: middle;
-      font-size: @fontsize-b;
+      font-size: @fontsize-biger;
       font-family: 'Songti SC';
-      font-weight: bold;
+      font-weight: @fontweight-bold;
     }
   }
   .right {
     float: right;
-    margin-right: @unit-plus;
+    margin-right: @unit-triple;
     &:before {
       content: '';
       display: inline-block;
