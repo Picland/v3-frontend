@@ -2,25 +2,33 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
 import Button from '../component/Button/Button'
 import styles from './Header.less'
 
+@CSSModules(styles)
 class Header extends Component {
   static propTypes = {
     logoName: PropTypes.string,
     buttonName: PropTypes.string,
-    buttonLink: PropTypes.string
+    buttonLink: PropTypes.string,
+    shadow: PropTypes.bool
   }
   static defaultProps = {
     logoName: '',
     buttonName: '',
-    buttonLink: '/'
+    buttonLink: '/',
+    shadow: false
   }
 
   render () {
-    let {logoName, buttonName, buttonLink} = this.props
+    let {logoName, buttonName, buttonLink, shadow} = this.props
+    const container = classNames({
+      'container-base': !shadow,
+      'container-shadow': shadow
+    })
     return (
-      <header styleName="contianer">
+      <header styleName={container}>
         <div styleName="left">
           <span styleName="logo">{logoName}</span>
         </div>
@@ -32,4 +40,4 @@ class Header extends Component {
   }
 }
 
-export default CSSModules(Header, styles)
+export default Header

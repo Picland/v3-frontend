@@ -12,7 +12,7 @@ class Setting extends Component {
   render () {
     return (
       <div styleName="container">
-        <Header logoName="木纹子印象派" buttonLink="/login" buttonName="发布" />
+        <Header logoName="木纹子印象派" buttonLink="/login" buttonName="发布" shadow />
         <div styleName="main">{this.props.children}</div>
       </div>
     )
