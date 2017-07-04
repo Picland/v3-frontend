@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import Button from '../../component/Button/Button'
-import Input from '../../component/Input/Input'
-import CopyRight from '../../component/CopyRight/CopyRight'
+import Button from '../../common/ui/Button/Button'
+import Input from '../../common/ui/Input/Input'
+import CopyRight from '../../common/ui/CopyRight/CopyRight'
 import Header from '../../layout/Header'
 import styles from './Register.less'
 

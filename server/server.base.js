@@ -1,8 +1,9 @@
 import path from 'path'
 import fs from 'fs'
 import express from 'express'
+import bodyParser from 'body-parser'
 import session from 'express-session'
-import formidable from 'express-formidable' // 接收表单及文件的上传中间件
+// import formidable from 'express-formidable' // 接收表单及文件的上传中间件
 import connectMongo from 'connect-mongo' // 将 session 存储于 mongodb，结合 express-session 使用
 import flash from 'connect-flash' // 页面通知提示的中间件，基于 session 实现
 import config from 'config-lite' // 读取配置文件
@@ -16,6 +17,8 @@ import favicon from 'serve-favicon'
 const MongoStore = connectMongo(session)
 
 const server = express()
+
+server.use(bodyParser.json())
 
 server.use(favicon(path.join(__dirname, '../static', 'favicon.ico')))
 
@@ -68,10 +71,10 @@ server.use(session({
 server.use(flash())
 
 // 处理表单及文件上传的中间件
-server.use(formidable({
-  uploadDir: path.join(__dirname, '../static/img'), // 上传文件目录
-  keepExtensions: true // 保留后缀
-}))
+// server.use(formidable({
+//   uploadDir: path.join(__dirname, '../static/img'), // 上传文件目录
+//   keepExtensions: true // 保留后缀
+// }))
 
 // 设置模板全局常量
 server.locals.blog = {

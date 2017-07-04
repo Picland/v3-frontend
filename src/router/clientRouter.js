@@ -2,11 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Frame from '../view/layout/Frame'
-import Login from '../view/page/Login/Login'
-import Register from '../view/page/Register/Register'
-import Setting from '../view/page/Setting/Setting'
-import Detail from '../view/page/Setting/container/Detail'
-import Preview from '../view/page/Setting/container/Preview'
+import Login from '../view/container/Login'
+import Register from '../view/component/Register/Register'
+import Setting from '../view/container/Setting/Setting'
+import Detail from '../view/container/Setting/Detail'
+import Preview from '../view/container/Setting/Preview'
 
 console.log('ClientRouter===')
 

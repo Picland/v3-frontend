@@ -17,8 +17,8 @@
   },
   "parser": "babel-eslint",
   "rules": {
-//    "strict": 0,
     "jsx-quotes": ["error", "prefer-double"],
-    "react/jsx-no-bind": 0
+    "react/jsx-no-bind": 0,
+    "react/jsx-indent-props": 0
   }
 }

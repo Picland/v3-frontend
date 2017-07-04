@@ -1,3 +1,4 @@
+import auth from '../middleware/auth'
 import authorize from '../middleware/authorize'
 import loginController from '../controller/loginController'
 import logoutController from '../controller/logoutController'
@@ -9,14 +10,16 @@ import userController from '../controller/userController'
 export default (server) => {
   // GET / 首页重定向
   server.get('/', (req, res) => {
-    res.redirect('/articles')
+    res.redirect('/settings/preview') // for dev test
   })
 
   // GET /login 登录页
-  server.get('/login', authorize.isNotLogin, loginController.renderLoginPage)
+  // server.get('/login', authorize.isNotLogin, loginController.renderLoginPage)
+  server.get('/login', auth.isNotLogin, loginController.renderLoginPage)
 
   // POST /login 用户登录
-  server.post('/login', authorize.isNotLogin, loginController.login)
+  // server.post('/login', authorize.isNotLogin, loginController.login)
+  server.post('/api/v1/login', auth.isNotLogin, loginController.login)
 
   // GET /logout 登出
   server.get('/logout', authorize.isLogin, logoutController.logout)
@@ -66,5 +69,3 @@ export default (server) => {
     }
   })
 }
-
-// express.router().get 和 server.get .post

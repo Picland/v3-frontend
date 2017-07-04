@@ -8,7 +8,7 @@ import createFetchMiddleware from 'redux-composable-fetch'
 // 引入请求 middleware 的工厂方法
 import ThunkMiddleware from 'redux-thunk'
 import rootReducer from '../reducer/index'
-import DevTools from '../component/DevTools/DevTools'
+import DevTools from '../common/ui/DevTools/DevTools'
 
 // 创建一个请求 middleware 的实例
 // 使用 middleware, 让 Redux 可以解析各种类型的 action

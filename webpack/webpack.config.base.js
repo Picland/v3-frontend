@@ -63,8 +63,8 @@ module.exports = {
       'node_modules'
     ],
     alias: {
-      'variable.less': path.resolve(viewPath, 'style/variable.less'),
-      'core.less': path.resolve(viewPath, 'style/core.less')
+      'variable.less': path.resolve(viewPath, 'common/style/variable.less'),
+      'core.less': path.resolve(viewPath, 'common/style/core.less')
     }
   },
   plugins: [

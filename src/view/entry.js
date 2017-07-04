@@ -2,21 +2,24 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import generateStore from './store/store'
 import { Provider } from 'react-redux'
-import { syncHistoryWithStore } from 'react-router-redux'
-import createBrowserHistory from 'history/createBrowserHistory'
-import clientRouter from '../router/clientRouter'
-import DevTools from './component/DevTools/DevTools'
+// import { syncHistoryWithStore } from 'react-router-redux'
+// import createBrowserHistory from 'history/createBrowserHistory'
+// import clientRouter from '../router/clientRouter'
+import App from '../router/clientRouter2'
+import DevTools from './common/ui/DevTools/DevTools'
 
 const store = generateStore() // 完整的 Redux 状态树从这里开始生成
-const browserHistory = createBrowserHistory() // 将 react-router 中的 browserHistory 移到这里引入
-const history = syncHistoryWithStore(browserHistory, store) // 保证 react-router 和 Redux store 的统一
+// const browserHistory = createBrowserHistory() // 将 react-router 中的 browserHistory 移到这里引入
+// const history = syncHistoryWithStore(browserHistory, store) // 保证 react-router 和 Redux store 的统一
 
 // 用 Provider 组件作为整个应用的根组件
+// {clientRouter(history)}
 ReactDOM.render((
   <Provider store={store}>
     <div>
-      {clientRouter(history)}
+      <App />
       <DevTools />
+      <div id="loading">正在加载...</div>
     </div>
   </Provider>
   ),

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
-import Button from '../component/Button/Button'
+import Button from '../common/ui/Button/Button'
 import styles from './Header.less'
 
 @CSSModules(styles)
