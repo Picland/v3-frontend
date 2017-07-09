@@ -1,5 +1,5 @@
 /**
- * @fileoverview Routers config on server side
+ * @fileoverview Router config on server side
  * @author mrgaonju@gmail.com
  */
 
@@ -14,7 +14,6 @@ import renderService from '../service/renderService'
 // import commentController from '../controller/commentController'
 
 export default (server) => {
-  server.get('/login', auth.isNotLogin, loginController.renderLoginPage)
   server.get('/logout', auth.isLogin, logoutController.logout)
 
   // --------------------------------------------------------------------------
@@ -41,7 +40,7 @@ export default (server) => {
   })
 
   // --------------------------------------------------------------------------
-  // Old Multiple Routers
+  // Old Multiple Pages Router
   // --------------------------------------------------------------------------
   //
   // // GET /register 注册页
