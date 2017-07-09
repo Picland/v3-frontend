@@ -2,7 +2,7 @@ import Login from '../component/Login/Login'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { login } from '../common/service/fetch'
-import redirect from '../common/service/redirect'
+import { checkLoginRedirect } from '../common/service/redirect' // redirect is high-order component
 import { startLogin, finishLogin, failLogin, loginSuccess, loginFail } from '../reducer/user'
 import { showFlashMessage } from '../reducer/flashMessage'
 
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(redirect(Login)))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(checkLoginRedirect(Login)))

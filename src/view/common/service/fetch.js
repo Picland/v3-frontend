@@ -181,6 +181,22 @@ export const login = async(params) => {
   return createResult(result)
 }
 
+// check user status
+export const getUserStatus = async() => {
+  let url = `${DOMAIN}/api/v1/user/status`
+  let result
+  try {
+    result = await fetch(url, {
+      method: 'GET',
+      headers: defaultHeaders,
+      credentials: CREDENTIALS
+    })
+  } catch (e) {
+    console.error(e)
+  }
+  return createResult(result)
+}
+
 /*
  添加评论
  */

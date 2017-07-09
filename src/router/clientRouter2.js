@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Login from '../view/container/Login'
-import Register from '../view/container/Register'
+// import Register from '../view/container/Register'
 import Setting from '../view/container/Setting/Setting'
 import NoMatch from '../view/component/NoMatch/NoMatch'
 import Frame from '../view/layout/Frame'
@@ -16,13 +16,13 @@ const TestScreen = () => (
 
 // auth 处理需要登录的路由，包装/合成
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
+  console.log('PrivateRoute-state.user', auth)
   return (
-    <Route {...rest} render={props => (
-      auth.user
-        ? (<Component {...props} />)
-        : (<Redirect to={{pathname: '/login', state: { from: props.location }}} />)
-      )}
-    />
+    <Route {...rest} render={props => {
+      return auth.user
+        ? <Component {...props} />
+        : <Redirect to={{pathname: '/login', state: { from: props.location }}} />
+    }} />
   )
 }
 
@@ -41,9 +41,9 @@ const UserSetting = ({ match }) => (
 const mapStateToProps = (state) => ({
   user: state.user
 })
-// 处理服务器重定向问题与404
+
+// Handle the sever redirect and 404
 const RedirectFromServer = ({match}) => {
-  // deal the sever redirect
   let url = window.location.search
   console.log(url.substring(1))
   return url.substring(1)
@@ -69,8 +69,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/test" component={TestScreen} />
               <Route path="/login" component={Login} />
-              <Route path="/logout" component={Login} />
-              <Route path="/register" component={Register} />
+              {/* <Route path="/register" component={Register} /> */}
               <PrivateRoute path="/settings" component={UserSetting} auth={auth} />
             </Switch>
           </Frame>
@@ -83,7 +82,7 @@ class App extends Component {
 PrivateRoute.propTypes = {
   component: PropTypes.func,
   auth: PropTypes.object,
-  location: PropTypes.func
+  location: PropTypes.object
 }
 
 UserSetting.propTypes = {

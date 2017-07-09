@@ -7,7 +7,7 @@
   "description": "muwenzi.com version3",
   "license": "BSD-3-Clause",
   "engines": {
-    "node": "^8.0.0"
+    "node": ">= 8.0.0"
   },
   "scripts": {
     "boot": "yarn || (npm i -g yarn && yarn)",
