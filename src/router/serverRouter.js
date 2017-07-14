@@ -14,6 +14,7 @@ import renderService from '../service/renderService'
 // import commentController from '../controller/commentController'
 
 export default (server) => {
+  server.get('/', auth.isLogin, (req, res) => { res.redirect('/settings/preview') })
   server.get('/logout', auth.isLogin, logoutController.logout)
 
   // --------------------------------------------------------------------------
