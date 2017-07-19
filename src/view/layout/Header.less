@@ -20,21 +20,58 @@
       line-height: @unit-sixfold - @unit-half;
       vertical-align: middle;
       font-size: @fontsize-biger;
-      font-family: 'Songti SC';
+      font-family: @fontfamily-logo;
       font-weight: @fontweight-bold;
     }
   }
   .right {
     float: right;
-    margin-right: @unit-triple;
-    &:before {
-      content: '';
-      display: inline-block;
-      vertical-align: middle;
-      height: 100%;
-      font-size: 0;
+    display: flex;
+    align-items: center;
+    margin-right: @unit-triple - 2px;
+    .dropdown-wrapper {
+      position: relative;
+      right: 22px;
+      cursor: pointer;
+      div:first-child {
+        position: relative;
+        top: 13px;
+        padding-bottom: 24px;
+      }
+      .avatar:hover {
+        cursor: pointer;
+      }
     }
   }
+  .dropdown-container {
+    display: none;
+    float: right;
+    position: absolute;
+    top: 55px;
+    left: -33px;
+    flex-direction: column;
+    justify-content: center;
+    width: @unit-ninefold;
+    height: 108px;
+    border: 1px solid @lite-lite;
+    background-color: @white;
+    box-shadow: 0 5px 20px rgba(0,34,77,.1);
+    border-radius: 4px;
+    padding-left: 0;
+    li {
+      list-style: none;
+      line-height: @unit-triple;
+      text-align: center;
+      color: @medium-darkest;
+      &:hover {
+        background-color: @liteblue-lite;
+      }
+    }
+  }
+  .dropdown-wrapper:hover .dropdown-container {
+    display: flex;
+  }
+  .dropdown-wrapper > .avatar { padding-bottom: 30px; }
 }
 
 .container-shadow {

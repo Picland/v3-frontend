@@ -8,7 +8,7 @@ import createFetchMiddleware from 'redux-composable-fetch'
 // 引入请求 middleware 的工厂方法
 import ThunkMiddleware from 'redux-thunk'
 import rootReducer from '../reducer/index'
-import DevTools from '../common/ui/DevTools/DevTools'
+import DevTools from '../layout/DevTools'
 // import * as asyncInitialState from 'redux-async-initial-state'
 
 // 创建一个请求 middleware 的实例

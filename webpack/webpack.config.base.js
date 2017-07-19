@@ -46,13 +46,8 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            'css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]',
-            'postcss-loader',
-            'less-loader'
-          ]
-        }),
-        include: /flexboxgrid/
+          use: ['css-loader']
+        })
       }
     ]
   },

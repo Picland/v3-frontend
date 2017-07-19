@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 // import createBrowserHistory from 'history/createBrowserHistory'
 // import clientRouter from '../router/clientRouter'
 import App from '../router/clientRouter2'
-import DevTools from './common/ui/DevTools/DevTools'
+import DevTools from './layout/DevTools'
 import { getUserStatus } from './common/service/fetch'
 
 async function getInitialState () {
