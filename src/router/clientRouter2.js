@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Login from '../view/container/Login'
+import Logout from '../view/container/Logout'
 // import Register from '../view/container/Register'
 import Setting from '../view/container/Setting/Setting'
 import NoMatch from '../view/component/NoMatch/NoMatch'
@@ -25,6 +26,18 @@ const PrivateRoute = ({ component: Component, auth, ...rest }) => {
     }} />
   )
 }
+
+// // Logout
+// const Logout = ({ component: Component, auth, ...rest }) => {
+//   console.log('PrivateRoute-state.user', auth)
+//   return (
+//     <Route {...rest} render={props => {
+//       return auth.user
+//         ? <Component {...props} />
+//         : <Redirect to={{pathname: '/login', state: { from: props.location }}} />
+//     }} />
+//   )
+// }
 
 // User Setting
 const UserSetting = ({ match }) => (
@@ -69,6 +82,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/test" component={TestScreen} />
               <Route path="/login" component={Login} />
+              <Route path="/logout" component={Logout} />
               {/* <Route path="/register" component={Register} /> */}
               <PrivateRoute path="/settings" component={UserSetting} auth={auth} />
             </Switch>

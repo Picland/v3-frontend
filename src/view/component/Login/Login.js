@@ -13,7 +13,7 @@ import CopyRight from '../../common/ui/CopyRight/CopyRight'
 class Login extends Component {
   static propTypes=({
     user: PropTypes.object,
-    loginIn: PropTypes.func,
+    login: PropTypes.func,
     redirect: PropTypes.func,
     location: PropTypes.shape({
       state: PropTypes.object
@@ -66,7 +66,7 @@ class Login extends Component {
     this._checkAccount(this.state.account)
     this._checkPassword(this.state.password)
     accountValid && pwdValid &&
-      await this.props.loginIn({account, password}) // 对应connect里面的login方法不是reduer里面的
+      await this.props.login({account, password}) // 对应connect里面的login方法不是reduer里面的
   }
   componentWillUpdate (nextProps, nextState) {
     if (nextProps.user) {

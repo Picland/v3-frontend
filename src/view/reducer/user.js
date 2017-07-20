@@ -7,15 +7,15 @@ const initialState = {
 /*
  action type of LOGIN
  */
-const LOGIN_IN = 'LOGIN_IN'
-const LOGIN_OUT = 'LOGIN_OUT'
+const LOGIN = 'LOGIN'
+const LOGOUT = 'LOGOUT'
 
 const LOGIN_STARTED = 'LOGIN_STARTED'
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 const LOGIN_FAILURE = 'LOGIN_FAILURE'
 
 // reducer for LOGIN
-const login = (state = initialState, action) => {
+const user = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_STARTED:
       return {
@@ -34,7 +34,7 @@ const login = (state = initialState, action) => {
         message: action.error
 
       }
-    case LOGIN_OUT:
+    case LOGOUT:
       return {
         user: null,
         logining: false,
@@ -46,12 +46,12 @@ const login = (state = initialState, action) => {
 }
 
 // -------action  creators----------
-export const loginIn = (user) => ({
-  type: LOGIN_IN,
+export const login = (user) => ({
+  type: LOGIN,
   user
 })
-export const loginOut = () => ({
-  type: LOGIN_OUT
+export const logout = () => ({
+  type: LOGOUT
 })
 
 export const startLogin = () => ({
@@ -75,4 +75,4 @@ export const loginFail = (error) => ({
   msgType: 'warning'
 })
 
-export default login
+export default user

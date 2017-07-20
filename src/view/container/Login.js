@@ -9,7 +9,7 @@ import { showFlashMessage } from '../reducer/flashMessage'
 const mapStateToProps = (state) => (state.user)
 
 const mapDispatchToProps = (dispatch) => ({
-  loginIn: async (user) => {
+  login: async (user) => {
     dispatch(startLogin())
     // let loading = document.getElementById('loading');
     // loading.style.display="block";

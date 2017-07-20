@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
-import { onMouseOver, onMouseOut } from '../reducer/header'
 import Avatar from '../common/ui/Avatar/Avatar'
 import Button from '../common/ui/Button/Button'
 import styles from './Header.less'
@@ -27,16 +26,8 @@ import styles from './Header.less'
 const mapStateToProps = (state) => ({
   avatarHover: state.header.avatarHover
 })
-const mapDispatchToProps = (dispatch) => ({
-  onMouseOver: () => {
-    dispatch(onMouseOver())
-  },
-  onMouseOut: () => {
-    dispatch(onMouseOut())
-  }
-})
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(mapStateToProps)
 @CSSModules(styles)
 class Header extends Component {
   static propTypes = {
@@ -44,9 +35,7 @@ class Header extends Component {
     buttonName: PropTypes.string,
     buttonLink: PropTypes.string,
     avatarSrc: PropTypes.string,
-    shadow: PropTypes.bool,
-    onMouseOver: PropTypes.func,
-    onMouseOut: PropTypes.func
+    shadow: PropTypes.bool
   }
   static defaultProps = {
     logoName: '',
@@ -82,11 +71,9 @@ class Header extends Component {
                       size="default"
                       src={avatarSrc}
                       styleName="avatar"
-                      onMouseOver={() => this.props.onMouseOver()}
-                      onMouseOut={() => this.props.onMouseOut()}
               />
               <ul styleName="dropdown-container">
-                <Link to="/people/test"><li>我的主页</li></Link>
+                <Link to="/test"><li>我的主页</li></Link>
                 <Link to="/settings/preview"><li>设置</li></Link>
                 <Link to="/logout"><li>退出</li></Link>
               </ul>

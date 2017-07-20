@@ -158,9 +158,10 @@ export const register = async(formData) => {
   }
   return createResult(result)
 }
-/*
- 登录
- */
+
+// --------------------------------------------------------------------------
+// Login
+// --------------------------------------------------------------------------
 export const login = async(params) => {
   let url = `${DOMAIN}/api/v1/login`
   let { account, password } = params
@@ -181,7 +182,27 @@ export const login = async(params) => {
   return createResult(result)
 }
 
-// check user status
+// --------------------------------------------------------------------------
+// Logout
+// --------------------------------------------------------------------------
+export const logout = async() => {
+  let url = `${DOMAIN}/api/v1/logout`
+  let result
+  try {
+    result = await fetch(url, {
+      method: 'GET',
+      headers: defaultHeaders,
+      credentials: CREDENTIALS
+    })
+  } catch (e) {
+    console.error(e)
+  }
+  return createResult(result)
+}
+
+// --------------------------------------------------------------------------
+// Check user status
+// --------------------------------------------------------------------------
 export const getUserStatus = async() => {
   let url = `${DOMAIN}/api/v1/user/status`
   let result

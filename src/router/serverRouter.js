@@ -15,12 +15,12 @@ import renderService from '../service/renderService'
 
 export default (server) => {
   server.get('/', auth.isLogin, (req, res) => { res.redirect('/settings/preview') })
-  server.get('/logout', auth.isLogin, logoutController.logout)
 
   // --------------------------------------------------------------------------
   // Restful API version 1
   // --------------------------------------------------------------------------
   server.post('/api/v1/login', auth.isNotLogin, loginController.login)
+  server.get('/api/v1/logout', auth.isLogin, logoutController.logout)
   server.get('/api/v1/user/status', userController.getUserStatus) // GET whether user is login
 
   // --------------------------------------------------------------------------
