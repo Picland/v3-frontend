@@ -10,6 +10,8 @@ import NoMatch from '../view/component/NoMatch/NoMatch'
 import Frame from '../view/layout/Frame'
 import Detail from '../view/container/Setting/Detail'
 import Preview from '../view/container/Setting/Preview'
+import Profile from '../view/container/Setting/Profile'
+import Account from '../view/container/Setting/Account'
 
 const TestScreen = () => (
   <h2>Welcome to React</h2>
@@ -44,6 +46,8 @@ const UserSetting = ({ match }) => (
   <Route path={match.url} render={() =>
     <Setting>
       <Switch>
+        <Profile path={`${match.url}/profile`} />
+        <Account path={`${match.url}/account`} />
         <Preview path={`${match.url}/preview`} />
         <Detail path={`${match.url}/detail/:id`} />
       </Switch>

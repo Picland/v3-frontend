@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../common/service/fetch'
 import { logout as logoutFromReducer } from '../reducer/user'
-import autobind from 'autobind-decorator'
 
 const mapStateToProps = (state) => (state.user)
 
@@ -20,7 +19,6 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-@autobind
 @connect(mapStateToProps, mapDispatchToProps)
 class Logout extends Component {
   static propTypes=({
