@@ -74,7 +74,7 @@ class Header extends Component {
               />
               <ul styleName="dropdown-container">
                 <Link to="/test"><li>我的主页</li></Link>
-                <Link to="/settings/preview"><li>设置</li></Link>
+                <Link to="/settings/profile"><li>设置</li></Link>
                 <Link to="/logout"><li>退出</li></Link>
               </ul>
             </div>

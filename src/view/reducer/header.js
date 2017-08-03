@@ -1,5 +1,5 @@
 /**
- * @fileview the state management of header
+ * @fileoverview the state management of header
  * @author mrgaonju@gmail.com
  */
 

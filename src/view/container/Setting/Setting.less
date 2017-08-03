@@ -10,7 +10,43 @@
   background-color: @liteblue-lite;
   .main {
     width: @width-main;
-    padding-bottom: @unit-sixfold - @unit-half;
-    margin: 0 auto;
+    box-sizing: content-box;
+    margin: @unit-fivefold auto @unit-sixfold - @unit-half;
+    height: 709px;
+    background-color: @white;
+    border: 1px solid #E7EAF1;
+    .nav-left {
+      width: 253px;
+      float: left;
+      height: 100%;
+      border-right: 1px solid #E7EAF1;
+      .nav-menu {
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        vertical-align: middle;
+        &:before {
+          width: 2px;
+          content: '';
+          display: inline-block;
+          float: left;
+          height: 100%;
+          margin-right: 26px;
+        }
+        &:hover {
+          cursor: pointer;
+          background-color: #F5F5F5;
+          &:before {
+            background-color: #DBDBDB;
+          }
+        }
+      }
+      .active .nav-menu:before {
+        background-color: @theme;
+      }
+    }
+    .content {
+      float: left;
+    }
   }
 }
