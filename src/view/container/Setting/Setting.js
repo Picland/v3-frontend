@@ -31,8 +31,8 @@ class Setting extends Component {
           <div styleName="content">
             {this.props.children}
           </div>
-          页脚
         </div>
+        <div styleName="footer">页脚</div>
       </div>
     )
   }

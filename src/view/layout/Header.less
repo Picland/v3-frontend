@@ -2,22 +2,24 @@
 
 .container-base {
   position: fixed;
+  box-sizing: content-box;
   z-index: @zindex-header;
   top: 0;
   width: 100%;
-  height: @unit-sixfold - @unit-half;
+  height: @unit-fivefold;
   background-color: @white;
   color: @theme-dark;
+  border-bottom: 1px solid #E7EAF1;
   & > div {
-    height: @unit-sixfold - @unit-half;
+    height: @unit-fivefold;
   }
   .left {
     float: left;
     margin-left: @unit-triple;
     .logo {
       display: inline-table;
-      height: @unit-sixfold - @unit-half;
-      line-height: @unit-sixfold - @unit-half;
+      height: @unit-fivefold;
+      line-height: @unit-fivefold;
       vertical-align: middle;
       font-size: @fontsize-biger;
       font-family: @fontfamily-logo;
@@ -55,7 +57,7 @@
     height: 108px;
     border: 1px solid @lite-lite;
     background-color: @white;
-    box-shadow: 0 5px 20px rgba(0,34,77,.1);
+    //box-shadow: 0 5px 20px rgba(0,34,77,.1);
     border-radius: 4px;
     padding-left: 0;
     li {
@@ -76,7 +78,7 @@
 
 .container-shadow {
   .container-base();
-  border-bottom: 1px solid rgba(30,35,42,.06);
-  box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
-  background-clip: content-box;
+  //border-bottom: 1px solid rgba(30,35,42,.06);
+  //box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+  //background-clip: content-box;
 }
