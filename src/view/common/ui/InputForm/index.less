@@ -1,0 +1,39 @@
+@import '~variable';
+
+@width: 632px;
+@height: @unit-sixfold;
+
+.input-form {
+  position: relative;
+  width: @width;
+  height: @height;
+  line-height: @height;
+  font-size: @fontsize;
+  font-weight: @fontweight;
+  border-bottom: 1px solid @lite-lite;
+  vertical-align: middle;
+  .label {
+    color: @medium-dark;
+  }
+  .content {
+    position: absolute;
+    left: 92px;
+    color: @medium-litest;
+  }
+  .button {
+    float: right;
+    color: @theme;
+    cursor: pointer;
+    &:hover {
+      font-weight: @fontweight-bold;
+    }
+  }
+  .button-cancel {
+    &:extend(.input-form .button);
+    &:hover {
+      font-weight: @fontweight-bold;
+    }
+    color: @dark-lite;
+    margin-left: @unit;
+  }
+}

@@ -19,7 +19,6 @@ const TestScreen = () => (
 
 // auth 处理需要登录的路由，包装/合成
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
-  console.log('PrivateRoute-state.user', auth)
   return (
     <Route {...rest} render={props => {
       return auth.user
