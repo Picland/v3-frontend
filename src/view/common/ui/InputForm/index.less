@@ -2,8 +2,9 @@
 
 @width: 632px;
 @height: @unit-sixfold;
+@input-height: @unit-double + 4;
 
-.input-form {
+.input-form, .input-form-active {
   position: relative;
   width: @width;
   height: @height;
@@ -19,6 +20,15 @@
     position: absolute;
     left: 92px;
     color: @medium-litest;
+    border: none;
+    outline: none;
+    top: 50%;
+    margin-top: -@input-height / 2;
+    height: @input-height;
+    width: 460px;
+    line-height: @input-height;
+    font-size: @fontsize;
+    font-weight: @fontweight;
   }
   .button, .button-cancel {
     display: none;
@@ -39,4 +49,8 @@
     color: @dark-lite;
     margin-left: @unit;
   }
+}
+
+.input-form-active {
+  border-bottom-color: @theme;
 }
