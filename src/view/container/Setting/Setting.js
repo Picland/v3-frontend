@@ -1,41 +1,9 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import CSSModules from 'react-css-modules'
-import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Header from '../../layout/Header'
-import styles from './Setting.less'
+import { withRouter } from 'react-router-dom'
+import Setting from '../../component/Setting'
 
 const mapStateToProps = (state) => ({
   user: state.user.user
 })
 
-@connect(mapStateToProps)
-@CSSModules(styles)
-class Setting extends Component {
-  static propTypes = {
-    user: PropTypes.object,
-    children: PropTypes.node
-  }
-  render () {
-    let { user } = this.props
-    let avatarSrc = user ? user.avatar : ''
-    return (
-      <div styleName="container">
-        <Header logoName="木纹子印象派" buttonLink="/login" buttonName="发布" avatarSrc={avatarSrc} shadow />
-        <div styleName="main">
-          <div styleName="nav-left">
-            <NavLink to="/settings/profile" activeClassName={styles.active}><div styleName="nav-menu">个人资料</div></NavLink>
-            <NavLink to="/settings/account" activeClassName={styles.active}><div styleName="nav-menu">账号和密码</div></NavLink>
-          </div>
-          <div styleName="content">
-            {this.props.children}
-          </div>
-        </div>
-        <div styleName="footer">页脚</div>
-      </div>
-    )
-  }
-}
-
-export default Setting
+export default withRouter(connect(mapStateToProps)(Setting))

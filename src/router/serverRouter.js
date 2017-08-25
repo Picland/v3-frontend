@@ -22,12 +22,12 @@ export default (server) => {
   server.post('/api/v1/login', auth.isNotLogin, loginController.login)
   server.get('/api/v1/logout', auth.isLogin, logoutController.logout)
   server.get('/api/v1/user/status', userController.getUserStatus) // GET whether user is login
+  server.post('/api/v1/updateUserInfo', auth.isLogin, userController.updateUserInfo)
 
   // --------------------------------------------------------------------------
   // Turn over others page to client router and render
   // --------------------------------------------------------------------------
   server.get('/*', (req, res) => {
-    console.log('进入/*')
     res.status(200).send(renderService(req.url))
   })
 

@@ -1,32 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import CSSModules from 'react-css-modules'
-import styles from './Profile.less'
-import InputForm from '../../common/ui/InputForm'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import Profile from '../../component/Profile'
+import { update } from '../../reducer/user'
+import { updateUserInfo } from '../../common/service/fetch'
 
 const mapStateToProps = (state) => ({
   user: state.user.user
 })
 
-@connect(mapStateToProps)
-@CSSModules(styles)
-class Profile extends React.Component {
-  static propTypes = {
-    user: PropTypes.object
+const mapDispatchToProps = (dispatch) => ({
+  update: async (formData) => {
+    try {
+      let result = await updateUserInfo(formData)
+      console.log('result', result)
+      result && dispatch(update(result))
+    } catch (e) {
+      console.error(e)
+    }
   }
-  _save () {
-    console.log('Profile的save')
-  }
-  render () {
-    let { user } = this.props
-    return (
-      <div styleName="container">
-        <div styleName="title">个人资料</div>
-        <InputForm label="昵称" content={user.name} save={() => this._save()} />
-      </div>
-    )
-  }
-}
+})
 
-export default Profile
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile))

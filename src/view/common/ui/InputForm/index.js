@@ -11,8 +11,10 @@ import styles from './index.less'
 class InputForm extends Component {
   static propTypes = {
     label: PropTypes.string,
+    name: PropTypes.string,
     content: PropTypes.string,
-    save: PropTypes.func
+    save: PropTypes.func,
+    onChange: PropTypes.func
   }
 
   static defaultProps = {
@@ -27,7 +29,8 @@ class InputForm extends Component {
       inputProps: {
         readOnly: 'readOnly'
       },
-      content: this.props.content
+      content: this.props.content,
+      name: this.props.name
     }
   }
 
@@ -44,11 +47,12 @@ class InputForm extends Component {
     this.setState({
       content: e.target.value
     })
+    this.props.onChange(e.target.value)
   }
 
   _save () {
     console.log('save')
-    this.props.save()
+    this.props.save(this.state.name, this.state.content)
     this.setState({
       showEdit: true,
       inputProps: {
@@ -71,7 +75,7 @@ class InputForm extends Component {
   }
 
   render () {
-    let {label} = this.props
+    let { label, name } = this.props
     const inputForm = classNames({
       'input-form': this.state.showEdit,
       'input-form-active': !this.state.showEdit
@@ -96,6 +100,8 @@ class InputForm extends Component {
                onChange={(e) => this._handleChange(e)}
                ref={ref => (this.contentInput = ref)}
                {...this.state.inputProps}
+               name={name}
+               autoComplete="off"
         />
         <span styleName={buttonEdit} onClick={() => this._edit()}>修改</span>
         <span>

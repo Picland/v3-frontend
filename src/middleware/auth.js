@@ -8,7 +8,7 @@ export default {
   // 同时显示 未登录 的通知，用于需要用户登录才能操作的页面及接口
   isLogin (req, res, next) {
     if (!req.session.user) {
-      res.redirect('/login')
+      return res.redirect('/login')
     }
     next()
   },
@@ -17,7 +17,7 @@ export default {
   // 同时显示 已登录 的通知，如登录、注册页面及登录、注册的接口
   isNotLogin (req, res, next) {
     if (req.session.user) {
-      res.json({
+      return res.json({
         'code': 0,
         'message': '已登录'
       })

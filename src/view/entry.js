@@ -37,6 +37,9 @@ async function getInitialState () {
   // const time2 = new Date()
   // console.log('2', (time2 - time1) / 1000)
   const store = generateStore(initialState) // 完整的 Redux 状态树从这里开始生成
+  window.runtime = {
+    userId: initialState.user.user && initialState.user.user._id
+  }
 // const browserHistory = createBrowserHistory() // 将 react-router 中的 browserHistory 移到这里引入
 // const history = syncHistoryWithStore(browserHistory, store) // 保证 react-router 和 Redux store 的统一
 

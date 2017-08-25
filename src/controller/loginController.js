@@ -8,7 +8,6 @@ export default {
   },
 
   login (req, res, next) {
-    console.log('ppp', req.body)
     const { account, password } = req.body
     userService.getUserByPhone(account)
       .then((user) => {

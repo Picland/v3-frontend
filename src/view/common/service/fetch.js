@@ -4,6 +4,9 @@ const defaultHeaders = {
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
+// const formHeaders = {
+//   'Content-Type': 'application/x-www-form-urlencoded'
+// }
 const createResult = (result) => result
     ? result.json()
     : {
@@ -210,6 +213,26 @@ export const getUserStatus = async() => {
     result = await fetch(url, {
       method: 'GET',
       headers: defaultHeaders,
+      credentials: CREDENTIALS
+    })
+  } catch (e) {
+    console.error(e)
+  }
+  return createResult(result)
+}
+
+// --------------------------------------------------------------------------
+// Update User Info
+// --------------------------------------------------------------------------
+export const updateUserInfo = async(formData) => {
+  let url = DOMAIN + '/api/v1/updateUserInfo'
+  let result
+  defaultHeaders.userId = window.runtime.userId
+  try {
+    result = await fetch(url, {
+      method: 'POST',
+      headers: defaultHeaders,
+      body: JSON.stringify(formData),
       credentials: CREDENTIALS
     })
   } catch (e) {

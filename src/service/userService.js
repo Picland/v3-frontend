@@ -12,5 +12,11 @@ export default {
       .findOne({ phoneNumber: phoneNumber })
       .addCreatedAt()
       .exec()
+  },
+
+  // 根据用户ID修改用户信息
+  async updateUserInfo (userId, data) {
+    await User.update({_id: userId}, { $set: data }).exec()
+    return User.findOne({ _id: userId }).exec()
   }
 }

@@ -61,11 +61,12 @@ class Header extends Component {
     })
     return (
       <header styleName={container}>
-        <div styleName="left">
-          <span styleName="logo">{logoName}</span>
-        </div>
-        <div styleName="right">
-          { avatarSrc &&
+        <div>
+          <div styleName="left">
+            <span styleName="logo">{logoName}</span>
+          </div>
+          <div styleName="right">
+            { avatarSrc &&
             <div styleName="dropdown-wrapper">
               <Avatar shape="circle"
                       size="default"
@@ -78,8 +79,9 @@ class Header extends Component {
                 <Link to="/logout"><li>退出</li></Link>
               </ul>
             </div>
-          }
-          <Link to={buttonLink}><Button styleType="ghost">{buttonName}</Button></Link>
+            }
+            <Link to={buttonLink}><Button styleType="ghost">{buttonName}</Button></Link>
+          </div>
         </div>
       </header>
     )
