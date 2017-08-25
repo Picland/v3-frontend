@@ -4,7 +4,7 @@
 @height: @unit-sixfold;
 @input-height: @unit-double + 4;
 
-.input-form, .input-form-active {
+.input-form, .input-form-active, .input-form-nobutton {
   position: relative;
   width: @width;
   height: @height;
@@ -54,3 +54,12 @@
 .input-form-active {
   border-bottom-color: @theme;
 }
+
+.input-form-nobutton:hover {
+  border-bottom-color: @theme;
+}
+
+::-webkit-input-placeholder { color: @lite; font-weight: @fontweight-light }
+::-moz-placeholder { color: @lite; font-weight: @fontweight-light } /* firefox 19+ */
+:-ms-input-placeholder { color: @lite; font-weight: @fontweight-light } /* ie */
+input:-moz-placeholder { color: @lite; font-weight: @fontweight-light }

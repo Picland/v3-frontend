@@ -5,7 +5,7 @@ import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 import Avatar from '../common/ui/Avatar/Avatar'
-import Button from '../common/ui/Button/Button'
+import Button from '../common/ui/Button/index'
 import styles from './Header.less'
 // import { Menu, Dropdown } from 'antd'
 //

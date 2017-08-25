@@ -1,27 +1,23 @@
-import React from 'react'
-// import { connect } from 'react-redux'
-// import { push } from 'react-router-redux'
-// import { loadArticles } from '../../reducer/preview'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import Account from '../../component/Account'
+import { update } from '../../reducer/user'
+import { updateUserInfo } from '../../common/service/fetch'
 
-// const mapStateToProps = (state) => ({
-//   articleList: state.preview.articleList
-// })
+const mapStateToProps = (state) => ({
+  user: state.user.user
+})
 
-// const mapDispatchToProps = ({
-//   loadArticles,
-//   push
-// })
-
-// connect 方法让组件从redux的状态树中获取数据
-// @connect(mapStateToProps, mapDispatchToProps)
-class Account extends React.Component {
-  render () {
-    return (
-      <div>
-        <h1>Account</h1>
-      </div>
-    )
+const mapDispatchToProps = (dispatch) => ({
+  update: async (formData) => {
+    try {
+      let result = await updateUserInfo(formData)
+      console.log('result', result)
+      result && dispatch(update(result))
+    } catch (e) {
+      console.error(e)
+    }
   }
-}
+})
 
-export default Account
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Account))

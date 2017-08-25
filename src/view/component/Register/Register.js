@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import Button from '../../common/ui/Button/Button'
+import Button from '../../common/ui/Button/index'
 import Input from '../../common/ui/Input/Input'
 import CopyRight from '../../common/ui/CopyRight/CopyRight'
 import Header from '../../layout/Header'

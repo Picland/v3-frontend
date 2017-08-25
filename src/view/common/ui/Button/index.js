@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import PropTypes from 'prop-types'
 // import autobind from 'autobind-decorator'
-import styles from './Button.less'
+import styles from './index.less'
 import '../../style/core.less'
 
 // @autobind

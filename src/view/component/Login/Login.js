@@ -4,7 +4,7 @@ import CSSModules from 'react-css-modules'
 // import autobind from 'autobind-decorator'
 import styles from '../../component/Login/Login.less'
 import Header from '../../layout/Header'
-import Button from '../../common/ui/Button/Button'
+import Button from '../../common/ui/Button/index'
 import Input from '../../common/ui/Input/Input'
 import CopyRight from '../../common/ui/CopyRight/CopyRight'
 

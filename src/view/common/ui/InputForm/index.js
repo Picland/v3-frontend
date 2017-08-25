@@ -12,19 +12,23 @@ class InputForm extends Component {
   static propTypes = {
     label: PropTypes.string,
     name: PropTypes.string,
+    placeholder: PropTypes.string,
+    type: PropTypes.string,
     content: PropTypes.string,
     save: PropTypes.func,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    hasbutton: PropTypes.bool
   }
 
   static defaultProps = {
     label: '',
-    content: 'default'
+    content: '',
+    placeholder: ''
   }
 
   constructor (props) {
     super(props)
-    this.state = {
+    let state = {
       showEdit: true,
       inputProps: {
         readOnly: 'readOnly'
@@ -32,6 +36,8 @@ class InputForm extends Component {
       content: this.props.content,
       name: this.props.name
     }
+    if (!props.hasbutton) state.inputProps.readOnly = ''
+    this.state = state
   }
 
   _edit () {
@@ -75,10 +81,11 @@ class InputForm extends Component {
   }
 
   render () {
-    let { label, name } = this.props
+    let { label, name, hasbutton, placeholder, type } = this.props
     const inputForm = classNames({
-      'input-form': this.state.showEdit,
-      'input-form-active': !this.state.showEdit
+      'input-form': this.state.showEdit && hasbutton,
+      'input-form-active': !this.state.showEdit && hasbutton,
+      'input-form-nobutton': !hasbutton
     })
     const buttonEdit = classNames({
       'button': !this.state.showEdit,
@@ -101,13 +108,19 @@ class InputForm extends Component {
                ref={ref => (this.contentInput = ref)}
                {...this.state.inputProps}
                name={name}
+               placeholder={placeholder}
+               type={type}
                autoComplete="off"
         />
-        <span styleName={buttonEdit} onClick={() => this._edit()}>修改</span>
-        <span>
-          <span styleName={buttonCancel} onClick={() => this._cancel()}>取消</span>
-          <span styleName={buttonSave} onClick={() => this._save()}>保存</span>
-        </span>
+        {hasbutton &&
+          <span>
+            <span styleName={buttonEdit} onClick={() => this._edit()}>修改</span>
+            <span>
+              <span styleName={buttonCancel} onClick={() => this._cancel()}>取消</span>
+              <span styleName={buttonSave} onClick={() => this._save()}>保存</span>
+            </span>
+          </span>
+        }
       </div>
     )
   }
