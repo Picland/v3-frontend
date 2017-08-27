@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
 import { NavLink } from 'react-router-dom'
 import Header from '../../layout/Header'
+import Footer from '../../layout/Footer'
 import styles from './index.less'
 
 @CSSModules(styles)
@@ -26,7 +27,7 @@ class Setting extends Component {
             {this.props.children}
           </div>
         </div>
-        <div styleName="footer">页脚</div>
+        <Footer />
       </div>
     )
   }

@@ -3,7 +3,7 @@
 @content-width: 724px;
 
 .container {
-  position: absolute;
+  position: relative;
   top: 60px;
   right: 0;
   bottom: 0;
@@ -23,7 +23,6 @@
       height: 50px;
       line-height: 50px;
       font-size: 14px;
-      //font-weight: @fontweight-light;
       vertical-align: middle;
       display: inline-table;
       padding: 0 10px;
@@ -31,15 +30,13 @@
         width: 72px;
         content: '';
         display: block;
-        //float: left;
         height: 3px;
         margin-top: -2px;
-        //margin-right: 26px;
       }
       &:hover {
         cursor: pointer;
         &:after {
-          background-color: #DBDBDB;
+          background-color: @lite-darker;
         }
       }
     }
@@ -56,12 +53,5 @@
     .content {
       width: @content-width;
     }
-  }
-  .footer {
-    width: @width-main;
-    margin: @unit-double auto @unit-fourfold;
-    font-size: @fontsize-small;
-    font-weight: 600;
-    color: #003569;
   }
 }
