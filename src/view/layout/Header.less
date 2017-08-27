@@ -1,25 +1,28 @@
 @import '~variable';
 
+@background-color: @black;
+@height: 60px;
+
 .container-base {
   position: fixed;
   box-sizing: content-box;
   z-index: @zindex-header;
   top: 0;
   width: 100%;
-  height: @unit-fivefold;
-  background-color: @white;
-  color: @theme-dark;
-  border-bottom: 1px solid #E7EAF1;
+  height: @height;
+  background-color: @background-color;
+  color: @white;
+  //border-bottom: 1px solid #E7EAF1;
   & > div {
-    height: @unit-fivefold;
+    height: @height;
   }
   .left {
     float: left;
     margin-left: @unit-triple;
     .logo {
       display: inline-table;
-      height: @unit-fivefold;
-      line-height: @unit-fivefold;
+      height: @height;
+      line-height: @height;
       vertical-align: middle;
       font-size: @fontsize-biger;
       font-family: @fontfamily-logo;
@@ -55,18 +58,19 @@
     justify-content: center;
     width: @unit-ninefold;
     height: 108px;
-    border: 1px solid @lite-lite;
-    background-color: @white;
+    border: 1px solid @dark-dark;
+    background-color: @black;
     //box-shadow: 0 5px 20px rgba(0,34,77,.1);
-    border-radius: 4px;
+    //border-radius: 4px;
     padding-left: 0;
     li {
       list-style: none;
       line-height: @unit-triple;
       text-align: center;
-      color: @medium-darkest;
+      color: @white;
       &:hover {
-        background-color: @liteblue-lite;
+        color: @theme;
+        background-color: @dark-dark;
       }
     }
   }
@@ -78,9 +82,9 @@
 
 .container-shadow {
   .container-base();
-  border-bottom: 1px solid rgba(30,35,42,.06);
-  box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
-  background-clip: content-box;
+  //border-bottom: 1px solid rgba(30,35,42,.06);
+  //box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+  //background-clip: content-box;
   //.content {
   //  width: 1000px;
   //  margin: 0 auto;

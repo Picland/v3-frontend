@@ -1,6 +1,6 @@
 @import '~variable';
 
-@width: 632px;
+@width: 460px;
 @height: @unit-sixfold;
 @input-height: @unit-double + 4;
 
@@ -25,7 +25,7 @@
     top: 50%;
     margin-top: -@input-height / 2;
     height: @input-height;
-    width: 460px;
+    width: @width - 172;
     line-height: @input-height;
     font-size: @fontsize;
     font-weight: @fontweight;
@@ -59,7 +59,7 @@
   border-bottom-color: @theme;
 }
 
-::-webkit-input-placeholder { color: @lite; font-weight: @fontweight-light }
-::-moz-placeholder { color: @lite; font-weight: @fontweight-light } /* firefox 19+ */
-:-ms-input-placeholder { color: @lite; font-weight: @fontweight-light } /* ie */
-input:-moz-placeholder { color: @lite; font-weight: @fontweight-light }
+::-webkit-input-placeholder { color: @lite; }
+::-moz-placeholder { color: @lite; } /* firefox 19+ */
+:-ms-input-placeholder { color: @lite; } /* ie */
+input:-moz-placeholder { color: @lite; }

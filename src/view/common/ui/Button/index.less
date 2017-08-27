@@ -1,5 +1,8 @@
 @import '~variable';
 
+@ghost-color: @theme;
+@ghost-color-hover: @theme-lite;
+
 .btn {
   font-size: 13px;
 }
@@ -12,14 +15,14 @@
 
 .ghost {
   &:extend(.btn);
-  color: @theme-dark;
-  border: 2px @theme-dark solid;
+  color: @ghost-color;
+  border: 1px @ghost-color solid;
   background-color: transparent;
-  padding: 3px 18px;
+  padding: 4px 27px;
   &:hover {
-    color: @theme-text;
-    border-color: @theme-darker;
-    background-color: @theme-dark;
+    color: @white;
+    border-color: @ghost-color-hover;
+    background-color: @theme-darker;
   }
 }
 
@@ -36,8 +39,8 @@
 
 .primary {
   &:extend(.wide);
-  font-size: 12px;
-  padding: 5px 16px;
+  font-size: 14px;
+  padding: 8px 28px;
   &:hover {
     background-color: @theme-darker;
   }
