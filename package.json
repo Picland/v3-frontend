@@ -96,7 +96,6 @@
     "express-session": "1.14.2",
     "express-winston": "2.0.0",
     "extract-text-webpack-plugin": "^2.1.0",
-    "hbs": "^4.0.1",
     "isomorphic-style-loader": "^1.1.0",
     "jquery": "^3.2.1",
     "jsx-loader": "^0.13.2",

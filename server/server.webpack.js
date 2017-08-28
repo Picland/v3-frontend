@@ -21,9 +21,9 @@ const serverOptions = {
 
 const app = express()
 
-// ------------------------------------
+// --------------------------------------------------------------------------
 // Apply Webpack HMR Middleware
-// ------------------------------------
+// --------------------------------------------------------------------------
 console.log('Enable webpack dev and HMR middleware')
 app.use(require('webpack-dev-middleware')(compiler, serverOptions))
 app.use(require('webpack-hot-middleware')(compiler))
