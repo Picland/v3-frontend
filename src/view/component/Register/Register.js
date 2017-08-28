@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules'
 import Button from '../../common/ui/Button/index'
 import Input from '../../common/ui/Input/Input'
 import CopyRight from '../../common/ui/CopyRight/CopyRight'
-import Header from '../../layout/Header'
+import Header from '../../layout/Header/index'
 import styles from './Register.less'
 
 @CSSModules(styles)

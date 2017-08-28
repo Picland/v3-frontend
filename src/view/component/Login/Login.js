@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-// import autobind from 'autobind-decorator'
+// import _ from 'lodash'
 import styles from '../../component/Login/Login.less'
-import Header from '../../layout/Header'
-import Button from '../../common/ui/Button/index'
-import Input from '../../common/ui/Input/Input'
-import CopyRight from '../../common/ui/CopyRight/CopyRight'
+import SectionIndex from '../../component/SectionIndex/'
+import Header from '../../layout/Header/'
+import Footer from '../../layout/Footer/'
+// import Button from '../../common/ui/Button/index'
+// import Input from '../../common/ui/Input/Input'
 
-// @autobind
 @CSSModules(styles)
 class Login extends Component {
   static propTypes=({
@@ -24,7 +24,8 @@ class Login extends Component {
     this.state = {
       account: '',
       password: '',
-      loading: false
+      loading: false,
+      shadow: false
     }
   }
   _checkAccount (value) {
@@ -60,6 +61,18 @@ class Login extends Component {
       })
     }
   }
+  _handleScroll () {
+    let bodyScrollTop = document.getElementsByTagName('body')[0].scrollTop
+    if (bodyScrollTop > 200) {
+      this.setState({shadow: true})
+    } else {
+      this.setState({shadow: false})
+    }
+  }
+
+  componentDidMount () {
+    window.addEventListener('scroll', this._handleScroll.bind(this))
+  }
   async _signIn () {
     // 检查数据有效性
     let { account, password, accountValid, pwdValid } = this.state
@@ -80,30 +93,31 @@ class Login extends Component {
   render () {
     return (
       <div styleName="container">
-        <Header logoName="木纹子印象派" buttonLink="/register" buttonName="注册" />
-        <div styleName="main">
-          <div>登录</div>
-          <Input styleType="line"
-                 placeholder="手机号码"
-                 type="text"
-                 name="account"
-                 onChange={(event) => this.setState({account: event.target.value})}
-                 onBlur={(event) => this._checkAccount(event.target.value)}
-                 validationState={this.state.accountValid}
-                 help={this.state.accountHelp}
-          />
-          <Input styleType="line"
-                 placeholder="密码"
-                 type="password"
-                 name="password"
-                 onChange={(event) => this.setState({password: event.target.value})}
-                 onBlur={(event) => this._checkPassword(event.target.value)}
-                 validationState={this.state.pwdValid}
-                 help={this.state.pwdHelp}
-          />
-          <Button styleType="wide" onClick={() => this._signIn()}>登录</Button>
-        </div>
-        <CopyRight />
+        <Header logoName="木纹子印象派" buttonLink="/register" buttonName="注册" shadow={this.state.shadow} />
+        {/* <div styleName="login"> */}
+        {/* <div>登录</div> */}
+        {/* <Input styleType="line" */}
+        {/* placeholder="手机号码" */}
+        {/* type="text" */}
+        {/* name="account" */}
+        {/* onChange={(event) => this.setState({account: event.target.value})} */}
+        {/* onBlur={(event) => this._checkAccount(event.target.value)} */}
+        {/* validationState={this.state.accountValid} */}
+        {/* help={this.state.accountHelp} */}
+        {/* /> */}
+        {/* <Input styleType="line" */}
+        {/* placeholder="密码" */}
+        {/* type="password" */}
+        {/* name="password" */}
+        {/* onChange={(event) => this.setState({password: event.target.value})} */}
+        {/* onBlur={(event) => this._checkPassword(event.target.value)} */}
+        {/* validationState={this.state.pwdValid} */}
+        {/* help={this.state.pwdHelp} */}
+        {/* /> */}
+        {/* <Button styleType="wide" onClick={() => this._signIn()}>登录</Button> */}
+        {/* </div> */}
+        <SectionIndex />
+        <Footer />
       </div>
     )
   }

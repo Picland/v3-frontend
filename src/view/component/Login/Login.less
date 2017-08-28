@@ -1,26 +1,108 @@
 @import '~variable';
 
+@login-wdith: 270px;
+@content0width: 1000px;
 .container {
-  .main {
-    width: 300px;
+  .section1 {
     position: relative;
-    top: 200px;
-    margin: 0 auto;
+    //border: 1px solid red;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    .login {
+      //border: 1px solid blue;
+      width: @login-wdith;
+      position: absolute;
+      top: 140px;
+      right: 160px;
+      text-align: center;
+      box-sizing: content-box;
+      padding: 44px 33px;
+      background-color: rgba(255, 255, 255, 1);
+      & > div:first-child {
+        color: @medium;
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: @unit-double;
+      }
+      input {
+        box-sizing: border-box;
+        width: @login-wdith;
+        margin-bottom: @unit-double + @unit-half;
+      }
+      button {
+        margin-top: @unit;
+        width: @login-wdith;
+        height: 42px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  .section2 {
+    margin-top: 66px;
     text-align: center;
-    & > div:first-child {
-      color: @medium;
+    h2 {
+      font-weight: @fontweight;
       font-size: 24px;
-      font-weight: 300;
-      margin-bottom: @unit-fourfold;
+      margin-bottom: 33px;
     }
-    input {
-      width: 300px;
-      margin-bottom: @unit-double + @unit-half;
+  }
+  .section3 {
+    text-align: center;
+    h2 {
+      display: inline-block;
+      letter-spacing: 10px;
+      line-height: 1.19;
+      font-size: 32px;
+      font-weight: 500;
     }
-    button {
-      margin-top: @unit-double;
-      width: 300px;
-      height: 42px;
+    .photo {
+      //border: 1px solid red;
+      width: @content0width;
+      margin: 0 auto;
+      ul {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 410px;
+        li {
+          list-style: none;
+          position: relative;
+          //border: 1px solid blue;
+          cursor: pointer;
+          height: 176px;
+          &:before {
+            content: '';
+            background: rgba(0,0,0,.3);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          }
+          .tag-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            line-height: 173px;
+            display: inline-block;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 10px;
+            text-indent: 10px;
+          }
+        }
+      }
     }
   }
 }

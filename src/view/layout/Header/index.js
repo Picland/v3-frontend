@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
-import Avatar from '../common/ui/Avatar/Avatar'
-import Button from '../common/ui/Button/index'
-import styles from './Header.less'
+import Avatar from '../../common/ui/Avatar/Avatar'
+import Button from '../../common/ui/Button/index'
+import styles from './index.less'
 // import { Menu, Dropdown } from 'antd'
 //
 // const menu = (
@@ -29,7 +29,7 @@ const mapStateToProps = (state) => ({
 
 @connect(mapStateToProps)
 @CSSModules(styles)
-class Header extends Component {
+class Header extends PureComponent {
   static propTypes = {
     logoName: PropTypes.string,
     buttonName: PropTypes.string,
@@ -56,32 +56,38 @@ class Header extends Component {
   render () {
     let {logoName, buttonName, buttonLink, avatarSrc, shadow} = this.props
     const container = classNames({
-      'container-base': !shadow,
-      'container-shadow': shadow
+      'container-unlogin': !shadow,
+      'container-login': shadow
     })
     return (
       <header styleName={container}>
         <div>
           <div styleName="left">
             <span styleName="logo">{logoName}</span>
+            <Link to="/"><li>首页</li></Link>
+            <Link to="/"><li>旧版</li></Link>
           </div>
-          <div styleName="right">
-            { avatarSrc &&
+          { avatarSrc
+          ? <div styleName="right">
             <div styleName="dropdown-wrapper">
               <Avatar shape="circle"
-                      size="default"
-                      src={avatarSrc}
-                      styleName="avatar"
-              />
+                          size="default"
+                          src={avatarSrc}
+                          styleName="avatar"
+                  />
               <ul styleName="dropdown-container">
                 <Link to="/test"><li>我的主页</li></Link>
                 <Link to="/settings/profile"><li>设置</li></Link>
                 <Link to="/logout"><li>退出</li></Link>
               </ul>
             </div>
-            }
             <Link to={buttonLink}><Button styleType="ghost">{buttonName}</Button></Link>
           </div>
+            : <div styleName="right">
+              <div styleName="nav-btn">登录</div>
+              <Link to={buttonLink}><Button styleType="primary-wide">{buttonName}</Button></Link>
+            </div>
+            }
         </div>
       </header>
     )

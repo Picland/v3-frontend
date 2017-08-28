@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './index.less'
 
 @CSSModules(styles)
-class Footer extends Component {
+class Footer extends PureComponent {
   render () {
     return (
       <footer styleName="container">
