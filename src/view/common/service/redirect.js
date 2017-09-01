@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { Redirect } from 'react-router-dom'
 
 /*
  暂时归类为高阶组件。。
@@ -50,8 +50,13 @@ export const checkLoginRedirect = (WrappedComponent) => (props) => {
         redirectState: null
       }
     }
+    componentDidMount () {
+      let bodyElement = document.getElementsByTagName('body')[0]
+      bodyElement.removeAttribute('class')
+      bodyElement.removeAttribute('style')
+    }
     componentWillUpdate (nextProps, nextState) {
-      console.log(nextProps)
+      console.log('[checkLoginRedirect]componentWillUpdate', nextProps)
     }
     render () {
       return (

@@ -1,0 +1,43 @@
+@import '~variable';
+
+@wdith: 330px;
+
+.login {
+  //border: 1px solid blue;
+  text-align: center;
+  box-sizing: content-box;
+  padding: 20px 18px;
+  & > div:first-child {
+    float: left;
+    color: @dark-darker;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: @unit-fourfold;
+  }
+  .switch-modal {
+    float: right;
+    margin-top: 8px;
+    color: @dark-darker;
+    span {
+      border-bottom: 1px solid;
+      cursor: pointer;
+    }
+  }
+  input {
+    box-sizing: border-box;
+    width: @wdith;
+    margin-bottom: @unit-double + @unit-half;
+  }
+  button {
+    box-sizing: border-box;
+    margin-top: @unit;
+    width: @wdith;
+    height: 42px;
+  }
+  .server-error {
+    text-align: left;
+    margin-bottom: @unit;
+    color: @red;
+    font-size: 12px;
+  }
+}

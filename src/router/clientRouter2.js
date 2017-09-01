@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Login from '../view/container/Login'
 import Logout from '../view/container/Logout'
-// import Register from '../view/container/Register'
 import Setting from '../view/container/Setting/Setting'
 import NoMatch from '../view/component/NoMatch/NoMatch'
 import Frame from '../view/layout/Frame'
+import Welcome from '../view/container/Welcome'
 import Detail from '../view/container/Setting/Detail'
 import Preview from '../view/container/Setting/Preview'
 import Profile from '../view/container/Setting/Profile'
@@ -21,9 +20,9 @@ const TestScreen = () => (
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
   return (
     <Route {...rest} render={props => {
-      return auth.user
+      return auth
         ? <Component {...props} />
-        : <Redirect to={{pathname: '/login', state: { from: props.location }}} />
+        : <Redirect to={{pathname: '/', state: { from: props.location }}} />
     }} />
   )
 }
@@ -55,7 +54,7 @@ const UserSetting = ({ match }) => (
 )
 
 const mapStateToProps = (state) => ({
-  user: state.user
+  user: state.user.user
 })
 
 // Handle the sever redirect and 404
@@ -84,7 +83,7 @@ class App extends Component {
           <Frame>
             <Switch>
               <Route exact path="/test" component={TestScreen} />
-              <Route path="/login" component={Login} />
+              <Route exact path="/" component={Welcome} />
               <Route path="/logout" component={Logout} />
               {/* <Route path="/register" component={Register} /> */}
               <PrivateRoute path="/settings" component={UserSetting} auth={auth} />

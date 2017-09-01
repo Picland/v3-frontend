@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+// import autobind from 'autobind-decorator'
 import CSSModules from 'react-css-modules'
 import styles from './PreviewItem.less'
 
-@autobind
+// @autobind
 @CSSModules(styles)
 class PreviewItem extends React.Component {
   static propTypes = {

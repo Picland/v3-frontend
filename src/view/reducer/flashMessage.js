@@ -1,17 +1,23 @@
-/*
- action type of FLASHMESSAGE
+/**
+ * @fileoverview the state management of flashMessage
+ * @author mrgaonju@gmail.com
  */
+
+const initialState = {
+  show: false,
+  msg: ''
+}
+
+// --------------------------------------------------------------------------
+// action type of FLASHMESSAGE
+// --------------------------------------------------------------------------
 const SHOW_FLASHMESSAGE = 'SHOW_FLASHMESSAGE'
 const REMOVE_FLASHMESSAGE = 'REMOVE_FLASHMESSAGE'
 
-// reducer for flashMessage
-const flashMessage = (state, action) => {
-  if (!state) {
-    state = {
-      show: false,
-      msg: '网络错误'
-    }
-  }
+// --------------------------------------------------------------------------
+// reducer for FLASHMESSAGE
+// --------------------------------------------------------------------------
+const flashMessage = (state = initialState, action) => {
   switch (action.type) {
     case SHOW_FLASHMESSAGE:
       return {
@@ -29,7 +35,9 @@ const flashMessage = (state, action) => {
   }
 }
 
-// for flashMessage
+// --------------------------------------------------------------------------
+// action  creators
+// --------------------------------------------------------------------------
 export const showFlashMessage = (flashMessage) => {
   return {type: SHOW_FLASHMESSAGE, flashMessage}
 }

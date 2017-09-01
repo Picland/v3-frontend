@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import PropTypes from 'prop-types'
 import '../../style/core.less'
-import styles from './Input.less'
+import styles from './index.less'
 
 @CSSModules(styles)
 class Input extends Component {
   static propTypes = {
     styleType: PropTypes.string,
     label: PropTypes.string,
-    type: PropTypes.string
+    type: PropTypes.string,
+    validationState: PropTypes.bool,
+    help: PropTypes.string
   }
 
   static defaultProps = {
@@ -19,18 +21,14 @@ class Input extends Component {
   }
 
   render () {
-    let {styleType, label, type, ...others} = this.props
+    let {styleType, label, type, validationState, help, ...others} = this.props
     return (
       <div>
         {label &&
           <label>{label}</label>
         }
-        {type === 'password' &&
-          <input styleName={styleType} autoComplete="new-password" {...others} />
-        }
-        {type !== 'password' &&
-          <input styleName={styleType} type={type} name={name} {...others} />
-        }
+        <input styleName={styleType} type={type} name={name} {...others} />
+        {!validationState && <div styleName="help">{help}</div>}
       </div>
     )
   }

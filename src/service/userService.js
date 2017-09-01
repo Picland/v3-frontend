@@ -7,7 +7,7 @@ export default {
   },
 
   // 通过手机号码获取用户信息
-  getUserByPhone (phoneNumber) {
+  async getUserByPhone (phoneNumber) {
     return User
       .findOne({ phoneNumber: phoneNumber })
       .addCreatedAt()

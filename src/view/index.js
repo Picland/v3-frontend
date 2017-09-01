@@ -10,7 +10,7 @@ const dist = NODE_ENV === 'development'
 export default (renderMe) => {
   if (NODE_ENV === 'development') {
     return `<!DOCTYPE html>
-      <html lang="en">
+      <html lang="zh-cn">
         <head>
           <meta charset="UTF-8">
           <title>木纹子印象派</title>
@@ -24,7 +24,7 @@ export default (renderMe) => {
       </html>`
   } else {
     return `<!DOCTYPE html>
-      <html lang="en">
+      <html lang="zh-cn">
         <head>
           <meta charset="UTF-8">
           <title>木纹子印象派</title>

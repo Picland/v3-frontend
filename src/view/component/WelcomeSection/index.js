@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 import CSSModules from 'react-css-modules'
 import _ from 'lodash'
-import styles from '../../component/SectionIndex/index.less'
+import styles from './/index.less'
 
 @CSSModules(styles)
-class SectionIndex extends PureComponent {
+class WelcomeSection extends PureComponent {
   render () {
     let photo = [
       {tag: '风光', cover: 'scenery'},
@@ -30,8 +30,8 @@ class SectionIndex extends PureComponent {
           <h2>摄影</h2>
           <div styleName="photo">
             <ul>
-              {photo.map(v =>
-                <li>
+              {photo.map((v, i) =>
+                <li key={i}>
                   <img src={`/img/c_${v.cover}.jpg`} alt="" width={176} height={176} />
                   <span styleName="tag-title">{v.tag}</span>
                 </li>
@@ -44,4 +44,4 @@ class SectionIndex extends PureComponent {
   }
 }
 
-export default SectionIndex
+export default WelcomeSection

@@ -40,7 +40,20 @@ module.exports = {
             'postcss-loader',
             'less-loader'
           ]
-        })
+        }),
+        exclude: path.resolve(__dirname, '../src/view/common/ui/Modal')
+      },
+      {
+        test: /\.less$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            'postcss-loader',
+            'less-loader'
+          ]
+        }),
+        include: path.resolve(__dirname, '../src/view/common/ui/Modal')
       },
       {
         test: /\.css$/,

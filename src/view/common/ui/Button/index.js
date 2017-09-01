@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import PropTypes from 'prop-types'
-// import autobind from 'autobind-decorator'
-import styles from './index.less'
 import '../../style/core.less'
+import styles from './index.less'
 
-// @autobind
 @CSSModules(styles)
 class Button extends Component {
   static propTypes = {
