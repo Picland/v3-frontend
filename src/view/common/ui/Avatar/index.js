@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
 import PropTypes from 'prop-types'
-import styles from './Avatar.less'
-import '../../style/core.less'
+import './index.less'
 
-@CSSModules(styles)
 class Avatar extends Component {
   static propTypes = {
     shape: PropTypes.string,
     size: PropTypes.string,
-    src: PropTypes.string
+    src: PropTypes.string,
+    onClick: PropTypes.func
   }
 
   static defaultProps = {
@@ -18,11 +16,18 @@ class Avatar extends Component {
     src: ''
   }
 
+  _handleClick (e) {
+    const onClick = this.props.onClick
+    if (onClick) {
+      onClick(e)
+    }
+  }
+
   render () {
-    let {shape, size, src, ...others} = this.props
+    let {shape, size, src} = this.props
     return (
       <div>
-        <img src={`/img/${src}`} alt="img" styleName={shape} {...others} />
+        <img src={`/img/${src}`} alt="img" onClick={::this._handleClick} className={`cmui-avatar__${shape}__${size}`} />
       </div>
     )
   }

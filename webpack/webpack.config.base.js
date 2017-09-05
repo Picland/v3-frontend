@@ -41,7 +41,7 @@ module.exports = {
             'less-loader'
           ]
         }),
-        exclude: path.resolve(__dirname, '../src/view/common/ui/Modal')
+        exclude: path.resolve(__dirname, '../src/view/common/ui')
       },
       {
         test: /\.less$/,
@@ -53,7 +53,7 @@ module.exports = {
             'less-loader'
           ]
         }),
-        include: path.resolve(__dirname, '../src/view/common/ui/Modal')
+        include: path.resolve(__dirname, '../src/view/common/ui')
       },
       {
         test: /\.css$/,

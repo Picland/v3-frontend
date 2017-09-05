@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-// import autobind from 'autobind-decorator'
 import '../../style/core.less'
-import styles from './index.less'
+import './index.less'
 
-// @autobind
-@CSSModules(styles)
 class InputForm extends Component {
   static propTypes = {
     label: PropTypes.string,
@@ -100,10 +96,10 @@ class InputForm extends Component {
       'button-cancel-active': !this.state.showEdit
     })
     return (
-      <div styleName={inputForm}>
-        <span styleName="label">{label}</span>
+      <div className={inputForm}>
+        <span className="label">{label}</span>
         <input value={this.state.content}
-               styleName="content"
+               className="content"
                onChange={(e) => this._handleChange(e)}
                ref={ref => (this.contentInput = ref)}
                {...this.state.inputProps}
@@ -114,10 +110,10 @@ class InputForm extends Component {
         />
         {hasbutton &&
           <span>
-            <span styleName={buttonEdit} onClick={() => this._edit()}>修改</span>
+            <span className={buttonEdit} onClick={() => this._edit()}>修改</span>
             <span>
-              <span styleName={buttonCancel} onClick={() => this._cancel()}>取消</span>
-              <span styleName={buttonSave} onClick={() => this._save()}>保存</span>
+              <span className={buttonCancel} onClick={() => this._cancel()}>取消</span>
+              <span className={buttonSave} onClick={() => this._save()}>保存</span>
             </span>
           </span>
         }

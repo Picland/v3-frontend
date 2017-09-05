@@ -1,6 +1,7 @@
 @import '~variable';
 
-@background-color: @black;
+@background-color: @theme-header;
+@text-color: @theme-text;
 @height: 60px;
 
 .container-base {
@@ -10,7 +11,7 @@
   top: 0;
   width: 100%;
   height: @height;
-  color: @white;
+  color: @text-color;
   //border-bottom: 1px solid #E7EAF1;
   &:hover {
     background-color: @background-color;
@@ -22,7 +23,7 @@
   }
   .nav-btn {
     font-size: @fontsize;
-    color: @white;
+    color: @text-color;
     cursor: pointer;
     display: inline-table;
     padding: 10px 33px;
@@ -45,7 +46,7 @@
     }
     a {
       display: inline-table;
-      color: @white;
+      color: @text-color;
       font-weight: @fontweight-medium;
       letter-spacing: 2px;
       list-style: none;
@@ -95,7 +96,7 @@
       list-style: none;
       line-height: @unit-triple;
       text-align: center;
-      color: @white;
+      color: @text-color;
       &:hover {
         color: @theme;
         background-color: @dark-dark;

@@ -3,23 +3,18 @@
 @ghost-color: @theme;
 @ghost-color-hover: @theme-lite;
 
-button[disabled] {
-  cursor: pointer;
-  background-color: @theme-lite;
-}
-
-.btn {
+.cmui-button__btn {
   font-size: 13px;
 }
 
-.default {
-  &:extend(.btn);
+.cmui-button__default {
+  &:extend(.cmui-button__btn);
   color: @theme-dark;
   background-color: @theme-text;
 }
 
-.ghost {
-  &:extend(.btn);
+.cmui-button__ghost {
+  &:extend(.cmui-button__btn);
   font-size: @fontsize;
   font-weight: @fontweight-medium;
   color: @ghost-color;
@@ -33,7 +28,7 @@ button[disabled] {
   }
 }
 
-.wide {
+.cmui-button__wide {
   margin: 0 auto;
   font-size: 15px;
   text-align: center;
@@ -44,17 +39,24 @@ button[disabled] {
   }
 }
 
-.primary {
-  &:extend(.wide);
+.cmui-button__primary {
+  &:extend(.cmui-button__wide);
+  letter-spacing: 4px;
+  text-indent: 4px;
+  height: 40px;
+  text-align: center;
   font-size: 14px;
-  padding: 8px 28px;
+  line-height: 22px;
+  background-color: @theme;
+  padding-left: 30px;
+  padding-right: 30px;
   &:hover {
     background-color: @theme-darker;
   }
 }
 
-.primary-wide {
-  &:extend(.wide);
+.cmui-button__primary-wide {
+  &:extend(.cmui-button__wide);
   font-size: 14px;
   padding: 8px 34px;
   &:hover {

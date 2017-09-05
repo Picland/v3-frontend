@@ -2,14 +2,14 @@ import path from 'path'
 import express from 'express'
 import bodyParser from 'body-parser'
 import session from 'express-session'
-// import formidable from 'express-formidable' // 接收表单及文件的上传中间件
 import connectMongo from 'connect-mongo' // 将 session 存储于 mongodb，结合 express-session 使用
 import config from 'config-lite'
-import router from '../src/router/serverRouter'
-import pkg from '../package.json'
 import winston from 'winston'
 import expressWinston from 'express-winston'
 import favicon from 'serve-favicon'
+import pkg from '../package.json'
+import formidable from '../src/middleware/formidable'
+import router from '../src/router/serverRouter'
 
 const MongoStore = connectMongo(session)
 const server = express()
@@ -17,13 +17,20 @@ const server = express()
 server.use(bodyParser.json())
 
 // --------------------------------------------------------------------------
-// static resource config
+// View Engine
+// --------------------------------------------------------------------------
+server.engine('.html', require('ejs').__express)
+server.set('views', path.join(__dirname, '../src/view'))
+server.set('view engine', 'html')
+
+// --------------------------------------------------------------------------
+// Static Resource
 // --------------------------------------------------------------------------
 server.use(favicon(path.join(__dirname, '../static', 'favicon.ico')))
 server.use(express.static(path.join(__dirname, '../static')))
 
 // --------------------------------------------------------------------------
-// session middleware config
+// Session Middleware
 // --------------------------------------------------------------------------
 server.use(session({
   name: config.session.key, // 设置 cookie 中保存 session id 的字段名称
@@ -38,14 +45,18 @@ server.use(session({
   })
 }))
 
-// 处理表单及文件上传的中间件
-// server.use(formidable({
-//   uploadDir: path.join(__dirname, '../static/img'), // 上传文件目录
-//   keepExtensions: true // 保留后缀
-// }))
+// --------------------------------------------------------------------------
+// Form and File Upload Middleware
+// https://github.com/felixge/node-formidable#api
+// https://github.com/noraesae/express-formidable
+// --------------------------------------------------------------------------
+server.use(formidable({
+  uploadDir: path.join(__dirname, '../static/img'),
+  keepExtensions: true
+}))
 
 // --------------------------------------------------------------------------
-// success log
+// Success Log
 // --------------------------------------------------------------------------
 server.use(expressWinston.logger({
   transports: [
@@ -60,12 +71,12 @@ server.use(expressWinston.logger({
 }))
 
 // --------------------------------------------------------------------------
-// router
+// Router
 // --------------------------------------------------------------------------
 router(server)
 
 // --------------------------------------------------------------------------
-// error log
+// Error Log
 // --------------------------------------------------------------------------
 server.use(expressWinston.errorLogger({
   transports: [
@@ -80,16 +91,16 @@ server.use(expressWinston.errorLogger({
 }))
 
 // --------------------------------------------------------------------------
-// error page
+// Error Page
 // --------------------------------------------------------------------------
-server.use((err, req, res, next) => {
-  res.render('error', {
-    error: err
-  })
-})
+// server.use((err, req, res, next) => {
+//   res.render('error', {
+//     error: err
+//   })
+// })
 
 // --------------------------------------------------------------------------
-// start
+// Start the Server
 // --------------------------------------------------------------------------
 server.listen(config.port, () => {
   console.log(`----\n==> ✅  ${pkg.name} listening on http://localhost:${config.port}\n----`)

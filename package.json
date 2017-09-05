@@ -31,7 +31,7 @@
       }
     },
     "dev": {
-      "command": "npm run boot && node server/server.dev.js",
+      "command": "npm run boot && node $NODE_DEBUG_OPTION server/server.dev.js",
       "env": {
         "NODE_ENV": "development",
         "PORT": 3000
@@ -90,8 +90,8 @@
     "connect-flash": "0.1.1",
     "connect-mongo": "1.3.2",
     "css-loader": "^0.27.3",
+    "ejs": "^2.5.7",
     "express": "4.14.0",
-    "express-formidable": "1.0.0",
     "express-session": "^1.15.5",
     "express-winston": "^2.4.0",
     "extract-text-webpack-plugin": "^2.1.0",

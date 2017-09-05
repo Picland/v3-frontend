@@ -3,20 +3,24 @@
  * @author mrgaonju@gmail.com
  */
 const initialState = {
-  user: null,
+  user: {},
   logining: false,
+  registering: false,
   message: ''
 }
 
 // --------------------------------------------------------------------------
 // action type of USER
 // --------------------------------------------------------------------------
-const LOGIN = 'LOGIN'
 const LOGOUT = 'LOGOUT'
 
 const LOGIN_STARTED = 'LOGIN_STARTED'
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 const LOGIN_FAILURE = 'LOGIN_FAILURE'
+
+const REGISTER_STARTED = 'REGISTER_STARTED'
+const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
+const REGISTER_FAILURE = 'REGISTER_FAILURE'
 
 const UPDATE = 'UPDATE'
 
@@ -30,21 +34,37 @@ const user = (state = initialState, action) => {
         ...state,
         logining: true
       }
+    case REGISTER_STARTED:
+      return {
+        ...state,
+        registering: true
+      }
     case LOGIN_SUCCESS:
       return {
         user: action.result,
         logining: false
+      }
+    case REGISTER_SUCCESS:
+      return {
+        ...state,
+        registering: false,
+        message: action.result
       }
     case LOGIN_FAILURE:
       return {
         ...state,
         logining: false,
         message: action.error
-
+      }
+    case REGISTER_FAILURE:
+      return {
+        ...state,
+        registering: false,
+        message: action.error
       }
     case LOGOUT:
       return {
-        user: null,
+        user: {},
         logining: false,
         message: ''
       }
@@ -61,14 +81,6 @@ const user = (state = initialState, action) => {
 // --------------------------------------------------------------------------
 // action  creators
 // --------------------------------------------------------------------------
-export const login = (user) => ({
-  type: LOGIN,
-  user
-})
-
-export const logout = () => ({
-  type: LOGOUT
-})
 
 export const startLogin = () => ({
   type: LOGIN_STARTED
@@ -79,18 +91,47 @@ export const finishLogin = (result) => ({
   result
 })
 
+export const loginSuccess = (message) => ({
+  message: message,
+  type: 'success'
+})
+
 export const failLogin = (error) => ({
   type: LOGIN_FAILURE,
   error
 })
-export const loginSuccess = () => ({
-  msg: '登录成功',
-  msgType: 'success'
-})
 
 export const loginFail = (error) => ({
-  msg: error,
-  msgType: 'warning'
+  message: error,
+  type: 'error'
+})
+
+export const startRegister = () => ({
+  type: REGISTER_STARTED
+})
+
+export const finishRegister = (result) => ({
+  type: REGISTER_SUCCESS,
+  result
+})
+
+export const failRegister = (error) => ({
+  type: REGISTER_FAILURE,
+  error
+})
+
+export const registerSuccess = (message) => ({
+  message: message,
+  type: 'success'
+})
+
+export const registerFail = (error) => ({
+  message: error,
+  type: 'error'
+})
+
+export const logout = () => ({
+  type: LOGOUT
 })
 
 export const update = (result) => ({

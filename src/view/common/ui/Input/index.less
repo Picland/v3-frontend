@@ -1,6 +1,6 @@
 @import '~variable';
 
-.input {
+.cmui-input__input {
   color: @medium-litest;
   font-size: @fontsize;
   border-color: @white;
@@ -8,12 +8,12 @@
   -webkit-appearance: none;
 }
 
-.default {
+.cmui-input__default {
   border-bottom-color: @theme-dark;
 }
 
-.line {
-  &:extend(.input);
+.cmui-input__line {
+  &:extend(.cmui-input__input);
   border: 1px transparent solid;
   border-bottom: 1px @lite-darker solid;
   padding-bottom: @unit;
@@ -29,7 +29,7 @@
   }
 }
 
-.help {
+.cmui-input__help {
   position: absolute;
   right: 40px;
   margin-top: -@unit-fivefold;

@@ -7,9 +7,9 @@ import auth from '../middleware/auth'
 import loginController from '../controller/loginController'
 import logoutController from '../controller/logoutController'
 import userController from '../controller/userController'
+import registerController from '../controller/registerController'
 import renderService from '../service/renderService'
 // import authorize from '../middleware/authorize'
-// import registerController from '../controller/registerController'
 // import articleController from '../controller/articleController'
 // import commentController from '../controller/commentController'
 
@@ -20,23 +20,18 @@ export default (server) => {
   // Restful API version 1
   // --------------------------------------------------------------------------
   server.post('/api/v1/login', auth.isNotLogin, loginController.login)
+  server.post('/api/v1/register', auth.isNotLogin, registerController.createUser)
   server.get('/api/v1/logout', auth.isLogin, logoutController.logout)
-  server.get('/api/v1/user/status', userController.getUserStatus) // GET whether user is login
+  server.get('/api/v1/user/status', userController.getUserStatus)
   server.post('/api/v1/updateUserInfo', auth.isLogin, userController.updateUserInfo)
+  server.post('/api/v1/updateUserAvatar', auth.isLogin, userController.updateUserAvatar)
 
   // --------------------------------------------------------------------------
   // Turn over others page to client router and render
   // --------------------------------------------------------------------------
-  server.get('/*', (req, res) => {
-    res.status(200).send(renderService(req.url))
-  })
-
-  // --------------------------------------------------------------------------
-  // 404 Page in server side, may remove to clint side
-  // --------------------------------------------------------------------------
   server.use((req, res) => {
     if (!res.headersSent) {
-      res.status(404).render('404')
+      res.status(200).send(renderService(req.url))
     }
   })
 

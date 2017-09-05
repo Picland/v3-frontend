@@ -5,7 +5,7 @@
 
 const initialState = {
   show: false,
-  msg: ''
+  message: ''
 }
 
 // --------------------------------------------------------------------------
@@ -21,8 +21,8 @@ const flashMessage = (state = initialState, action) => {
   switch (action.type) {
     case SHOW_FLASHMESSAGE:
       return {
-        type: action.flashMessage.msgType,
-        msg: action.flashMessage.msg,
+        type: action.flashMessage.type,
+        message: action.flashMessage.message,
         show: true
       }
     case REMOVE_FLASHMESSAGE:

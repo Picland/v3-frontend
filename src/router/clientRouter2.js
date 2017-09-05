@@ -54,7 +54,7 @@ const UserSetting = ({ match }) => (
 )
 
 const mapStateToProps = (state) => ({
-  user: state.user.user
+  user: state.user.user._id
 })
 
 // Handle the sever redirect and 404
@@ -69,7 +69,7 @@ const RedirectFromServer = ({match}) => {
 @connect(mapStateToProps)
 class App extends Component {
   static propTypes = {
-    user: PropTypes.object
+    user: PropTypes.string
   }
   componentDidMount () {
     const loading = document.getElementById('loading')
@@ -97,7 +97,7 @@ class App extends Component {
 
 PrivateRoute.propTypes = {
   component: PropTypes.func,
-  auth: PropTypes.object,
+  auth: PropTypes.string,
   location: PropTypes.object
 }
 

@@ -2,7 +2,7 @@ import { User } from '../model/mongo'
 
 export default {
   // 注册一个用户
-  insert (user) {
+  async insert (user) {
     return User.insert(user).exec()
   },
 

@@ -7,12 +7,19 @@
   text-align: center;
   box-sizing: content-box;
   padding: 20px 18px;
-  & > div:first-child {
+  .title {
     float: left;
     color: @dark-darker;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: @unit-fourfold;
+  }
+  .title-join {
+    .title();
+    float: none;
+    text-align: left;
+    margin-bottom: @unit-triple;
+
   }
   .switch-modal {
     float: right;

@@ -135,26 +135,22 @@ export const updatePost = async(postId, article) => {
   return createResult(result)
 }
 
-/*
- 注册
- 涉及头像上传
- 暂时不分离
- params
- account
- name
- password
- bio
- */
-export const register = async(formData) => {
-  let url = DOMAIN + '/api/signUp'
+// --------------------------------------------------------------------------
+// Login
+// --------------------------------------------------------------------------
+export const login = async(data) => {
+  let url = `${DOMAIN}/api/v1/login`
+  let { account, password } = data
   let result
   try {
     result = await fetch(url, {
       method: 'POST',
-      //      headers: {
-      //          'Content-Type': 'application/x-www-form-urlencoded'
-      //  },
-      body: formData
+      headers: defaultHeaders,
+      body: JSON.stringify({
+        account: account,
+        password: password
+      }),
+      credentials: CREDENTIALS
     })
   } catch (e) {
     console.error(e)
@@ -163,11 +159,11 @@ export const register = async(formData) => {
 }
 
 // --------------------------------------------------------------------------
-// Login
+// Register
 // --------------------------------------------------------------------------
-export const login = async(params) => {
-  let url = `${DOMAIN}/api/v1/login`
-  let { account, password } = params
+export const register = async(data) => {
+  let url = `${DOMAIN}/api/v1/register`
+  let { account, inviteCode, password } = data
   let result
   try {
     result = await fetch(url, {
@@ -175,6 +171,7 @@ export const login = async(params) => {
       headers: defaultHeaders,
       body: JSON.stringify({
         account: account,
+        inviteCode: inviteCode,
         password: password
       }),
       credentials: CREDENTIALS
@@ -204,7 +201,7 @@ export const logout = async() => {
 }
 
 // --------------------------------------------------------------------------
-// Check user status
+// Check User Status
 // --------------------------------------------------------------------------
 export const getUserStatus = async() => {
   let url = `${DOMAIN}/api/v1/user/status`
@@ -300,19 +297,4 @@ export const checkAccount = async(account) => {
     console.error(e)
   }
   return createResult(result)
-}
-
-//* * promise
-export const loginFetch = (params) => {
-  let {account, password} = params
-  let url = DOMAIN + '/api/signIn'
-  return fetch(url, {
-    method: 'POST',
-    headers: defaultHeaders,
-    body: JSON.stringify({
-      account: account,
-      password: password
-    }),
-    credentials: CREDENTIALS
-  })
 }

@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
 import PropTypes from 'prop-types'
 import '../../style/core.less'
-import styles from './index.less'
+import './index.less'
 
-@CSSModules(styles)
 class Input extends Component {
   static propTypes = {
     styleType: PropTypes.string,
@@ -27,8 +25,8 @@ class Input extends Component {
         {label &&
           <label>{label}</label>
         }
-        <input styleName={styleType} type={type} name={name} {...others} />
-        {!validationState && <div styleName="help">{help}</div>}
+        <input className={`cmui-input__${styleType}`} type={type} name={name} {...others} />
+        {!validationState && <div className="cmui-input__help">{help}</div>}
       </div>
     )
   }

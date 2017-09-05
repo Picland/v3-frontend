@@ -1,0 +1,59 @@
+@import '~variable';
+
+@width: 460px;
+@height: @unit-sixfold;
+@input-height: @unit-double + 4;
+
+.cmui-inputnew, .cmui-inputnew__active, .cmui-inputnew__nobutton {
+  //position: relative;
+  //width: @width;
+  //height: @height;
+  //line-height: @height;
+  //font-size: @fontsize;
+  //font-weight: @fontweight;
+  //border-bottom: 1px solid @lite-lite;
+  //vertical-align: middle;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .label {
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+  }
+  input {
+    //position: absolute;
+    //left: 92px;
+    //color: @medium-litest;
+    //border: none;
+    //outline: none;
+    //top: 50%;
+    //margin-top: -@input-height / 2;
+    //height: @input-height;
+    //width: @width - 172;
+    //line-height: @input-height;
+    //font-size: @fontsize;
+    //font-weight: @fontweight;
+    width: @width;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+    font-size: 13px;
+    border: 2px solid @lite;
+    margin-top: 12px;
+  }
+}
+
+.cmui-inputnew__active {
+  border-bottom-color: @theme;
+}
+
+.cmui-inputnew__nobutton:hover {
+  border-bottom-color: @theme;
+}
+
+::-webkit-input-placeholder { color: @lite; }
+::-moz-placeholder { color: @lite; } /* firefox 19+ */
+:-ms-input-placeholder { color: @lite; } /* ie */
+input:-moz-placeholder { color: @lite; }

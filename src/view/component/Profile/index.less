@@ -4,17 +4,27 @@
 @content-width: 460px;
 
 .container {
-  margin-top: 14px;
-  margin-left: 56px;
-  margin-right: 56px;
-  width: @right-width;
-  .title {
-    width: @content-width;
-    color: @dark-liter;
-    font-size: @fontsize-big;
-    font-weight: @fontweight-medium;
-    vertical-align: middle;
-    line-height: 56px;
-    border-bottom: 1px solid @lite-lite;
+  padding-top: 14px;
+  padding-left: 56px;
+  padding-right: 56px;
+  width: 100%;
+  overflow: hidden;
+  .left {
+    float: left;
+    .title {
+      width: @content-width;
+      color: @dark-darker;
+      font-size: @fontsize-medium-double;
+      font-weight: @fontweight-medium;
+      vertical-align: middle;
+      line-height: 56px;
+    }
+    button {
+      margin-top: 20px;
+    }
+  }
+  .right {
+    float: right;
+    border: 1px solid red;
   }
 }

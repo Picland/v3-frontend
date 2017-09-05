@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-import styles from './index.less'
-import Input from '../../common/ui/Input/index'
 import Button from '../../common/ui/Button/'
+import Input from '../../common/ui/Input/index'
+import styles from './index.less'
 
 @CSSModules(styles)
 class Login extends Component {
@@ -41,10 +41,10 @@ class Login extends Component {
       pwdValid: false,
       pwdHelp: ''
     })
-    if (value.length < 6) {
+    if (value.length < 6 || value.length > 16) {
       this.setState({
         pwdValid: false,
-        pwdHelp: '密码长度须大于6位'
+        pwdHelp: '密码长度须6-16位'
       })
     } else {
       this.setState({
@@ -55,13 +55,13 @@ class Login extends Component {
   async _logIn () {
     // 检查数据有效性
     let { account, password, accountValid, pwdValid } = this.state
-    this._checkAccount(this.state.account)
-    this._checkPassword(this.state.password)
+    this._checkAccount(account)
+    this._checkPassword(password)
     if (accountValid && pwdValid) {
       await this.props.login({account, password}) // 对应connect里面的login方法不是reduer里面的
-      if (this.props.flashMessage.show) {
+      if (this.props.flashMessage.type === 'error') {
         this.setState({
-          serverError: this.props.flashMessage.msg
+          serverError: this.props.flashMessage.message
         })
       }
     }
@@ -103,7 +103,7 @@ class Login extends Component {
                help={this.state.pwdHelp}
          />
         {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
-        <Button styleType="wide" onClick={() => this._logIn()}>登录</Button>
+        <Button styleType="wide" onClick={::this._logIn}>登录</Button>
       </div>
     )
   }

@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
 import PropTypes from 'prop-types'
 import '../../style/core.less'
-import styles from './index.less'
+import './index.less'
 
-@CSSModules(styles)
 class Button extends Component {
   static propTypes = {
     styleType: PropTypes.string,
@@ -16,7 +14,7 @@ class Button extends Component {
     styleType: 'default'
   }
 
-  handleClick = (e) => {
+  _handleClick (e) {
     const onClick = this.props.onClick
     if (onClick) {
       onClick(e)
@@ -24,9 +22,9 @@ class Button extends Component {
   }
 
   render () {
-    let {styleType, children, onClick, ...others} = this.props
+    let {styleType, children} = this.props
     return (
-      <button styleName={styleType} onClick={this.handleClick} {...others}>{children}</button>
+      <button className={`cmui-button__${styleType}`} onClick={::this._handleClick}>{children}</button>
     )
   }
 }
