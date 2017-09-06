@@ -2,7 +2,7 @@
  * @fileoverview the state management of user
  * @author mrgaonju@gmail.com
  */
-const initialState = {
+export const initialState = {
   user: {},
   logining: false,
   registering: false,

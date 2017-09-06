@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import App from '../router/clientRouter2'
 import DevTools from './layout/DevTools'
 import { getUserStatus } from './common/service/fetch'
+import { initialState } from './reducer/user'
 
 async function getInitialState () {
   let result = await getUserStatus()
@@ -15,16 +16,16 @@ async function getInitialState () {
     return {
       user: {
         user: result,
-        logining: false,
-        message: {}
+        logining: initialState.logining,
+        message: initialState.message
       }
     }
   } else {
     return {
       user: {
         user: {},
-        logining: false,
-        message: {}
+        logining: initialState.logining,
+        message: initialState.message
       }
     }
   }
