@@ -27,18 +27,6 @@ const PrivateRoute = ({ component: Component, auth, ...rest }) => {
   )
 }
 
-// // Logout
-// const Logout = ({ component: Component, auth, ...rest }) => {
-//   console.log('PrivateRoute-state.user', auth)
-//   return (
-//     <Route {...rest} render={props => {
-//       return auth.user
-//         ? <Component {...props} />
-//         : <Redirect to={{pathname: '/login', state: { from: props.location }}} />
-//     }} />
-//   )
-// }
-
 // User Setting
 const UserSetting = ({ match }) => (
   <Route path={match.url} render={() =>
@@ -54,7 +42,7 @@ const UserSetting = ({ match }) => (
 )
 
 const mapStateToProps = (state) => ({
-  user: state.user.user._id
+  auth: state.user.user._id
 })
 
 // Handle the sever redirect and 404
@@ -69,14 +57,14 @@ const RedirectFromServer = ({match}) => {
 @connect(mapStateToProps)
 class App extends Component {
   static propTypes = {
-    user: PropTypes.string
+    auth: PropTypes.string
   }
   componentDidMount () {
     const loading = document.getElementById('loading')
     loading.style.display = 'none'
   }
   render () {
-    let auth = this.props.user
+    let auth = this.props.auth
     return (
       <Router>
         <Route path="/" render={() =>
@@ -85,7 +73,6 @@ class App extends Component {
               <Route exact path="/test" component={TestScreen} />
               <Route exact path="/" component={Welcome} />
               <Route path="/logout" component={Logout} />
-              {/* <Route path="/register" component={Register} /> */}
               <PrivateRoute path="/settings" component={UserSetting} auth={auth} />
             </Switch>
           </Frame>

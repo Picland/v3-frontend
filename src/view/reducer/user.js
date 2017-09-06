@@ -6,7 +6,7 @@ const initialState = {
   user: {},
   logining: false,
   registering: false,
-  message: ''
+  message: {}
 }
 
 // --------------------------------------------------------------------------
@@ -23,6 +23,7 @@ const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 const REGISTER_FAILURE = 'REGISTER_FAILURE'
 
 const UPDATE = 'UPDATE'
+const UPDATE_AVATAR = 'UPDATE_AVATAR'
 
 // --------------------------------------------------------------------------
 // reducer for USER
@@ -66,12 +67,20 @@ const user = (state = initialState, action) => {
       return {
         user: {},
         logining: false,
-        message: ''
+        message: {}
       }
     case UPDATE:
       return {
         ...state,
         user: action.result
+      }
+    case UPDATE_AVATAR:
+      return {
+        ...state,
+        message: {
+          _id: action.result._id,
+          avatar: action.result.avatar
+        }
       }
     default:
       return state
@@ -136,6 +145,11 @@ export const logout = () => ({
 
 export const update = (result) => ({
   type: UPDATE,
+  result
+})
+
+export const updateAvatar = (result) => ({
+  type: UPDATE_AVATAR,
   result
 })
 

@@ -1,7 +1,15 @@
 @import '~variable';
 
 .cmui-upload {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .cmui-upload__children {
+    text-align: center;
+    display: table;
+    margin: 0 auto;
+    margin-bottom: @unit-double;
+  }
 }
 .cmui-upload__listbox {
   position: relative;

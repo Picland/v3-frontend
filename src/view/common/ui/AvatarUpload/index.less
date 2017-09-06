@@ -2,29 +2,40 @@
 
 @default: 30px;
 @large: 92px;
+@larger: 112px;
 
 .cmui-avatarupload {
   position: relative;
   display: inline-table;
-  margin-bottom: @unit-double;
-  .cmui-avatarupload__cover {
+  .cmui-avatarupload__cover__circle__large,
+  .cmui-avatarupload__cover__circle__larger {
     display: none;
   }
   &:hover {
     .cmui-avatarupload__cover {
       display: block;
       position: absolute;
-      width: @large + 2;
-      height: @large + 2;
       border-radius: 50%;
-      line-height: @large + 2;
       color: @white;
       top: 0;
       left: 50%;
-      margin-left: -(@large + 2)/2;
       cursor: pointer;
       text-align: center;
       background: rgba(0, 0, 0, 0.6);
+    }
+    .cmui-avatarupload__cover__circle__large {
+      .cmui-avatarupload__cover();
+      width: @large;
+      height: @large;
+      line-height: @large;
+      margin-left: -(@large)/2;
+    }
+    .cmui-avatarupload__cover__circle__larger {
+      .cmui-avatarupload__cover();
+      width: @larger;
+      height: @larger;
+      line-height: @larger;
+      margin-left: -(@larger)/2;
     }
   }
 }
@@ -41,7 +52,6 @@
   width: @large;
   height: @large;
   margin: 0 auto;
-  margin-bottom: @unit-double;
   background-color: @lite-darker;
   color: @white;
   line-height: @large;
@@ -56,4 +66,11 @@
     cursor: pointer;
     background-color: rgba(0, 0, 0, .6);
   }
+}
+
+.cmui-avatarupload__circle__larger {
+  .cmui-avatarupload__circle__large();
+  width: @larger;
+  height: @larger;
+  line-height: @larger;
 }

@@ -7,11 +7,11 @@ import renderService from '../service/renderService'
 export default {
   // 当用户信息（req.session.user）不存在，即认为用户没有登录，则跳转到登录页
   isLogin (req, res, next) {
-    // 用户已登录
+    // 用户未登录
     if (!req.session.user) {
       return res.status(200).send(renderService(req.url))
     }
-    // 用户未登录
+    // 用户已登录
     next()
   },
 

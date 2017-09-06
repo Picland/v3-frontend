@@ -79,7 +79,9 @@ export default {
       return res.status(200).json({
         'code': 1,
         'message': '注册成功',
-        'userId': user._id
+        'user': {
+          '_id': user._id
+        }
       })
     } catch (e) {
       // 注册失败，异步删除上传的头像

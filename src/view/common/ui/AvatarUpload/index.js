@@ -26,11 +26,11 @@ class AvatarUpload extends Component {
   render () {
     let {shape, size, src} = this.props
     return (
-      <div>
+      <div style={{display: 'flex'}}>
         {src
           ? <div className="cmui-avatarupload">
             <img src={`/img/${src}`} alt="img" onClick={::this._handleClick} className={`cmui-avatarupload__${shape}__${size}`} />
-            <div className="cmui-avatarupload__cover" onClick={::this._handleClick}>更换头像</div>
+            <div className={`cmui-avatarupload__cover__${shape}__${size}`} onClick={::this._handleClick}>更换头像</div>
           </div>
           : <div onClick={::this._handleClick} className={`cmui-avatarupload__${shape}__${size}`}>设置头像</div>
         }

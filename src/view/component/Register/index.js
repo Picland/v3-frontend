@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-import Button from '../../common/ui/Button/index'
-import Input from '../../common/ui/Input/index'
-import Upload from '../../common/ui/Upload/index'
+import Button from '../../common/ui/Button'
+import Input from '../../common/ui/Input'
+import Upload from '../../common/ui/Upload'
+import AvatarUpload from '../../common/ui/AvatarUpload'
 import styles from './index.less'
 
 @CSSModules(styles)
 class Register extends Component {
   static propTypes = {
-    userId: PropTypes.string,
+    user: PropTypes.object,
     // flashMessage: PropTypes.object,
     switchModal: PropTypes.func,
-    update: PropTypes.func
+    update: PropTypes.func,
+    updateAfterUpload: PropTypes.func
   }
   constructor (props) {
     super(props)
@@ -110,7 +112,7 @@ class Register extends Component {
       // 注册最后一步：打开上传头像的对话框
       if (this.props.flashMessage.type === 'success') {
         window.runtime = {
-          userId: this.props.userId
+          userId: this.props.user._id
           // userId: '59ac077391853dd6d21fb3d1'
         }
         this.setState({
@@ -142,11 +144,11 @@ class Register extends Component {
     this.setState({pwdInputType: 'password'})
   }
   _handleUploading (pre) {
-    console.log('uploading...', pre)
+    // console.log('uploading...', pre)
   }
 
   _handleComplete (data, list) {
-    console.log('complete:', data, 'list:', list)
+    this.props.updateAfterUpload(data)
   }
   render () {
     let { join } = this.state
@@ -161,6 +163,7 @@ class Register extends Component {
                      placeholder="手机号码"
                      type="text"
                      name="phoneNumber"
+                     value={this.state.account}
                      onChange={(event) => this.setState({account: event.target.value})}
                      onBlur={(event) => this._checkAccount(event.target.value)}
                      validationState={this.state.accountValid}
@@ -170,6 +173,7 @@ class Register extends Component {
                      placeholder="邀请码"
                      type="text"
                      name="inviteCode"
+                     value={this.state.inviteCode}
                      onChange={(event) => this.setState({inviteCode: event.target.value})}
                      onBlur={(event) => this._checkInviteCode(event.target.value)}
                      validationState={this.state.inviteCodeValid}
@@ -179,6 +183,7 @@ class Register extends Component {
                      placeholder="密码6-16位，区分大小写"
                      type={this.state.pwdInputType}
                      name="password"
+                     value={this.state.password}
                      onFocus={::this._handleFocus}
                      onChange={(event) => this.setState({password: event.target.value})}
                      onBlur={(event) => this._checkPassword(event.target.value)}
@@ -194,7 +199,11 @@ class Register extends Component {
                       action="/api/v1/updateUserAvatar"
                       onUplading={::this._handleUploading}
                       onComplete={::this._handleComplete}
-              />
+              >
+                <AvatarUpload
+                  src={this.props.user.avatar}
+                  size="large" />
+              </Upload>
               <Input styleType="line"
                      placeholder="输入昵称，不超过10个汉字或20个英文字符"
                      type="text"

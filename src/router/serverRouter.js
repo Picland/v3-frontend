@@ -1,5 +1,5 @@
 /**
- * @fileoverview Router config on server side
+ * @fileoverview Router map on server side
  * @author mrgaonju@gmail.com
  */
 
@@ -9,7 +9,6 @@ import logoutController from '../controller/logoutController'
 import userController from '../controller/userController'
 import registerController from '../controller/registerController'
 import renderService from '../service/renderService'
-// import authorize from '../middleware/authorize'
 // import articleController from '../controller/articleController'
 // import commentController from '../controller/commentController'
 

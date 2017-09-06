@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import xhr from '../xhr'
-import AvatarUpload from '../AvatarUpload'
 import FileList from './FileList'
+import Button from '../Button/index'
 import './index.less'
 
 class Upload extends Component {
@@ -27,11 +27,16 @@ class Upload extends Component {
     onUplading: PropTypes.func,
 
     onUpload: PropTypes.func,
+
     // 上传文件完成时的回调函数
     onComplete: PropTypes.func,
 
     // 是否显示文件上传列表
-    showFileList: PropTypes.bool
+    showFileList: PropTypes.bool,
+
+    children: PropTypes.node,
+
+    button: PropTypes.string
   }
 
   static defaultProps = {
@@ -147,14 +152,16 @@ class Upload extends Component {
   }
 
   render () {
-    const { className, action, fileName, text, multiple, onUplading, onComplete, showFileList, ...other } = this.props
+    const { className, action, fileName, text, multiple, onUplading, onComplete, showFileList, button, ...other } = this.props
     return (
       <div className={classnames('cmui-upload', className)} {...other}>
         <input ref="file" onChange={::this.handleChange} type="file" multiple={!!multiple} style={{display: 'none'}} />
-        <AvatarUpload onClick={::this.handleClick}
-                      src={this.state.data.avatar}
-                      size="large"
-        />
+        <div className="cmui-upload__children" onClick={::this.handleClick}>
+          {this.props.children}
+        </div>
+        {button &&
+          <Button styleType="ghost" onClick={::this.handleClick}>{button}</Button>
+        }
         {showFileList &&
           <div className="cmui-upload__listbox">
             <FileList data={this.state.list} onRemove={::this.handleRemove} />

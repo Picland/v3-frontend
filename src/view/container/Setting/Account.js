@@ -12,7 +12,6 @@ const mapDispatchToProps = (dispatch) => ({
   update: async (formData) => {
     try {
       let result = await updateUserInfo(formData)
-      console.log('result', result)
       result && dispatch(update(result))
     } catch (e) {
       console.error(e)

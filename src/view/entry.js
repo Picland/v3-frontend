@@ -16,7 +16,7 @@ async function getInitialState () {
       user: {
         user: result,
         logining: false,
-        message: ''
+        message: {}
       }
     }
   } else {
@@ -24,7 +24,7 @@ async function getInitialState () {
       user: {
         user: {},
         logining: false,
-        message: ''
+        message: {}
       }
     }
   }

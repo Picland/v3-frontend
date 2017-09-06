@@ -10,14 +10,14 @@ class InputNew extends Component {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     type: PropTypes.string,
-    content: PropTypes.string,
+    value: PropTypes.string,
     onChange: PropTypes.func,
     hasbutton: PropTypes.bool
   }
 
   static defaultProps = {
     label: '',
-    content: '',
+    value: '',
     placeholder: ''
   }
 
@@ -28,8 +28,7 @@ class InputNew extends Component {
       inputProps: {
         readOnly: 'readOnly'
       },
-      content: this.props.content,
-      name: this.props.name
+      value: this.props.value
     }
     if (!props.hasbutton) state.inputProps.readOnly = ''
     this.state = state
@@ -37,9 +36,9 @@ class InputNew extends Component {
 
   _handleChange (e) {
     this.setState({
-      content: e.target.value
+      value: e.target.value
     })
-    this.props.onChange(e.target.value)
+    this.props.onChange(this.props.name, e.target.value)
   }
 
   render () {
@@ -52,8 +51,8 @@ class InputNew extends Component {
     return (
       <div className={inputForm}>
         <div className="label">{label}</div>
-        <input value={this.state.content}
-               onChange={(e) => this._handleChange(e)}
+        <input value={this.state.value}
+               onChange={::this._handleChange}
                ref={ref => (this.contentInput = ref)}
                {...this.state.inputProps}
                name={name}

@@ -23,12 +23,13 @@ import {
   registerSuccess,
   failRegister,
   registerFail,
-  update
+  update,
+  updateAvatar
 } from '../../reducer/user'
 
 const mapStateToProps = (state) => ({
   // avatarHover: state.header.avatarHover,
-  userId: state.user.message,
+  user: state.user.message,
   flashMessage: state.flashMessage
 })
 
@@ -57,7 +58,7 @@ const mapDispatchToProps = (dispatch) => ({
     try {
       let result = await register(user)
       if (result.code === 1) {
-        dispatch(finishRegister(result.userId))
+        dispatch(finishRegister(result.user))
         dispatch(showFlashMessage(registerSuccess(result.message)))
       } else {
         dispatch(failRegister(result.message))
@@ -70,11 +71,13 @@ const mapDispatchToProps = (dispatch) => ({
   update: async (formData) => {
     try {
       let result = await updateUserInfo(formData)
-      console.log('result', result)
       result && dispatch(update(result))
     } catch (e) {
       console.error(e)
     }
+  },
+  updateAfterUpload: (data) => {
+    data && dispatch(updateAvatar(data))
   }
 })
 
@@ -87,11 +90,12 @@ class Header extends PureComponent {
     buttonLink: PropTypes.string,
     avatarSrc: PropTypes.string,
     shadow: PropTypes.bool,
-    userId: PropTypes.string,
+    user: PropTypes.object,
     flashMessage: PropTypes.object,
     login: PropTypes.func,
     register: PropTypes.func,
-    update: PropTypes.func
+    update: PropTypes.func,
+    updateAfterUpload: PropTypes.func
   }
   static defaultProps = {
     logoName: '',
@@ -157,18 +161,18 @@ class Header extends PureComponent {
                 <ModalBody>
                   {this.state.loginModal
                     ? <Login
-                      userId={this.props.userId}
                       flashMessage={this.props.flashMessage}
                       login={this.props.login}
                       modal={this.ref}
                       switchModal={::this._switchModal}
                     />
                     : <Register
-                      userId={this.props.userId}
+                      user={this.props.user}
                       flashMessage={this.props.flashMessage}
                       register={this.props.register}
                       update={this.props.update}
                       switchModal={::this._switchModal}
+                      updateAfterUpload={::this.props.updateAfterUpload}
                     />
                   }
                 </ModalBody>
