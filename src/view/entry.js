@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 // import { syncHistoryWithStore } from 'react-router-redux'
 // import createBrowserHistory from 'history/createBrowserHistory'
 // import clientRouter from '../router/clientRouter'
-import App from '../router/clientRouter2'
+import App from '../router/clientRouter'
 import DevTools from './layout/DevTools'
 import { getUserStatus } from './common/service/fetch'
 import { initialState } from './reducer/user'
@@ -46,7 +46,7 @@ async function getInitialState () {
 // const history = syncHistoryWithStore(browserHistory, store) // 保证 react-router 和 Redux store 的统一
 
 // 用 Provider 组件作为整个应用的根组件
-// {clientRouter(history)}
+// {clientRouter2(history)}
   ReactDOM.render((
     <Provider store={store}>
       <div>
