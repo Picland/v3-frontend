@@ -1,7 +1,8 @@
+import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-import InputForm from '../../common/ui/InputForm'
+import InputNew from '../../common/ui/InputNew'
 import Button from '../../common/ui/Button'
 import styles from './index.less'
 
@@ -11,59 +12,59 @@ class Profile extends Component {
     user: PropTypes.object,
     update: PropTypes.func
   }
-  async _save (name, value) {
-    console.log('Profile的save', value)
-    console.log('name', name)
-    console.log('value', value)
-    const formData = {}
-    formData[name] = value
-    await this.props.update(formData)
+  async _save () {
+    !_.isEmpty(this.state.formData) && await this.props.update(this.state.formData)
+  }
+  async _savePassword (name, value) {
+    !_.isEmpty(this.state.formData) && await this.props.update(this.state.formData)
   }
   _handleChange (name, value) {
-
+    this.state.formData[name] = value
   }
   render () {
     let { user } = this.props
     return (
       <div styleName="container">
-        <div styleName="title">账号</div>
-        <InputForm label="邮箱"
-                   name="name"
-                   content={user.name}
-                   save={(n, v) => this._save(n, v)}
-                   onChange={(v) => this._handleChange(v)}
-                   hasbutton
-        />
-        <InputForm label="手机"
-                   name="phoneNumber"
-                   content={user.phoneNumber}
-                   save={(n, v) => this._save(n, v)}
-                   onChange={(v) => this._handleChange(v)}
-                   hasbutton
-        />
-        <div styleName="title2">密码</div>
-        <InputForm label="原密码"
-                   name="password"
-                   type="text"
-                   placeholder="请输入原始密码"
-                   content={user.password}
-                   onChange={(v) => this._handleChange(v)}
-        />
-        <InputForm label="新密码"
-                   name="password"
-                   type="text"
-                   placeholder="请输入新密码"
-                   content={user.password}
-                   onChange={(v) => this._handleChange(v)}
-        />
-        <InputForm label="确认密码"
-                   name="password"
-                   type="text"
-                   placeholder="请确认新密码"
-                   content={user.password}
-                   onChange={(v) => this._handleChange(v)}
-        />
-        <Button styleType="primary" styleName="btn-save">保存</Button>
+        <div styleName="card">
+          <div styleName="title">账号</div>
+          <InputNew label="邮箱"
+                    name="name"
+                    value={user.name}
+                    onChange={::this._handleChange}
+          />
+          <InputNew label="手机"
+                    name="phoneNumber"
+                    value={user.phoneNumber}
+                    onChange={::this._handleChange}
+                    hasbutton
+          />
+          <Button styleType="primary" onClick={::this._save}>保存</Button>
+        </div>
+        <div styleName="card">
+          <div styleName="title">密码</div>
+          <InputNew label="原密码"
+                    name="password"
+                    type="text"
+                    placeholder="请输入原始密码"
+                    value={user.password}
+                    onChange={::this._handleChange}
+          />
+          <InputNew label="新密码"
+                    name="password"
+                    type="text"
+                    placeholder="请输入新密码"
+                    value={user.password}
+                    onChange={::this._handleChange}
+          />
+          <InputNew label="确认密码"
+                    name="password"
+                    type="text"
+                    placeholder="请确认新密码"
+                    value={user.password}
+                    onChange={::this._handleChange}
+          />
+          <Button styleType="primary" onClick={::this._savePassword}>保存</Button>
+        </div>
       </div>
     )
   }

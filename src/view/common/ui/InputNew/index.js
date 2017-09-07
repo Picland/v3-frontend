@@ -24,10 +24,10 @@ class InputNew extends Component {
   constructor (props) {
     super(props)
     let state = {
-      showEdit: true,
       inputProps: {
         readOnly: 'readOnly'
       },
+      active: false,
       value: this.props.value
     }
     if (!props.hasbutton) state.inputProps.readOnly = ''
@@ -40,20 +40,30 @@ class InputNew extends Component {
     })
     this.props.onChange(this.props.name, e.target.value)
   }
-
+  _handleFocus () {
+    this.setState({
+      active: true
+    })
+  }
+  _handleBlur () {
+    this.setState({
+      active: false
+    })
+  }
   render () {
-    let { label, name, hasbutton, placeholder, type } = this.props
+    let { label, name, placeholder, type } = this.props
     const inputForm = classNames({
-      'cmui-inputnew': this.state.showEdit && hasbutton,
-      'cmui-inputnew__active': !this.state.showEdit && hasbutton,
-      'cmui-inputnew__nobutton': !hasbutton
+      'cmui-inputnew': !this.state.active,
+      'cmui-inputnew__active': this.state.active
     })
     return (
       <div className={inputForm}>
         <div className="label">{label}</div>
         <input value={this.state.value}
                onChange={::this._handleChange}
-               ref={ref => (this.contentInput = ref)}
+               onFocus={::this._handleFocus}
+               onBlur={::this._handleBlur}
+               // ref={ref => (this.contentInput = ref)}
                {...this.state.inputProps}
                name={name}
                placeholder={placeholder}

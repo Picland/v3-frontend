@@ -23,9 +23,7 @@ class Setting extends Component {
           <NavLink to="/settings/account" activeClassName={styles.active}><div styleName="nav-menu">账号和密码</div></NavLink>
         </div>
         <div styleName="main">
-          <div styleName="content">
-            {this.props.children}
-          </div>
+          {this.props.children}
         </div>
         <Footer />
       </div>
