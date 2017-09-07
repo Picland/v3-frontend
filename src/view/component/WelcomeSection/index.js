@@ -18,7 +18,7 @@ class WelcomeSection extends PureComponent {
       {tag: '私房', cover: 'private'},
       {tag: '校园', cover: 'school'}
     ]
-    let bgUrl = `url(/img/login_bg${_.random(1, 3)}.jpg)`
+    let bgUrl = `url(/img/common/login_bg${_.random(1, 3)}.jpg)`
     return (
       <div>
         <section styleName="section1" style={{backgroundImage: bgUrl}} />
@@ -32,7 +32,7 @@ class WelcomeSection extends PureComponent {
             <ul>
               {photo.map((v, i) =>
                 <li key={i}>
-                  <img src={`/img/c_${v.cover}.jpg`} alt="" width={176} height={176} />
+                  <img src={`/img/common/c_${v.cover}.jpg`} alt="" width={176} height={176} />
                   <span styleName="tag-title">{v.tag}</span>
                 </li>
               )}
