@@ -148,6 +148,16 @@ export const update = (result) => ({
   result
 })
 
+export const updateFail = (error) => ({
+  message: error,
+  type: 'error'
+})
+
+export const updateSuccess = () => ({
+  message: '更新成功',
+  type: 'success'
+})
+
 export const updateAvatar = (result) => ({
   type: UPDATE_AVATAR,
   result

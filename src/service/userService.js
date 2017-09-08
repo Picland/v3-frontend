@@ -1,4 +1,5 @@
 import { User } from '../model/mongo'
+import { ObjectID } from 'mongolass'
 
 export default {
   // 注册一个用户
@@ -10,6 +11,14 @@ export default {
   async getUserByPhone (phoneNumber) {
     return User
       .findOne({ phoneNumber: phoneNumber })
+      .addCreatedAt()
+      .exec()
+  },
+
+  // 通过userid码获取用户信息
+  async getUserById (userid) {
+    return User
+      .findOne({_id: ObjectID(userid)})
       .addCreatedAt()
       .exec()
   },

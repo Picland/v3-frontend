@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import sha1 from 'sha1'
 import userService from '../service/userService'
 import renderService from '../service/renderService'
 
@@ -22,12 +23,50 @@ export default {
     }
   },
   async updateUserInfo (req, res, next) {
-    try {
-      let result = await userService.updateUserInfo(req.headers.userid, req.body)
-      delete result.password
-      res.json(result)
-    } catch (error) {
-      console.error(error)
+    let {password, newpassword1, newpassword2} = req.body
+    if (password && newpassword1 && newpassword2) {
+      try {
+        // 基础校验
+        if (password.length < 6 || password.length > 16) {
+          throw new Error('密码长度须6-16位')
+        }
+        if (newpassword1.length < 6 || newpassword1.length > 16) {
+          throw new Error('密码长度须6-16位')
+        }
+        if (newpassword2.length < 6 || newpassword2.length > 16) {
+          throw new Error('密码长度须6-16位')
+        }
+        // 基础校验通过
+        password = sha1(password)
+        newpassword1 = sha1(newpassword1)
+        newpassword2 = sha1(newpassword2)
+        const user = await userService.getUserById(req.headers.userid)
+        if (password !== user.password) {
+          throw new Error('原密码不正确')
+        }
+        if (newpassword1 !== newpassword2) {
+          throw new Error('两次密码输入不一致')
+        }
+        let result = await userService.updateUserInfo(req.headers.userid, {password: newpassword2})
+        delete result.password
+        res.json(result)
+      } catch (e) {
+        res.json({
+          'code': -1,
+          'message': e.message
+        })
+      }
+    } else {
+      try {
+        let result = await userService.updateUserInfo(req.headers.userid, req.body)
+        delete result.password
+        res.json(result)
+      } catch (e) {
+        res.json({
+          'code': -1,
+          'message': e.message
+        })
+      }
     }
   },
   async updateUserAvatar (req, res, next) {
