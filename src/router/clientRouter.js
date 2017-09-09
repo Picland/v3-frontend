@@ -7,14 +7,13 @@ import Setting from '../view/container/Setting/Setting'
 import NoMatch from '../view/component/NoMatch/NoMatch'
 import Frame from '../view/layout/Frame'
 import Welcome from '../view/container/Welcome'
+import User from '../view/container/User'
+import Home from '../view/container/Home'
+import NewPhoto from '../view/container/NewPhoto'
 import Detail from '../view/container/Setting/Detail'
 import Preview from '../view/container/Setting/Preview'
 import Profile from '../view/container/Setting/Profile'
 import Account from '../view/container/Setting/Account'
-
-const TestScreen = () => (
-  <h2>Welcome to React</h2>
-)
 
 // auth 处理需要登录的路由，包装/合成
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
@@ -70,10 +69,12 @@ class App extends Component {
         <Route path="/" render={() =>
           <Frame>
             <Switch>
-              <Route exact path="/test" component={TestScreen} />
+              <Route exact path="/user" component={User} />
               <Route exact path="/" component={Welcome} />
               <Route path="/logout" component={Logout} />
               <PrivateRoute path="/settings" component={UserSetting} auth={auth} />
+              <PrivateRoute path="/home" component={Home} auth={auth} />
+              <PrivateRoute path="/newphoto" component={NewPhoto} auth={auth} />
             </Switch>
           </Frame>
         } />

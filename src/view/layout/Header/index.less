@@ -87,8 +87,9 @@
     justify-content: center;
     width: @unit-ninefold;
     height: 108px;
-    border: 1px solid @dark-dark;
+    //border: 1px solid @dark-dark;
     background-color: @black;
+    transition: opacity .5s ease;
     //box-shadow: 0 5px 20px rgba(0,34,77,.1);
     //border-radius: 4px;
     padding-left: 0;
@@ -97,9 +98,10 @@
       line-height: @unit-triple;
       text-align: center;
       color: @text-color;
+      font-weight: 500;
       &:hover {
         color: @theme;
-        background-color: @dark-dark;
+        //background-color: @dark-dark;
       }
     }
   }

@@ -23,8 +23,8 @@ export default {
     }
   },
   async updateUserInfo (req, res, next) {
-    let {password, newpassword1, newpassword2} = req.body
-    if (password && newpassword1 && newpassword2) {
+    if (req.body.password && req.body.newpassword1 && req.body.newpassword2) {
+      let {password, newpassword1, newpassword2} = req.body
       try {
         // 基础校验
         if (password.length < 6 || password.length > 16) {

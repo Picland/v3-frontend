@@ -17,7 +17,7 @@ class Setting extends Component {
     let avatarSrc = user ? user.avatar : ''
     return (
       <div styleName="container">
-        <Header logoName="木纹子印象派" buttonLink="/login" buttonName="发布" avatarSrc={avatarSrc} shadow />
+        <Header logoName="木纹子印象派" buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} shadow />
         <div styleName="nav-top">
           <NavLink to="/settings/profile" activeClassName={styles.active}><div styleName="nav-menu">个人资料</div></NavLink>
           <NavLink to="/settings/account" activeClassName={styles.active}><div styleName="nav-menu">账号和密码</div></NavLink>

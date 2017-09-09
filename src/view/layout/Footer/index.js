@@ -35,11 +35,11 @@ class Footer extends PureComponent {
             <span>坐标：南京 / 杭州 / 苏州 / 上海</span>
           </div>
           <div styleName="right">
-            <span>旧版首页</span>
-            <span>环境人像</span>
-            <span>私房写真</span>
-            <span>风光人文</span>
-            <span>拍摄活动</span>
+            <span><a href="http://muwenzi.com/">旧版首页</a></span>
+            <span><a href="http://muwenzi.com/people/list/all">环境人像</a></span>
+            <span><a href="http://muwenzi.com/private/list/all">私房写真</a></span>
+            <span><a href="http://muwenzi.com/scenery/list/all">风光人文</a></span>
+            <span><a href="http://muwenzi.com/activity">拍摄活动</a></span>
           </div>
         </div>
       </footer>

@@ -134,8 +134,8 @@ class Header extends PureComponent {
         <div>
           <div styleName="left">
             <span styleName="logo">{logoName}</span>
-            <Link to="/"><li>首页</li></Link>
-            <Link to="/"><li>旧版</li></Link>
+            <Link to="/home"><li>首页</li></Link>
+            <a href="http://muwenzi.com"><li>旧版</li></a>
           </div>
           { avatarSrc
           ? <div styleName="right">
@@ -146,7 +146,7 @@ class Header extends PureComponent {
                       styleName="avatar"
               />
               <ul styleName="dropdown-container">
-                <Link to="/test"><li>我的主页</li></Link>
+                <Link to="/user"><li>我的主页</li></Link>
                 <Link to="/settings/profile"><li>设置</li></Link>
                 <Link to="/logout"><li>退出</li></Link>
               </ul>
