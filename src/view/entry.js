@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 // import createBrowserHistory from 'history/createBrowserHistory'
 // import clientRouter from '../router/clientRouter'
 import App from '../router/clientRouter'
-import DevTools from './layout/DevTools'
+// import DevTools from './layout/DevTools'
 import { getUserStatus } from './common/service/fetch'
 import { initialState } from './reducer/user'
 
@@ -51,7 +51,7 @@ async function getInitialState () {
     <Provider store={store}>
       <div>
         <App />
-        <DevTools />
+        {/* <DevTools /> */}
         <div id="loading">正在加载...</div>
       </div>
     </Provider>

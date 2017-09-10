@@ -38,7 +38,7 @@
       }
     },
     "presandbox": {
-      "command": "npm run boot && webpack --config webpack/webpack.prod.config.js",
+      "command": "npm run boot && webpack --config webpack/webpack.config.prod.js",
       "env": {
         "NODE_ENV": "sandbox"
       }
@@ -51,7 +51,7 @@
       }
     },
     "preprod": {
-      "command": "npm run boot && webpack --config webpack/webpack.prod.config.js",
+      "command": "npm run boot && webpack --config webpack/webpack.config.prod.js",
       "env": {
         "NODE_ENV": "production"
       }
@@ -95,6 +95,7 @@
     "express-session": "^1.15.5",
     "express-winston": "^2.4.0",
     "extract-text-webpack-plugin": "^2.1.0",
+    "fetch": "^1.1.0",
     "isomorphic-style-loader": "^1.1.0",
     "jquery": "^3.2.1",
     "jsx-loader": "^0.13.2",
