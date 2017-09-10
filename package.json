@@ -39,7 +39,7 @@
       }
     },
     "dev2": {
-      "command": "npm run boot && node server/server.dev.js",
+      "command": "npm run preprod && pm2 start server/server.dev.js --name 'earth-dev2'",
       "env": {
         "NODE_ENV": "development",
         "PORT": 8892
