@@ -16,6 +16,7 @@ export default {
     let gender = req.body.gender || 'x'
     let bio = req.body.bio || ''
     let avatar
+    let email = ''
     // let avatar = req.files.avatar
     // let repassword = req.body.repassword
 
@@ -67,7 +68,8 @@ export default {
       password,
       gender,
       bio,
-      avatar
+      avatar,
+      email
     }
     try {
       let result = await userService.insert(user)

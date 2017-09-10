@@ -52,8 +52,8 @@ class Profile extends Component {
         <div styleName="card">
           <div styleName="title">账号</div>
           <InputNew label="邮箱"
-                    name="name"
-                    value={user.name}
+                    name="email"
+                    value={user.email}
                     onChange={::this._handleChange}
           />
           <InputNew label="手机"

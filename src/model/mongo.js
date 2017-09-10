@@ -34,7 +34,8 @@ let User = mongolass.model('User', {
   password: { type: 'string' },
   avatar: { type: 'string' },
   gender: { type: 'string', enum: ['m', 'f', 'x'] },
-  bio: { type: 'string' }
+  bio: { type: 'string' },
+  email: { type: 'string' }
 })
 User.createIndex({ phoneNumber: 1 }, { unique: true }).exec() // 根据用户名找到用户，用户名全局唯一
 
