@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.config.base')
-const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
+// const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 
 module.exports = merge(baseWebpackConfig, {
   plugins: [
@@ -15,7 +15,7 @@ module.exports = merge(baseWebpackConfig, {
       compress: {
         warnings: false
       }
-    }),
-    new WebpackIsomorphicToolsPlugin(require('./isomorphic.config.js'))
+    })
+    // new WebpackIsomorphicToolsPlugin(require('./isomorphic.config.js'))
   ]
 })

@@ -6,12 +6,12 @@ import render from '../view'
 // import Login from '../view/page/Login/Login'
 // import Register from '../view/page/Register/Register'
 
-const NODE_ENV = process.env.NODE_ENV
+// const NODE_ENV = process.env.NODE_ENV
 
 export default (url, ctx = {}) => {
-  if (NODE_ENV === 'development') {
-    return render()
-  }
+  // if (NODE_ENV === 'development') {
+  return render()
+  // }
   // else {
   //   return render(
   //     <Router context={ctx} location={url}>

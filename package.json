@@ -13,6 +13,7 @@
     "boot": "yarn || (npm i -g yarn && yarn)",
     "webpack": "better-npm-run webpack",
     "dev": "better-npm-run dev",
+    "dev2": "better-npm-run dev2",
     "presandbox": "better-npm-run presandbox",
     "sandbox": "better-npm-run sandbox",
     "preprod": "better-npm-run preprod",
@@ -35,6 +36,13 @@
       "env": {
         "NODE_ENV": "development",
         "PORT": 3000
+      }
+    },
+    "dev2": {
+      "command": "npm run boot && node server/server.dev.js",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": 8892
       }
     },
     "presandbox": {
@@ -96,6 +104,7 @@
     "express-winston": "^2.4.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "fetch": "^1.1.0",
+    "formidable": "^1.1.1",
     "isomorphic-style-loader": "^1.1.0",
     "jquery": "^3.2.1",
     "jsx-loader": "^0.13.2",

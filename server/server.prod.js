@@ -36,14 +36,17 @@ require('babel-register')(config)
 //
 // The control interface of webpack-isomorphic-tools,
 // running the project on server.
-const WebpackIsomorphicTools = require('webpack-isomorphic-tools')
-console.log('ok1')
-global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/isomorphic.config'))
-  // .development()
-  .server(rootDir, function () {
-    console.log('ok')
-    require('./server.base')
-  })
+// ----------暂时关闭ssr------------------
+// const WebpackIsomorphicTools = require('webpack-isomorphic-tools')
+// console.log('ok1')
+// global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/isomorphic.config'))
+//   // .development()
+//   .server(rootDir, function () {
+//     console.log('ok')
+//     require('./server.base')
+//   })
+// ----------end------------------
+require('./server.base')
 // global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/isomorphic.config'))
 //   .development(global.__DEVELOPMENT__)
 //   .server(global.__DEVELOPMENT__ ? __dirname : rootDir, function () {
