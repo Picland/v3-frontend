@@ -13,7 +13,7 @@ import renderService from '../service/renderService'
 // import commentController from '../controller/commentController'
 
 export default (server) => {
-  server.get('/', auth.isLogin, (req, res) => { res.redirect('/settings/profile') })
+  // server.get('/', auth.isLogin, (req, res) => { res.redirect('/home') })
 
   // --------------------------------------------------------------------------
   // Restful API version 1

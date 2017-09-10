@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react'
 import CSSModules from 'react-css-modules'
 import _ from 'lodash'
-import styles from './/index.less'
+import styles from './index.less'
 
 @CSSModules(styles)
 class WelcomeSection extends PureComponent {
   render () {
-    let photo = [
+    const photo = [
       {tag: '风光', cover: 'scenery'},
       {tag: '人像', cover: 'portrait'},
       {tag: '城市', cover: 'city'},
@@ -18,13 +18,23 @@ class WelcomeSection extends PureComponent {
       {tag: '私房', cover: 'private'},
       {tag: '校园', cover: 'school'}
     ]
-    let bgUrl = `url(/img/common/login_bg${_.random(1, 3)}.jpg)`
+    const author = [
+      'J4M35',
+      '谢松汕-桂林大河',
+      '张宇卿',
+      'Sean_T',
+      '左耳右耳'
+    ]
+    const bgNo = _.random(0, 4)
+    let bgUrl = `url(/img/common/login_bg${bgNo}.jpg)`
     return (
       <div>
-        <section styleName="section1" style={{backgroundImage: bgUrl}} />
+        <section styleName="section1" style={{backgroundImage: bgUrl}}>
+          <div styleName="author">By: @{author[bgNo]}</div>
+        </section>
         <section styleName="section2">
-          <h2>唯有生活和酒，是自己的</h2>
-          <p>在这里，你可以基于共同的兴趣爱好，寻找志同道合的人。约上几个好友，一壶浊酒尽馀欢。</p>
+          <h2>我们有梦， 关于摄影， 关于爱情， 关于穿越世界的旅行</h2>
+          <p>在这里，发现基于共同兴趣的同好；鼓励原创和分享精神；除了美好的摄影和技能，我们更在意影像背后价值观的认同</p>
         </section>
         <section styleName="section3">
           <h2>摄影</h2>

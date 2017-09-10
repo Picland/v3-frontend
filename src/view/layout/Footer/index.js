@@ -17,7 +17,7 @@ class Footer extends PureComponent {
           <div styleName="left">
             <label>微信公众号</label>
             <div styleName="intro">
-              <img src="/img/common/qrcode_footer.png" alt="" />
+              <img src="/img/common/qrcode_footer.jpg" alt="" />
             </div>
           </div>
           <div styleName="right">
