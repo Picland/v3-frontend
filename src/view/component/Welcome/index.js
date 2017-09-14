@@ -16,7 +16,7 @@ class Welcome extends Component {
     }
   }
   _handleScroll () {
-    let bodyScrollTop = document.getElementsByTagName('body')[0].scrollTop
+    let bodyScrollTop = document.documentElement.scrollTop
     if (bodyScrollTop > 200) {
       this.setState({shadow: true})
     } else {
