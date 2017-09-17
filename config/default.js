@@ -18,7 +18,7 @@ module.exports = {
   session: {
     secret: dataBaseName,
     key: dataBaseName,
-    maxAge: 2592000000
+    maxAge: 604800000
   },
   mongodb: `mongodb://localhost:27017/${dataBaseName}`
 }

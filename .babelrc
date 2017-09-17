@@ -4,11 +4,9 @@
     "stage-0",
     "react"
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        "react-hot-loader/babel"
-      ]
-    }
-  }
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-runtime",
+    ["import", { "libraryName": "antd", "style": "css" }]
+  ]
 }

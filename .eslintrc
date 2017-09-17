@@ -15,7 +15,10 @@
   "globals": {
 
   },
+  "parser": "babel-eslint",
   "rules": {
-    "jsx-quotes": [2, "prefer-single"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/jsx-no-bind": 0,
+    "react/jsx-indent-props": 0
   }
 }

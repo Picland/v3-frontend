@@ -1,0 +1,56 @@
+@import '~variable';
+
+@nav-height: 60px;
+
+.container {
+  background-color: @lite-liter;
+  .nav-top {
+    width: 100%;
+    height: @nav-height;
+    border-right: 1px solid #E7EAF1;
+    text-align: center;
+    background-color: @white;
+    border-bottom: 1px solid rgba(30,35,42,.06);
+    box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+    background-clip: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nav-menu {
+      height: 29px;
+      line-height: 28px;
+      font-size: 14px;
+      vertical-align: middle;
+      display: inline-table;
+      border-bottom: 2px solid transparent;
+      margin-left: 22px;
+      margin-right: 22px;
+      &:hover {
+        cursor: pointer;
+        border-bottom-color: @theme;
+        color: @theme;
+      }
+    }
+    .active .nav-menu {
+      border-bottom-color: @theme;
+    }
+  }
+  .main {
+    width: 940px;
+    height: 709px;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    margin-bottom: 220px;
+    border: 1px solid #E7EAF1;
+    background-color: @white;
+    h2 {
+      margin-top: 33px;
+      text-indent: 22px
+    }
+    ul {
+      line-height: 33px;
+      vertical-align: middle;
+    }
+  }
+}

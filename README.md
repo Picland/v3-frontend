@@ -12,11 +12,12 @@
 
 Earth(version3-inside) is a photography website built by NodeJS, ReactStack and MongoDB
 
-## Requirements
+## Main Requirements
 
-* react: ^15.4.2
-* node: ^7.7.0
-* mongodb: ^3.4.2
+* react: `^15.5.0`
+* react-router: `^4.0.0`
+* node: `^8.0.0`
+* mongodb: `^3.4.2`
 
 ## Init Database
 
@@ -62,17 +63,16 @@ mongod
 ```
 
 - [More MongoDB Installation](https://docs.mongodb.com/master/administration/install-community/)
-- [MongoDB Tutorial](https://www.tutorialspoint.com/mongodb/index.htm)
+- [MongoDB Tutorial 1](https://www.tutorialspoint.com/mongodb/index.htm)
+- [MongoDB Tutorial 2](http://www.runoob.com/mongodb/mongodb-tutorial.html)
 - Download [RoboMongo](https://robomongo.org/)
 
 ## Quick start
 
 1. ENV: development (feature and dev branch)
 ```shell
-# step0 init project first time
-npm run boot
-# step1 start bulid server for dev
-npm run build
+# step1 start webpack server for dev
+npm run webpack
 # step2 start app server for dev
 npm run dev
 # step3 open the browser
@@ -81,16 +81,12 @@ open http://localhost:3000
 
 2. ENV: sandbox (release branch)
 ```shell
-# step0 init project first time
-npm run boot
 # step1 only need to run this command
 npm run sandbox
 ```
 
 3. ENV: production (master branch)
 ```shell
-# step0 init project first time
-npm run boot
 # step1 only need to run this command
 npm run prod
 ```

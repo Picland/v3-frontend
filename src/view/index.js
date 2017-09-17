@@ -1,0 +1,44 @@
+// import { renderToString } from 'react-dom/server'
+
+// -------------
+// const NODE_ENV = process.env.NODE_ENV
+// const port = +process.env.PORT + 1
+//
+// const dist = NODE_ENV === 'development'
+//   ? `http://localhost:${port}/dist`
+//   : '/dist'
+// -------------
+
+const dist = '/dist'
+
+export default (renderMe) => {
+  // if (NODE_ENV === 'development') {
+  return `<!DOCTYPE html>
+      <html lang="zh-cn">
+        <head>
+          <meta charset="UTF-8">
+          <title>木纹子印象派</title>
+          <link rel="stylesheet" href="${dist}/css/app.css">
+        </head>
+        <body>
+          <div id="root"></div>
+          <script src="${dist}/js/vendor.js"></script>
+          <script src="${dist}/js/app.js"></script>
+        </body>
+      </html>`
+  // } else {
+  //   return `<!DOCTYPE html>
+  //     <html lang="zh-cn">
+  //       <head>
+  //         <meta charset="UTF-8">
+  //         <title>木纹子印象派</title>
+  //         <link rel="stylesheet" href="${dist}/css/app.css">
+  //       </head>
+  //       <body>
+  //         <div id="root">${renderToString(renderMe)}</div>
+  //         <script src="${dist}/js/vendor.js"></script>
+  //         <script src="${dist}/js/app.js"></script>
+  //       </body>
+  //     </html>`
+  // }
+}
