@@ -14,7 +14,7 @@ const outputPath = path.resolve(__dirname, '../static/dist/')
 module.exports = {
   entry: {
     app: [path.resolve(viewPath, 'entry.js')],
-    vendor: ['react', 'react-dom', 'whatwg-fetch']
+    vendor: ['whatwg-fetch']
   },
   output: {
     path: outputPath,
@@ -71,9 +71,14 @@ module.exports = {
       'node_modules'
     ],
     alias: {
+      _common_ui: path.resolve(viewPath, 'common/ui'),
       'variable.less': path.resolve(viewPath, 'common/style/variable.less'),
       'core.less': path.resolve(viewPath, 'common/style/core.less')
     }
+  },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   plugins: [
     new ExtractTextPlugin('css/[name].css'),
