@@ -8,7 +8,11 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
-      }
+      },
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEVELOPMENT__: false,
+      __DEVTOOLS__: false  // <-------- DISABLE redux-devtools HERE
     }),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,

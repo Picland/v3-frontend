@@ -23,6 +23,8 @@ module.exports = merge(baseWebpackConfig, {
   },
   devtool: 'source-map',
   plugins: [
+    // This plugin is for defining global variables for different environment
+    // You should config the corresponding `.eslintrc`.
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development')
