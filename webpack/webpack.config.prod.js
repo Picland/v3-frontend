@@ -12,7 +12,7 @@ module.exports = merge(baseWebpackConfig, {
       __CLIENT__: true,
       __SERVER__: false,
       __DEVELOPMENT__: false,
-      __DEVTOOLS__: false  // <-------- DISABLE redux-devtools HERE
+      __DEVTOOLS__: false
     }),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,

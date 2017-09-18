@@ -9,7 +9,7 @@ import expressWinston from 'express-winston'
 import favicon from 'serve-favicon'
 import pkg from '../package.json'
 import formidable from '../src/middleware/formidable'
-import router from '../src/router/serverRouter'
+import api from '../src/api'
 
 const MongoStore = connectMongo(session)
 const server = express()
@@ -73,7 +73,7 @@ server.use(expressWinston.logger({
 // --------------------------------------------------------------------------
 // Router
 // --------------------------------------------------------------------------
-router(server)
+api(server)
 
 // --------------------------------------------------------------------------
 // Error Log

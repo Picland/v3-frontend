@@ -1,6 +1,7 @@
 /**
- * @fileoverview Router map on server side
- * @author mrgaonju@gmail.com
+ * Restful API definition.
+ *
+ * @returns {Function} A api or router function that lets server.base can use.
  */
 
 import auth from '../middleware/auth'
@@ -13,8 +14,6 @@ import renderService from '../service/renderService'
 // import commentController from '../controller/commentController'
 
 export default (server) => {
-  // server.get('/', auth.isLogin, (req, res) => { res.redirect('/home') })
-
   // --------------------------------------------------------------------------
   // Restful API version 1
   // --------------------------------------------------------------------------

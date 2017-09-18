@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import Profile from '../../component/Profile'
 import { update } from '../../reducer/user'
-import { updateUserInfo } from '../../common/service/fetch'
+import { updateUserInfo } from '../../common/lib/fetch'
 
 const mapStateToProps = (state) => ({
   user: state.user.user

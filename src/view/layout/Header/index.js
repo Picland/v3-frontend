@@ -10,7 +10,7 @@ import { Modal, ModalHeader, ModalBody } from '_common_ui/Modal'
 import styles from './index.less'
 import Login from '../../component/Login/'
 import Register from '../../component/Register/'
-import { login, register, updateUserInfo } from '../../common/service/fetch'
+import { login, register, updateUserInfo } from '../../common/lib/fetch'
 import { showFlashMessage } from '../../reducer/flashMessage'
 import {
   startLogin,
