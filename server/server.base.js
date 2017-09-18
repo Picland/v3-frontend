@@ -9,6 +9,7 @@ import expressWinston from 'express-winston'
 import favicon from 'serve-favicon'
 import pkg from '../package.json'
 import formidable from '../src/middleware/formidable'
+import renderService from '../src/service/renderService'
 import api from '../src/api'
 
 const MongoStore = connectMongo(session)
@@ -76,6 +77,15 @@ server.use(expressWinston.logger({
 api(server)
 
 // --------------------------------------------------------------------------
+// Turn over others page to client router and render
+// --------------------------------------------------------------------------
+server.use((req, res) => {
+  if (!res.headersSent) {
+    res.status(200).send(renderService(req.url))
+  }
+})
+
+// --------------------------------------------------------------------------
 // Error Log
 // --------------------------------------------------------------------------
 server.use(expressWinston.errorLogger({
@@ -89,15 +99,6 @@ server.use(expressWinston.errorLogger({
     })
   ]
 }))
-
-// --------------------------------------------------------------------------
-// Error Page
-// --------------------------------------------------------------------------
-// server.use((err, req, res, next) => {
-//   res.render('error', {
-//     error: err
-//   })
-// })
 
 // --------------------------------------------------------------------------
 // Start the Server

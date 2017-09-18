@@ -1,7 +1,7 @@
 /**
  * Restful API definition.
  *
- * @returns {Function} A api or router function that lets server.base can use.
+ * @returns {Function} Api function that lets `server.base.js` can use.
  */
 
 import auth from '../middleware/auth'
@@ -9,7 +9,6 @@ import loginController from '../controller/loginController'
 import logoutController from '../controller/logoutController'
 import userController from '../controller/userController'
 import registerController from '../controller/registerController'
-import renderService from '../service/renderService'
 // import articleController from '../controller/articleController'
 // import commentController from '../controller/commentController'
 
@@ -23,15 +22,6 @@ export default (server) => {
   server.get('/api/v1/user/status', userController.getUserStatus)
   server.post('/api/v1/updateUserInfo', auth.isLogin, userController.updateUserInfo)
   server.post('/api/v1/updateUserAvatar', auth.isLogin, userController.updateUserAvatar)
-
-  // --------------------------------------------------------------------------
-  // Turn over others page to client router and render
-  // --------------------------------------------------------------------------
-  server.use((req, res) => {
-    if (!res.headersSent) {
-      res.status(200).send(renderService(req.url))
-    }
-  })
 
   // --------------------------------------------------------------------------
   // Old Multiple Pages Router
