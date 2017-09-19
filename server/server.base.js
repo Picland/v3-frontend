@@ -9,7 +9,8 @@ import expressWinston from 'express-winston'
 import favicon from 'serve-favicon'
 import pkg from '../package.json'
 import formidable from '../src/middleware/formidable'
-import router from '../src/router/serverRouter'
+import renderService from '../src/service/renderService'
+import api from '../src/api'
 
 const MongoStore = connectMongo(session)
 const server = express()
@@ -32,16 +33,26 @@ server.use(express.static(path.join(__dirname, '../static')))
 // --------------------------------------------------------------------------
 // Session Middleware
 // --------------------------------------------------------------------------
+/**
+ * @type {String} [name] 设置 cookie 中保存 session id 的字段名称
+ * @type {String} [secret] 通过设置 secret 来计算 hash 值并放在 cookie 中
+ *   使产生的 signedCookie 防篡改
+ * @type {Boolean} [resave] 强制更新 session
+ * @type {Boolean} [saveUninitialized] false，强制创建一个 session，即使用户未登录
+ * @type {String} [maxAge] 过期时间，过期后 cookie 中的 session id 自动删除
+ * @type {Object} [store] 将 session 存储到 mongodb
+ * @type {String} [url] mongodb 地址
+ */
 server.use(session({
-  name: config.session.key, // 设置 cookie 中保存 session id 的字段名称
-  secret: config.session.secret, // 通过设置 secret 来计算 hash 值并放在 cookie 中，使产生的 signedCookie 防篡改
-  resave: true, // 强制更新 session
-  saveUninitialized: false, // 设置为 false，强制创建一个 session，即使用户未登录
+  name: config.session.key,
+  secret: config.session.secret,
+  resave: true,
+  saveUninitialized: false,
   cookie: {
-    maxAge: config.session.maxAge // 过期时间，过期后 cookie 中的 session id 自动删除
+    maxAge: config.session.maxAge
   },
-  store: new MongoStore({ // 将 session 存储到 mongodb
-    url: config.mongodb // mongodb 地址
+  store: new MongoStore({
+    url: config.mongodb
   })
 }))
 
@@ -73,7 +84,16 @@ server.use(expressWinston.logger({
 // --------------------------------------------------------------------------
 // Router
 // --------------------------------------------------------------------------
-router(server)
+api(server)
+
+// --------------------------------------------------------------------------
+// Turn over others page to client router and render
+// --------------------------------------------------------------------------
+server.use((req, res) => {
+  if (!res.headersSent) {
+    res.status(200).send(renderService(req.url))
+  }
+})
 
 // --------------------------------------------------------------------------
 // Error Log
@@ -89,15 +109,6 @@ server.use(expressWinston.errorLogger({
     })
   ]
 }))
-
-// --------------------------------------------------------------------------
-// Error Page
-// --------------------------------------------------------------------------
-// server.use((err, req, res, next) => {
-//   res.render('error', {
-//     error: err
-//   })
-// })
 
 // --------------------------------------------------------------------------
 // Start the Server

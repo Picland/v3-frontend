@@ -23,6 +23,8 @@ module.exports = merge(baseWebpackConfig, {
   },
   devtool: 'source-map',
   plugins: [
+    // This plugin is for defining global variables for different environment
+    // You should config the corresponding `.eslintrc`.
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development')
@@ -30,7 +32,7 @@ module.exports = merge(baseWebpackConfig, {
       __CLIENT__: true,
       __SERVER__: false,
       __DEVELOPMENT__: true,
-      __DEVTOOLS__: true  // <-------- DISABLE redux-devtools HERE
+      __DEVTOOLS__: true
     }),
     new FriendlyErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin()

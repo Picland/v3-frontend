@@ -1,7 +1,7 @@
 import Welcome from '../component/Welcome'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { checkLoginRedirect } from '../common/service/redirect'
+import { checkLoginRedirect } from '../common/lib/redirect'
 
 const mapStateToProps = (state) => {
   return {

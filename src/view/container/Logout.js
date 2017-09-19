@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { logout } from '../common/service/fetch'
+import { logout } from '../common/lib/fetch'
 import { logout as logoutFromReducer } from '../reducer/user'
 
 const mapStateToProps = (state) => (state.user)

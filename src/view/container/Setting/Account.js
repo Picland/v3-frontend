@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import Account from '../../component/Account'
 import { update, updateFail, updateSuccess } from '../../reducer/user'
 import { showFlashMessage } from '../../reducer/flashMessage'
-import { updateUserInfo } from '../../common/service/fetch'
+import { updateUserInfo } from '../../common/lib/fetch'
 
 const mapStateToProps = (state) => ({
   user: state.user.user,
