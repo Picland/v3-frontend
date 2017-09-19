@@ -13,8 +13,6 @@
     "boot": "yarn || (npm i -g yarn && yarn)",
     "webpack": "better-npm-run webpack",
     "dev": "better-npm-run dev",
-    "predev2": "better-npm-run predev2",
-    "dev2": "better-npm-run dev2",
     "presandbox": "better-npm-run presandbox",
     "sandbox": "better-npm-run sandbox",
     "sandbox:debug": "better-npm-run sandbox:debug",
@@ -38,19 +36,6 @@
       "env": {
         "NODE_ENV": "development",
         "PORT": 3000
-      }
-    },
-    "predev2": {
-      "command": "npm run boot && webpack --config webpack/webpack.config.prod.js",
-      "env": {
-        "NODE_ENV": "development"
-      }
-    },
-    "dev2": {
-      "command": "pm2 start server/server.dev.js --name 'earth-dev2'",
-      "env": {
-        "NODE_ENV": "development",
-        "PORT": 8892
       }
     },
     "presandbox": {
