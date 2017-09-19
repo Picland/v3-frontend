@@ -9,16 +9,14 @@
  * @type {{port: number, session: {secret: string, key: string, maxAge: number}, mongodb: string}}
  */
 
-const envPort = +process.env.PORT || 3000
-
-const dataBaseName = 'earth-default'
+const base = require('./base')
 
 module.exports = {
-  port: envPort,
+  port: base.port,
   session: {
-    secret: dataBaseName,
-    key: dataBaseName,
+    secret: base.db,
+    key: base.db,
     maxAge: 604800000
   },
-  mongodb: `mongodb://localhost:27017/${dataBaseName}`
+  mongodb: `mongodb://${base.user}:${base.pwd}@localhost:27017/${base.db}?authSource=admin`
 }
