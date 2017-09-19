@@ -1,7 +1,7 @@
 /**
  * Restful API definition.
  *
- * @returns {Function} Api function that lets `server.base.js` can use.
+ * @type {Function} Api function that lets `server.base.js` can use.
  */
 
 import auth from '../middleware/auth'

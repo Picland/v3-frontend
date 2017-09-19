@@ -1,7 +1,7 @@
 /**
  * Create store by reducer and redux-middleware.
  *
- * @returns {Object} A Redux store that lets you read the state, dispatch
+ * @type {Object} A Redux store that lets you read the state, dispatch
  *   actions and subscribe to changes.
  */
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
@@ -26,7 +26,7 @@ const FetchMiddleware = createFetchMiddleware({
 })
 
 /**
- * Combine new reducers
+ * Combine new reducers.
  * The second `routing: routerReducer` can unify router state and redux store.
  * @private
  */

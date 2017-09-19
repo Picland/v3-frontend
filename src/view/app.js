@@ -52,11 +52,11 @@ async function getInitialState () {
         document.getElementById('root')
       )
   }
+  renderApp()
   // if (__DEVELOPMENT__ && module.hot) {
   //   console.info('React Moudle/Page Replacement for Dev')
   //   module.hot.accept('./clientRouter', () => {
   //     renderApp()
   //   })
   // }
-  renderApp()
 })()
