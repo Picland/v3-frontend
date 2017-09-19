@@ -1,2 +1,2 @@
-const base = require('./base')
-base.db = 'earth-production'
+const dbConfig = require('./db.config')
+dbConfig.db = 'earth-production'

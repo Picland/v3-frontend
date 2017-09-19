@@ -9,14 +9,14 @@
  * @type {{port: number, session: {secret: string, key: string, maxAge: number}, mongodb: string}}
  */
 
-const base = require('./base')
-
+const dbConfig = require('./db.config')
+const port = +process.env.PORT || 3000
 module.exports = {
-  port: base.port,
+  port,
   session: {
-    secret: base.db,
-    key: base.db,
+    secret: dbConfig.db,
+    key: dbConfig.db,
     maxAge: 604800000
   },
-  mongodb: `mongodb://${base.user}:${base.pwd}@localhost:27017/${base.db}?authSource=admin`
+  mongodb: `mongodb://${dbConfig.user}:${dbConfig.pwd}@localhost:${dbConfig.port}/${dbConfig.db}?authSource=admin`
 }
