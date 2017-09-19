@@ -1,4 +1,3 @@
-// #!/usr/bin/env node
 const path = require('path')
 const rootDir = path.resolve(__dirname, '..')
 const fs = require('fs')
