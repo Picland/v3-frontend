@@ -57,10 +57,22 @@ export const update = data => async (dispatch, getState, util) => {
 }
 
 /**
- * Update after user update avatar.
+ * Update state after unlogined user upload avatar.
  *
  * @public
  */
-export const updateAfterUpload = data => dispatch => {
+export const updateAvatarUnlogined = data => dispatch => {
   data && dispatch(updateAvatar(data))
+}
+
+/**
+ * Update state after logined user upload avatar.
+ *
+ * @public
+ */
+export const updateAvatarLogined = data => dispatch => {
+  if (data) {
+    dispatch(updateInfo(data))
+    dispatch(showFlashMessage(updateSuccess()))
+  }
 }

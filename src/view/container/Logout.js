@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import logoutAction from '../redux/action/logout'
 
-const mapStateToProps = (state) => (state.user)
+const mapStateToProps = state => (state.user)
 
 const mapDispatchToProps = (dispatch) => ({
   logout: async () => dispatch(logoutAction())

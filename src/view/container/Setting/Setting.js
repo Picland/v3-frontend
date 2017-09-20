@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 import Setting from '../../component/Setting'
 
 const mapStateToProps = (state) => ({
-  user: state.user.user
+  userInfo: state.user.userInfo
 })
 
-export default withRouter(connect(mapStateToProps)(Setting))
+export default connect(mapStateToProps)(Setting)

@@ -23,7 +23,7 @@ export default {
       return res.status(200).json({
         'code': 1,
         'message': '登录成功',
-        'user': user
+        'data': user
       })
     } catch (error) {
       console.log(error)

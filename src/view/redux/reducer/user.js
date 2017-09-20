@@ -1,10 +1,10 @@
 import constActionType from '../constant/actionType'
 
 export const initialState = {
-  user: {},
+  userInfo: {},
+  otherInfo: {},
   logining: false,
-  registering: false,
-  message: {}
+  registering: false
 }
 
 const user = (state = initialState, action) => {
@@ -21,45 +21,43 @@ const user = (state = initialState, action) => {
       }
     case constActionType.LOGIN_SUCCESS:
       return {
-        user: action.result,
-        logining: false,
-        message: {
+        userInfo: action.result,
+        otherInfo: {
           _id: action.result._id
-        }
+        },
+        logining: false
       }
     case constActionType.REGISTER_SUCCESS:
       return {
         ...state,
-        registering: false,
-        message: action.result
+        otherInfo: action.result,
+        registering: false
       }
     case constActionType.LOGIN_FAILURE:
       return {
         ...state,
-        logining: false,
-        message: action.error
+        logining: false
       }
     case constActionType.REGISTER_FAILURE:
       return {
         ...state,
-        registering: false,
-        message: action.error
+        registering: false
       }
     case constActionType.LOGOUT:
       return {
-        user: {},
-        logining: false,
-        message: {}
+        userInfo: {},
+        otherInfo: {},
+        logining: false
       }
     case constActionType.UPDATE:
       return {
         ...state,
-        user: action.result
+        userInfo: action.result
       }
     case constActionType.UPDATE_AVATAR:
       return {
         ...state,
-        message: {
+        otherInfo: {
           _id: action.result._id,
           avatar: action.result.avatar
         }

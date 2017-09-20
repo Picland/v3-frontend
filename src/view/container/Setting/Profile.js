@@ -1,18 +1,17 @@
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 import Profile from '../../component/Profile'
 import {
   update as updateAction,
-  updateAfterUpload as updateAfterUploadAction
+  updateAvatarLogined as updateAvatarLoginedAction
 } from '../../redux/action/user'
 
 const mapStateToProps = (state) => ({
-  user: state.user.user
+  userInfo: state.user.userInfo
 })
 
 const mapDispatchToProps = (dispatch) => ({
   update: async (data) => dispatch(updateAction(data)),
-  updateAfterUpload: (data) => dispatch(updateAfterUploadAction(data))
+  updateAvatarLogined: (data) => dispatch(updateAvatarLoginedAction(data))
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile))
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)

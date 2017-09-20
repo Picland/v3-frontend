@@ -5,22 +5,21 @@ const startLogin = () => ({
   type: constActionType.LOGIN_STARTED
 })
 
-const finishLogin = (result) => ({
+const finishLogin = result => ({
   type: constActionType.LOGIN_SUCCESS,
   result
 })
 
-const failLogin = (error) => ({
-  type: constActionType.LOGIN_FAILURE,
-  error
+const failLogin = () => ({
+  type: constActionType.LOGIN_FAILURE
 })
 
-const loginSuccess = (message) => ({
+const loginSuccess = message => ({
   message: message,
   type: 'success'
 })
 
-const loginFail = (error) => ({
+const loginFail = error => ({
   message: error,
   type: 'error'
 })
@@ -37,7 +36,7 @@ const loginFail = (error) => ({
  *   {
  *     'code': 1,
  *     'message': '登录成功',
- *     'user': user
+ *     'data': user
  *   }
  *   ```
  * @public
@@ -47,10 +46,14 @@ export const login = user => async (dispatch, getState, util) => {
   try {
     let result = await util.api.login(user)
     if (result.code === 1) {
-      dispatch(finishLogin(result.user))
+      dispatch(finishLogin(result.data))
       dispatch(showFlashMessage(loginSuccess(result.message)))
+      // Please write here, showFlashMessage cannot get in Login because of redirect
+      runtime = {
+        userId: result.data._id
+      }
     } else {
-      dispatch(failLogin(result.message))
+      dispatch(failLogin())
       dispatch(showFlashMessage(loginFail(result.message)))
     }
     return result

@@ -9,11 +9,11 @@ import styles from './index.less'
 @CSSModules(styles)
 class Home extends Component {
   static propTypes = {
-    user: PropTypes.object
+    userInfo: PropTypes.object
   }
   render () {
-    let { user } = this.props
-    let avatarSrc = user ? user.avatar : ''
+    let { userInfo } = this.props
+    let avatarSrc = userInfo ? userInfo.avatar : ''
     return (
       <div styleName="container">
         <Header logoName="木纹子印象派" buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} shadow />

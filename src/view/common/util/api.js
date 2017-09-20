@@ -224,7 +224,7 @@ export const getUserStatus = async() => {
 export const updateUserInfo = async(formData) => {
   let url = DOMAIN + '/api/v1/updateUserInfo'
   let result
-  defaultHeaders.userId = window.runtime.userId
+  defaultHeaders.userId = runtime.userId
   try {
     result = await fetch(url, {
       method: 'POST',

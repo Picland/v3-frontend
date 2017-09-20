@@ -10,12 +10,12 @@ import styles from './index.less'
 @CSSModules(styles)
 class Register extends Component {
   static propTypes = {
-    user: PropTypes.object,
+    otherInfo: PropTypes.object,
     flashMessage: PropTypes.object,
     switchModal: PropTypes.func,
     update: PropTypes.func,
     register: PropTypes.func,
-    updateAfterUpload: PropTypes.func
+    updateAvatarUnlogined: PropTypes.func
   }
   constructor (props) {
     super(props)
@@ -102,7 +102,6 @@ class Register extends Component {
     this._checkInviteCode(inviteCode)
     this._checkPassword(password)
     if (accountValid && inviteCodeValid && pwdValid) {
-      // 对应connect里面props的register方法，不是reduer里面的
       await this.props.register({account, inviteCode, password})
       // 注册错误：显示服务器端传来的错误信息
       if (this.props.flashMessage.type === 'error') {
@@ -112,8 +111,8 @@ class Register extends Component {
       }
       // 注册最后一步：打开上传头像的对话框
       if (this.props.flashMessage.type === 'success') {
-        window.runtime = {
-          userId: this.props.user._id
+        runtime = {
+          userId: this.props.otherInfo._id
         }
         this.setState({
           join: true,
@@ -148,7 +147,7 @@ class Register extends Component {
   }
 
   _handleComplete (data, list) {
-    this.props.updateAfterUpload(data)
+    this.props.updateAvatarUnlogined(data)
   }
   render () {
     let { join } = this.state
@@ -201,7 +200,7 @@ class Register extends Component {
                       onComplete={::this._handleComplete}
               >
                 <AvatarUpload
-                  src={this.props.user.avatar}
+                  src={this.props.otherInfo.avatar}
                   size="large" />
               </Upload>
               <Input styleType="line"

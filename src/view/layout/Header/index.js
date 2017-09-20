@@ -14,11 +14,11 @@ import { login as loginAction } from '../../redux/action/login'
 import { register as registerAction } from '../../redux/action/register'
 import {
   update as updateAction,
-  updateAfterUpload as updateAfterUploadAction
+  updateAvatarUnlogined as updateAvatarUnloginedAction
 } from '../../redux/action/user'
 
 const mapStateToProps = (state) => ({
-  user: state.user.message,
+  otherInfo: state.user.otherInfo,
   flashMessage: state.flashMessage
 })
 
@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
   login: async (user) => dispatch(loginAction(user)),
   register: async (user) => dispatch(registerAction(user)),
   update: async (info) => dispatch(updateAction(info)),
-  updateAfterUpload: (data) => dispatch(updateAfterUploadAction(data))
+  updateAvatarUnlogined: (data) => dispatch(updateAvatarUnloginedAction(data))
 })
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -38,12 +38,12 @@ class Header extends PureComponent {
     buttonLink: PropTypes.string,
     avatarSrc: PropTypes.string,
     shadow: PropTypes.bool,
-    user: PropTypes.object,
+    otherInfo: PropTypes.object,
     flashMessage: PropTypes.object,
     login: PropTypes.func,
     register: PropTypes.func,
     update: PropTypes.func,
-    updateAfterUpload: PropTypes.func
+    updateAvatarUnlogined: PropTypes.func
   }
   static defaultProps = {
     logoName: '',
@@ -109,18 +109,18 @@ class Header extends PureComponent {
                 <ModalBody>
                   {this.state.loginModal
                     ? <Login
-                      user={this.props.user}
+                      otherInfo={this.props.otherInfo}
                       flashMessage={this.props.flashMessage}
                       login={this.props.login}
                       switchModal={::this._switchModal}
                     />
                     : <Register
-                      user={this.props.user}
+                      otherInfo={this.props.otherInfo}
                       flashMessage={this.props.flashMessage}
                       register={this.props.register}
                       update={this.props.update}
                       switchModal={::this._switchModal}
-                      updateAfterUpload={::this.props.updateAfterUpload}
+                      updateAvatarUnlogined={::this.props.updateAvatarUnlogined}
                     />
                   }
                 </ModalBody>

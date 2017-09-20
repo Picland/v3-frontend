@@ -8,7 +8,6 @@ import styles from './index.less'
 @CSSModules(styles)
 class Login extends Component {
   static propTypes=({
-    user: PropTypes.object,
     flashMessage: PropTypes.object,
     switchModal: PropTypes.func,
     login: PropTypes.func
@@ -55,25 +54,14 @@ class Login extends Component {
     }
   }
   async _logIn () {
-    // 检查数据有效性
     let { account, password, accountValid, pwdValid } = this.state
     this._checkAccount(account)
     this._checkPassword(password)
     if (accountValid && pwdValid) {
-      // debugger
-      await this.props.login({account, password}) // 对应connect里面的login方法不是reduer里面的
-      // debugger
+      await this.props.login({account, password})
       if (this.props.flashMessage.type === 'error') {
         this.setState({
           serverError: this.props.flashMessage.message
-        })
-      }
-      if (this.props.flashMessage.type === 'success') {
-        window.runtime = {
-          userId: this.props.user._id
-        }
-        this.setState({
-          serverError: ''
         })
       }
     }
@@ -81,16 +69,6 @@ class Login extends Component {
   _switchModal () {
     this.props.switchModal()
   }
-  // componentWillUpdate (nextProps, nextState) {
-  //   // if (nextProps.user) {
-  //   //   console.log('nextProps.user', this.props.location)
-  //   //   let pathname = this.props.location.state
-  //   //     ? this.props.location.state.from.pathname // 从外部因为需要登录跳转过来的逻辑，登录后再跳转到原来的地址
-  //   //     : '/settings/prewview' // 默认登录后跳转到首页
-  //   //   let redirectState = { from: this.props.location }
-  //   //   this.props.redirect(pathname, redirectState)
-  //   // }
-  // }
   render () {
     return (
       <div styleName="login">
