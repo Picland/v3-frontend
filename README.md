@@ -33,6 +33,13 @@ brew install mongodb
 mkdir -p /data/db
 # start mongodb
 mongod
+# creater user with auth (open another terminal)
+mongo
+> use admin
+> db.createUser({user:"porta",pwd:"porta123",roles:["root"]})
+# restart mongodb
+db.shutdownServer()
+mongod --auth
 ```
 
 - Linux(CentOS)
@@ -53,19 +60,33 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 
 then install by yum
 ```shell
-sudo yum install -y mongodb-org
+yum install -y mongodb-org
 # set a data folder to store its files
 mkdir -p /data/db
 # start mongodb
-sudo service mongod start
-# or
-mongod
+service mongod start
+```
+
+Add auth for Database
+```shell
+# creater user with auth (should start mongod first)
+mongo
+> use admin
+> db.createUser({user:"porta",pwd:"porta123",roles:["root"]})
+# change the config of mongod
+vi /etc/mongod.conf
+# then edit this config
+security:
+   authorization: "enabled"
+# restart mongodb
+service mongod restart
 ```
 
 - [More MongoDB Installation](https://docs.mongodb.com/master/administration/install-community/)
-- [MongoDB Tutorial 1](https://www.tutorialspoint.com/mongodb/index.htm)
-- [MongoDB Tutorial 2](http://www.runoob.com/mongodb/mongodb-tutorial.html)
-- Download [RoboMongo](https://robomongo.org/)
+- [MongoDB Tutorial English](https://www.tutorialspoint.com/mongodb/index.htm)
+- [MongoDB Tutorial Chinese](http://www.runoob.com/mongodb/mongodb-tutorial.html)
+- [MongoDB Experience Chinese](https://www.teakki.com/p/57e234416ef0382919521692)
+- Download MongoDB GUI: [Robo 3T](https://robomongo.org/)
 
 ## Quick start
 
@@ -78,14 +99,23 @@ npm run dev
 # step3 open the browser
 open http://localhost:3000
 ```
+2. ENV: sandbox (feature and dev branch)
 
-2. ENV: sandbox (release branch)
+```shell
+# for devs to pre-deploy and debug locally
+# step1 only need to run this command
+npm run sandbox:debug
+# step2 open the browser
+open http://localhost:8890
+```
+
+3. ENV: sandbox (release branch)
 ```shell
 # step1 only need to run this command
 npm run sandbox
 ```
 
-3. ENV: production (master branch)
+4. ENV: production (master branch)
 ```shell
 # step1 only need to run this command
 npm run prod
