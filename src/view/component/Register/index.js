@@ -11,9 +11,10 @@ import styles from './index.less'
 class Register extends Component {
   static propTypes = {
     user: PropTypes.object,
-    // flashMessage: PropTypes.object,
+    flashMessage: PropTypes.object,
     switchModal: PropTypes.func,
     update: PropTypes.func,
+    register: PropTypes.func,
     updateAfterUpload: PropTypes.func
   }
   constructor (props) {
@@ -113,7 +114,6 @@ class Register extends Component {
       if (this.props.flashMessage.type === 'success') {
         window.runtime = {
           userId: this.props.user._id
-          // userId: '59ac077391853dd6d21fb3d1'
         }
         this.setState({
           join: true,

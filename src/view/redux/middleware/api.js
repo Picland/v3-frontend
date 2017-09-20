@@ -298,3 +298,11 @@ export const checkAccount = async(account) => {
   }
   return createResult(result)
 }
+
+export default {
+  login,
+  register,
+  logout,
+  getUserStatus,
+  updateUserInfo
+}

@@ -6,8 +6,8 @@ import { Provider } from 'react-redux'
 // import createBrowserHistory from 'history/createBrowserHistory'
 // import clientRouter from '../router/clientRouter'
 import App from './router'
-import { getUserStatus } from './common/lib/fetch'
-import { initialState } from './reducer/user'
+import { getUserStatus } from './redux/middleware/api'
+import { initialState } from './redux/reducer/user'
 import _ from 'lodash'
 
 async function getInitialState () {

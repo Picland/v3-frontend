@@ -10,75 +10,23 @@ import { Modal, ModalHeader, ModalBody } from '_common_ui/Modal'
 import styles from './index.less'
 import Login from '../../component/Login/'
 import Register from '../../component/Register/'
-import { login, register, updateUserInfo } from '../../common/lib/fetch'
-import { showFlashMessage } from '../../reducer/flashMessage'
+import { login as loginAction } from '../../redux/action/login'
+import { register as registerAction } from '../../redux/action/register'
 import {
-  startLogin,
-  finishLogin,
-  failLogin,
-  loginSuccess,
-  loginFail,
-  startRegister,
-  finishRegister,
-  registerSuccess,
-  failRegister,
-  registerFail,
-  update,
-  updateAvatar
-} from '../../reducer/user'
+  update as updateAction,
+  updateAfterUpload as updateAfterUploadAction
+} from '../../redux/action/user'
 
 const mapStateToProps = (state) => ({
-  // avatarHover: state.header.avatarHover,
   user: state.user.message,
   flashMessage: state.flashMessage
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  login: async (user) => {
-    dispatch(startLogin())
-    // let loading = document.getElementById('loading');
-    // loading.style.display="block";
-    try {
-      let result = await login(user)
-      if (result.code === 1) {
-        dispatch(finishLogin(result.user))
-        dispatch(showFlashMessage(loginSuccess(result.message)))
-      } else {
-        dispatch(failLogin(result.message))
-        dispatch(showFlashMessage(loginFail(result.message)))
-      }
-    } catch (e) {
-      console.error(e)
-    }
-  },
-  register: async (user) => {
-    dispatch(startRegister())
-    // let loading = document.getElementById('loading');
-    // loading.style.display="block";
-    try {
-      let result = await register(user)
-      if (result.code === 1) {
-        dispatch(finishRegister(result.user))
-        dispatch(showFlashMessage(registerSuccess(result.message)))
-      } else {
-        dispatch(failRegister(result.message))
-        dispatch(showFlashMessage(registerFail(result.message)))
-      }
-    } catch (e) {
-      console.error(e)
-    }
-  },
-  update: async (formData) => {
-    try {
-      let result = await updateUserInfo(formData)
-      result && dispatch(update(result))
-    } catch (e) {
-      console.error(e)
-    }
-  },
-  updateAfterUpload: (data) => {
-    data && dispatch(updateAvatar(data))
-  }
+  login: async (user) => dispatch(loginAction(user)),
+  register: async (user) => dispatch(registerAction(user)),
+  update: async (info) => dispatch(updateAction(info)),
+  updateAfterUpload: (data) => dispatch(updateAfterUploadAction(data))
 })
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -161,9 +109,9 @@ class Header extends PureComponent {
                 <ModalBody>
                   {this.state.loginModal
                     ? <Login
+                      user={this.props.user}
                       flashMessage={this.props.flashMessage}
                       login={this.props.login}
-                      modal={this.ref}
                       switchModal={::this._switchModal}
                     />
                     : <Register

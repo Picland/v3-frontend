@@ -8,8 +8,10 @@ import styles from './index.less'
 @CSSModules(styles)
 class Login extends Component {
   static propTypes=({
+    user: PropTypes.object,
     flashMessage: PropTypes.object,
-    switchModal: PropTypes.func
+    switchModal: PropTypes.func,
+    login: PropTypes.func
   })
   constructor (props) {
     super(props)
@@ -58,10 +60,20 @@ class Login extends Component {
     this._checkAccount(account)
     this._checkPassword(password)
     if (accountValid && pwdValid) {
+      // debugger
       await this.props.login({account, password}) // 对应connect里面的login方法不是reduer里面的
+      // debugger
       if (this.props.flashMessage.type === 'error') {
         this.setState({
           serverError: this.props.flashMessage.message
+        })
+      }
+      if (this.props.flashMessage.type === 'success') {
+        window.runtime = {
+          userId: this.props.user._id
+        }
+        this.setState({
+          serverError: ''
         })
       }
     }
