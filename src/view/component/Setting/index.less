@@ -1,0 +1,50 @@
+@import '~variable';
+
+@content-width: 100%;
+@nav-height: 60px;
+
+.container {
+  position: relative;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  background-color: @lite-liter;
+  .nav-top {
+    width: 100%;
+    height: @nav-height;
+    border-right: 1px solid #E7EAF1;
+    text-align: center;
+    background-color: @white;
+    border-bottom: 1px solid rgba(30,35,42,.06);
+    box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+    background-clip: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nav-menu {
+      height: 29px;
+      line-height: 28px;
+      font-size: 14px;
+      vertical-align: middle;
+      display: inline-table;
+      border-bottom: 2px solid transparent;
+      margin-left: 22px;
+      margin-right: 22px;
+      &:hover {
+        cursor: pointer;
+        border-bottom-color: @theme;
+        color: @theme;
+      }
+    }
+    .active .nav-menu {
+      border-bottom-color: @theme;
+    }
+  }
+  .main {
+    width: 940px;
+    //height: 709px;
+    margin: 40px auto 0;
+  }
+}

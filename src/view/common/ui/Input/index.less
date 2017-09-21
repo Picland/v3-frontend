@@ -1,0 +1,38 @@
+@import '~variable';
+
+.cmui-input__input {
+  color: @medium-litest;
+  font-size: @fontsize;
+  border-color: @white;
+  background-color: @white;
+  -webkit-appearance: none;
+}
+
+.cmui-input__default {
+  border-bottom-color: @theme-dark;
+}
+
+.cmui-input__line {
+  &:extend(.cmui-input__input);
+  border: 1px transparent solid;
+  border-bottom: 1px @lite-darker solid;
+  padding-bottom: @unit;
+  &:focus {
+    border-bottom-color: @theme-dark;
+    color: @theme-dark;
+  }
+  &::-webkit-input-placeholder {
+    color: @lite-dark;
+  }
+  &:focus::-webkit-input-placeholder {
+    color: @theme-lite;
+  }
+}
+
+.cmui-input__help {
+  position: absolute;
+  right: 40px;
+  margin-top: -@unit-fivefold;
+  color: @red;
+  font-size: @fontsize-small;
+}

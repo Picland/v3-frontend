@@ -1,0 +1,34 @@
+@import '~variable';
+
+@right-width: 632px;
+@content-width: 460px;
+
+.container {
+  .card {
+    margin-bottom: 40px;
+    background-color: @white;
+    padding: 22px 56px 44px 56px;
+    border: 1px solid #E7EAF1;
+    overflow: hidden;
+    .left {
+      float: left;
+      .title {
+        width: @content-width;
+        color: @dark-darker;
+        font-size: @fontsize-medium-double;
+        font-weight: @fontweight-medium;
+        vertical-align: middle;
+        line-height: 56px;
+      }
+      button {
+        margin-top: 20px;
+      }
+    }
+    .right {
+      float: right;
+      .upload-avatar {
+        margin-top: 76px;
+      }
+    }
+  }
+}

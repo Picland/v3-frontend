@@ -12,11 +12,12 @@
 
 Earth(version3-inside) is a photography website built by NodeJS, ReactStack and MongoDB
 
-## Requirements
+## Main Requirements
 
-* react: ^15.4.2
-* node: ^7.7.0
-* mongodb: ^3.4.2
+* react: `^15.5.0`
+* react-router: `^4.0.0`
+* node: `^8.0.0`
+* mongodb: `^3.4.2`
 
 ## Init Database
 
@@ -32,6 +33,13 @@ brew install mongodb
 mkdir -p /data/db
 # start mongodb
 mongod
+# creater user with auth (open another terminal)
+mongo
+> use admin
+> db.createUser({user:"porta",pwd:"porta123",roles:["root"]})
+# restart mongodb
+db.shutdownServer()
+mongod --auth
 ```
 
 - Linux(CentOS)
@@ -52,45 +60,63 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 
 then install by yum
 ```shell
-sudo yum install -y mongodb-org
+yum install -y mongodb-org
 # set a data folder to store its files
 mkdir -p /data/db
 # start mongodb
-sudo service mongod start
-# or
-mongod
+service mongod start
+```
+
+Add auth for Database
+```shell
+# creater user with auth (should start mongod first)
+mongo
+> use admin
+> db.createUser({user:"porta",pwd:"porta123",roles:["root"]})
+# change the config of mongod
+vi /etc/mongod.conf
+# then edit this config
+security:
+   authorization: "enabled"
+# restart mongodb
+service mongod restart
 ```
 
 - [More MongoDB Installation](https://docs.mongodb.com/master/administration/install-community/)
-- [MongoDB Tutorial](https://www.tutorialspoint.com/mongodb/index.htm)
-- Download [RoboMongo](https://robomongo.org/)
+- [MongoDB Tutorial English](https://www.tutorialspoint.com/mongodb/index.htm)
+- [MongoDB Tutorial Chinese](http://www.runoob.com/mongodb/mongodb-tutorial.html)
+- [MongoDB Experience Chinese](https://www.teakki.com/p/57e234416ef0382919521692)
+- Download MongoDB GUI: [Robo 3T](https://robomongo.org/)
 
 ## Quick start
 
 1. ENV: development (feature and dev branch)
 ```shell
-# step0 init project first time
-npm run boot
-# step1 start bulid server for dev
-npm run build
+# step1 start webpack server for dev
+npm run webpack
 # step2 start app server for dev
 npm run dev
 # step3 open the browser
 open http://localhost:3000
 ```
+2. ENV: sandbox (feature and dev branch)
 
-2. ENV: sandbox (release branch)
 ```shell
-# step0 init project first time
-npm run boot
+# for devs to pre-deploy and debug locally
+# step1 only need to run this command
+npm run sandbox:debug
+# step2 open the browser
+open http://localhost:8890
+```
+
+3. ENV: sandbox (release branch)
+```shell
 # step1 only need to run this command
 npm run sandbox
 ```
 
-3. ENV: production (master branch)
+4. ENV: production (master branch)
 ```shell
-# step0 init project first time
-npm run boot
 # step1 only need to run this command
 npm run prod
 ```
