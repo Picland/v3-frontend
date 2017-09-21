@@ -9,7 +9,7 @@ import styles from './index.less'
 @CSSModules(styles)
 class Profile extends Component {
   static propTypes = {
-    user: PropTypes.object,
+    userInfo: PropTypes.object,
     flashMessage: PropTypes.object,
     update: PropTypes.func
   }
@@ -44,21 +44,21 @@ class Profile extends Component {
     this.state.pwdData[name] = value
   }
   render () {
-    let { user } = this.props
-    user.newpassword1 = ''
-    user.newpassword2 = ''
+    let { userInfo } = this.props
+    userInfo.newpassword1 = ''
+    userInfo.newpassword2 = ''
     return (
       <div styleName="container">
         <div styleName="card">
           <div styleName="title">账号</div>
           <InputNew label="邮箱"
                     name="email"
-                    value={user.email}
+                    value={userInfo.email}
                     onChange={::this._handleChange}
           />
           <InputNew label="手机"
                     name="phoneNumber"
-                    value={user.phoneNumber}
+                    value={userInfo.phoneNumber}
                     onChange={::this._handleChange}
                     hasbutton
           />
@@ -70,21 +70,21 @@ class Profile extends Component {
                     name="password"
                     type="text"
                     placeholder="请输入原始密码"
-                    value={user.password}
+                    value={userInfo.password}
                     onChange={::this._handleChangePwd}
           />
           <InputNew label="新密码"
                     name="newpassword1"
                     type="text"
                     placeholder="请输入新密码"
-                    value={user.newpassword1}
+                    value={userInfo.newpassword1}
                     onChange={::this._handleChangePwd}
           />
           <InputNew label="确认新密码"
                     name="newpassword2"
                     type="text"
                     placeholder="请确认新密码"
-                    value={user.newpassword2}
+                    value={userInfo.newpassword2}
                     onChange={::this._handleChangePwd}
           />
           {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}

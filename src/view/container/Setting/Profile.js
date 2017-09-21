@@ -1,25 +1,17 @@
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 import Profile from '../../component/Profile'
-import { update } from '../../reducer/user'
-import { updateUserInfo } from '../../common/lib/fetch'
+import {
+  update as updateAction,
+  updateAvatarLogined as updateAvatarLoginedAction
+} from '../../redux/action/user'
 
 const mapStateToProps = (state) => ({
-  user: state.user.user
+  userInfo: state.user.userInfo
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  update: async (formData) => {
-    try {
-      let result = await updateUserInfo(formData)
-      result && dispatch(update(result))
-    } catch (e) {
-      console.error(e)
-    }
-  },
-  updateAfterUpload: (data) => {
-    data && dispatch(update(data))
-  }
+  update: async (data) => dispatch(updateAction(data)),
+  updateAvatarLogined: (data) => dispatch(updateAvatarLoginedAction(data))
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile))
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)

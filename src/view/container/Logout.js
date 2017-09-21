@@ -2,21 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { logout } from '../common/lib/fetch'
-import { logout as logoutFromReducer } from '../reducer/user'
+import logoutAction from '../redux/action/logout'
 
-const mapStateToProps = (state) => (state.user)
+const mapStateToProps = state => (state.user)
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: async (user) => {
-    try {
-      let result = await logout(user)
-      result.code === 0 && dispatch(logoutFromReducer())
-      if (result.code === -2) throw new Error('登出失败！')
-    } catch (e) {
-      console.error(e)
-    }
-  }
+  logout: async () => dispatch(logoutAction())
 })
 
 @connect(mapStateToProps, mapDispatchToProps)

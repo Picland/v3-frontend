@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-// import CSSModules from 'react-css-modules'
-// import styles from './index.less'
 import WelcomeSection from '../WelcomeSection/'
 import Header from '../../layout/Header'
 import Footer from '../../layout/Footer/'
 
-// @CSSModules(styles)
 class Welcome extends Component {
   constructor (props) {
     super(props)

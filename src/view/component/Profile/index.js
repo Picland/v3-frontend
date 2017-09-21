@@ -11,9 +11,9 @@ import styles from './index.less'
 @CSSModules(styles)
 class Profile extends Component {
   static propTypes = {
-    user: PropTypes.object,
+    userInfo: PropTypes.object,
     update: PropTypes.func,
-    updateAfterUpload: PropTypes.func
+    updateAvatarLogined: PropTypes.func
   }
   constructor (props) {
     super(props)
@@ -25,13 +25,13 @@ class Profile extends Component {
     !_.isEmpty(this.state.formData) && await this.props.update(this.state.formData)
   }
   _uploadComplete (data) {
-    this.props.updateAfterUpload(data)
+    this.props.updateAvatarLogined(data)
   }
   _handleChange (name, value) {
     this.state.formData[name] = value
   }
   render () {
-    let { user } = this.props
+    let { userInfo } = this.props
     return (
       <div styleName="container">
         <div styleName="card">
@@ -39,17 +39,17 @@ class Profile extends Component {
             <div styleName="title">基本信息</div>
             <InputNew label="昵称"
                       name="name"
-                      value={user.name}
+                      value={userInfo.name}
                       onChange={::this._handleChange}
             />
             <InputNew label="性别"
                       name="gender"
-                      value={user.gender}
+                      value={userInfo.gender}
                       onChange={::this._handleChange}
             />
             <InputNew label="简介"
                       name="bio"
-                      value={user.bio}
+                      value={userInfo.bio}
                       onChange={::this._handleChange}
             />
             <Button styleType="primary" onClick={::this._save}>保存</Button>
@@ -61,7 +61,7 @@ class Profile extends Component {
                       button="更换头像"
                       onComplete={::this._uploadComplete}>
                 <AvatarUpload
-                  src={user.avatar}
+                  src={userInfo.avatar}
                   size="larger" />
               </Upload>
             </div>

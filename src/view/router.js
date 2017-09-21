@@ -41,7 +41,7 @@ const UserSetting = ({ match }) => (
 )
 
 const mapStateToProps = (state) => ({
-  auth: state.user.user._id
+  auth: state.user.userInfo._id
 })
 
 // Handle the sever redirect and 404

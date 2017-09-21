@@ -1,11 +1,11 @@
 import Welcome from '../component/Welcome'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { checkLoginRedirect } from '../common/lib/redirect'
+import { checkLoginRedirect } from '../common/util/redirect'
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user.user
+    userInfo: state.user.userInfo
   }
 }
 

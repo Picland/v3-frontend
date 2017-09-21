@@ -1,13 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Store from './store'
+import Store from './redux/store'
 import { Provider } from 'react-redux'
 // import { syncHistoryWithStore } from 'react-router-redux'
 // import createBrowserHistory from 'history/createBrowserHistory'
 // import clientRouter from '../router/clientRouter'
 import App from './router'
-import { getUserStatus } from './common/lib/fetch'
-import { initialState } from './reducer/user'
+import { getUserStatus } from './common/util/api'
+import { initialState } from './redux/reducer/user'
 import _ from 'lodash'
 
 async function getInitialState () {
@@ -15,17 +15,19 @@ async function getInitialState () {
   if (result.code !== 0) {
     return {
       user: {
-        user: result,
+        userInfo: result,
         logining: initialState.logining,
-        message: initialState.message
+        otherInfo: initialState.otherInfo,
+        registering: initialState.registering
       }
     }
   } else {
     return {
       user: {
-        user: {},
+        userInfo: result,
         logining: initialState.logining,
-        message: initialState.message
+        otherInfo: initialState.otherInfo,
+        registering: initialState.registering
       }
     }
   }
@@ -35,7 +37,7 @@ async function getInitialState () {
   let initialState = await getInitialState()
   const store = Store(initialState) // 完整的 Redux 状态树从这里开始生成
   window.runtime = {
-    userId: _.get(initialState, 'user.user._id', null)
+    userId: _.get(initialState, 'user.userInfo._id', null)
   }
 // const browserHistory = createBrowserHistory() // 将 react-router 中的 browserHistory 移到这里引入
 // const history = syncHistoryWithStore(browserHistory, store) // 保证 react-router 和 Redux store 的统一
