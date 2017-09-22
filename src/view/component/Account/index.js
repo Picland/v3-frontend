@@ -2,8 +2,9 @@ import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-import InputNew from '../../common/ui/InputNew'
-import Button from '../../common/ui/Button'
+import InputNew from '_common_ui/InputNew'
+import Button from '_common_ui/Button'
+import message from '_common_ui/message'
 import styles from './index.less'
 
 @CSSModules(styles)
@@ -23,18 +24,22 @@ class Profile extends Component {
   async _save () {
     !_.isEmpty(this.state.formData) && await this.props.update(this.state.formData)
   }
-  async _savePassword () {
+  _savePassword () {
     if (!_.isEmpty(this.state.pwdData)) {
-      await this.props.update(this.state.pwdData)
-      if (this.props.flashMessage.type === 'error') {
-        this.setState({
-          serverError: this.props.flashMessage.message
-        })
-      } else {
-        this.setState({
-          serverError: ''
-        })
-      }
+      this.props.update(this.state.pwdData)
+    }
+  }
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.flashMessage.type === 'success') {
+      message.success(nextProps.flashMessage.message, 0)
+      this.setState({
+        serverError: ''
+      })
+    }
+    if (nextProps.flashMessage.type === 'error') {
+      this.setState({
+        serverError: nextProps.flashMessage.message
+      })
     }
   }
   _handleChange (name, value) {

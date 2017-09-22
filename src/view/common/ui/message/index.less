@@ -1,5 +1,6 @@
 @success-color: #4cd964;
 @danger-color: #f94242;
+@import '~variable';
 
 .cmui-message {
   position: fixed;
@@ -8,14 +9,16 @@
   max-width: 400px;
   left: 50%;
   transform: translate(-50%, 0);
-  top: 10%;
-  padding: 30px 50px;
-  padding-left: 80px;
-  border-radius: 2px;
+  top: 40%;
+  padding: 22px 33px;
+  text-align: center;
+  //padding-left: 80px;
+  //border-radius: 2px;
   border: 1px solid transparent;
   word-wrap: break-word;
   font-size: 14px;
-  background-color: #fff;
+  background-color: @dark;
+  color: @white;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, .2);
   opacity: 0;
   transform: translate(-50%, -25%);
