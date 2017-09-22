@@ -6,7 +6,8 @@ import {
 } from '../../redux/action/user'
 
 const mapStateToProps = (state) => ({
-  userInfo: state.user.userInfo
+  userInfo: state.user.userInfo,
+  flashMessage: state.flashMessage
 })
 
 const mapDispatchToProps = (dispatch) => ({

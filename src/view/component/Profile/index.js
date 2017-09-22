@@ -2,16 +2,18 @@ import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-import InputNew from '../../common/ui/InputNew'
-import Upload from '../../common/ui/Upload'
-import Button from '../../common/ui/Button'
-import AvatarUpload from '../../common/ui/AvatarUpload'
+import InputNew from '_common_ui/InputNew'
+import Upload from '_common_ui/Upload'
+import Button from '_common_ui/Button'
+import AvatarUpload from '_common_ui/AvatarUpload'
+import message from '_common_ui/message'
 import styles from './index.less'
 
 @CSSModules(styles)
 class Profile extends Component {
   static propTypes = {
     userInfo: PropTypes.object,
+    flashMessage: PropTypes.object,
     update: PropTypes.func,
     updateAvatarLogined: PropTypes.func
   }
@@ -22,7 +24,13 @@ class Profile extends Component {
     }
   }
   async _save () {
-    !_.isEmpty(this.state.formData) && await this.props.update(this.state.formData)
+    if (!_.isEmpty(this.state.formData)) {
+      await this.props.update(this.state.formData)
+    }
+  }
+  shouldComponentUpdate (nextProps) {
+    nextProps.flashMessage.type === 'success' && message.success(nextProps.flashMessage.message)
+    nextProps.flashMessage.type === 'error' && message.danger(nextProps.flashMessage.message)
   }
   _uploadComplete (data) {
     this.props.updateAvatarLogined(data)

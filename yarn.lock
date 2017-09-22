@@ -5142,10 +5142,6 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-async-initial-state@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/redux-async-initial-state/-/redux-async-initial-state-0.2.1.tgz#ee80737e6c654ef12dd4d2e2a4fb3ab2121d6a92"
-
 redux-composable-fetch@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/redux-composable-fetch/-/redux-composable-fetch-0.3.4.tgz#f4d093bcb5754aa17d6d25095910570a08795e6c"
