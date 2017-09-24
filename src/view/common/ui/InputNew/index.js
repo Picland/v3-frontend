@@ -38,7 +38,7 @@ class InputNew extends Component {
     this.setState({
       value: e.target.value
     })
-    this.props.onChange(this.props.name, e.target.value)
+    this.props.onChange(e.target.value, this.props.name)
   }
   _handleFocus () {
     this.setState({

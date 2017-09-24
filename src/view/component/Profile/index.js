@@ -7,36 +7,29 @@ import Upload from '_common_ui/Upload'
 import Button from '_common_ui/Button'
 import AvatarUpload from '_common_ui/AvatarUpload'
 import message from '_common_ui/message'
+import { Select, Option } from '_common_ui/Select'
 import styles from './index.less'
 
 @CSSModules(styles)
 class Profile extends Component {
-  static propTypes = {
-    userInfo: PropTypes.object,
-    flashMessage: PropTypes.object,
-    update: PropTypes.func,
-    updateAvatarLogined: PropTypes.func
-  }
   constructor (props) {
     super(props)
     this.state = {
       formData: {}
     }
   }
-  async _save () {
-    if (!_.isEmpty(this.state.formData)) {
-      await this.props.update(this.state.formData)
-    }
+  _uploadComplete (data) {
+    this.props.updateAvatarLogined(data)
+  }
+  _handleChange (value, name) {
+    this.state.formData[name] = value
+  }
+  _save () {
+    !_.isEmpty(this.state.formData) && this.props.update(this.state.formData)
   }
   componentDidUpdate () {
     this.props.flashMessage.type === 'success' && message.success(this.props.flashMessage.message)
     this.props.flashMessage.type === 'error' && message.danger(this.props.flashMessage.message)
-  }
-  _uploadComplete (data) {
-    this.props.updateAvatarLogined(data)
-  }
-  _handleChange (name, value) {
-    this.state.formData[name] = value
   }
   render () {
     let { userInfo } = this.props
@@ -50,11 +43,14 @@ class Profile extends Component {
                       value={userInfo.name}
                       onChange={::this._handleChange}
             />
-            <InputNew label="性别"
-                      name="gender"
-                      value={userInfo.gender}
-                      onChange={::this._handleChange}
-            />
+            <div styleName="label">性别</div>
+            <Select minWidth={460}
+                    defaultValue={userInfo.gender}
+                    onChange={(value, name) => this._handleChange(value, 'gender')}>
+              <Option value="m">男</Option>
+              <Option value="f">女</Option>
+              <Option value="x">不详</Option>
+            </Select>
             <InputNew label="简介"
                       name="bio"
                       value={userInfo.bio}
@@ -78,6 +74,13 @@ class Profile extends Component {
       </div>
     )
   }
+}
+
+Profile.propTypes = {
+  userInfo: PropTypes.object,
+  flashMessage: PropTypes.object,
+  update: PropTypes.func,
+  updateAvatarLogined: PropTypes.func
 }
 
 export default Profile

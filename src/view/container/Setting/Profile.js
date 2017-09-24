@@ -11,8 +11,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  update: async (data) => dispatch(updateAction(data)),
-  updateAvatarLogined: (data) => dispatch(updateAvatarLoginedAction(data))
+  update: data => dispatch(updateAction(data)),
+  updateAvatarLogined: data => dispatch(updateAvatarLoginedAction(data))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)
