@@ -35,7 +35,7 @@ class Header extends PureComponent {
   static propTypes = {
     logoName: PropTypes.string,
     buttonName: PropTypes.string,
-    buttonLink: PropTypes.string,
+    // buttonLink: PropTypes.string,
     avatarSrc: PropTypes.string,
     shadow: PropTypes.bool,
     otherInfo: PropTypes.object,
@@ -72,7 +72,8 @@ class Header extends PureComponent {
   }
 
   render () {
-    let {logoName, buttonName, buttonLink, avatarSrc, shadow} = this.props
+    // {buttonLink}
+    let {logoName, buttonName, avatarSrc, shadow} = this.props
     const container = classNames({
       'container-unlogin': !shadow,
       'container-login': shadow
@@ -99,7 +100,7 @@ class Header extends PureComponent {
                 <Link to="/logout"><li>退出</li></Link>
               </ul>
             </div>
-            <Link to={buttonLink}><Button styleType="ghost">{buttonName}</Button></Link>
+            {/* <Link to={buttonLink}><Button styleType="ghost">{buttonName}</Button></Link> */}
           </div>
             : <div styleName="right">
               <div styleName="nav-btn" onClick={() => this._handleModal('login')}>登录</div>

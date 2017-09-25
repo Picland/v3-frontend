@@ -3,6 +3,7 @@
 @background-color: @theme-header;
 @text-color: @theme-text;
 @height: 60px;
+@padding: 70px;
 
 .container-base {
   position: fixed;
@@ -18,8 +19,8 @@
   }
   & > div {
     height: @height;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: @padding;
+    padding-right: @padding;
   }
   .nav-btn {
     font-size: @fontsize;
@@ -66,7 +67,7 @@
     align-items: center;
     .dropdown-wrapper {
       position: relative;
-      right: 22px;
+      //right: 22px;
       cursor: pointer;
       div:first-child {
         position: relative;
