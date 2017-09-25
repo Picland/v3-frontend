@@ -56,7 +56,7 @@ class Profile extends Component {
                       value={userInfo.bio}
                       onChange={::this._handleChange}
             />
-            <Button styleType="primary" onClick={::this._save}>保存</Button>
+            <Button size="lg" onClick={::this._save}>保存</Button>
           </div>
           <div styleName="right">
             <div styleName="upload-avatar">

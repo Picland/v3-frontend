@@ -160,7 +160,7 @@ class Upload extends Component {
           {this.props.children}
         </div>
         {button &&
-          <Button styleType="ghost" onClick={::this.handleClick}>{button}</Button>
+          <Button ghost onClick={::this.handleClick}>{button}</Button>
         }
         {showFileList &&
           <div className="cmui-upload__listbox">

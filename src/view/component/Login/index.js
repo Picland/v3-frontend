@@ -93,7 +93,7 @@ class Login extends Component {
                help={this.state.pwdHelp}
          />
         {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
-        <Button styleType="wide" onClick={::this._logIn}>登录</Button>
+        <Button onClick={::this._logIn}>登录</Button>
       </div>
     )
   }

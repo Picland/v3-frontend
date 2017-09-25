@@ -67,7 +67,7 @@ class Profile extends Component {
                     onChange={::this._handleChange}
                     hasbutton
           />
-          <Button styleType="primary" onClick={::this._save}>保存</Button>
+          <Button size="lg" onClick={::this._save}>保存</Button>
         </div>
         <div styleName="card">
           <div styleName="title">密码</div>
@@ -93,7 +93,7 @@ class Profile extends Component {
                     onChange={::this._handleChangePwd}
           />
           {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
-          <Button styleType="primary" onClick={::this._savePassword}>保存</Button>
+          <Button size="lg" onClick={::this._savePassword}>保存</Button>
         </div>
       </div>
     )

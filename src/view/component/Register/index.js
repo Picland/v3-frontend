@@ -190,7 +190,7 @@ class Register extends Component {
                      help={this.state.pwdHelp}
               />
               {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
-              <Button styleType="wide" onClick={::this._register}>注册</Button>
+              <Button onClick={::this._register}>注册</Button>
             </div>
             : <div>
               <div styleName="title-join">Hi, 欢迎加入!</div>
@@ -213,7 +213,7 @@ class Register extends Component {
               />
               {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
               {this.state.nickNameHelp && <div styleName="server-error">{this.state.nickNameHelp}</div>}
-              <Button styleType="wide" onClick={::this._fishRegister}>完成</Button>
+              <Button onClick={::this._fishRegister}>完成</Button>
             </div>
         }
       </div>

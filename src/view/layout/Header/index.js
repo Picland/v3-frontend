@@ -104,7 +104,7 @@ class Header extends PureComponent {
           </div>
             : <div styleName="right">
               <div styleName="nav-btn" onClick={() => this._handleModal('login')}>登录</div>
-              <Button styleType="primary-wide" onClick={() => this._handleModal('register')}>{buttonName}</Button>
+              <Button onClick={() => this._handleModal('register')}>{buttonName}</Button>
               <Modal ref="modal" lock>
                 <ModalHeader />
                 <ModalBody>
