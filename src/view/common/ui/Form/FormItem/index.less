@@ -1,14 +1,18 @@
-@danger-color: #f94242;
+@import '~variable';
+@danger-color: @red-lite;
 
 .cmui-form__item {
-  margin-bottom: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .cmui-form__item-label {
-  line-height: 30px;
-  height: 30px;
-  text-align: right;
-  float: left;
+  height: 22px;
+  line-height: 22px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 12px;
 }
 
 .cmui-form__item-content {
@@ -16,19 +20,19 @@
 }
 
 .cmui-form__item-label--required {
-  &:before {
+  &:after {
     content: '* ';
     color: @danger-color;
     font-size: 14px;
     font-weight: bold;
-    vertical-align: middle;
+    vertical-align: top;
+    margin-left: 5px;
   }
 }
 
 .cmui-form__item-tip {
   font-size: 12px;
-  margin-top: 5px;
-  margin-left: 5px;
+  margin-top: 11px;
   display: inline-block;
   color: #999;
   > .cmui-icon {

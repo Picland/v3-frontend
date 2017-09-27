@@ -51,14 +51,13 @@ class InputNew extends Component {
     })
   }
   render () {
-    let { label, name, placeholder, type } = this.props
+    let { name, placeholder, type } = this.props
     const inputForm = classNames({
       'cmui-inputnew': !this.state.active,
       'cmui-inputnew__active': this.state.active
     })
     return (
       <div className={inputForm}>
-        <div className="label">{label}</div>
         <input value={this.state.value}
                onChange={::this._handleChange}
                onFocus={::this._handleFocus}

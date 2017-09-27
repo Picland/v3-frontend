@@ -97,7 +97,7 @@ class FormItem extends Component {
             })}
             style={{width: `${labelWidth}px`}}
           >
-            {label}：
+            {label}
           </div>
         )}
         <div className="cmui-form__item-content">

@@ -47,10 +47,8 @@ class FormSubmit extends Component {
   render () {
     const { children, className, onClick, ...other } = this.props
     const { process } = this.state
-    const { form } = this.context
     return (
       <Button
-        style={{marginLeft: `${form.props.labelWidth}px`}}
         className={classnames('cmui-form-submit', className)}
         onClick={::this.handleClick}
         disabled={process}

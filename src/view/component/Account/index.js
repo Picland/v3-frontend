@@ -1,10 +1,10 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import update from 'react-update'
 import CSSModules from 'react-css-modules'
-import InputNew from '_common_ui/InputNew'
-import Button from '_common_ui/Button'
 import message from '_common_ui/message'
+import { Form, FormItem, FormSubmit, FormInput } from '_common_ui/Form'
 import styles from './index.less'
 
 @CSSModules(styles)
@@ -12,26 +12,33 @@ class Profile extends Component {
   static propTypes = {
     userInfo: PropTypes.object,
     flashMessage: PropTypes.object,
-    update: PropTypes.func
+    update: PropTypes.func,
+    removeFlashMessage: PropTypes.func
   }
   constructor (props) {
     super(props)
+    this.update = update.bind(this)
     this.state = {
-      formData: {},
-      pwdData: {}
+      accData: {
+        email: this.props.userInfo.email,
+        phoneNumber: this.props.userInfo.phoneNumber
+      },
+      pwdData: {
+        password: '',
+        newpassword1: '',
+        newpassword2: ''
+      }
     }
   }
-  async _save () {
-    !_.isEmpty(this.state.formData) && await this.props.update(this.state.formData)
+  handleSubmitAccData () {
+    !_.isEmpty(this.state.accData) && this.props.update(this.state.accData)
   }
-  _savePassword () {
-    if (!_.isEmpty(this.state.pwdData)) {
-      this.props.update(this.state.pwdData)
-    }
+  handleSubmitPwdData () {
+    !_.isEmpty(this.state.pwdData) && this.props.update(this.state.pwdData)
   }
   componentWillReceiveProps (nextProps) {
     if (nextProps.flashMessage.type === 'success') {
-      message.success(nextProps.flashMessage.message, 0)
+      message.success(nextProps.flashMessage.message)
       this.setState({
         serverError: ''
       })
@@ -42,58 +49,44 @@ class Profile extends Component {
       })
     }
   }
-  _handleChange (name, value) {
-    this.state.formData[name] = value
-  }
-  _handleChangePwd (name, value) {
-    this.state.pwdData[name] = value
+  componentDidUpdate () {
+    this.props.flashMessage.show && this.props.removeFlashMessage()
   }
   render () {
-    let { userInfo } = this.props
-    userInfo.newpassword1 = ''
-    userInfo.newpassword2 = ''
+    let { accData, pwdData } = this.state
     return (
       <div styleName="container">
         <div styleName="card">
           <div styleName="title">账号</div>
-          <InputNew label="邮箱"
-                    name="email"
-                    value={userInfo.email}
-                    onChange={::this._handleChange}
-          />
-          <InputNew label="手机"
-                    name="phoneNumber"
-                    value={userInfo.phoneNumber}
-                    onChange={::this._handleChange}
-                    hasbutton
-          />
-          <Button size="lg" onClick={::this._save}>保存</Button>
+          <Form data={accData}
+                onSubmit={::this.handleSubmitAccData}
+                onChange={accData => this.update('set', { accData })}>
+            <FormItem label="邮箱" name="email">
+              <FormInput />
+            </FormItem>
+            <FormItem label="手机" name="phoneNumber" required>
+              <FormInput hasbutton />
+            </FormItem>
+            <FormSubmit size="lg" >保存</FormSubmit>
+          </Form>
         </div>
         <div styleName="card">
           <div styleName="title">密码</div>
-          <InputNew label="原密码"
-                    name="password"
-                    type="text"
-                    placeholder="请输入原始密码"
-                    value={userInfo.password}
-                    onChange={::this._handleChangePwd}
-          />
-          <InputNew label="新密码"
-                    name="newpassword1"
-                    type="text"
-                    placeholder="请输入新密码"
-                    value={userInfo.newpassword1}
-                    onChange={::this._handleChangePwd}
-          />
-          <InputNew label="确认新密码"
-                    name="newpassword2"
-                    type="text"
-                    placeholder="请确认新密码"
-                    value={userInfo.newpassword2}
-                    onChange={::this._handleChangePwd}
-          />
-          {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
-          <Button size="lg" onClick={::this._savePassword}>保存</Button>
+          <Form data={pwdData}
+                onSubmit={::this.handleSubmitPwdData}
+                onChange={pwdData => this.update('set', { pwdData })}>
+            <FormItem label="原密码" name="password">
+              <FormInput placeholder="请输入原始密码" />
+            </FormItem>
+            <FormItem label="新密码" name="newpassword1">
+              <FormInput placeholder="请输入新密码" />
+            </FormItem>
+            <FormItem label="确认新密码" name="newpassword2">
+              <FormInput placeholder="确认新密码" />
+            </FormItem>
+            {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
+            <FormSubmit size="lg" >保存</FormSubmit>
+          </Form>
         </div>
       </div>
     )

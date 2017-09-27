@@ -46,7 +46,7 @@ class Profile extends Component {
             <Form data={formData}
                   onSubmit={::this.handleSubmit}
                   onChange={formData => this.update('set', { formData })}>
-              <FormItem label="昵称" name="name" help="5个字符以内" required>
+              <FormItem label="昵称" name="name" required>
                 <FormInput />
               </FormItem>
               <FormItem label="性别" name="gender">
