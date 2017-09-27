@@ -4,6 +4,7 @@ import {
   update as updateAction,
   updateAvatarLogined as updateAvatarLoginedAction
 } from '../../redux/action/user'
+import { removeFlashMessage as removeFlashMessageAction } from '../../redux/action/flashMessage'
 
 const mapStateToProps = (state) => ({
   userInfo: state.user.userInfo,
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   update: data => dispatch(updateAction(data)),
-  updateAvatarLogined: data => dispatch(updateAvatarLoginedAction(data))
+  updateAvatarLogined: data => dispatch(updateAvatarLoginedAction(data)),
+  removeFlashMessage: data => dispatch(removeFlashMessageAction())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)

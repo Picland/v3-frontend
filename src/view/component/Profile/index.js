@@ -28,9 +28,12 @@ class Profile extends Component {
   handleSubmit () {
     !_.isEmpty(this.state.formData) && this.props.update(this.state.formData)
   }
-  componentDidUpdate () {
+  componentWillUpdate () {
     this.props.flashMessage.type === 'success' && message.success(this.props.flashMessage.message)
     this.props.flashMessage.type === 'error' && message.danger(this.props.flashMessage.message)
+  }
+  componentDidUpdate () {
+    this.props.flashMessage.show && this.props.removeFlashMessage()
   }
   render () {
     let { formData } = this.state
@@ -81,7 +84,8 @@ Profile.propTypes = {
   userInfo: PropTypes.object,
   flashMessage: PropTypes.object,
   update: PropTypes.func,
-  updateAvatarLogined: PropTypes.func
+  updateAvatarLogined: PropTypes.func,
+  removeFlashMessage: PropTypes.func
 }
 
 export default Profile
