@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import update from 'react-update'
 import CSSModules from 'react-css-modules'
 import Upload from '_common_ui/Upload'
-import AvatarUpload from '_common_ui/AvatarUpload'
+import Avatar from '_common_ui/Avatar'
 import message from '_common_ui/message'
 import { Form, FormItem, FormSubmit, FormInput, FormSelect, Option } from '_common_ui/Form'
 import styles from './index.less'
@@ -69,9 +69,9 @@ class Profile extends Component {
                       action="/api/v1/updateUserAvatar"
                       button="更换头像"
                       onComplete={::this.uploadComplete}>
-                <AvatarUpload
+                <Avatar
                   src={userInfo.avatar}
-                  size="larger" />
+                  size="lg" />
               </Upload>
             </div>
           </div>

@@ -50,7 +50,8 @@ class Upload extends Component {
     }
   }
 
-  handleClick () {
+  handleClick (e) {
+    if (this.props.button && e.target.localName !== 'button') return
     const fileEl = this.refs.file
     fileEl.value = ''
     fileEl.click()
