@@ -14,6 +14,7 @@ class Profile extends Component {
   constructor (props) {
     super(props)
     this.update = update.bind(this)
+    this.props.flashMessage.show && this.props.removeFlashMessage()
     this.state = {
       formData: {
         name: this.props.userInfo.name,
@@ -28,9 +29,9 @@ class Profile extends Component {
   handleSubmit () {
     !_.isEmpty(this.state.formData) && this.props.update(this.state.formData)
   }
-  componentWillUpdate () {
-    this.props.flashMessage.type === 'success' && message.success(this.props.flashMessage.message)
-    this.props.flashMessage.type === 'error' && message.danger(this.props.flashMessage.message)
+  componentWillUpdate (nextProps) {
+    nextProps.flashMessage.type === 'success' && message.success(nextProps.flashMessage.message)
+    nextProps.flashMessage.type === 'error' && message.danger(nextProps.flashMessage.message)
   }
   componentDidUpdate () {
     this.props.flashMessage.show && this.props.removeFlashMessage()

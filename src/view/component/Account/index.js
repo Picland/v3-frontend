@@ -12,6 +12,7 @@ class Profile extends Component {
   constructor (props) {
     super(props)
     this.update = update.bind(this)
+    this.props.flashMessage.show && this.props.removeFlashMessage()
     this.state = {
       accData: {
         email: this.props.userInfo.email,

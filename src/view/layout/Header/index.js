@@ -16,7 +16,6 @@ import {
   update as updateAction,
   updateAvatarUnlogined as updateAvatarUnloginedAction
 } from '../../redux/action/user'
-import { removeFlashMessage as removeFlashMessageAction } from '../../redux/action/flashMessage'
 
 const mapStateToProps = (state) => ({
   otherInfo: state.user.otherInfo,
@@ -27,8 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
   login: async (user) => dispatch(loginAction(user)),
   register: async (user) => dispatch(registerAction(user)),
   update: async (info) => dispatch(updateAction(info)),
-  updateAvatarUnlogined: (data) => dispatch(updateAvatarUnloginedAction(data)),
-  removeFlashMessage: data => dispatch(removeFlashMessageAction())
+  updateAvatarUnlogined: (data) => dispatch(updateAvatarUnloginedAction(data))
 })
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -95,7 +93,6 @@ class Header extends PureComponent {
                       flashMessage={this.props.flashMessage}
                       login={this.props.login}
                       switchModal={::this._switchModal}
-                      removeFlashMessageAction={this.props.removeFlashMessage}
                     />
                     : <Register
                       otherInfo={this.props.otherInfo}
@@ -104,7 +101,6 @@ class Header extends PureComponent {
                       update={this.props.update}
                       switchModal={::this._switchModal}
                       updateAvatarUnlogined={::this.props.updateAvatarUnlogined}
-                      removeFlashMessageAction={this.props.removeFlashMessage}
                     />
                   }
                 </ModalBody>
@@ -128,8 +124,7 @@ Header.propTypes = {
   login: PropTypes.func,
   register: PropTypes.func,
   update: PropTypes.func,
-  updateAvatarUnlogined: PropTypes.func,
-  removeFlashMessage: PropTypes.func
+  updateAvatarUnlogined: PropTypes.func
 }
 
 Header.defaultProps = {

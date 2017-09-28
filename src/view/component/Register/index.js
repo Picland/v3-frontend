@@ -128,9 +128,6 @@ class Register extends Component {
       // }
     }
   }
-  componentDidUpdate () {
-    this.props.flashMessage.show && this.props.removeFlashMessage()
-  }
   _switchModal () {
     this.props.switchModal()
   }
@@ -222,8 +219,7 @@ Register.propTypes = {
   switchModal: PropTypes.func,
   update: PropTypes.func,
   register: PropTypes.func,
-  updateAvatarUnlogined: PropTypes.func,
-  removeFlashMessage: PropTypes.func
+  updateAvatarUnlogined: PropTypes.func
 }
 
 export default Register
