@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import update from 'react-update'
@@ -11,8 +10,25 @@ import styles from './index.less'
 class Profile extends Component {
   constructor (props) {
     super(props)
-    this.update = update.bind(this)
     this.props.flashMessage.show && this.props.removeFlashMessage()
+    this.update = update.bind(this)
+    this.rulesOfAccount = {
+      email (v) {
+        if (!/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
+            .test(v)) return '邮箱格式不正确'
+      }
+    }
+    this.rulesOfPassword = {
+      password (v) {
+        if (v.length > 16) return '密码长度不超过16位'
+      },
+      newpassword1 (v) {
+        if (v.length > 16) return '密码长度不超过16位'
+      },
+      newpassword2 (v) {
+        if (v.length > 16) return '密码长度不超过16位'
+      }
+    }
     this.state = {
       accData: {
         email: this.props.userInfo.email,
@@ -25,11 +41,8 @@ class Profile extends Component {
       }
     }
   }
-  handleSubmitAccData () {
-    !_.isEmpty(this.state.accData) && this.props.update(this.state.accData)
-  }
-  handleSubmitPwdData () {
-    !_.isEmpty(this.state.pwdData) && this.props.update(this.state.pwdData)
+  handleSubmit (data) {
+    this.props.update(data)
   }
   componentWillReceiveProps (nextProps) {
     if (nextProps.flashMessage.type === 'success') {
@@ -54,7 +67,8 @@ class Profile extends Component {
         <div styleName="card">
           <div styleName="title">账号</div>
           <Form data={accData}
-                onSubmit={::this.handleSubmitAccData}
+                rules={this.rulesOfAccount}
+                onSubmit={::this.handleSubmit}
                 onChange={accData => this.update('set', { accData })}>
             <FormItem label="邮箱" name="email">
               <FormInput size="lg" />
@@ -68,16 +82,17 @@ class Profile extends Component {
         <div styleName="card">
           <div styleName="title">密码</div>
           <Form data={pwdData}
-                onSubmit={::this.handleSubmitPwdData}
+                rules={this.rulesOfPassword}
+                onSubmit={::this.handleSubmit}
                 onChange={pwdData => this.update('set', { pwdData })}>
             <FormItem label="原密码" name="password">
-              <FormInput size="lg" placeholder="请输入原始密码" />
+              <FormInput type="password" size="lg" placeholder="请输入原始密码" />
             </FormItem>
             <FormItem label="新密码" name="newpassword1">
-              <FormInput size="lg" placeholder="请输入新密码" />
+              <FormInput type="password" size="lg" placeholder="请输入新密码" />
             </FormItem>
             <FormItem label="确认新密码" name="newpassword2">
-              <FormInput size="lg" placeholder="确认新密码" />
+              <FormInput type="password" size="lg" placeholder="确认新密码" />
             </FormItem>
             {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
             <FormSubmit size="lg" >保存</FormSubmit>

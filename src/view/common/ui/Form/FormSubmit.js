@@ -24,7 +24,7 @@ class FormSubmit extends Component {
     const { form } = this.context
     onClick && onClick()
     if (form.props.onSubmit) {
-      form.props.onSubmit(form.state.data)
+      form.handleSubmit()
     } else {
       form.save()
     }

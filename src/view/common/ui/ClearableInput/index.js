@@ -58,8 +58,8 @@ class ClearableInput extends Component {
 
   render () {
     const {
-      className, type, defaultValue, onChange, onClear, disabled, size, placeholder, readOnly, maxLength, forbidClearable,
-      ...other
+      className, type, defaultValue, onChange, onClear, disabled, size, placeholder, readOnly,
+      maxLength, forbidClearable, ...other
     } = this.props
     const { value, hasChanged } = this.state
     delete other.value
@@ -68,6 +68,8 @@ class ClearableInput extends Component {
 
     return (
       <div className={classnames('cmui-clearable-input', className)} {...other}>
+        {/* {autocomplete === 'off' && <input type="text" className="autocomplete-off" />} */}
+        {/* {autocomplete === 'off' && <input type="password" className="autocomplete-off" />} */}
         <Input
           ref="input"
           onChange={::this.handleInput}
@@ -97,6 +99,7 @@ ClearableInput.propTypes = {
   maxLength: PropTypes.number,
 
   forbidClearable: PropTypes.bool,
+  // autocomplete: PropTypes.string,
 
   // 输入框的值
   value: controlledPropValidator(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),

@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import update from 'react-update'
@@ -13,8 +12,17 @@ import styles from './index.less'
 class Profile extends Component {
   constructor (props) {
     super(props)
-    this.update = update.bind(this)
     this.props.flashMessage.show && this.props.removeFlashMessage()
+    this.update = update.bind(this)
+    this.rules = {
+      name (v) {
+        if (!v) return '请填写昵称'
+        if (v.length > 30) return '昵称不能超过30个字符'
+      },
+      bio (v) {
+        if (v.length > 60) return '昵称不能超过60个字符'
+      }
+    }
     this.state = {
       formData: {
         name: this.props.userInfo.name,
@@ -26,8 +34,8 @@ class Profile extends Component {
   uploadComplete (data) {
     this.props.updateAvatarLogined(data)
   }
-  handleSubmit () {
-    !_.isEmpty(this.state.formData) && this.props.update(this.state.formData)
+  handleSubmit (data) {
+    this.props.update(data)
   }
   componentWillUpdate (nextProps) {
     nextProps.flashMessage.type === 'success' && message.success(nextProps.flashMessage.message)
@@ -45,6 +53,7 @@ class Profile extends Component {
           <div styleName="left">
             <div styleName="title">基本信息</div>
             <Form data={formData}
+                  rules={this.rules}
                   onSubmit={::this.handleSubmit}
                   onChange={formData => this.update('set', { formData })}>
               <FormItem label="昵称" name="name" required>

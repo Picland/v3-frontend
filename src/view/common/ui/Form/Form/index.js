@@ -142,9 +142,9 @@ class Form extends Component {
     }
   }
 
-  handleSubmit (e) {
-    e.preventDefault()
-    this.props.onSubmit && this.props.onSubmit(this.state.data)
+  handleSubmit () {
+    // e.preventDefault()
+    this.props.onSubmit && this.validate() && this.props.onSubmit(this.state.data)
   }
 
   render () {
