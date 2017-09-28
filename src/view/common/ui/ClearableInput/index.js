@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import controlledPropValidator from '../_shared/propValidator/controlled'
-import Input from '../InputNew'
+import Input from '../Input'
 import Button from '../Button'
 import './index.less'
 
@@ -58,7 +58,7 @@ class ClearableInput extends Component {
 
   render () {
     const {
-      className, type, defaultValue, onChange, onClear, disabled, size, placeholder, readOnly, maxLength,
+      className, type, defaultValue, onChange, onClear, disabled, size, placeholder, readOnly, maxLength, forbidClearable,
       ...other
     } = this.props
     const { value, hasChanged } = this.state
@@ -73,7 +73,7 @@ class ClearableInput extends Component {
           onChange={::this.handleInput}
           {...inputProps}
         />
-        {(hasChanged && (value || value === 0 || Number.isNaN(value))) && (
+        {(!forbidClearable && hasChanged && (value || value === 0 || Number.isNaN(value))) && (
           <Button
             tabIndex="-1"
             icon="remove"
@@ -95,6 +95,8 @@ ClearableInput.propTypes = {
   type: PropTypes.string,
   readOnly: PropTypes.bool,
   maxLength: PropTypes.number,
+
+  forbidClearable: PropTypes.bool,
 
   // 输入框的值
   value: controlledPropValidator(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),

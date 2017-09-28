@@ -16,6 +16,7 @@ import {
   update as updateAction,
   updateAvatarUnlogined as updateAvatarUnloginedAction
 } from '../../redux/action/user'
+import { removeFlashMessage as removeFlashMessageAction } from '../../redux/action/flashMessage'
 
 const mapStateToProps = (state) => ({
   otherInfo: state.user.otherInfo,
@@ -26,33 +27,13 @@ const mapDispatchToProps = (dispatch) => ({
   login: async (user) => dispatch(loginAction(user)),
   register: async (user) => dispatch(registerAction(user)),
   update: async (info) => dispatch(updateAction(info)),
-  updateAvatarUnlogined: (data) => dispatch(updateAvatarUnloginedAction(data))
+  updateAvatarUnlogined: (data) => dispatch(updateAvatarUnloginedAction(data)),
+  removeFlashMessage: data => dispatch(removeFlashMessageAction())
 })
 
 @connect(mapStateToProps, mapDispatchToProps)
 @CSSModules(styles)
 class Header extends PureComponent {
-  static propTypes = {
-    logoName: PropTypes.string,
-    buttonName: PropTypes.string,
-    // buttonLink: PropTypes.string,
-    avatarSrc: PropTypes.string,
-    shadow: PropTypes.bool,
-    otherInfo: PropTypes.object,
-    flashMessage: PropTypes.object,
-    login: PropTypes.func,
-    register: PropTypes.func,
-    update: PropTypes.func,
-    updateAvatarUnlogined: PropTypes.func
-  }
-  static defaultProps = {
-    logoName: '',
-    buttonName: '',
-    buttonLink: '/',
-    shadow: false,
-    loginModal: true
-  }
-
   constructor (props) {
     super(props)
     this.state = { chosen: null }
@@ -114,6 +95,7 @@ class Header extends PureComponent {
                       flashMessage={this.props.flashMessage}
                       login={this.props.login}
                       switchModal={::this._switchModal}
+                      removeFlashMessageAction={this.props.removeFlashMessage}
                     />
                     : <Register
                       otherInfo={this.props.otherInfo}
@@ -122,6 +104,7 @@ class Header extends PureComponent {
                       update={this.props.update}
                       switchModal={::this._switchModal}
                       updateAvatarUnlogined={::this.props.updateAvatarUnlogined}
+                      removeFlashMessageAction={this.props.removeFlashMessage}
                     />
                   }
                 </ModalBody>
@@ -132,6 +115,29 @@ class Header extends PureComponent {
       </header>
     )
   }
+}
+
+Header.propTypes = {
+  logoName: PropTypes.string,
+  buttonName: PropTypes.string,
+  // buttonLink: PropTypes.string,
+  avatarSrc: PropTypes.string,
+  shadow: PropTypes.bool,
+  otherInfo: PropTypes.object,
+  flashMessage: PropTypes.object,
+  login: PropTypes.func,
+  register: PropTypes.func,
+  update: PropTypes.func,
+  updateAvatarUnlogined: PropTypes.func,
+  removeFlashMessage: PropTypes.func
+}
+
+Header.defaultProps = {
+  logoName: '',
+  buttonName: '',
+  buttonLink: '/',
+  shadow: false,
+  loginModal: true
 }
 
 export default Header
