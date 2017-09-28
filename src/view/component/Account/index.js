@@ -9,12 +9,6 @@ import styles from './index.less'
 
 @CSSModules(styles)
 class Profile extends Component {
-  static propTypes = {
-    userInfo: PropTypes.object,
-    flashMessage: PropTypes.object,
-    update: PropTypes.func,
-    removeFlashMessage: PropTypes.func
-  }
   constructor (props) {
     super(props)
     this.update = update.bind(this)
@@ -62,10 +56,10 @@ class Profile extends Component {
                 onSubmit={::this.handleSubmitAccData}
                 onChange={accData => this.update('set', { accData })}>
             <FormItem label="邮箱" name="email">
-              <FormInput />
+              <FormInput size="lg" />
             </FormItem>
             <FormItem label="手机" name="phoneNumber" required>
-              <FormInput hasbutton />
+              <FormInput size="lg" disabled />
             </FormItem>
             <FormSubmit size="lg" >保存</FormSubmit>
           </Form>
@@ -76,13 +70,13 @@ class Profile extends Component {
                 onSubmit={::this.handleSubmitPwdData}
                 onChange={pwdData => this.update('set', { pwdData })}>
             <FormItem label="原密码" name="password">
-              <FormInput placeholder="请输入原始密码" />
+              <FormInput size="lg" placeholder="请输入原始密码" />
             </FormItem>
             <FormItem label="新密码" name="newpassword1">
-              <FormInput placeholder="请输入新密码" />
+              <FormInput size="lg" placeholder="请输入新密码" />
             </FormItem>
             <FormItem label="确认新密码" name="newpassword2">
-              <FormInput placeholder="确认新密码" />
+              <FormInput size="lg" placeholder="确认新密码" />
             </FormItem>
             {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
             <FormSubmit size="lg" >保存</FormSubmit>
@@ -91,6 +85,13 @@ class Profile extends Component {
       </div>
     )
   }
+}
+
+Profile.propTypes = {
+  userInfo: PropTypes.object,
+  flashMessage: PropTypes.object,
+  update: PropTypes.func,
+  removeFlashMessage: PropTypes.func
 }
 
 export default Profile

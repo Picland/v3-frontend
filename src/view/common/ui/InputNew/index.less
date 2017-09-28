@@ -1,24 +1,44 @@
 @import '~variable';
 
 @width: 460px;
-@height: @unit-sixfold;
-@input-height: @unit-double + 4;
 
-.cmui-inputnew, .cmui-inputnew__active {
-  input {
-    width: @width;
-    height: 40px;
-    padding: 10px;
-    outline: none;
-    font-size: 13px;
-    border: 2px solid @lite;
+.cmui-input {
+  width: @width;
+  height: 30px;
+  padding: 0 8px;
+  outline: none;
+  font-size: 13px;
+  border: 2px solid @lite;
+  background-color: #fff;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  transition: border-color .2s ease;
+  &:focus {
+    border-color: @medium-liter;
+    // box-shadow: inset 0 1px 2px rgba(0, 0, 0, .3);
+  }
+  &[disabled] {
+    background-color: @lite-liter;
+    color: @medium-litest;
+    cursor: not-allowed;
   }
 }
 
-.cmui-inputnew__active {
-  input {
-    border-color: @medium-liter;
-  }
+.cmui-input--sm {
+  height: 22px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.cmui-input--lg {
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+// remove IE clearfield
+.cmui-input::-ms-clear {
+  display: none;
 }
 
 //::-webkit-input-placeholder { color: @lite; }

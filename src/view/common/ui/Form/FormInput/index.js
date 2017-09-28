@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import InputNew from '../../InputNew'
+import ClearableInput from '../../ClearableInput'
 
 const FormInput = (props, context) => {
   const { children, className, onChange, ...other } = props
@@ -11,7 +11,7 @@ const FormInput = (props, context) => {
     form.setItemValue(formItem, value)
     onChange && onChange(value)
   }
-  return <InputNew className={classnames('cmui-form-input', className)} {...other} />
+  return <ClearableInput className={classnames('cmui-form-input', className)} {...other} />
 }
 
 FormInput.propTypes = {
