@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 // import clientRouter from '../router/clientRouter'
 import App from './router'
 import { getUserStatus } from './common/util/api'
+// import SvgSprite from './common/ui/IconSvg/SvgSprite/index'
 import { initialState } from './redux/reducer/user'
 import _ from 'lodash'
 
