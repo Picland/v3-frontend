@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 import Avatar from '_common_ui/Avatar'
 import Button from '_common_ui/Button'
+import Icon from '_common_ui/Icon'
 import { Modal, ModalHeader, ModalBody } from '_common_ui/Modal'
 import styles from './index.less'
 import Login from '../../component/Login/'
@@ -67,6 +68,7 @@ class Header extends PureComponent {
           </div>
           { avatarSrc
           ? <div styleName="right">
+            <Icon type="message" styleName="icon-message" />
             <div styleName="dropdown-wrapper">
               <Avatar shape="circle"
                       size="default"
