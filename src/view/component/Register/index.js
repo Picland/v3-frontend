@@ -1,22 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-import Button from '../../common/ui/Button'
-import Input from '../../common/ui/Input'
-import Upload from '../../common/ui/Upload'
-import AvatarUpload from '../../common/ui/AvatarUpload'
+import Button from '_common_ui/Button'
+import InputLine from '_common_ui/InputLine'
+import Upload from '_common_ui/Upload'
+import AvatarUpload from '_common_ui/AvatarUpload'
 import styles from './index.less'
 
 @CSSModules(styles)
 class Register extends Component {
-  static propTypes = {
-    otherInfo: PropTypes.object,
-    flashMessage: PropTypes.object,
-    switchModal: PropTypes.func,
-    update: PropTypes.func,
-    register: PropTypes.func,
-    updateAvatarUnlogined: PropTypes.func
-  }
   constructor (props) {
     super(props)
     this.state = {
@@ -158,7 +150,7 @@ class Register extends Component {
             ? <div>
               <div styleName="title">注册</div>
               <div styleName="switch-modal">已有账号， <span onClick={::this._switchModal}>立即登录</span></div>
-              <Input styleType="line"
+              <InputLine
                      placeholder="手机号码"
                      type="text"
                      name="phoneNumber"
@@ -168,7 +160,7 @@ class Register extends Component {
                      validationState={this.state.accountValid}
                      help={this.state.accountHelp}
               />
-              <Input styleType="line"
+              <InputLine
                      placeholder="邀请码"
                      type="text"
                      name="inviteCode"
@@ -178,7 +170,7 @@ class Register extends Component {
                      validationState={this.state.inviteCodeValid}
                      help={this.state.inviteCodeHelp}
               />
-              <Input styleType="line"
+              <InputLine
                      placeholder="密码6-16位，区分大小写"
                      type={this.state.pwdInputType}
                      name="password"
@@ -190,7 +182,7 @@ class Register extends Component {
                      help={this.state.pwdHelp}
               />
               {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
-              <Button styleType="wide" onClick={::this._register}>注册</Button>
+              <Button onClick={::this._register}>注册</Button>
             </div>
             : <div>
               <div styleName="title-join">Hi, 欢迎加入!</div>
@@ -203,7 +195,7 @@ class Register extends Component {
                   src={this.props.otherInfo.avatar}
                   size="large" />
               </Upload>
-              <Input styleType="line"
+              <InputLine
                      placeholder="输入昵称，不超过10个汉字或20个英文字符"
                      type="text"
                      name="name"
@@ -213,12 +205,21 @@ class Register extends Component {
               />
               {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
               {this.state.nickNameHelp && <div styleName="server-error">{this.state.nickNameHelp}</div>}
-              <Button styleType="wide" onClick={::this._fishRegister}>完成</Button>
+              <Button onClick={::this._fishRegister}>完成</Button>
             </div>
         }
       </div>
     )
   }
+}
+
+Register.propTypes = {
+  otherInfo: PropTypes.object,
+  flashMessage: PropTypes.object,
+  switchModal: PropTypes.func,
+  update: PropTypes.func,
+  register: PropTypes.func,
+  updateAvatarUnlogined: PropTypes.func
 }
 
 export default Register

@@ -1,65 +1,113 @@
 @import '~variable';
 
-@ghost-color: @theme;
-@ghost-color-hover: @theme-lite;
-
-.cmui-button__btn {
-  font-size: 13px;
-}
-
-.cmui-button__default {
-  &:extend(.cmui-button__btn);
-  color: @theme-dark;
-  background-color: @theme-text;
-}
-
-.cmui-button__ghost {
-  &:extend(.cmui-button__btn);
-  font-size: @fontsize;
-  font-weight: @fontweight-medium;
-  color: @ghost-color;
-  border: 1px @ghost-color solid;
-  background-color: transparent;
-  padding: 3px 27px;
-  &:hover {
-    color: @white;
-    border-color: @ghost-color-hover;
-    background-color: @theme;
-  }
-}
-
-.cmui-button__wide {
-  margin: 0 auto;
-  font-size: 15px;
-  text-align: center;
-  color: @theme-text;
-  background-color: @theme-dark;
-  &:hover {
-    background-color: @theme-darker;
-  }
-}
-
-.cmui-button__primary {
-  &:extend(.cmui-button__wide);
-  letter-spacing: 4px;
-  text-indent: 4px;
-  height: 40px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 22px;
+.cmui-btn {
+  color: @white;
+  padding: 0 20px;
+  height: 30px;
   background-color: @theme;
-  padding-left: 30px;
-  padding-right: 30px;
+  border: 1px solid @theme;
+  border-radius: @btn-border-radius;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
   &:hover {
+    border-color: @theme-dark;
+    background-color: @theme-dark;
+  }
+  &:active {
+    border-color: @theme-darker;
     background-color: @theme-darker;
+  }
+  &:focus {
+    outline: none;
+  }
+  &[disabled] {
+    background-color: #eceff1;
+    border-color: #eaeaea;
+    color: #9e9e9e;
+    cursor: not-allowed;
+  }
+  .cmui-icon {
+    margin-right: 5px;
+  }
+  +.cmui-btn {
+    margin-left: 10px;
   }
 }
 
-.cmui-button__primary-wide {
-  &:extend(.cmui-button__wide);
-  font-size: 14px;
-  padding: 8px 34px;
+.cmui-btn--minor {
+  color: @theme;
+  background-color: @theme-liter;
+  border-color: @theme;
   &:hover {
-    background-color: @theme-darker;
+    background-color: @theme;
+    color: @white;
+  }
+  &:active {
+    background-color: @theme;
+    color: @white;
+
+  }
+}
+
+.cmui-btn--sm {
+  padding: 0 10px;
+  height: 22px;
+}
+
+.cmui-btn--lg {
+  padding: 0 33px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.cmui-btn--icon,
+.cmui-btn--circle {
+  padding: 0;
+  width: 30px;
+  text-align: center;
+  &.cmui-btn--sm {
+    width: 22px;
+  }
+  &.cmui-btn--lg {
+    width: 40px;
+  }
+}
+
+.cmui-btn--icon {
+  .cmui-icon {
+    margin-right: 0;
+  }
+}
+
+.cmui-btn--circle {
+  border-radius: 50%;
+}
+
+.cmui-btn--transparent {
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  opacity: .7;
+  transition: opacity .1s ease;
+  &:hover:enabled {
+    color: inherit;
+    background-color: transparent;
+    opacity: .85;
+  }
+  &:active:enabled {
+    color: inherit;
+    background-color: transparent;
+    opacity: 1;
+  }
+}
+
+.cmui-btn--ghost {
+  border: 1px solid @theme;
+  background-color: transparent;
+  color: @theme;
+  &:hover:enabled {
+    color: @white;
   }
 }

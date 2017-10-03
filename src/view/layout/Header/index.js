@@ -6,8 +6,8 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 import Avatar from '_common_ui/Avatar'
 import Button from '_common_ui/Button'
+import Icon from '_common_ui/Icon'
 import { Modal, ModalHeader, ModalBody } from '_common_ui/Modal'
-import styles from './index.less'
 import Login from '../../component/Login/'
 import Register from '../../component/Register/'
 import { login as loginAction } from '../../redux/action/login'
@@ -16,6 +16,7 @@ import {
   update as updateAction,
   updateAvatarUnlogined as updateAvatarUnloginedAction
 } from '../../redux/action/user'
+import styles from './index.less'
 
 const mapStateToProps = (state) => ({
   otherInfo: state.user.otherInfo,
@@ -32,27 +33,6 @@ const mapDispatchToProps = (dispatch) => ({
 @connect(mapStateToProps, mapDispatchToProps)
 @CSSModules(styles)
 class Header extends PureComponent {
-  static propTypes = {
-    logoName: PropTypes.string,
-    buttonName: PropTypes.string,
-    buttonLink: PropTypes.string,
-    avatarSrc: PropTypes.string,
-    shadow: PropTypes.bool,
-    otherInfo: PropTypes.object,
-    flashMessage: PropTypes.object,
-    login: PropTypes.func,
-    register: PropTypes.func,
-    update: PropTypes.func,
-    updateAvatarUnlogined: PropTypes.func
-  }
-  static defaultProps = {
-    logoName: '',
-    buttonName: '',
-    buttonLink: '/',
-    shadow: false,
-    loginModal: true
-  }
-
   constructor (props) {
     super(props)
     this.state = { chosen: null }
@@ -72,6 +52,7 @@ class Header extends PureComponent {
   }
 
   render () {
+    // {buttonLink}
     let {logoName, buttonName, buttonLink, avatarSrc, shadow} = this.props
     const container = classNames({
       'container-unlogin': !shadow,
@@ -87,6 +68,7 @@ class Header extends PureComponent {
           </div>
           { avatarSrc
           ? <div styleName="right">
+            <Icon type="message" styleName="icon-message" />
             <div styleName="dropdown-wrapper">
               <Avatar shape="circle"
                       size="default"
@@ -99,11 +81,11 @@ class Header extends PureComponent {
                 <Link to="/logout"><li>退出</li></Link>
               </ul>
             </div>
-            <Link to={buttonLink}><Button styleType="ghost">{buttonName}</Button></Link>
+            <Link to={buttonLink}><Button size="sm" ghost>{buttonName}</Button></Link>
           </div>
             : <div styleName="right">
               <div styleName="nav-btn" onClick={() => this._handleModal('login')}>登录</div>
-              <Button styleType="primary-wide" onClick={() => this._handleModal('register')}>{buttonName}</Button>
+              <Button onClick={() => this._handleModal('register')}>{buttonName}</Button>
               <Modal ref="modal" lock>
                 <ModalHeader />
                 <ModalBody>
@@ -131,6 +113,28 @@ class Header extends PureComponent {
       </header>
     )
   }
+}
+
+Header.propTypes = {
+  logoName: PropTypes.string,
+  buttonName: PropTypes.string,
+  buttonLink: PropTypes.string,
+  avatarSrc: PropTypes.string,
+  shadow: PropTypes.bool,
+  otherInfo: PropTypes.object,
+  flashMessage: PropTypes.object,
+  login: PropTypes.func,
+  register: PropTypes.func,
+  update: PropTypes.func,
+  updateAvatarUnlogined: PropTypes.func
+}
+
+Header.defaultProps = {
+  logoName: '',
+  buttonName: '',
+  buttonLink: '/',
+  shadow: false,
+  loginModal: true
 }
 
 export default Header

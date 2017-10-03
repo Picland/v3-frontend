@@ -11,12 +11,13 @@
   background-color: @background-color;
   color: @white;
   margin-top: 110px;
-  padding: 20px 40px;
+  padding: 20px 70px;
+  border-top: @theme-footer-bottom-top 1px solid;
   .first-line, .second-line {
     overflow: hidden;
   }
   label {
-    color: @theme;
+    color: @theme-footer-text-top;
     display: block;
     font-size: @fontsize;
     height: @unit-double;
@@ -35,7 +36,7 @@
     }
   }
   .intro, .thanks {
-    color: @white;
+    color: @theme-footer-text-middle;
     font-size: @fontsize-small;
     max-width: 342px;
     margin-right: 70px;
@@ -56,7 +57,7 @@
   }
   .second-line {
     font-size: @fontsize-small;
-    color: @medium-lite;
+    color: @theme-footer-text-bottom;
     position: relative;
     bottom: -@unit-triple;
     cursor: default;

@@ -22,8 +22,8 @@ const render = (renderMe) => {
         </head>
         <body>
           <div id="root"></div>
-          <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
-          <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+          <script src="/3rdParty/react-16.0.0.production.min.js"></script>
+          <script src="/3rdParty/react-dom-16.0.0.production.min.js"></script>
           <script src="${dist}/js/vendor.js"></script>
           <script src="${dist}/js/app.js"></script>
         </body>
@@ -38,8 +38,8 @@ const render = (renderMe) => {
         </head>
         <body>
           <div id="root"></div>
-          <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
-          <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+          <script src="/3rdParty/react-16.0.0.production.min.js"></script>
+          <script src="/3rdParty/react-dom-16.0.0.production.min.js"></script>
           <script src="${dist}/js/vendor.js"></script>
           <script src="${dist}/js/app.js"></script>
         </body>

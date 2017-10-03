@@ -95,8 +95,8 @@ function xhr (option) {
          * @description 全局成功回调，在 dataFilter 后执行，此方法会覆盖单独的 success
          * 方法，如果需要可手动调用
          * ```js
-         * import xhr from 'bfd/xhr'
-         * import message from 'bfd/message'
+         * import xhr from 'cmui/xhr'
+         * import message from 'cmui/message'
          *
          * xhr.success = (res, option) => {
          *   if (typeof res !== 'object') {

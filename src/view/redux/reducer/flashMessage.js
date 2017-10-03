@@ -15,10 +15,7 @@ export default (state = initialState, action) => {
         show: true
       }
     case constActionType.REMOVE_FLASHMESSAGE:
-      return {
-        ...state,
-        show: false
-      }
+      return initialState
     default:
       return state
   }

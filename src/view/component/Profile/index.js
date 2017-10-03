@@ -1,68 +1,86 @@
-import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import update from 'react-update'
 import CSSModules from 'react-css-modules'
-import InputNew from '../../common/ui/InputNew'
-import Upload from '../../common/ui/Upload'
-import Button from '../../common/ui/Button'
-import AvatarUpload from '../../common/ui/AvatarUpload'
+import Upload from '_common_ui/Upload'
+import Avatar from '_common_ui/Avatar'
+import message from '_common_ui/message'
+import { Form, FormItem, FormSubmit, FormInput, FormSelect, Option } from '_common_ui/Form'
 import styles from './index.less'
 
 @CSSModules(styles)
 class Profile extends Component {
-  static propTypes = {
-    userInfo: PropTypes.object,
-    update: PropTypes.func,
-    updateAvatarLogined: PropTypes.func
-  }
   constructor (props) {
     super(props)
+    this.props.flashMessage.show && this.props.removeFlashMessage()
+    this.update = update.bind(this)
+    this.rules = {
+      name (v) {
+        if (!v) return '请填写昵称'
+        if (v.length > 30) return '昵称不能超过30个字符'
+      },
+      bio (v) {
+        if (v.length > 60) return '昵称不能超过60个字符'
+      }
+    }
     this.state = {
-      formData: {}
+      formData: {
+        name: this.props.userInfo.name,
+        gender: this.props.userInfo.gender,
+        bio: this.props.userInfo.bio
+      }
     }
   }
-  async _save () {
-    !_.isEmpty(this.state.formData) && await this.props.update(this.state.formData)
-  }
-  _uploadComplete (data) {
+  uploadComplete (data) {
     this.props.updateAvatarLogined(data)
   }
-  _handleChange (name, value) {
-    this.state.formData[name] = value
+  handleSubmit (data) {
+    this.props.update(data)
+  }
+  componentWillUpdate (nextProps) {
+    nextProps.flashMessage.type === 'success' && message.success(nextProps.flashMessage.message)
+    nextProps.flashMessage.type === 'error' && message.danger(nextProps.flashMessage.message)
+  }
+  componentDidUpdate () {
+    this.props.flashMessage.show && this.props.removeFlashMessage()
   }
   render () {
+    let { formData } = this.state
     let { userInfo } = this.props
     return (
       <div styleName="container">
         <div styleName="card">
           <div styleName="left">
             <div styleName="title">基本信息</div>
-            <InputNew label="昵称"
-                      name="name"
-                      value={userInfo.name}
-                      onChange={::this._handleChange}
-            />
-            <InputNew label="性别"
-                      name="gender"
-                      value={userInfo.gender}
-                      onChange={::this._handleChange}
-            />
-            <InputNew label="简介"
-                      name="bio"
-                      value={userInfo.bio}
-                      onChange={::this._handleChange}
-            />
-            <Button styleType="primary" onClick={::this._save}>保存</Button>
+            <Form data={formData}
+                  rules={this.rules}
+                  onSubmit={::this.handleSubmit}
+                  onChange={formData => this.update('set', { formData })}>
+              <FormItem label="昵称" name="name" required>
+                <FormInput size="lg" />
+              </FormItem>
+              <FormItem label="性别" name="gender">
+                <FormSelect minWidth={460}>
+                  <Option value="m">男</Option>
+                  <Option value="f">女</Option>
+                  <Option value="x">不详</Option>
+                </FormSelect>
+              </FormItem>
+              <FormItem label="简介" name="bio">
+                <FormInput size="lg" />
+              </FormItem>
+              <FormSubmit size="lg" >保存</FormSubmit>
+            </Form>
           </div>
           <div styleName="right">
             <div styleName="upload-avatar">
               <Upload method="post"
                       action="/api/v1/updateUserAvatar"
                       button="更换头像"
-                      onComplete={::this._uploadComplete}>
-                <AvatarUpload
+                      onComplete={::this.uploadComplete}>
+                <Avatar
                   src={userInfo.avatar}
-                  size="larger" />
+                  size="lg" />
               </Upload>
             </div>
           </div>
@@ -70,6 +88,14 @@ class Profile extends Component {
       </div>
     )
   }
+}
+
+Profile.propTypes = {
+  userInfo: PropTypes.object,
+  flashMessage: PropTypes.object,
+  update: PropTypes.func,
+  updateAvatarLogined: PropTypes.func,
+  removeFlashMessage: PropTypes.func
 }
 
 export default Profile

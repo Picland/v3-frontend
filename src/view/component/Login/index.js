@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-import Button from '../../common/ui/Button/'
-import Input from '../../common/ui/Input/index'
+import Button from '_common_ui/Button/'
+import InputLine from '_common_ui/InputLine'
 import styles from './index.less'
 
 @CSSModules(styles)
 class Login extends Component {
-  static propTypes=({
-    flashMessage: PropTypes.object,
-    switchModal: PropTypes.func,
-    login: PropTypes.func
-  })
   constructor (props) {
     super(props)
     this.state = {
@@ -74,7 +69,7 @@ class Login extends Component {
       <div styleName="login">
         <div>登录</div>
         <div styleName="switch-modal">还没有账号， <span onClick={::this._switchModal}>立即注册</span></div>
-        <Input styleType="line"
+        <InputLine
                placeholder="手机号码"
                type="text"
                name="account"
@@ -83,7 +78,7 @@ class Login extends Component {
                validationState={this.state.accountValid}
                help={this.state.accountHelp}
          />
-        <Input styleType="line"
+        <InputLine
                placeholder="密码"
                type="password"
                name="password"
@@ -93,10 +88,15 @@ class Login extends Component {
                help={this.state.pwdHelp}
          />
         {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
-        <Button styleType="wide" onClick={::this._logIn}>登录</Button>
+        <Button onClick={::this._logIn}>登录</Button>
       </div>
     )
   }
 }
+Login.propTypes = ({
+  flashMessage: PropTypes.object,
+  switchModal: PropTypes.func,
+  login: PropTypes.func
+})
 
 export default Login
