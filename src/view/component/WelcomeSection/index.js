@@ -22,10 +22,9 @@ class WelcomeSection extends PureComponent {
       'J4M35',
       '谢松汕-桂林大河',
       '张宇卿',
-      'Sean_T',
-      '左耳右耳'
+      'Sean_T'
     ]
-    const bgNo = _.random(0, 4)
+    const bgNo = _.random(0, 3)
     let bgUrl = `url(/img/common/login_bg${bgNo}.jpg)`
     return (
       <div>

@@ -3,19 +3,6 @@ import PropTypes from 'prop-types'
 import './index.less'
 
 class AvatarUpload extends Component {
-  static propTypes = {
-    shape: PropTypes.string,
-    size: PropTypes.string,
-    src: PropTypes.string,
-    onClick: PropTypes.func
-  }
-
-  static defaultProps = {
-    shape: 'circle',
-    size: 'default',
-    src: ''
-  }
-
   _handleClick (e) {
     const onClick = this.props.onClick
     if (onClick) {
@@ -37,6 +24,19 @@ class AvatarUpload extends Component {
       </div>
     )
   }
+}
+
+AvatarUpload.propTypes = {
+  shape: PropTypes.string,
+  size: PropTypes.string,
+  src: PropTypes.string,
+  onClick: PropTypes.func
+}
+
+AvatarUpload.defaultProps = {
+  shape: 'circle',
+  size: 'default',
+  src: ''
 }
 
 export default AvatarUpload

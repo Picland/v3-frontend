@@ -50,7 +50,8 @@ class Upload extends Component {
     }
   }
 
-  handleClick () {
+  handleClick (e) {
+    if (this.props.button && e.target.localName !== 'button') return
     const fileEl = this.refs.file
     fileEl.value = ''
     fileEl.click()
@@ -160,7 +161,7 @@ class Upload extends Component {
           {this.props.children}
         </div>
         {button &&
-          <Button styleType="ghost" onClick={::this.handleClick}>{button}</Button>
+          <Button ghost onClick={::this.handleClick}>{button}</Button>
         }
         {showFileList &&
           <div className="cmui-upload__listbox">

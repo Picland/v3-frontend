@@ -8,10 +8,6 @@ import styles from './index.less'
 
 @CSSModules(styles)
 class Setting extends Component {
-  static propTypes = {
-    userInfo: PropTypes.object,
-    children: PropTypes.node
-  }
   render () {
     let { userInfo } = this.props
     let avatarSrc = userInfo ? userInfo.avatar : ''
@@ -29,6 +25,11 @@ class Setting extends Component {
       </div>
     )
   }
+}
+
+Setting.propTypes = {
+  userInfo: PropTypes.object,
+  children: PropTypes.node
 }
 
 export default Setting
