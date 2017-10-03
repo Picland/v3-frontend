@@ -129,7 +129,6 @@
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
     "react-router-redux": "^4.0.8",
-    "react-svg-sprite": "^1.0.8",
     "react-update": "^0.4.4",
     "redux": "^3.7.0",
     "redux-composable-fetch": "^0.3.4",

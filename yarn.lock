@@ -1617,14 +1617,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.6.0:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.2.tgz#cf1ed15f12aad7f14ef5f2dfe05e6c42f91ef02a"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
-
 cron@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/cron/-/cron-1.2.1.tgz#3a86c09b41b8f261ac863a7cc85ea4735857eab2"
@@ -5044,28 +5036,12 @@ react-router@^4.0.0, react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-svg-sprite@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/react-svg-sprite/-/react-svg-sprite-1.0.8.tgz#2ec484bfef6fef1bd4668d92c058a387e039a60d"
-  dependencies:
-    react "^15.1.0"
-
 react-update@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/react-update/-/react-update-0.4.4.tgz#eb46917025a05f4e074acfc9591b1f078c52a824"
   dependencies:
     babel-plugin-transform-runtime "^6.12.0"
     immutability-helper "^2.0.0"
-
-react@^15.1.0:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
-  dependencies:
-    create-react-class "^15.6.0"
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.10"
 
 react@^16.0.0:
   version "16.0.0"

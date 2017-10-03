@@ -103,9 +103,9 @@ const message = {
    * @name message.success
    * @param  {string | element} message message 内容，支持 React 元素
    * @param  {number} [duration] 持续时间，单位秒，为0时手动关闭
-   * @description 成功信息，默认 2 秒后自动关闭
+   * @description 成功信息，默认 1 秒后自动关闭
    */
-  success (message, duration = 2) {
+  success (message, duration = 1) {
     render({
       message,
       duration,
@@ -119,9 +119,9 @@ const message = {
    * @name message.danger
    * @param  {string | element} message message 内容，支持 React 元素
    * @param  {number} [duration] 持续时间，单位秒，为0时手动关闭
-   * @description 失败信息，默认 3 秒后自动关闭
+   * @description 失败信息，默认 2 秒后自动关闭
    */
-  danger (message, duration = 3) {
+  danger (message, duration = 2) {
     render({
       message,
       duration,
