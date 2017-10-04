@@ -105,7 +105,6 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "fetch": "^1.1.0",
     "file-loader": "^0.11.2",
-    "font-awesome": "^4.7.0",
     "formidable": "^1.1.1",
     "invariant": "^2.2.2",
     "isomorphic-style-loader": "^1.1.0",
