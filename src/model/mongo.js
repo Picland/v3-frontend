@@ -37,7 +37,7 @@ let User = mongolass.model('User', {
   bio: { type: 'string' },
   email: { type: 'string' }
 })
-User.createIndex({ phoneNumber: 1 }, { unique: true }).exec() // 根据用户名找到用户，用户名全局唯一
+User.createIndex({ phoneNumber: 1 }, { unique: true }).exec() // 根据手机号查找用户，手机号全局唯一
 
 // Article Collection
 let Article = mongolass.model('Article', {
