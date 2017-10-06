@@ -27,12 +27,6 @@ export default (server) => {
   // Old Multiple Pages Router
   // --------------------------------------------------------------------------
   //
-  // // GET /register 注册页
-  // server.get('/register', authorize.isNotLogin, registerController.renderRegisterPage)
-  //
-  // // POST /register 用户注册
-  // server.post('/register', authorize.isNotLogin, registerController.createUser)
-  //
   // // GET /articles 所有用户或者特定用户的文章页
   // // eg: GET /articles?author=xxx
   // server.get('/articles', authorize.isLogin, articleController.getAllArticles)
