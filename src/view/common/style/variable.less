@@ -57,7 +57,7 @@
 // Colors ......................................................................
 
 // black and white
-@black: rgba(30, 30, 30, 1);
+@black: rgba(0, 0, 0, 1);
 @white: rgba(255, 255, 255, 1);
 
 // dark grey
@@ -163,14 +163,17 @@
 @theme-liter: #f5f3ef;
 @theme-text: @white;
 //@theme-header: #25292e;
-@theme-header: #333;
+@theme-header: @black;
+//@theme-header: #333;
 @theme-header-logo: @white;
-@theme-header-dropdown: #333;
-@theme-footer: rgb(68, 68, 68);
+@theme-header-dropdown: @dark-darker;
+//@theme-footer: rgb(68, 68, 68);
+@theme-footer: @dark-darker;
 @theme-footer-bottom-top: @lite-lite;
 @theme-footer-text-top: #fff;
 @theme-footer-text-middle: #ddd;
-@theme-footer-text-bottom: #aaa;
+//@theme-footer-text-bottom: #aaa;
+@theme-footer-text-bottom: @medium-lite;
 @btn-border-radius: 0px;
 
 //@theme: #b89f7a;
