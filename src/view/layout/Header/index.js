@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
-import classNames from 'classnames'
+// import classNames from 'classnames'
 import { connect } from 'react-redux'
 import Avatar from '_common_ui/Avatar'
 import Button from '_common_ui/Button'
@@ -52,12 +52,11 @@ class Header extends PureComponent {
   }
 
   render () {
-    // {buttonLink}
-    let {logoName, buttonName, buttonLink, avatarSrc, shadow} = this.props
-    const container = classNames({
-      'container-unlogin': !shadow,
-      'container-login': shadow
-    })
+    let {logoName, buttonName, buttonLink, avatarSrc, nofixed, scroll} = this.props
+    let container = nofixed && 'container-nofixed'
+    container = container || (!avatarSrc && !scroll && 'container-unlogin-unscroll')
+    container = container || (!avatarSrc && scroll && 'container-unlogin-scroll')
+    container = container || 'container-base'
     return (
       <header styleName={container}>
         <div>
@@ -120,7 +119,8 @@ Header.propTypes = {
   buttonName: PropTypes.string,
   buttonLink: PropTypes.string,
   avatarSrc: PropTypes.string,
-  shadow: PropTypes.bool,
+  nofixed: PropTypes.bool,
+  scroll: PropTypes.bool,
   otherInfo: PropTypes.object,
   flashMessage: PropTypes.object,
   login: PropTypes.func,
@@ -133,7 +133,7 @@ Header.defaultProps = {
   logoName: '',
   buttonName: '',
   buttonLink: '/',
-  shadow: false,
+  nofixed: false,
   loginModal: true
 }
 

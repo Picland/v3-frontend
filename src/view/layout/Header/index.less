@@ -13,13 +13,14 @@
 //}
 
 .container-base {
-  position: fixed;
   box-sizing: content-box;
-  z-index: @zindex-header;
+  position: fixed;
   top: 0;
+  z-index: @zindex-header;
   width: 100%;
   height: @height;
   color: @text-color;
+  background-color: @background-color;
   //border-bottom: 1px solid #E7EAF1;
   &:hover {
     background-color: @background-color;
@@ -89,6 +90,7 @@
       position: relative;
       //right: 22px;
       cursor: pointer;
+      z-index: @zindex-dropdown;
       div:first-child {
         position: relative;
         top: 13px;
@@ -103,16 +105,16 @@
     display: none;
     float: right;
     position: absolute;
+    height: 0;
+    z-index: @zindex-dropdown;
     top: 55px;
     left: -33px;
     flex-direction: column;
     justify-content: center;
     width: @unit-ninefold;
-    height: 108px;
-    //border: 1px solid @dark-dark;
     background-color: @theme-header-dropdown;
-    transition: opacity .5s ease;
-    //box-shadow: 0 5px 20px rgba(0,34,77,.1);
+    transition: height .5s ease;
+    //border: 1px solid @dark-dark;
     //border-radius: 4px;
     padding-left: 0;
     li {
@@ -129,21 +131,14 @@
   }
   .dropdown-wrapper:hover .dropdown-container {
     display: flex;
+    height: 108px;
   }
   .dropdown-wrapper > .avatar { padding-bottom: 30px; }
 }
 
-.container-unlogin {
+.container-nofixed {
   .container-base();
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4), transparent);
-  //background-color: transparent;
-  transition: background-color ease 0.8s;
-  &:hover {
-    background-color: rbg(34, 34, 34);
-  }
-}
-.container-login {
-  .container-base();
+  position: relative;
   background-color: @background-color;
   //border-bottom: 1px solid rgba(30,35,42,.06);
   //box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
@@ -158,4 +153,19 @@
   //    margin-right: 0;
   //  }
   //}
+}
+.container-unlogin-unscroll {
+  .container-base();
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4), transparent);
+  //background-color: transparent;
+  transition: background-color ease 0.8s;
+  &:hover {
+    background-color: rbg(34, 34, 34);
+  }
+}
+
+.container-unlogin-scroll {
+  .container-base();
+  background-color: @background-color;
 }
