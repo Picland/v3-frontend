@@ -52,7 +52,7 @@ class Header extends PureComponent {
   }
 
   render () {
-    let {logoName, buttonName, buttonLink, avatarSrc, nofixed, scroll} = this.props
+    let {buttonName, buttonLink, avatarSrc, nofixed, scroll} = this.props
     let container = nofixed && 'container-nofixed'
     container = container || (!avatarSrc && !scroll && 'container-unlogin-unscroll')
     container = container || (!avatarSrc && scroll && 'container-unlogin-scroll')
@@ -61,7 +61,7 @@ class Header extends PureComponent {
       <header styleName={container}>
         <div>
           <div styleName="left">
-            <span styleName="logo">{logoName}</span>
+            <img styleName="logo" src="/img/common/logo.png" />
             <Link to="/home"><li>首页</li></Link>
             <a href="http://muwenzi.com"><li>旧版</li></a>
           </div>
@@ -115,7 +115,6 @@ class Header extends PureComponent {
 }
 
 Header.propTypes = {
-  logoName: PropTypes.string,
   buttonName: PropTypes.string,
   buttonLink: PropTypes.string,
   avatarSrc: PropTypes.string,

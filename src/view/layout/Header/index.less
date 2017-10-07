@@ -43,16 +43,13 @@
   .left {
     float: left;
     .logo {
-      display: inline-table;
-      height: @height;
-      line-height: @height;
-      vertical-align: middle;
-      font-size: @fontsize-biger;
-      font-family: @fontfamily-logo;
-      font-weight: @fontweight-bold;
+      position: relative;
+      top: 6px;
+      display: inline-block;
+      width: 120px;
+      height: 20px;
       cursor: default;
       margin-right: 22px;
-      color: @theme-header-logo;
     }
     a {
       display: inline-table;
@@ -62,6 +59,7 @@
       list-style: none;
       padding: 10px 26px;
       font-size: @fontsize;
+      line-height: @height - 20px;
       vertical-align: middle;
       &:hover {
         color: @theme;

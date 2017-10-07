@@ -32,7 +32,7 @@ class Welcome extends Component {
   render () {
     return (
       <div>
-        <Header logoName="木纹子印象派" buttonLink="/register" buttonName="注册" scroll={this.state.scroll} />
+        <Header buttonLink="/register" buttonName="注册" scroll={this.state.scroll} />
         <WelcomeSection />
         <Footer />
       </div>

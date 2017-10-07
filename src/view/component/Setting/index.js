@@ -14,7 +14,7 @@ class Setting extends Component {
     let avatarSrc = userInfo ? userInfo.avatar : ''
     return (
       <div styleName="container">
-        <Header logoName="木纹子印象派" buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} nofixed />
+        <Header buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} nofixed />
         <StickyContainer>
           <Sticky>
             {

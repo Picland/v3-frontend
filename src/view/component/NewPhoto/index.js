@@ -16,7 +16,7 @@ class NewPhoto extends Component {
     let avatarSrc = userInfo ? userInfo.avatar : ''
     return (
       <div styleName="container">
-        <Header logoName="木纹子印象派" buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} />
+        <Header buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} />
         <div>
           <div styleName="main">
             <h2>正在开发中...</h2>
