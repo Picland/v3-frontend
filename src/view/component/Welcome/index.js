@@ -9,15 +9,15 @@ class Welcome extends Component {
     // only by this way, the EventListener can be removed
     this._handleScroll = this._handleScroll.bind(this)
     this.state = {
-      shadow: false
+      scroll: false
     }
   }
   _handleScroll () {
     let bodyScrollTop = document.documentElement.scrollTop
     if (bodyScrollTop > 200) {
-      this.setState({shadow: true})
+      this.setState({scroll: true})
     } else {
-      this.setState({shadow: false})
+      this.setState({scroll: false})
     }
   }
 
@@ -32,7 +32,7 @@ class Welcome extends Component {
   render () {
     return (
       <div>
-        <Header logoName="木纹子印象派" buttonLink="/register" buttonName="注册" shadow={this.state.shadow} />
+        <Header buttonLink="/register" buttonName="注册" scroll={this.state.scroll} />
         <WelcomeSection />
         <Footer />
       </div>

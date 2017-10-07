@@ -17,8 +17,8 @@ class User extends Component {
     return (
       <div styleName="container">
         { avatarSrc
-          ? <Header logoName="木纹子印象派" buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} shadow />
-          : <Header logoName="木纹子印象派" buttonLink="/register" buttonName="注册" shadow />
+          ? <Header buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} nofixed />
+          : <Header buttonLink="/register" buttonName="注册" nofixed />
         }
         <div>
           <div styleName="top-background" style={{backgroundImage: 'url(/img/common/personal_bg.jpg)'}} />

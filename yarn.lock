@@ -4397,6 +4397,10 @@ performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
 
+performance-now@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+
 pidusage@^1.1.0:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/pidusage/-/pidusage-1.1.6.tgz#d708d8e38cc7ccfaa191fb6adac1fd674a4be184"
@@ -4910,6 +4914,12 @@ querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
+raf@^3.3.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
+  dependencies:
+    performance-now "^2.1.0"
+
 random-bytes@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/random-bytes/-/random-bytes-1.0.0.tgz#4f68a1dc0ae58bd3fb95848c30324db75d64360b"
@@ -5031,6 +5041,13 @@ react-router@^4.0.0, react-router@^4.2.0:
     path-to-regexp "^1.7.0"
     prop-types "^15.5.4"
     warning "^3.0.0"
+
+react-sticky@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/react-sticky/-/react-sticky-6.0.1.tgz#356988bdcc6fc8cd2d89746d2302edce67d86687"
+  dependencies:
+    prop-types "^15.5.8"
+    raf "^3.3.0"
 
 react-update@^0.4.4:
   version "0.4.4"
