@@ -1,4 +1,5 @@
 // ShadowEqual except function props.
+// maybe replaced by PureComponent
 function isEqual (source, target) {
   if (!source) return true
   return Object.keys(source).every(key => {
