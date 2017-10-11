@@ -1,47 +1,50 @@
 @import '~variable';
 
 @nav-height: 60px;
+@width: 940px;
 
 .container {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: @lite-liter;
-  .nav-top {
+  .navTop {
+    position: relative;
     width: 100%;
     height: @nav-height;
+    z-index: @zindex-subnav;
     border-right: 1px solid #E7EAF1;
     text-align: center;
     background-color: @white;
-    border-bottom: 1px solid rgba(30,35,42,.06);
-    box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+    border-bottom: 1px solid rgba(30, 35, 42, .06);
+    box-shadow: 0 1px 3px 0 rgba(0, 34, 77, .05);
     background-clip: content-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    .nav-menu {
-      height: 29px;
-      line-height: 28px;
-      font-size: 14px;
-      vertical-align: middle;
-      display: inline-table;
-      border-bottom: 2px solid transparent;
-      margin-left: 22px;
-      margin-right: 22px;
-      &:hover {
-        cursor: pointer;
-        border-bottom-color: @theme;
-        color: @theme;
+    .content {
+      width: 1300px;
+      font-size: 0;
+      button {
+        padding: 0 31px;
+        &:first-child {
+          margin-right: 12px;
+        }
+      }
+      .left {
+        float: left;
+        font-size: 13px;
+      }
+      .right {
+        float: right;
       }
     }
-    .active .nav-menu {
-      border-bottom-color: @theme;
-    }
   }
-  .main {
+  .upload {
     width: 940px;
-    height: 709px;
-    margin: 0 auto;
-    position: relative;
-    top: 100px;
-    margin-bottom: 220px;
+    min-height: 400px;
+    margin: 40px auto 0;
     border: 1px solid #E7EAF1;
     background-color: @white;
     h2 {
@@ -53,5 +56,14 @@
       line-height: 33px;
       vertical-align: middle;
     }
+  }
+  .form {
+    margin-top: 66px;
+    min-height: 410px;
+    background-color: @white;
+    border-top: 1px solid #E7EAF1;
+  }
+  footer {
+    margin-top: 0;
   }
 }
