@@ -1,8 +1,7 @@
 import path from 'path'
 import express from 'express'
 import bodyParser from 'body-parser'
-import session from 'express-session'
-import connectMongo from 'connect-mongo' // 将 session 存储于 mongodb，结合 express-session 使用
+import cookieParser from 'cookie-parser'
 import config from 'config-lite'
 import winston from 'winston'
 import expressWinston from 'express-winston'
@@ -12,10 +11,10 @@ import formidable from '../src/middleware/formidable'
 import renderService from '../src/service/renderService'
 import api from '../src/api'
 
-const MongoStore = connectMongo(session)
 const server = express()
 
 server.use(bodyParser.json())
+server.use(cookieParser())
 
 // --------------------------------------------------------------------------
 // View Engine
@@ -29,32 +28,6 @@ server.set('view engine', 'html')
 // --------------------------------------------------------------------------
 server.use(favicon(path.join(__dirname, '../static', 'favicon.ico')))
 server.use(express.static(path.join(__dirname, '../static')))
-
-// --------------------------------------------------------------------------
-// Session Middleware
-// --------------------------------------------------------------------------
-/**
- * @type {String} [name] 设置 cookie 中保存 session id 的字段名称
- * @type {String} [secret] 通过设置 secret 来计算 hash 值并放在 cookie 中
- *   使产生的 signedCookie 防篡改
- * @type {Boolean} [resave] 强制更新 session
- * @type {Boolean} [saveUninitialized] false，强制创建一个 session，即使用户未登录
- * @type {String} [maxAge] 过期时间，过期后 cookie 中的 session id 自动删除
- * @type {Object} [store] 将 session 存储到 mongodb
- * @type {String} [url] mongodb 地址
- */
-server.use(session({
-  name: config.session.key,
-  secret: config.session.secret,
-  resave: true,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: config.session.maxAge
-  },
-  store: new MongoStore({
-    url: config.mongodb
-  })
-}))
 
 // --------------------------------------------------------------------------
 // Form and File Upload Middleware

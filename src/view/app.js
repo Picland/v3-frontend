@@ -6,26 +6,17 @@ import { Provider } from 'react-redux'
 // import createBrowserHistory from 'history/createBrowserHistory'
 // import clientRouter from '../router/clientRouter'
 import App from './router'
-import { getUserStatus } from './common/util/api'
+import { getOwnInfo } from './common/util/api'
 // import SvgSprite from './common/ui/IconSvg/SvgSprite/index'
 import { initialState } from './redux/reducer/user'
 import _ from 'lodash'
 
 async function getInitialState () {
-  let result = await getUserStatus()
-  if (result.code !== 0) {
+  let result = await getOwnInfo()
+  if (result.code === 0) {
     return {
       user: {
-        userInfo: result,
-        logining: initialState.logining,
-        otherInfo: initialState.otherInfo,
-        registering: initialState.registering
-      }
-    }
-  } else {
-    return {
-      user: {
-        userInfo: result,
+        userInfo: result.user,
         logining: initialState.logining,
         otherInfo: initialState.otherInfo,
         registering: initialState.registering

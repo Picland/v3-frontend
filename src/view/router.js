@@ -40,10 +40,6 @@ const UserSetting = ({ match }) => (
   } />
 )
 
-const mapStateToProps = (state) => ({
-  auth: state.user.userInfo._id
-})
-
 // Handle the sever redirect and 404
 const RedirectFromServer = ({match}) => {
   let url = window.location.search
@@ -52,6 +48,10 @@ const RedirectFromServer = ({match}) => {
     ? <Redirect to={{pathname: url.substring(1), state: { from: '/' }}} />
     : <NoMatch />
 }
+
+const mapStateToProps = state => ({
+  auth: state.user.userInfo._id
+})
 
 @connect(mapStateToProps)
 class App extends Component {
