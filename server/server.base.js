@@ -31,8 +31,6 @@ server.use(express.static(path.join(__dirname, '../static')))
 
 // --------------------------------------------------------------------------
 // Form and File Upload Middleware
-// https://github.com/felixge/node-formidable#api
-// https://github.com/noraesae/express-formidable
 // --------------------------------------------------------------------------
 server.use(formidable({
   uploadDir: path.join(__dirname, '../static/img'),
@@ -87,5 +85,5 @@ server.use(expressWinston.errorLogger({
 // Start the Server
 // --------------------------------------------------------------------------
 server.listen(config.port, () => {
-  console.log(`----\n==> ✅  ${pkg.name} listening on http://localhost:${config.port}\n----`)
+  console.log(`✅ ${pkg.name} listening on http://localhost:${config.port}`)
 })
