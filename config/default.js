@@ -6,17 +6,13 @@
  * config/test.node、config/tes.yml、config/test.yaml 并合并 default 配置; 如果程序以 NODE_ENV=production node app 启动，
  * 则通过 require('config-lite') 会依次降级查找 config/production.js、config/production.json、config/production.node、
  * config/production.yml、config/production.yaml 并合并 default 配置
- * @type {{port: number, session: {secret: string, key: string, maxAge: number}, mongodb: string}}
+ * @type {{port: number, tokenSecret: string, mongodb: string}}
  */
 
 const dbConfig = require('./db.config')
 const port = +process.env.PORT || 3000
 module.exports = {
   port,
-  session: {
-    secret: dbConfig.db,
-    key: dbConfig.db,
-    maxAge: 604800000
-  },
+  tokenSecret: 'bm9kZXNlcnZlckFQSWp8dHNlY6JldA==',
   mongodb: `mongodb://${dbConfig.user}:${dbConfig.pwd}@localhost:${dbConfig.port}/${dbConfig.db}?authSource=admin`
 }

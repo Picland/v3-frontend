@@ -2,23 +2,56 @@ import fs from 'fs'
 import path from 'path'
 import sha1 from 'sha1'
 import userService from '../service/userService'
-import renderService from '../service/renderService'
+import tokenUtil from '../util/token'
 
 export default {
-  renderProfilePage (req, res, next) {
-    res.status(200).send(renderService(req.url))
-  },
-  getUserStatus (req, res, next) {
-    if (req.session.user) {
-      userService.getUserByPhone(req.session.user.phoneNumber)
-        .then((user) => {
-          delete user.password
-          res.json(user)
+  // getAccessToken (req, res, next) {
+  //   const oldToken = tokenUtil.getToken(req)
+  //   if (oldToken && tokenUtil.verifyToken(oldToken)) {
+  //     res.json({accessToken: oldToken})
+  //   } else {
+  //     const accessToken = `Bearer ${tokenUtil.generateToken({ userId: req.headers.userid })}`
+  //     res.json({accessToken})
+  //   }
+  // },
+  async getOwnInfo (req, res, next) {
+    try {
+      const oldToken = tokenUtil.getToken(req)
+      if (oldToken && tokenUtil.verifyToken(oldToken)) {
+        // TODO: revoke old token
+        const newTokent = tokenUtil.refreshToken(oldToken)
+        res.cookie('token', newTokent, {httpOnly: true})
+        const user = await userService.getUserById(tokenUtil.decodeToken(newTokent).userId)
+        delete user.password
+        res.json({
+          code: 0,
+          user
         })
-    } else {
+      } else {
+        res.json({
+          code: -2,
+          'message': '未登录'
+        })
+      }
+    } catch (e) {
       res.json({
-        'code': 0,
-        'message': '未登录'
+        'code': -1,
+        'message': e.message
+      })
+    }
+  },
+  async getUserInfo (req, res, next) {
+    try {
+      const user = await userService.getUserById(req.params.id)
+      delete user.password
+      res.json({
+        code: 0,
+        user
+      })
+    } catch (e) {
+      res.json({
+        'code': -1,
+        'message': e.message
       })
     }
   },

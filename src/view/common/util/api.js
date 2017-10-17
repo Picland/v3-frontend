@@ -1,18 +1,44 @@
 export const DOMAIN = ''
 const CREDENTIALS = (process.env.ORIGIN) ? 'include' : 'same-origin'
+// const ACCESS_TOKEN_POLL_INTERVAL = 3 * 60 * 1000 // 3 minutes
+
+// runtime = {}
+
 const defaultHeaders = {
   'Accept': 'application/json',
   'Content-Type': 'application/json'
+  // 'Authorization': runtime.accessToken,
+  // 'X-UserId': runtime.userId
 }
 // const formHeaders = {
 //   'Content-Type': 'application/x-www-form-urlencoded'
 // }
-const createResult = (result) => result
+const createResult = result => {
+  return result
     ? result.json()
     : {
       code: -2,
       message: '未知错误'
     }
+}
+
+// --------------------------------------------------------------------------
+// AccessToken
+// --------------------------------------------------------------------------
+// export const pollToRefreshAccessToken = () => {
+//   defaultHeaders.userId = runtime.userId
+//   setInterval(() => {
+//     fetch('/api/v1/accesstoken', {
+//       method: 'GET',
+//       headers: defaultHeaders,
+//       credentials: CREDENTIALS
+//     }).then(data => {
+//       runtime.accessToken = data.accessToken
+//       defaultHeaders.Authorization = data.accessToken
+//     })
+//   }, ACCESS_TOKEN_POLL_INTERVAL)
+// }
+
 /*
  处理所有网络请求_目前没有和action集成异步数据流，
  使用同步数据流达成类似效果的后遗症应该就是组件耦合性巨高。。
@@ -203,8 +229,8 @@ export const logout = async() => {
 // --------------------------------------------------------------------------
 // Check User Status
 // --------------------------------------------------------------------------
-export const getUserStatus = async() => {
-  let url = `${DOMAIN}/api/v1/user/status`
+export const getOwnInfo = async () => {
+  let url = `${DOMAIN}/api/v1/user`
   let result
   try {
     result = await fetch(url, {
@@ -303,6 +329,6 @@ export default {
   login,
   register,
   logout,
-  getUserStatus,
+  // getUserStatus,
   updateUserInfo
 }
