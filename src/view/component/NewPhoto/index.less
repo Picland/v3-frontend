@@ -42,7 +42,7 @@
     }
   }
   .upload {
-    width: 940px;
+    width: @width;
     min-height: 400px;
     margin: 40px auto 0;
     border: 1px solid #E7EAF1;
@@ -62,6 +62,27 @@
     min-height: 410px;
     background-color: @white;
     border-top: 1px solid #E7EAF1;
+    padding-top: 30px;
+    form {
+      width: @width;
+      margin: 0 auto;
+      overflow: hidden;
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+        & > div {
+          overflow: hidden;
+          .row {
+            float: right;
+            &:first-child {
+              margin-left: 22px;
+            }
+          }
+        }
+      }
+    }
   }
   footer {
     margin-top: 0;

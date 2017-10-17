@@ -3,16 +3,15 @@
 .cmui-form-textarea {
   display: block;
   color: inherit;
-  border: 1px solid #ececec;
-  border-radius: 2px;
-  padding: 6px 8px;
-  background-color: #fff;
-  width: 100%;
+  border: 2px solid @lite;
+  padding: 10px;
+  background-color: @white;
   resize: none;
+  font-size: 13px;
   -webkit-appearance: none;
-  transition: border-color .1s ease;
+  transition: border-color @transition-fast ease;
   &:focus {
     outline: none;
-    border-color: @theme;
+    border-color: @medium-liter;
   }
 }

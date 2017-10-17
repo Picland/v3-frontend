@@ -23,7 +23,7 @@ class Input extends Component {
   }
 
   render () {
-    const { className, size, ...other } = this.props
+    const { className, size, width, ...other } = this.props
     const classNames = classnames(
       'cmui-input',
       {
@@ -31,6 +31,9 @@ class Input extends Component {
       },
       className
     )
+    if (width) {
+      other.style = Object.assign(other.style || {}, { width: width })
+    }
     return <input ref="input" className={classNames} {...other} />
   }
 }
@@ -55,6 +58,8 @@ Input.propTypes = {
 
   // 同 input placeholder
   placeholder: PropTypes.string,
+
+  width: PropTypes.string,
 
   customProp ({ value, onChange }) {
     if (value && !onChange) {
