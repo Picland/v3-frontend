@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-// import TextOverflow from '../../TextOverflow'
+import TextOverflow from '../../TextOverflow'
 import Icon from '../../Icon'
 import './index.less'
 
@@ -17,9 +17,9 @@ const Option = props => {
   )
   return (
     <li className={classNames} {...other}>
-      {/* <TextOverflow> */}
-      <div>{children}</div>
-      {/* </TextOverflow> */}
+      <TextOverflow>
+        <div>{children}</div>
+      </TextOverflow>
       {selected && <Icon type="check" className="cmui-select__option-icon--selected" />}
     </li>
   )

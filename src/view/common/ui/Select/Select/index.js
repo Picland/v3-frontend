@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import invariant from 'invariant'
 import shouldComponentUpdate from '../../shouldComponentUpdate'
 import dataFilter from '../../_shared/dataFilter'
-// import TextOverflow from '../../TextOverflow'
+import TextOverflow from '../../TextOverflow'
 import SelectDropdown from '../../SelectDropdown'
 import './index.less'
 
@@ -119,6 +119,10 @@ class Select extends Component {
       [`cmui-select--${size}`]: size
     }, className)
 
+    const optionsClassNames = classnames('cmui-select__options', {
+      [`cmui-select__options--${size}`]: size
+    })
+
     if (!title) {
       if (!value && !defaultOption) {
         title = placeholder
@@ -129,7 +133,9 @@ class Select extends Component {
     }
 
     const Title = (
-      <div className="cmui-select__title">{title}</div>
+      <TextOverflow>
+        <div className="cmui-select__title">{title}</div>
+      </TextOverflow>
     )
 
     return (
@@ -143,7 +149,7 @@ class Select extends Component {
         caret
         {...other}
       >
-        <ul className="cmui-select__options">
+        <ul className={optionsClassNames}>
           {optionsWithProps && optionsWithProps.length ? optionsWithProps : (
             <li className="cmui-select__option">{noOptionsContent}</li>
           )}
@@ -198,8 +204,8 @@ Select.propTypes = {
   // 尺寸
   size: PropTypes.oneOf(['sm', 'lg']),
 
-  // 最小宽度，默认 160
-  minWidth: PropTypes.number,
+  // 宽度，默认 160
+  width: PropTypes.number,
 
   // 无 option 时显示的内容，默认`无选项`
   noOptionsContent: PropTypes.string,

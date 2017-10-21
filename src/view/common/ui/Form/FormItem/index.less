@@ -2,14 +2,14 @@
 @danger-color: @red;
 
 .cmui-form__item {
-  padding-top: 20px;
+  padding-top: 0;
   padding-bottom: 20px;
 }
 
 .cmui-form__item-label {
   height: 22px;
   line-height: 22px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   color: #222;
   margin-bottom: 12px;
@@ -53,5 +53,24 @@
   }
   .cmui-form__item-tip {
     color: @danger-color;
+  }
+}
+
+.cmui-form-sm {
+  .cmui-form__item-label {
+    font-size: 12px;
+  }
+  .cmui-form__item {
+    padding-top: 0;
+    padding-bottom: 15px;
+  }
+}
+
+.cmui-form-lg {
+  .cmui-form__item-label {
+    font-size: 16px;
+  }
+  .cmui-form__item {
+    padding-top: 20px;
   }
 }
