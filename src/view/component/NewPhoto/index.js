@@ -32,11 +32,13 @@ class NewPhoto extends Component {
         <Header buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} />
         <div styleName="box">
           <div styleName="main">
-            <div>从相册导入</div>
+            <div styleName="import-from-album">从相册导入</div>
             <div styleName="upload">
               <h2>正在开发中...</h2>
             </div>
-            <div styleName="discription">（1/7）添加此图描述...</div>
+            <div styleName="description">
+              <textarea name="description" styleName="img-description" placeholder="(8/10) 添加此图描述..." />
+            </div>
           </div>
           <div styleName="right">
             <Form data={formData}
