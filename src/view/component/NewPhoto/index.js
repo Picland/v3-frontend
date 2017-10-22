@@ -61,32 +61,43 @@ class NewPhoto extends Component {
                 <FormTextarea placeholder="说说你的拍摄经历..." minWidth={300} minHeight={100} />
               </FormItem>
               <FormItem label="标签" name="bio" style={{position: 'relative'}}>
-                <FormInput width={300} />
+                <div styleName="tags-wrap">
+                  <a styleName="tag-item">的</a>
+                  <a styleName="tag-item">风光</a>
+                  <a styleName="tag-item">色彩</a>
+                  <a styleName="tag-item">街拍</a>
+                  <a styleName="tag-item">手机</a>
+                  <a styleName="tag-item">城市</a>
+                  <a styleName="tag-item">黑白</a>
+                  <a styleName="tag-item">旅行</a>
+                  <a styleName="tag-item">纪实</a>
+                  <input type="text" styleName="tag-input" />
+                </div>
                 <span styleName="tags-note">（输入标签内容回车即可添加标签）</span>
                 <span styleName="tags-count">0/10</span>
               </FormItem>
               <div styleName="tag">
                 <div styleName="title">常用标签</div>
                 <div styleName="tags-recommend">
-                  <a styleName="tag-item">#人像</a>
-                  <a styleName="tag-item">#风光</a>
-                  <a styleName="tag-item">#街拍</a>
+                  <a styleName="tag-item">人像</a>
+                  <a styleName="tag-item">风光</a>
+                  <a styleName="tag-item">街拍</a>
                 </div>
               </div>
               <div styleName="tag">
                 <div styleName="title">推荐标签</div>
                 <div styleName="tags-recommend">
-                  <a styleName="tag-item">#人像</a>
-                  <a styleName="tag-item">#风光</a>
-                  <a styleName="tag-item">#街拍</a>
-                  <a styleName="tag-item">#城市</a>
-                  <a styleName="tag-item">#旅行</a>
-                  <a styleName="tag-item">#纪实</a>
-                  <a styleName="tag-item">#色彩</a>
-                  <a styleName="tag-item">#手机</a>
-                  <a styleName="tag-item">#黑白</a>
-                  <a styleName="tag-item">#胶片</a>
-                  <a styleName="tag-item">#抓拍</a>
+                  <a styleName="tag-item">人像</a>
+                  <a styleName="tag-item">风光</a>
+                  <a styleName="tag-item">街拍</a>
+                  <a styleName="tag-item">城市</a>
+                  <a styleName="tag-item">旅行</a>
+                  <a styleName="tag-item">纪实</a>
+                  <a styleName="tag-item">色彩</a>
+                  <a styleName="tag-item">手机</a>
+                  <a styleName="tag-item">黑白</a>
+                  <a styleName="tag-item">胶片</a>
+                  <a styleName="tag-item">抓拍</a>
                 </div>
               </div>
               <FormItem label="版权" name="gender">

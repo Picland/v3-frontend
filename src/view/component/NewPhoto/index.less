@@ -92,6 +92,33 @@
           font-size: 12px;
           cursor: pointer;
         }
+        .tags-wrap {
+          display: block;
+          width: 100%;
+          outline: 0;
+          cursor: text;
+          padding: 10px;
+          border: 2px solid @lite;
+          font-size: 13px;
+          .tag-item {
+            padding: 1px 8px;
+            border: 1px solid #222;
+            margin: 0 8px 8px 0;
+            vertical-align: top;
+            display: inline-block;
+            line-height: 18px;
+            &:before {
+              content: "#";
+            }
+          }
+          .tag-input {
+            width: 100px;
+            height: 22px;
+            border: 0;
+            outline: 0;
+            font-size: 13px;
+          }
+        }
         .tags-note {
           position: absolute;
           left: 26px;
@@ -107,12 +134,15 @@
           color: @black;
         }
         .tag {
-          margin-bottom: 28px;
+          margin-bottom: @unit-double;
           font-size: 13px;
           font-weight: 500;
           color: #222;
           .title {
             margin-bottom: 12px;
+            height: 22px;
+            line-height: 22px;
+            vertical-align: middle;
           }
           .tags-recommend {
             width: 320px;
@@ -120,11 +150,14 @@
             .tag-item {
               display: inline-table;
               font-weight: normal;
-              margin-top: 18px;
+              margin-top: 12px;
               margin-right: 20px;
               cursor: pointer;
               &:hover {
                 text-decoration: underline;
+              }
+              &:before {
+                content: "#";
               }
             }
           }
