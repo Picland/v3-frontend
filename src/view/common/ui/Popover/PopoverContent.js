@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
-import classnames from 'classnames'
+import cx from 'classnames'
 import classlist from 'classlist'
 import CoordinateFactory from './CoordinateFactory'
 
@@ -32,7 +32,7 @@ class PopoverContent extends Component {
     const [computedDirection, computedAlign] = CoordinateFactory(
       triggerNode, rootNode, direction, align
     )
-    this.positionClassNames = classnames({
+    this.positionClassNames = cx({
       [`cmui-popover--${computedDirection}`]: true,
       [`cmui-popover--align-${computedAlign}`]: !!computedAlign
     })
@@ -44,7 +44,7 @@ class PopoverContent extends Component {
       children, className, triggerNode, triggerMode, direction, align, ...other
     } = this.props
     return (
-      <div className={classnames('cmui-popover', {
+      <div className={cx('cmui-popover', {
         'cmui-popover--animation': triggerMode === 'hover'
       }, className)} {...other}>
         <div className="cmui-popover__content">

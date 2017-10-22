@@ -52,7 +52,8 @@ class Profile extends Component {
         <div styleName="card">
           <div styleName="left">
             <div styleName="title">基本信息</div>
-            <Form data={formData}
+            <Form size="lg"
+                  data={formData}
                   rules={this.rules}
                   onSubmit={::this.handleSubmit}
                   onChange={formData => this.update('set', { formData })}>
@@ -60,7 +61,7 @@ class Profile extends Component {
                 <FormInput size="lg" />
               </FormItem>
               <FormItem label="性别" name="gender">
-                <FormSelect minWidth={460}>
+                <FormSelect width={460} size="lg">
                   <Option value="m">男</Option>
                   <Option value="f">女</Option>
                   <Option value="x">不详</Option>

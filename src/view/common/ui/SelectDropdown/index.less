@@ -3,23 +3,26 @@
 .cmui-select-dropdown {
   min-width: 160px;
   outline: none;
-  line-height: 28px;
+  line-height: 40px;
+  font-size: 13px;
   background-color: #fff;
-  border: 1px solid #ececec;
-  border-radius: 2px;
+  border: 2px solid @lite;
   position: relative;
   &:focus {
-    border-color: @theme;
+    border-color: @medium-liter;
   }
   &.cmui-popover__trigger--disabled {
     &:focus {
       border-color: #ececec;
     }
   }
+  .cmui-select-dropdown__caret {
+    color: @medium-litest;
+  }
   &.cmui-dropdown-toggle--open {
-    border-color: @theme;
+    border-color: @medium-liter;
     .cmui-select-dropdown__caret {
-      color: @theme;
+      color: @medium;
     }
   }
 }
@@ -30,7 +33,7 @@
 
 .cmui-select-dropdown__caret {
   position: absolute;
-  right: 8px;
+  right: 10px;
   top: 50%;
   margin-top: -6px;
 }
@@ -39,6 +42,7 @@
   > .cmui-popover__content {
     max-width: none;
     padding: 0;
+    border-color: @lite-darker;
     > ul {
       margin: 0;
       padding: 0;

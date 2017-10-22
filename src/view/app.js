@@ -9,7 +9,7 @@ import App from './router'
 import { getOwnInfo } from './common/util/api'
 // import SvgSprite from './common/ui/IconSvg/SvgSprite/index'
 import { initialState } from './redux/reducer/user'
-import _ from 'lodash'
+import { get } from 'lodash'
 
 async function getInitialState () {
   let result = await getOwnInfo()
@@ -29,7 +29,7 @@ async function getInitialState () {
   let initialState = await getInitialState()
   const store = Store(initialState) // 完整的 Redux 状态树从这里开始生成
   window.runtime = {
-    userId: _.get(initialState, 'user.userInfo._id', null)
+    userId: get(initialState, 'user.userInfo._id', null)
   }
 // const browserHistory = createBrowserHistory() // 将 react-router 中的 browserHistory 移到这里引入
 // const history = syncHistoryWithStore(browserHistory, store) // 保证 react-router 和 Redux store 的统一

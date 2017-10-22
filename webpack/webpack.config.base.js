@@ -77,6 +77,7 @@ module.exports = {
     alias: {
       _common_ui: path.resolve(viewPath, 'common/ui'),
       'variable.less': path.resolve(viewPath, 'common/style/variable.less'),
+      'mixin.less': path.resolve(viewPath, 'common/style/mixin.less'),
       'core.less': path.resolve(viewPath, 'common/style/core.less')
     }
   },

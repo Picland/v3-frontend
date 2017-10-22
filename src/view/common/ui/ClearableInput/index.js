@@ -59,12 +59,12 @@ class ClearableInput extends Component {
   render () {
     const {
       className, type, defaultValue, onChange, onClear, disabled, size, placeholder, readOnly,
-      maxLength, forbidClearable, ...other
+      maxLength, forbidClearable, width, ...other
     } = this.props
     const { value, hasChanged } = this.state
     delete other.value
 
-    const inputProps = { value, disabled, size, placeholder, readOnly, type, maxLength }
+    const inputProps = { value, disabled, size, placeholder, readOnly, type, maxLength, width }
 
     return (
       <div className={classnames('cmui-clearable-input', className)} {...other}>
@@ -120,7 +120,9 @@ ClearableInput.propTypes = {
   disabled: PropTypes.bool,
 
   // 同 input placeholder
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+
+  width: PropTypes.string
 }
 
 export default ClearableInput

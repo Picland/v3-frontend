@@ -45,15 +45,15 @@
 .cmui-popover--up {
   padding-bottom: @padding;
   margin-top: -@padding;
-  // popover arrow
-  //&:after {
-  //  left: 50%;
-  //  bottom: 1px;
-  //  margin-left: -@padding;
-  //  border-left: @padding solid transparent;
-  //  border-right: @padding solid transparent;
-  //  border-top: @padding - 1px solid #fff;
-  //}
+   //popover arrow
+  &:after {
+    left: 50%;
+    bottom: 1px;
+    margin-left: -@padding;
+    border-left: @padding solid transparent;
+    border-right: @padding solid transparent;
+    border-top: @padding - 1px solid #fff;
+  }
 }
 
 .cmui-popover--down {
@@ -122,8 +122,9 @@
   padding: 10px 12px;
   background: #fff;
   word-wrap: break-word;
-  border: 1px solid @lite-darker;
+  border: 1px solid #333;
   max-width: 200px;
-  max-height: 300px;
+  max-height: 330px;
   overflow: auto;
+  font-size: 13px;
 }

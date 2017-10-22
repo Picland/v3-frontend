@@ -66,7 +66,8 @@ class Profile extends Component {
       <div styleName="container">
         <div styleName="card">
           <div styleName="title">账号</div>
-          <Form data={accData}
+          <Form size="lg"
+                data={accData}
                 rules={this.rulesOfAccount}
                 onSubmit={::this.handleSubmit}
                 onChange={accData => this.update('set', { accData })}>
@@ -81,7 +82,8 @@ class Profile extends Component {
         </div>
         <div styleName="card">
           <div styleName="title">密码</div>
-          <Form data={pwdData}
+          <Form size="lg"
+                data={pwdData}
                 rules={this.rulesOfPassword}
                 onSubmit={::this.handleSubmit}
                 onChange={pwdData => this.update('set', { pwdData })}>
