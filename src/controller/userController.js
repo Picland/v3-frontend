@@ -23,20 +23,17 @@ export default {
         res.cookie('token', newTokent, {httpOnly: true})
         const user = await userService.getUserById(tokenUtil.decodeToken(newTokent).userId)
         delete user.password
-        res.json({
-          code: 0,
-          user
-        })
+        res.api({user})
       } else {
-        res.json({
-          code: -2,
-          'message': '未登录'
+        res.api(401, {}, {
+          code: -1,
+          msg: '未登录无权限'
         })
       }
     } catch (e) {
-      res.json({
-        'code': -1,
-        'message': e.message
+      res.api(403, {}, {
+        code: -1,
+        msg: e.message
       })
     }
   },
@@ -44,14 +41,11 @@ export default {
     try {
       const user = await userService.getUserById(req.params.id)
       delete user.password
-      res.json({
-        code: 0,
-        user
-      })
+      res.api({user})
     } catch (e) {
-      res.json({
-        'code': -1,
-        'message': e.message
+      res.api(403, {}, {
+        code: -1,
+        msg: e.message
       })
     }
   },
@@ -83,28 +77,28 @@ export default {
           }
           let result = await userService.updateUserInfo(req.headers.userid, {password: newpassword2})
           delete result.password
-          res.json(result)
+          res.api(result)
         } catch (e) {
-          res.json({
-            'code': -1,
-            'message': e.message
+          res.api(403, {}, {
+            code: -1,
+            msg: e.message
           })
         }
       } else {
-        res.json({
-          'code': -1,
-          'message': '请填写新密码'
+        res.api(403, {}, {
+          code: -1,
+          msg: '请填写新密码'
         })
       }
     } else {
       try {
         let result = await userService.updateUserInfo(req.headers.userid, req.body)
         delete result.password
-        res.json(result)
+        res.api(result)
       } catch (e) {
-        res.json({
-          'code': -1,
-          'message': e.message
+        res.api(403, {}, {
+          code: -1,
+          msg: e.message
         })
       }
     }
@@ -117,11 +111,14 @@ export default {
       }
       let result = await userService.updateUserInfo(req.headers.userid, body)
       delete result.password
-      res.json(result)
+      res.api(result)
     } catch (e) {
       // 上传头像失败，异步删除上传的头像
       avatar && avatar.path && fs.unlink(avatar.path)
-      console.error(e.message)
+      res.api(403, {}, {
+        code: -1,
+        msg: e.message
+      })
     }
   }
 }

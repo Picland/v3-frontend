@@ -48,9 +48,9 @@ export default {
     } catch (e) {
       // 注册失败，异步删除上传的头像
       // avatar && avatar.path && fs.unlink(req.files.avatar.path)
-      return res.status(200).json({
-        'code': -1,
-        'message': e.message
+      return res.api(403, {}, {
+        code: -1,
+        msg: e.message
       })
     }
 
@@ -74,20 +74,17 @@ export default {
       delete user.password
       const token = tokenUtil.generateToken({ userId: user._id })
       res.cookie('token', token, {httpOnly: true})
-      return res.json({
-        'code': 1,
-        'message': '注册成功',
-        'user': {
-          '_id': user._id
-        }
+      return res.api(201, {user: {'_id': user._id}}, {
+        code: 1,
+        msg: '注册成功'
       })
     } catch (e) {
       // 注册失败，异步删除上传的头像
       // req.files.avatar && fs.unlink(req.files.avatar.path)
       if (e.message.match('E11000 duplicate key')) {
-        return res.json({
-          'code': -1,
-          'message': '账号已经被注册'
+        return res.api(403, {}, {
+          code: -1,
+          msg: '账号已经被注册'
         })
       }
       next(e)
