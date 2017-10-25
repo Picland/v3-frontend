@@ -1,5 +1,5 @@
 import React from 'react'
-import PreviewItem from './PreviewItem'
+import PreviewItem from './PreviewItem.presentational'
 import PropTypes from 'prop-types'
 
 class PreviewList extends React.Component {

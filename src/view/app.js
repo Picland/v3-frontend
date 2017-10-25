@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import App from './router'
 import { getOwnInfo } from './common/util/api'
 // import SvgSprite from './common/ui/IconSvg/SvgSprite/index'
-import { initialState } from './redux/reducer/user'
+import { initialState } from './redux/reducer/user.reducer'
 import { get } from 'lodash'
 
 async function getInitialState () {

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import autobind from 'autobind-decorator'
 import CSSModules from 'react-css-modules'
-import styles from './PreviewItem.less'
+import styles from './index.less'
 
 // @autobind
 @CSSModules(styles)

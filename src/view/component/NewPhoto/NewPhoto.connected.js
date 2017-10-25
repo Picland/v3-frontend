@@ -1,4 +1,4 @@
-import NewPhoto from '../component/NewPhoto'
+import NewPhoto from './NewPhoto.presentational'
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state) => {

@@ -1,5 +1,5 @@
 import constActionType from '../constant/actionType'
-import { showFlashMessage } from '../action/flashMessage'
+import { showFlashMessage } from './flashMessage.action'
 
 const startLogin = () => ({
   type: constActionType.LOGIN_STARTED

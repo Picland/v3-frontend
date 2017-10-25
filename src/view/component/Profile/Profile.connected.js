@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
-import Profile from '../../component/Profile'
+import Profile from './Profile.presentational'
 import {
   update as updateAction,
   updateAvatarLogined as updateAvatarLoginedAction
-} from '../../redux/action/user'
-import { removeFlashMessage as removeFlashMessageAction } from '../../redux/action/flashMessage'
+} from '../../redux/action/user.action'
+import { removeFlashMessage as removeFlashMessageAction } from '../../redux/action/flashMessage.action'
 
 const mapStateToProps = (state) => ({
   userInfo: state.user.userInfo,

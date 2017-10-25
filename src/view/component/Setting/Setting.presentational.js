@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
 import { NavLink } from 'react-router-dom'
 import { Sticky, StickyContainer } from 'react-sticky'
-import Header from '../../layout/Header/index'
-import Footer from '../../layout/Footer'
+import Header from '../../layout/Header/Header.connected'
+import Footer from '../../layout/Footer/Footer.presentational'
 import styles from './index.less'
 
 @CSSModules(styles)

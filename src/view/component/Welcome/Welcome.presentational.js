@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import WelcomeSection from '../WelcomeSection/'
-import Header from '../../layout/Header'
-import Footer from '../../layout/Footer/'
+import WelcomeSection from '../WelcomeSection/WelcomeSection.presentational'
+import Header from '../../layout/Header/Header.connected'
+import Footer from '../../layout/Footer/Footer.presentational'
 
 class Welcome extends Component {
   constructor (props) {
