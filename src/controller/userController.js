@@ -111,7 +111,10 @@ export default {
       }
       let result = await userService.updateUserInfo(req.headers.userid, body)
       delete result.password
-      res.api(result)
+      res.api(201, result, {
+        code: 0,
+        msg: '上传成功'
+      })
     } catch (e) {
       // 上传头像失败，异步删除上传的头像
       avatar && avatar.path && fs.unlink(avatar.path)

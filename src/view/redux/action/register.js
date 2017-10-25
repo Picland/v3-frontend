@@ -35,7 +35,7 @@ const registerFail = (error) => ({
  * @returns {Object} Data responsed from server, for example:
  *   ```js
  *   {
- *     'code': 1,
+ *     'code': 0,
  *     'message': '注册成功',
  *     'user': {
  *        '_id': user._id
@@ -48,12 +48,12 @@ export const register = user => async (dispatch, getState, util) => {
   dispatch(startRegister())
   try {
     let result = await util.api.register(user)
-    if (result.code === 1) {
-      dispatch(finishRegister(result.user))
-      dispatch(showFlashMessage(registerSuccess(result.message)))
+    if (result.status.code === 0) {
+      dispatch(finishRegister(result.data.user))
+      dispatch(showFlashMessage(registerSuccess(result.status.msg)))
     } else {
-      dispatch(failRegister(result.message))
-      dispatch(showFlashMessage(registerFail(result.message)))
+      dispatch(failRegister(result.status.msg))
+      dispatch(showFlashMessage(registerFail(result.status.msg)))
     }
     return result
   } catch (e) {

@@ -23,7 +23,7 @@ export default {
     const token = tokenUtil.getToken(req)
     // user has logined
     if (token && tokenUtil.verifyToken(token)) {
-      res.api(403, '', {
+      res.api(403, {}, {
         code: -1,
         msg: '已登录'
       })

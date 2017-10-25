@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch) => ({
   login: async (user) => dispatch(loginAction(user)),
   register: async (user) => dispatch(registerAction(user)),
   update: async (info) => dispatch(updateAction(info)),
-  updateAvatarUnlogined: (data) => dispatch(updateAvatarUnloginedAction(data))
+  updateAvatarUnlogined: (result) => dispatch(updateAvatarUnloginedAction(result))
 })
 
 @connect(mapStateToProps, mapDispatchToProps)

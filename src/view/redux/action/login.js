@@ -45,16 +45,16 @@ export const login = user => async (dispatch, getState, util) => {
   dispatch(startLogin())
   try {
     let result = await util.api.login(user)
-    if (result.code === 1) {
+    if (result.status.code === 0) {
       dispatch(finishLogin(result.data))
-      dispatch(showFlashMessage(loginSuccess(result.message)))
+      dispatch(showFlashMessage(loginSuccess(result.status.msg)))
       // Please write here, showFlashMessage cannot get in Login because of redirect
       runtime = {
         userId: result.data._id
       }
     } else {
       dispatch(failLogin())
-      dispatch(showFlashMessage(loginFail(result.message)))
+      dispatch(showFlashMessage(loginFail(result.status.msg)))
     }
     return result
   } catch (e) {

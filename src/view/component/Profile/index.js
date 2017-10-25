@@ -31,8 +31,8 @@ class Profile extends Component {
       }
     }
   }
-  uploadComplete (data) {
-    this.props.updateAvatarLogined(data)
+  uploadComplete (result) {
+    this.props.updateAvatarLogined(result)
   }
   handleSubmit (data) {
     this.props.update(data)

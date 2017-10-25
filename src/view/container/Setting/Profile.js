@@ -13,7 +13,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   update: data => dispatch(updateAction(data)),
-  updateAvatarLogined: data => dispatch(updateAvatarLoginedAction(data)),
+  updateAvatarLogined: result => dispatch(updateAvatarLoginedAction(result)),
   removeFlashMessage: data => dispatch(removeFlashMessageAction())
 })
 

@@ -13,10 +13,10 @@ import { get } from 'lodash'
 
 async function getInitialState () {
   let result = await getOwnInfo()
-  if (result.code === 0) {
+  if (result.status.code === 0) {
     return {
       user: {
-        userInfo: result.user,
+        userInfo: result.data.user,
         logining: initialState.logining,
         otherInfo: initialState.otherInfo,
         registering: initialState.registering
@@ -25,6 +25,7 @@ async function getInitialState () {
   }
 }
 
+// 把runtime放到redux状态树上
 (async () => {
   let initialState = await getInitialState()
   const store = Store(initialState) // 完整的 Redux 状态树从这里开始生成

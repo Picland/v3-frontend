@@ -44,10 +44,10 @@ const updateFail = error => ({
 export const update = data => async (dispatch, getState, util) => {
   try {
     let result = await util.api.updateUserInfo(data)
-    if (result.code === -1) {
-      dispatch(showFlashMessage(updateFail(result.message)))
+    if (result.status.code !== 0) {
+      dispatch(showFlashMessage(updateFail(result.status.msg)))
     } else {
-      dispatch(updateInfo(result))
+      dispatch(updateInfo(result.data))
       dispatch(showFlashMessage(updateSuccess()))
     }
     return result
@@ -61,8 +61,8 @@ export const update = data => async (dispatch, getState, util) => {
  *
  * @public
  */
-export const updateAvatarUnlogined = data => dispatch => {
-  data && dispatch(updateAvatar(data))
+export const updateAvatarUnlogined = result => dispatch => {
+  result && dispatch(updateAvatar(result.data))
 }
 
 /**
@@ -70,9 +70,9 @@ export const updateAvatarUnlogined = data => dispatch => {
  *
  * @public
  */
-export const updateAvatarLogined = data => dispatch => {
-  if (data) {
-    dispatch(updateInfo(data))
+export const updateAvatarLogined = result => dispatch => {
+  if (result) {
+    dispatch(updateInfo(result.data))
     dispatch(showFlashMessage(updateSuccess()))
   }
 }
