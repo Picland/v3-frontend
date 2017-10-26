@@ -6,6 +6,7 @@ import config from 'config-lite'
 import winston from 'winston'
 import expressWinston from 'express-winston'
 import favicon from 'serve-favicon'
+import resApi from 'res.api'
 import pkg from '../package.json'
 import formidable from '../src/middleware/formidable'
 import renderService from '../src/service/renderService'
@@ -15,6 +16,7 @@ const server = express()
 
 server.use(bodyParser.json())
 server.use(cookieParser())
+server.use(resApi)
 
 // --------------------------------------------------------------------------
 // View Engine

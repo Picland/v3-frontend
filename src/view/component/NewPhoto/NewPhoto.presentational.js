@@ -4,7 +4,7 @@ import CSSModules from 'react-css-modules'
 import update from 'react-update'
 // import Button from '_common_ui/Button/'
 import { Form, FormItem, FormInput, FormSelect, FormSubmit, FormTextarea, Option } from '_common_ui/Form'
-import Header from '../../layout/Header'
+import Header from '../../layout/Header/Header.connected'
 import styles from './index.less'
 
 @CSSModules(styles)

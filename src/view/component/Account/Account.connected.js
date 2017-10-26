@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import Account from '../../component/Account'
-import { update as updateAction } from '../../redux/action/user'
-import { removeFlashMessage as removeFlashMessageAction } from '../../redux/action/flashMessage'
+import Account from './Account.presentational'
+import { update as updateAction } from '../../redux/action/user.action'
+import { removeFlashMessage as removeFlashMessageAction } from '../../redux/action/flashMessage.action'
 
 const mapStateToProps = (state) => ({
   userInfo: state.user.userInfo,

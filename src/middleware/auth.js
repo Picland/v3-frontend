@@ -23,9 +23,9 @@ export default {
     const token = tokenUtil.getToken(req)
     // user has logined
     if (token && tokenUtil.verifyToken(token)) {
-      res.json({
-        'code': 0,
-        'message': '已登录'
+      res.api(403, {}, {
+        code: -1,
+        msg: '已登录'
       })
     } else {
       // user has unlogined and generate token next middleare

@@ -138,8 +138,8 @@ class Register extends Component {
     // console.log('uploading...', pre)
   }
 
-  _handleComplete (data, list) {
-    this.props.updateAvatarUnlogined(data)
+  _handleComplete (result, list) {
+    this.props.updateAvatarUnlogined(result)
   }
   render () {
     let { join } = this.state

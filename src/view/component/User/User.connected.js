@@ -1,4 +1,4 @@
-import User from '../component/User'
+import User from './User.presentational'
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state) => {

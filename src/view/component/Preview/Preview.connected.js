@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-import { loadArticles } from '../../redux/reducer/preview'
-import PreviewList from '../../component/Preview/PreviewList'
+import { loadArticles } from '../../redux/reducer/preview.reducer'
+import PreviewList from './PreviewList.presentational'
 
 const mapStateToProps = (state) => ({
   articleList: state.preview.articleList
