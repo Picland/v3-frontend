@@ -5,35 +5,34 @@ import Upload from '_common_ui/Upload'
 import Avatar from '_common_ui/Avatar'
 import xhr from '_common_ui/xhr'
 
-class AvatarCropperTest extends Component {
+class ProfileAvatar extends Component {
   constructor (props) {
     super(props)
     this.state = {
       cropperOpen: false,
       img: null,
-      croppedImg: this.props.imgSrc
+      imgSrc: this.props.imgSrc
     }
-  }
-  handleRequestHide () {
-    this.setState({
-      cropperOpen: false
-    })
   }
   onUpload (files) {
     let reader = new FileReader()
     let file = files[0]
-
     if (!file) return
 
     reader.onload = function (img) {
       this.setState({
         img: img.target.result,
-        croppedImg: this.state.croppedImg,
         cropperOpen: true
       })
     }.bind(this)
 
     reader.readAsDataURL(file)
+  }
+  // 当对话框点击X按钮时候回调
+  onClose () {
+    this.setState({
+      cropperOpen: false
+    })
   }
   dataURLtoBlob (dataURL) {
     const arr = dataURL.split(',')
@@ -47,7 +46,6 @@ class AvatarCropperTest extends Component {
     return new Blob([u8arr], {type: mime})
   }
   handleCrop (dataURL) {
-    const self = this
     const blob = this.dataURLtoBlob(dataURL)
 
     xhr.header = {
@@ -67,12 +65,6 @@ class AvatarCropperTest extends Component {
       },
       error: msg => {
         console.error('error!', msg)
-      },
-      complete: () => {
-        self.setState({
-          cropperOpen: false,
-          img: null
-        })
       }
     })
   }
@@ -84,17 +76,18 @@ class AvatarCropperTest extends Component {
             button="更换头像"
             onUpload={::this.onUpload}
           >
-            <Avatar src={this.state.croppedImg} size="lg" />
+            <Avatar src={this.state.imgSrc} size="lg" />
           </Upload>
         </div>
         {this.state.cropperOpen &&
           <AvatarCropper
-            onRequestHide={::this.handleRequestHide}
             open={this.state.cropperOpen}
             onCrop={::this.handleCrop}
+            onClose={::this.onClose}
+            cropButtonName="保存"
             image={this.state.img}
-            width={400}
-            height={400}
+            width={480}
+            height={480}
           />
         }
       </div>
@@ -102,9 +95,9 @@ class AvatarCropperTest extends Component {
   }
 }
 
-AvatarCropperTest.propTypes = {
+ProfileAvatar.propTypes = {
   imgSrc: PropTypes.string,
   onComplete: PropTypes.func
 }
 
-export default AvatarCropperTest
+export default ProfileAvatar

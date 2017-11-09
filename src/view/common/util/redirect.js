@@ -51,7 +51,8 @@ export const checkLoginRedirect = (WrappedComponent) => (props) => {
       }
     }
     componentDidMount () {
-      let bodyElement = document.getElementsByTagName('body')[0]
+      // TODO 状态树改变导致重选渲染的时候能自动删掉body上的属性
+      const bodyElement = document.getElementsByTagName('body')[0]
       bodyElement.removeAttribute('class')
       bodyElement.removeAttribute('style')
     }
