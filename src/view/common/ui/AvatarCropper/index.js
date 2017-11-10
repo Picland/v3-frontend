@@ -48,8 +48,8 @@ AvatarCropper.propTypes = {
 }
 
 AvatarCropper.defaultProps = {
-  width: 480,
-  height: 480,
+  width: 240,
+  height: 240,
   modalSize: 'large',
   closeButtonName: 'Close'
 }

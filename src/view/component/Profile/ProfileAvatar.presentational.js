@@ -86,8 +86,8 @@ class ProfileAvatar extends Component {
             onClose={::this.onClose}
             cropButtonName="保存"
             image={this.state.img}
-            width={480}
-            height={480}
+            width={240}
+            height={240}
           />
         }
       </div>

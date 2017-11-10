@@ -173,6 +173,25 @@ class Cropper extends Component {
     this.addImageToCanvas(context, this.state.image)
   }
 
+  // paint (context) {
+  //   context.save()
+  //   context.scale(1, 1)
+  //   context.translate(0, 0)
+  //   context.fillStyle = 'rgba(0, 0, 0, 0.5)'
+  //
+  //   const height = this.props.height
+  //   const width = this.props.width
+  //
+  //   context.beginPath()
+  //   // inner rect, possibly rounded
+  //   context.rect(25, 25, width - 50, height - 50)
+  //   // outer rect, drawn "counterclockwise"
+  //   context.rect(width, 0, -width, height)
+  //   context.fill('evenodd')
+  //
+  //   context.restore()
+  // }
+
   addImageToCanvas (context, image) {
     if (!image.resource) return
     context.save()
@@ -224,14 +243,10 @@ class Cropper extends Component {
 
   render () {
     const { width, height, cropButtonName } = this.props
-    const canvasStyle = {
-      width: this.props.width / 2,
-      height: this.props.height / 2
-    }
     return (
       <div className="AvatarCropper-canvas">
         <div className="AvatarCropper-edit">
-          <canvas ref="canvas" width={width} height={height} style={canvasStyle} />
+          <canvas ref="canvas" width={width} height={height} />
         </div>
         <div className="AvatarCropper-zoom">
           <svg viewBox="0 0 18 16" width="14" height="16" aria-hidden="true" style={{height: 16, width: 14}}><title /><g><path d="M13.296 3H1.006C.45 3 0 3.45 0 4.003v10.995C0 15.545.45 16 1.007 16h12.986C14.55 16 15 15.553 15 15V4.003C15 3.456 14.55 3 13.993 3h-.697zm-.892 11H2.596c-.33 0-.596-.266-.596-.6V5.6C2 5.27 2.267 5 2.596 5h9.81c.328 0 .595.266.595.6v7.8c0 .33-.268.6-.596.6zM4 0c-.552 0-1 .448-1 1s.448 1 1 1h11.5s.5 0 .5.5V12c0 .552.448 1 1 1s1-.448 1-1V1c0-.552-.448-1-1-1H4z" fillRule="evenodd" /></g></svg>
@@ -240,15 +255,15 @@ class Cropper extends Component {
             name="zoom"
             ref="zoom"
             onChange={this.handleZoomUpdate.bind(this)}
-            style={{width: this.props.width}}
             min="1"
             max="3"
             step="0.01"
             defaultValue="1"
+            className="range-input"
           />
           <svg viewBox="0 0 18 16" width="21" height="16" aria-hidden="true" style={{height: 16, width: 21}}><title /><g><path d="M13.296 3H1.006C.45 3 0 3.45 0 4.003v10.995C0 15.545.45 16 1.007 16h12.986C14.55 16 15 15.553 15 15V4.003C15 3.456 14.55 3 13.993 3h-.697zm-.892 11H2.596c-.33 0-.596-.266-.596-.6V5.6C2 5.27 2.267 5 2.596 5h9.81c.328 0 .595.266.595.6v7.8c0 .33-.268.6-.596.6zM4 0c-.552 0-1 .448-1 1s.448 1 1 1h11.5s.5 0 .5.5V12c0 .552.448 1 1 1s1-.448 1-1V1c0-.552-.448-1-1-1H4z" fillRule="evenodd" /></g></svg>
         </div>
-        <div className="modal-footer">
+        <div className="AvatarCropper-footer">
           <Button onClick={this.handleCrop.bind(this)}>
             {cropButtonName}
           </Button>
