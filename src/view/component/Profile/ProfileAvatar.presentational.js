@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import classlist from 'classlist'
 import AvatarCropper from '_common_ui/AvatarCropper'
 import Upload from '_common_ui/Upload'
 import Avatar from '_common_ui/Avatar'
@@ -62,6 +63,10 @@ class ProfileAvatar extends Component {
       data: fd,
       success: data => {
         this.props.onComplete(data)
+        // TODO remove body open dialog class
+        const body = document.body
+        classlist(body).remove('cmui-modal--open')
+        body.style.paddingRight = ''
       },
       error: msg => {
         console.error('error!', msg)
@@ -86,8 +91,8 @@ class ProfileAvatar extends Component {
             onClose={::this.onClose}
             cropButtonName="保存"
             image={this.state.img}
-            width={240}
-            height={240}
+            width={160}
+            height={160}
           />
         }
       </div>

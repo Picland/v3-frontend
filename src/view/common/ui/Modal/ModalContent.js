@@ -70,10 +70,10 @@ class ModalContent extends Component {
       <div className={classnames('cmui-modal', {
         [`cmui-modal--${size}`]: size
       }, className)} {...other}>
-        <div className="cmui-modal__backdrop" style={{zIndex: zIndex || 1000}} />
+        <div className="cmui-modal__backdrop" style={{zIndex: zIndex || 3000}} />
         <div
           className="cmui-modal__modal"
-          style={{zIndex: zIndex || 1000}}
+          style={{zIndex: zIndex || 3000}}
           onClick={::this.handleModalClick}
         >
           <div className="cmui-modal__modal-dialog" ref={node => (this.modalNode = node)}>
