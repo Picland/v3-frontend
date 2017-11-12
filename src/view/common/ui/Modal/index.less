@@ -1,7 +1,7 @@
 @import '~variable';
 
 @duration: .2s;
-@zIndex: 1000;
+@zIndex: @zindex-dialog;
 @primary-color-deep: #19afff;
 
 .cmui-modal--scrollbar-measure {
@@ -91,7 +91,7 @@ body.cmui-modal--open {
 
 .cmui-modal--lg {
   .cmui-modal__modal-dialog {
-    width: 1000px;
+    width: @zindex-dialog;
   }
 }
 

@@ -151,57 +151,58 @@ class Register extends Component {
               <div styleName="title">注册</div>
               <div styleName="switch-modal">已有账号， <span onClick={::this._switchModal}>立即登录</span></div>
               <InputLine
-                     placeholder="手机号码"
-                     type="text"
-                     name="phoneNumber"
-                     value={this.state.account}
-                     onChange={(event) => this.setState({account: event.target.value})}
-                     onBlur={(event) => this._checkAccount(event.target.value)}
-                     validationState={this.state.accountValid}
-                     help={this.state.accountHelp}
+                placeholder="手机号码"
+                type="text"
+                name="phoneNumber"
+                value={this.state.account}
+                onChange={(event) => this.setState({account: event.target.value})}
+                onBlur={(event) => this._checkAccount(event.target.value)}
+                validationState={this.state.accountValid}
+                help={this.state.accountHelp}
               />
               <InputLine
-                     placeholder="邀请码"
-                     type="text"
-                     name="inviteCode"
-                     value={this.state.inviteCode}
-                     onChange={(event) => this.setState({inviteCode: event.target.value})}
-                     onBlur={(event) => this._checkInviteCode(event.target.value)}
-                     validationState={this.state.inviteCodeValid}
-                     help={this.state.inviteCodeHelp}
+                placeholder="邀请码"
+                type="text"
+                name="inviteCode"
+                value={this.state.inviteCode}
+                onChange={(event) => this.setState({inviteCode: event.target.value})}
+                onBlur={(event) => this._checkInviteCode(event.target.value)}
+                validationState={this.state.inviteCodeValid}
+                help={this.state.inviteCodeHelp}
               />
               <InputLine
-                     placeholder="密码6-16位，区分大小写"
-                     type={this.state.pwdInputType}
-                     name="password"
-                     value={this.state.password}
-                     onFocus={::this._handleFocus}
-                     onChange={(event) => this.setState({password: event.target.value})}
-                     onBlur={(event) => this._checkPassword(event.target.value)}
-                     validationState={this.state.pwdValid}
-                     help={this.state.pwdHelp}
+                placeholder="密码6-16位，区分大小写"
+                type={this.state.pwdInputType}
+                name="password"
+                value={this.state.password}
+                onFocus={::this._handleFocus}
+                onChange={(event) => this.setState({password: event.target.value})}
+                onBlur={(event) => this._checkPassword(event.target.value)}
+                validationState={this.state.pwdValid}
+                help={this.state.pwdHelp}
               />
               {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
               <Button onClick={::this._register}>注册</Button>
             </div>
             : <div>
               <div styleName="title-join">Hi, 欢迎加入!</div>
-              <Upload method="post"
-                      action="/api/v1/updateUserAvatar"
-                      onUplading={::this._handleUploading}
-                      onComplete={::this._handleComplete}
+              <Upload
+                method="post"
+                action="/api/v1/updateUserAvatar"
+                onUplading={::this._handleUploading}
+                onComplete={::this._handleComplete}
               >
                 <AvatarUpload
                   src={this.props.otherInfo.avatar}
                   size="large" />
               </Upload>
               <InputLine
-                     placeholder="输入昵称，不超过10个汉字或20个英文字符"
-                     type="text"
-                     name="name"
-                     value={this.state.nickName}
-                     onChange={(event) => this.setState({nickName: event.target.value})}
-                     onBlur={(event) => this._checkNickName(event.target.value)}
+                placeholder="输入昵称，不超过10个汉字或20个英文字符"
+                type="text"
+                name="name"
+                value={this.state.nickName}
+                onChange={(event) => this.setState({nickName: event.target.value})}
+                onBlur={(event) => this._checkNickName(event.target.value)}
               />
               {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
               {this.state.nickNameHelp && <div styleName="server-error">{this.state.nickNameHelp}</div>}

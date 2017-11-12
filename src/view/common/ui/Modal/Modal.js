@@ -1,8 +1,3 @@
-/**
- * @fileoverview Modal component
- * @author mrgaonju@gmail.com
- */
-
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
@@ -84,6 +79,16 @@ class Modal extends Component {
     if (this.containerNode) {
       ReactDOM.unmountComponentAtNode(this.containerNode)
       document.body.removeChild(this.containerNode)
+      // TODO 代码和updateBodyState重复，后期优化，有状态组件产生了副作用
+      const body = document.body
+      const bodyPaddingRight = parseInt(body.style.paddingRight, 10) || 0
+      const _scrollbarWidth = body.scrollHeight > window.innerHeight ? scrollbarWidth : 0
+      classlist(body).remove('cmui-modal--open')
+      if (bodyPaddingRight) {
+        body.style.paddingRight = bodyPaddingRight - _scrollbarWidth + 'px'
+      } else {
+        body.style.paddingRight = ''
+      }
     }
   }
 

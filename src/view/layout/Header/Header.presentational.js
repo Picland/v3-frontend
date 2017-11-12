@@ -49,9 +49,9 @@ class Header extends PureComponent {
               <Icon type="message" styleName="icon-message" />
               <div styleName="dropdown-wrapper">
                 <Avatar shape="circle"
-                        size="default"
-                        src={avatarSrc}
-                        styleName="avatar"
+                  size="default"
+                  src={avatarSrc}
+                  styleName="avatar"
                 />
                 <ul styleName="dropdown-container">
                   <Link to="/user"><li>我的主页</li></Link>

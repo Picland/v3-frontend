@@ -12,7 +12,7 @@ class Upload extends Component {
     className: PropTypes.string,
 
     // 上传的地址
-    action: PropTypes.string.isRequired,
+    action: PropTypes.string,
 
     // 上传按钮文本内容，默认为`文件上传`
     text: PropTypes.string,
@@ -28,7 +28,7 @@ class Upload extends Component {
 
     onUpload: PropTypes.func,
 
-    // 上传文件完成时的回调函数
+    // 上传文件完成时的回调函数，前提用户没有自定义onUpload方法方可生效
     onComplete: PropTypes.func,
 
     // 是否显示文件上传列表

@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import update from 'react-update'
 import CSSModules from 'react-css-modules'
-import Upload from '_common_ui/Upload'
-import Avatar from '_common_ui/Avatar'
 import message from '_common_ui/message'
 import { Form, FormItem, FormSubmit, FormInput, FormSelect, Option } from '_common_ui/Form'
+import ProfileAvatar from './ProfileAvatar.presentational'
 import styles from './index.less'
 
 @CSSModules(styles)
@@ -52,11 +51,13 @@ class Profile extends Component {
         <div styleName="card">
           <div styleName="left">
             <div styleName="title">基本信息</div>
-            <Form size="lg"
-                  data={formData}
-                  rules={this.rules}
-                  onSubmit={::this.handleSubmit}
-                  onChange={formData => this.update('set', { formData })}>
+            <Form
+              size="lg"
+              data={formData}
+              rules={this.rules}
+              onSubmit={::this.handleSubmit}
+              onChange={formData => this.update('set', { formData })}
+            >
               <FormItem label="昵称" name="name" required>
                 <FormInput size="lg" />
               </FormItem>
@@ -74,16 +75,10 @@ class Profile extends Component {
             </Form>
           </div>
           <div styleName="right">
-            <div styleName="upload-avatar">
-              <Upload method="post"
-                      action="/api/v1/updateUserAvatar"
-                      button="更换头像"
-                      onComplete={::this.uploadComplete}>
-                <Avatar
-                  src={userInfo.avatar}
-                  size="lg" />
-              </Upload>
-            </div>
+            <ProfileAvatar
+              imgSrc={userInfo.avatar}
+              onComplete={::this.uploadComplete}
+            />
           </div>
         </div>
       </div>
