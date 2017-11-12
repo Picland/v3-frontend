@@ -1,13 +1,13 @@
 @import '~variable';
 
-.Modal-title {
+.AvatarClip-title {
   margin-top: @unit-double;
   margin-bottom: @unit;
   font-size: 24px;
   color: #262626;
   text-align: center;
 }
-.Modal-subtitle {
+.AvatarClip-subtitle {
   padding: 0 38px;
   margin-top: 4px;
   font-size: 14px;
@@ -16,15 +16,15 @@
   text-align: center;
 }
 
-.AvatarCropper-base {
+.AvatarClip-content {
   text-align: center;
 }
 
-.AvatarCropper-base input[type=range] {
+.AvatarClip-content input[type=range] {
   display: inline-block;
 }
 
-.AvatarCropper-base input[type=range] {
+.AvatarClip-content input[type=range] {
   /*removes default webkit styles*/
   -webkit-appearance: none;
   /*fix for FF unable to apply focus style bug */
@@ -34,14 +34,14 @@
   /*required for proper track sizing in FF*/
   width: 400px;
 }
-.AvatarCropper-base input[type=range]::-webkit-slider-runnable-track {
+.AvatarClip-content input[type=range]::-webkit-slider-runnable-track {
   width: 400px;
   height: 5px;
   background: #ddd;
   border: none;
   border-radius: 3px;
 }
-.AvatarCropper-base input[type=range]::-webkit-slider-thumb {
+.AvatarClip-content input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: none;
   height: 16px;
@@ -50,21 +50,21 @@
   background: #454545;
   margin-top: -4px;
 }
-.AvatarCropper-base input[type=range]:focus {
+.AvatarClip-content input[type=range]:focus {
   outline: none;
 }
-.AvatarCropper-base input[type=range]:focus::-webkit-slider-runnable-track {
+.AvatarClip-content input[type=range]:focus::-webkit-slider-runnable-track {
   background: #ccc;
 }
 
-.AvatarCropper-base input[type=range]::-moz-range-track {
+.AvatarClip-content input[type=range]::-moz-range-track {
   width: 400px;
   height: 5px;
   background: #ddd;
   border: none;
   border-radius: 3px;
 }
-.AvatarCropper-base input[type=range]::-moz-range-thumb {
+.AvatarClip-content input[type=range]::-moz-range-thumb {
   border: none;
   height: 16px;
   width: 16px;
@@ -73,12 +73,12 @@
 }
 
 /*hide the outline behind the border*/
-.AvatarCropper-base input[type=range]:-moz-focusring{
+.AvatarClip-content input[type=range]:-moz-focusring{
   outline: 1px solid white;
   outline-offset: -1px;
 }
 
-.AvatarCropper-base input[type=range]::-ms-track {
+.AvatarClip-content input[type=range]::-ms-track {
   width: 400px;
   height: 5px;
 
@@ -92,37 +92,37 @@
   /*remove default tick marks*/
   color: transparent;
 }
-.AvatarCropper-base input[type=range]::-ms-fill-lower {
+.AvatarClip-content input[type=range]::-ms-fill-lower {
   background: #777;
   border-radius: 10px;
 }
-.AvatarCropper-base input[type=range]::-ms-fill-upper {
+.AvatarClip-content input[type=range]::-ms-fill-upper {
   background: #ddd;
   border-radius: 10px;
 }
-.AvatarCropper-base input[type=range]::-ms-thumb {
+.AvatarClip-content input[type=range]::-ms-thumb {
   border: none;
   height: 16px;
   width: 16px;
   border-radius: 50%;
   background: #454545;
 }
-.AvatarCropper-base input[type=range]:focus::-ms-fill-lower {
+.AvatarClip-content input[type=range]:focus::-ms-fill-lower {
   background: #888;
 }
-.AvatarCropper-base input[type=range]:focus::-ms-fill-upper {
+.AvatarClip-content input[type=range]:focus::-ms-fill-upper {
   background: #ccc;
 }
-.AvatarCropper-base {
-  .AvatarCropper-edit {
+.AvatarClip-content {
+  .AvatarClip-edit {
     width: 240px;
     height: 240px;
-    margin: 24px 60px 30px;
+    margin: 24px 60px 50px;
     canvas {
       cursor: move;
     }
   }
-  .AvatarCropper-zoom {
+  .AvatarClip-zoom {
     svg {
       vertical-align: text-bottom;
       fill: #9fadc7;
@@ -195,7 +195,7 @@
       display:none
     }
   }
-  .AvatarCropper-footer {
+  .AvatarClip-footer {
     margin-top: 40px;
     margin-bottom: 28px;
     button {

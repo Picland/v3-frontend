@@ -79,16 +79,6 @@ class Profile extends Component {
               imgSrc={userInfo.avatar}
               onComplete={::this.uploadComplete}
             />
-            {/* <div styleName="upload-avatar"> */}
-            {/* <Upload */}
-            {/* method="post" */}
-            {/* action="/api/v1/updateUserAvatar" */}
-            {/* button="更换头像" */}
-            {/* onComplete={::this.uploadComplete} */}
-            {/* > */}
-            {/* <Avatar src={userInfo.avatar} size="lg" /> */}
-            {/* </Upload> */}
-            {/* </div> */}
           </div>
         </div>
       </div>

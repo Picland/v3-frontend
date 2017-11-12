@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classlist from 'classlist'
-import AvatarCropper from '_common_ui/AvatarCropper'
+import AvatarClip from '_common_ui/AvatarClip'
 import Upload from '_common_ui/Upload'
 import Avatar from '_common_ui/Avatar'
 import xhr from '_common_ui/xhr'
@@ -46,7 +45,7 @@ class ProfileAvatar extends Component {
     }
     return new Blob([u8arr], {type: mime})
   }
-  handleCrop (dataURL) {
+  handleSave (dataURL) {
     const blob = this.dataURLtoBlob(dataURL)
 
     xhr.header = {
@@ -63,10 +62,6 @@ class ProfileAvatar extends Component {
       data: fd,
       success: data => {
         this.props.onComplete(data)
-        // TODO remove body open dialog class
-        const body = document.body
-        classlist(body).remove('cmui-modal--open')
-        body.style.paddingRight = ''
       },
       error: msg => {
         console.error('error!', msg)
@@ -85,9 +80,9 @@ class ProfileAvatar extends Component {
           </Upload>
         </div>
         {this.state.cropperOpen &&
-          <AvatarCropper
+          <AvatarClip
             open={this.state.cropperOpen}
-            onCrop={::this.handleCrop}
+            onSave={::this.handleSave}
             onClose={::this.onClose}
             cropButtonName="保存"
             image={this.state.img}
