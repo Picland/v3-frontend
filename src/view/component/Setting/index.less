@@ -5,15 +5,16 @@
 
 .container {
   position: relative;
-  top: 60px;
+  //top: 60px;
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: auto;
   background-color: @lite-liter;
-  .nav-top {
+  .navTop {
     width: 100%;
     height: @nav-height;
+    position: relative;
+    z-index: @zindex-subnav;
     border-right: 1px solid #E7EAF1;
     text-align: center;
     background-color: @white;
@@ -23,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .nav-menu {
+    .navMenu {
       height: 29px;
       line-height: 28px;
       font-size: 14px;
@@ -38,7 +39,7 @@
         color: @theme;
       }
     }
-    .active .nav-menu {
+    .active .navMenu {
       border-bottom-color: @theme;
     }
   }

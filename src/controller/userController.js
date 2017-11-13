@@ -2,23 +2,50 @@ import fs from 'fs'
 import path from 'path'
 import sha1 from 'sha1'
 import userService from '../service/userService'
-import renderService from '../service/renderService'
+import tokenUtil from '../util/token'
 
 export default {
-  renderProfilePage (req, res, next) {
-    res.status(200).send(renderService(req.url))
-  },
-  getUserStatus (req, res, next) {
-    if (req.session.user) {
-      userService.getUserByPhone(req.session.user.phoneNumber)
-        .then((user) => {
-          delete user.password
-          res.json(user)
+  // getAccessToken (req, res, next) {
+  //   const oldToken = tokenUtil.getToken(req)
+  //   if (oldToken && tokenUtil.verifyToken(oldToken)) {
+  //     res.json({accessToken: oldToken})
+  //   } else {
+  //     const accessToken = `Bearer ${tokenUtil.generateToken({ userId: req.headers.userid })}`
+  //     res.json({accessToken})
+  //   }
+  // },
+  async getOwnInfo (req, res, next) {
+    try {
+      const oldToken = tokenUtil.getToken(req)
+      if (oldToken && tokenUtil.verifyToken(oldToken)) {
+        // TODO: revoke old token
+        const newTokent = tokenUtil.refreshToken(oldToken)
+        res.cookie('token', newTokent, {httpOnly: true})
+        const user = await userService.getUserById(tokenUtil.decodeToken(newTokent).userId)
+        delete user.password
+        res.api({user})
+      } else {
+        res.api(401, {}, {
+          code: -1,
+          msg: '未登录无权限'
         })
-    } else {
-      res.json({
-        'code': 0,
-        'message': '未登录'
+      }
+    } catch (e) {
+      res.api(403, {}, {
+        code: -1,
+        msg: e.message
+      })
+    }
+  },
+  async getUserInfo (req, res, next) {
+    try {
+      const user = await userService.getUserById(req.params.id)
+      delete user.password
+      res.api({user})
+    } catch (e) {
+      res.api(403, {}, {
+        code: -1,
+        msg: e.message
       })
     }
   },
@@ -50,28 +77,28 @@ export default {
           }
           let result = await userService.updateUserInfo(req.headers.userid, {password: newpassword2})
           delete result.password
-          res.json(result)
+          res.api(result)
         } catch (e) {
-          res.json({
-            'code': -1,
-            'message': e.message
+          res.api(403, {}, {
+            code: -1,
+            msg: e.message
           })
         }
       } else {
-        res.json({
-          'code': -1,
-          'message': '请填写新密码'
+        res.api(403, {}, {
+          code: -1,
+          msg: '请填写新密码'
         })
       }
     } else {
       try {
         let result = await userService.updateUserInfo(req.headers.userid, req.body)
         delete result.password
-        res.json(result)
+        res.api(result)
       } catch (e) {
-        res.json({
-          'code': -1,
-          'message': e.message
+        res.api(403, {}, {
+          code: -1,
+          msg: e.message
         })
       }
     }
@@ -84,11 +111,17 @@ export default {
       }
       let result = await userService.updateUserInfo(req.headers.userid, body)
       delete result.password
-      res.json(result)
+      res.api(201, result, {
+        code: 0,
+        msg: '上传成功'
+      })
     } catch (e) {
       // 上传头像失败，异步删除上传的头像
       avatar && avatar.path && fs.unlink(avatar.path)
-      console.error(e.message)
+      res.api(403, {}, {
+        code: -1,
+        msg: e.message
+      })
     }
   }
 }

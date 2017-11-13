@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Logout from './container/Logout'
-import Setting from './container/Setting/Setting'
-import NoMatch from './component/NoMatch/NoMatch'
+import Logout from './component/Logout/Logout.connected'
+import Setting from './component/Setting/Setting.connected'
+import NoMatch from './component/NoMatch/NoMatch.presentational'
 import Frame from './layout/Frame'
-import Welcome from './container/Welcome'
-import User from './container/User'
-import Home from './container/Home'
-import NewPhoto from './container/NewPhoto'
-import Detail from './container/Setting/Detail'
-import Preview from './container/Setting/Preview'
-import Profile from './container/Setting/Profile'
-import Account from './container/Setting/Account'
+import Welcome from './component/Welcome/Welcome.connected'
+import User from './component/User/User.connected'
+import Home from './component/Home/Home.connected'
+import NewPhoto from './component/NewPhoto/NewPhoto.connected'
+import Detail from './component/Setting/Detail.connected'
+import Preview from './component/Preview/Preview.connected'
+import Profile from './component/Profile/Profile.connected'
+import Account from './component/Account/Account.connected'
 
 // auth 处理需要登录的路由，包装/合成
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
@@ -40,10 +40,6 @@ const UserSetting = ({ match }) => (
   } />
 )
 
-const mapStateToProps = (state) => ({
-  auth: state.user.userInfo._id
-})
-
 // Handle the sever redirect and 404
 const RedirectFromServer = ({match}) => {
   let url = window.location.search
@@ -52,6 +48,10 @@ const RedirectFromServer = ({match}) => {
     ? <Redirect to={{pathname: url.substring(1), state: { from: '/' }}} />
     : <NoMatch />
 }
+
+const mapStateToProps = state => ({
+  auth: state.user.userInfo._id
+})
 
 @connect(mapStateToProps)
 class App extends Component {

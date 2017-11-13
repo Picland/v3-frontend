@@ -45,19 +45,19 @@
 // Z-index .....................................................................
 
 @zindex-main: 0;
-@zindex-header: 1000;
-@zindex-aside: 2000;
+@zindex-subnav: 1000;
+@zindex-header: 1500;
+@zindex-dropdown: 2000;
 @zindex-dialog: 3000;
 @zindex-spin: 4000;
 @zindex-max: 10000;
 @zindex-dialog-cover: @zindex-dialog - 1;
-@zindex-aside-cover: @zindex-aside - 1;
 @zindex-spin-cover: @zindex-spin - 1;
 
 // Colors ......................................................................
 
 // black and white
-@black: rgba(30, 30, 30, 1);
+@black: rgba(0, 0, 0, 1);
 @white: rgba(255, 255, 255, 1);
 
 // dark grey
@@ -163,14 +163,17 @@
 @theme-liter: #f5f3ef;
 @theme-text: @white;
 //@theme-header: #25292e;
-@theme-header: #333;
+@theme-header: @black;
+//@theme-header: #333;
 @theme-header-logo: @white;
-@theme-header-dropdown: #333;
-@theme-footer: rgb(68, 68, 68);
+@theme-header-dropdown: @dark-darker;
+//@theme-footer: rgb(68, 68, 68);
+@theme-footer: @dark-darker;
 @theme-footer-bottom-top: @lite-lite;
 @theme-footer-text-top: #fff;
 @theme-footer-text-middle: #ddd;
-@theme-footer-text-bottom: #aaa;
+//@theme-footer-text-bottom: #aaa;
+@theme-footer-text-bottom: @medium-lite;
 @btn-border-radius: 0px;
 
 //@theme: #b89f7a;

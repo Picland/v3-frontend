@@ -1,13 +1,9 @@
 import path from 'path'
 import sha1 from 'sha1'
 import userService from '../service/userService'
-import renderService from '../service/renderService'
+import tokenUtil from '../util/token'
 
 export default {
-  renderRegisterPage (req, res, next) {
-    res.status(200).send(renderService(req.url))
-  },
-
   async createUser (req, res, next) {
     let phoneNumber = req.body.account
     let inviteCode = req.body.inviteCode
@@ -52,9 +48,9 @@ export default {
     } catch (e) {
       // 注册失败，异步删除上传的头像
       // avatar && avatar.path && fs.unlink(req.files.avatar.path)
-      return res.status(200).json({
-        'code': -1,
-        'message': e.message
+      return res.api(403, {}, {
+        code: -1,
+        msg: e.message
       })
     }
 
@@ -75,23 +71,20 @@ export default {
       let result = await userService.insert(user)
       // 此 user 是插入 mongodb 后的值，包含 _id
       user = result.ops[0]
-      // 将用户信息存入 session
       delete user.password
-      req.session.user = user
-      return res.status(200).json({
-        'code': 1,
-        'message': '注册成功',
-        'user': {
-          '_id': user._id
-        }
+      const token = tokenUtil.generateToken({ userId: user._id })
+      res.cookie('token', token, {httpOnly: true})
+      return res.api(201, {user: {'_id': user._id}}, {
+        code: 0,
+        msg: '注册成功'
       })
     } catch (e) {
       // 注册失败，异步删除上传的头像
       // req.files.avatar && fs.unlink(req.files.avatar.path)
       if (e.message.match('E11000 duplicate key')) {
-        return res.status(200).json({
-          'code': -1,
-          'message': '账号已经被注册'
+        return res.api(403, {}, {
+          code: -1,
+          msg: '账号已经被注册'
         })
       }
       next(e)

@@ -1,3 +1,10 @@
+/**
+ * Formidable just for uploading img
+ *
+ * @reference https://github.com/felixge/node-formidable#api
+ * @reference https://github.com/noraesae/express-formidable
+ */
+
 import formidable from 'formidable'
 
 function parse (opts) {

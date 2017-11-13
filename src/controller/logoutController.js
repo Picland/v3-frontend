@@ -1,10 +1,9 @@
 export default {
   logout (req, res, next) {
-    // 清空 session 中用户信息
-    req.session.user = null
-    res.json({
+    res.clearCookie('token')
+    res.api({}, {
       'code': 0,
-      'message': '已退出登录'
+      'msg': '已退出登录'
     })
   }
 }

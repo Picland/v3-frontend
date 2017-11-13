@@ -149,14 +149,18 @@ class Form extends Component {
 
   render () {
     const {
-      children, className, data, defaultData, onChange, onSubmit, onSuccess,
-      rules, labelWidth, ...other
+      children, className, data, defaultData, onChange, onSubmit, onSuccess, size, rules, labelWidth, ...other
     } = this.props
+
+    const classNames = classnames(
+      'cmui-form',
+      {[`cmui-form-${size}`]: size}
+    )
 
     return (
       <form
         onSubmit={::this.handleSubmit}
-        className={classnames('cmui-form', className)}
+        className={classNames}
         {...other}
       >
         {this.state.isReload && children}
@@ -205,6 +209,9 @@ Form.propTypes = {
 
   // 提交的数据处理器，参数为当前表单数据，返回最终发送的数据
   sendDataFormatter: PropTypes.func,
+
+  // form表单元素的大小，影响label和值的文字大小
+  size: PropTypes.oneOf(['sm', 'lg']),
 
   customProp ({ data, onChange }) {
     if (data && !onChange) {

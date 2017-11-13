@@ -1,6 +1,6 @@
-import user from './user'
-import preview from './preview'
-import flashMessage from './flashMessage'
+import user from './user.reducer'
+import preview from './preview.reducer'
+import flashMessage from './flashMessage.reducer'
 
 export default {
   user,

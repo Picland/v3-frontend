@@ -19,19 +19,15 @@ export default (server) => {
   server.post('/api/v1/login', auth.isNotLogin, loginController.login)
   server.post('/api/v1/register', auth.isNotLogin, registerController.createUser)
   server.get('/api/v1/logout', auth.isLogin, logoutController.logout)
-  server.get('/api/v1/user/status', userController.getUserStatus)
+  server.get('/api/v1/user', userController.getOwnInfo)
+  server.get('/api/v1/user/:id', userController.getUserInfo)
   server.post('/api/v1/updateUserInfo', auth.isLogin, userController.updateUserInfo)
   server.post('/api/v1/updateUserAvatar', auth.isLogin, userController.updateUserAvatar)
+  // server.get('/api/v1/accesstoken', userController.getAccessToken)
 
   // --------------------------------------------------------------------------
   // Old Multiple Pages Router
   // --------------------------------------------------------------------------
-  //
-  // // GET /register 注册页
-  // server.get('/register', authorize.isNotLogin, registerController.renderRegisterPage)
-  //
-  // // POST /register 用户注册
-  // server.post('/register', authorize.isNotLogin, registerController.createUser)
   //
   // // GET /articles 所有用户或者特定用户的文章页
   // // eg: GET /articles?author=xxx

@@ -67,7 +67,7 @@ function xhr (option) {
 
   request.onreadystatechange = () => {
     if (request.readyState === 4) {
-      if (request.status === 200) {
+      if (request.status.toString().slice(0, 1) === '2') {
         let response = request.responseText
         if (request.getResponseHeader('Content-Type').indexOf('application/json') !== -1) {
           response = JSON.parse(response)

@@ -4,6 +4,7 @@
   color: @white;
   padding: 0 20px;
   height: 30px;
+  font-size: @fontsize-small;
   background-color: @theme;
   border: 1px solid @theme;
   border-radius: @btn-border-radius;
@@ -40,15 +41,13 @@
   color: @theme;
   background-color: @theme-liter;
   border-color: @theme;
-  &:hover {
-    background-color: @theme;
+  &:hover:enabled {
     color: @white;
   }
-  &:active {
-    background-color: @theme;
-    color: @white;
-
-  }
+  //&:active {
+  //  background-color: @theme;
+  //  color: @white;
+  //}
 }
 
 .cmui-btn--sm {

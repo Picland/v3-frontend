@@ -13,12 +13,12 @@ class SelectDropdown extends Component {
 
   render () {
     const {
-      className, children, title, url, hasPropValue, caret, onLoad, onToggle, minWidth,
+      className, children, title, url, hasPropValue, caret, onLoad, onToggle, width,
       disabled, ...other
     } = this.props
 
-    if (minWidth) {
-      other.style = Object.assign(other.style || {}, { minWidth })
+    if (width) {
+      other.style = Object.assign(other.style || {}, { width })
     }
 
     return (
@@ -68,7 +68,7 @@ SelectDropdown.propTypes = {
   hasPropValue: PropTypes.bool,
   caret: PropTypes.bool,
   disabled: PropTypes.bool,
-  minWidth: PropTypes.number,
+  width: PropTypes.number,
   onLoad: PropTypes.func,
   onToggle: PropTypes.func
 }
