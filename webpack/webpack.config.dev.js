@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const DashbordPlugin = require('webpack-dashboard/plugin')
 const baseWebpackConfig = require('./webpack.config.base')
 const host = process.env.HOST || 'localhost'
 const port = +process.env.PORT || 3001
@@ -35,6 +36,7 @@ module.exports = merge(baseWebpackConfig, {
       __DEVTOOLS__: true
     }),
     new FriendlyErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new DashbordPlugin()
   ]
 })
