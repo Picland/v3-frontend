@@ -3,6 +3,9 @@
 
 // import { renderToString } from 'react-dom/server'
 // <div id="root">${renderToString(renderMe)}</div>
+import pkg from '../../package.json'
+
+const reactVersion = '16.0.0' || pkg.dependencies.react.slice(1)
 
 const NODE_ENV = process.env.NODE_ENV
 const port = +process.env.PORT + 1
@@ -22,8 +25,8 @@ const render = (renderMe) => {
         </head>
         <body>
           <div id="root"></div>
-          <script src="https://cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
-          <script src="https://cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
+          <script src="https://cdn.bootcss.com/react/${reactVersion}/umd/react.production.min.js"></script>
+          <script src="https://cdn.bootcss.com/react-dom/${reactVersion}/umd/react-dom.production.min.js"></script>
           <script src="${dist}/js/vendor.js"></script>
           <script src="${dist}/js/app.js"></script>
         </body>
@@ -38,8 +41,8 @@ const render = (renderMe) => {
         </head>
         <body>
           <div id="root"></div>
-          <script src="https://cdn.bootcss.com/react/16.0.0/umd/react.production.min.js"></script>
-          <script src="https://cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
+          <script src="https://cdn.bootcss.com/react/${reactVersion}/umd/react.production.min.js"></script>
+          <script src="https://cdn.bootcss.com/react-dom/${reactVersion}/umd/react-dom.production.min.js"></script>
           <script src="${dist}/js/vendor.js"></script>
           <script src="${dist}/js/app.js"></script>
         </body>
