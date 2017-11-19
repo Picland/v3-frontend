@@ -32,10 +32,10 @@ async function getInitialState () {
   window.runtime = {
     userId: get(initialState, 'user.userInfo._id', null)
   }
-// const browserHistory = createBrowserHistory() // 将 react-router 中的 browserHistory 移到这里引入
-// const history = syncHistoryWithStore(browserHistory, store) // 保证 react-router 和 Redux store 的统一
+  // const browserHistory = createBrowserHistory() // 将 react-router 中的 browserHistory 移到这里引入
+  // const history = syncHistoryWithStore(browserHistory, store) // 保证 react-router 和 Redux store 的统一
 
-// {clientRouter2(history)}
+  // {clientRouter2(history)}
   const renderApp = () => {
     render(
       <Provider store={store}>
@@ -44,8 +44,8 @@ async function getInitialState () {
           <div id="loading">正在加载...</div>
         </div>
       </Provider>,
-        document.getElementById('root')
-      )
+      document.getElementById('root')
+    )
   }
   renderApp()
   // if (__DEVELOPMENT__ && module.hot) {
