@@ -1,25 +1,66 @@
 @import '~variable';
 
-@nav-height: 60px;
+@nav-height: 50px;
+@width: 1090px;
+@avatar-size: 110px;
 
 .container {
   background-color: @lite-liter;
   .top-background {
+    position: relative;
     background-color: #000;
     -moz-background-size: cover;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
+    width: @width;
     height: 320px;
-    padding: 180px 40px 40px;
+    padding: 60px 40px 40px;
+    margin: 15px auto 0;
     font-size: 14px;
     line-height: 20px;
     color: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    border-radius: 2px;
+    .homepage-userinfo {
+      text-align: center;
+      img {
+        width: @avatar-size;
+        height: @avatar-size;
+        width: @avatar-size;
+        height: @avatar-size;
+        border: 4px solid rgba(255, 255, 255, .3);
+        border-radius: 50%;
+        cursor: pointer;
+        //box-sizing: content-box;
+        &:hover {
+          //padding: 0;
+          //width: @avatar-size - 8;
+          //height: @avatar-size - 8;
+          //margin-top: 4px;
+          border-color: rgba(189, 157, 95, .7);
+          //box-shadow: 0 0 14px @theme;
+        }
+      }
+      .name {
+        margin-top: 12px;
+        font-size: 22px;
+        font-weight: 500;
+      }
+      .bio{
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        text-shadow: 0 0 4px rgba(0,0,0,0.5);
+      }
+    }
   }
-  .nav-top {
-    width: 100%;
+  .navTop {
+    width: @width;
     height: @nav-height;
+    position: relative;
+    margin: 0 auto;
+    z-index: @zindex-subnav;
     border-right: 1px solid #E7EAF1;
     text-align: center;
     background-color: @white;
@@ -29,11 +70,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .nav-menu {
-      height: 29px;
-      line-height: 28px;
+    .navMenu {
+      height: 50px;
+      padding-top: 17px;
       font-size: 14px;
-      vertical-align: middle;
       display: inline-table;
       border-bottom: 2px solid transparent;
       margin-left: 22px;
@@ -44,14 +84,15 @@
         color: @theme;
       }
     }
-    .active .nav-menu {
+    .active .navMenu {
       border-bottom-color: @theme;
+      font-weight: 500;
     }
   }
   .main {
-    //width: 100%;
+    width: @width;
     height: 709px;
-    margin: 40px 70px 0;
+    margin: 15px auto 0;
     border: 1px solid #E7EAF1;
     background-color: @white;
     text-align: center;
