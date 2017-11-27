@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
-// import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { Sticky, StickyContainer } from 'react-sticky'
+import Avatar from '_common_ui/Avatar'
 import Header from '../../layout/Header/Header.connected'
 import Footer from '../../layout/Footer/Footer.presentational'
 import styles from './index.less'
@@ -20,11 +22,28 @@ class User extends Component {
           ? <Header buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} nofixed />
           : <Header buttonLink="/register" buttonName="注册" nofixed />
         }
-        <div>
-          <div styleName="top-background" style={{backgroundImage: 'url(/img/common/personal_bg.jpg)'}} />
+        <StickyContainer>
+          <div styleName="top-background" style={{backgroundImage: 'url(/img/common/personal_bg.jpg)'}}>
+            <div styleName="homepage-userinfo">
+              <Avatar src={avatarSrc} title="更换头像" />
+              <div styleName="name">{userInfo.name}</div>
+              <div styleName="bio">{userInfo.bio}</div>
+            </div>
+          </div>
+          <Sticky relative>
+            {
+              ({ isSticky, style }) => {
+                console.log(isSticky)
+                return <div className={styles.navTop} style={style}>
+                  <NavLink to="/user" activeClassName={styles.active}><div className={styles.navMenu}>个人资料</div></NavLink>
+                  <NavLink to="/settings/account" activeClassName={styles.active}><div className={styles.navMenu}>账号和密码</div></NavLink>
+                </div>
+              }
+            }
+          </Sticky>
           <div styleName="main"><h2>正在开发中...</h2></div>
-        </div>
-        <Footer />
+          <Footer />
+        </StickyContainer>
       </div>
     )
   }

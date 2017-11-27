@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import './index.less'
 
 class Avatar extends Component {
@@ -11,20 +12,22 @@ class Avatar extends Component {
   }
 
   render () {
-    let {shape, size, src} = this.props
-    return (
-      <div>
-        <img src={`/img/${src}`} alt="img" onClick={::this._handleClick} className={`cmui-avatar__${shape}__${size}`} />
-      </div>
-    )
+    let {shape, size, src, className, ...others} = this.props
+    return <img src={`/img/${src}`}
+      onClick={::this._handleClick}
+      className={cx(`cmui-avatar__${shape}__${size}`, className)}
+      {...others}
+    />
   }
 }
 
 Avatar.propTypes = {
+  className: PropTypes.string,
   shape: PropTypes.string,
   size: PropTypes.string,
   src: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  others: PropTypes.any
 }
 
 Avatar.defaultProps = {
