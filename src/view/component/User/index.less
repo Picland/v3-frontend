@@ -53,6 +53,23 @@
         font-weight: 500;
         text-shadow: 0 0 4px rgba(0,0,0,0.5);
       }
+      .location{
+        float: right;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        //text-shadow: 0 0 4px rgba(0,0,0,0.5);
+      }
+      .follow-btn {
+        cursor: pointer;
+        font-size: 13px;
+        text-align: center;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #fff;
+        margin: 12px auto 0;
+      }
     }
   }
   .navTop {
@@ -90,11 +107,28 @@
     }
   }
   .main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
     width: @width;
-    height: 709px;
-    margin: 15px auto 0;
-    border: 1px solid #E7EAF1;
-    background-color: @white;
+    min-height: 600px;
+    margin: 22px auto 0;
+    //border: 1px solid red;
     text-align: center;
+    .card {
+      border: 1px solid #E7EAF1;
+      background-color: @white;
+      margin-bottom: 22px;
+      width: 256px;
+      height: 256px;
+      cursor: pointer;
+      img {
+        width: 256px;
+        height: 256px;
+        object-fit: cover;
+      }
+    }
   }
 }
