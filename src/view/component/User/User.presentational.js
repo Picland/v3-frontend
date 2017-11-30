@@ -28,6 +28,8 @@ class User extends Component {
               <Avatar src={avatarSrc} title="更换头像" />
               <div styleName="name">{userInfo.name}</div>
               <div styleName="bio">{userInfo.bio}</div>
+              {/* <div styleName="location">陕西省-西安市-雁塔区</div> */}
+              <div styleName="follow-btn">已关注</div>
             </div>
           </div>
           <Sticky relative>
@@ -35,13 +37,31 @@ class User extends Component {
               ({ isSticky, style }) => {
                 console.log(isSticky)
                 return <div className={styles.navTop} style={style}>
-                  <NavLink to="/user" activeClassName={styles.active}><div className={styles.navMenu}>个人资料</div></NavLink>
-                  <NavLink to="/settings/account" activeClassName={styles.active}><div className={styles.navMenu}>账号和密码</div></NavLink>
+                  <NavLink to="/user" activeClassName={styles.active}><div className={styles.navMenu}>帖子</div></NavLink>
+                  <NavLink to="/settings/account" activeClassName={styles.active}><div className={styles.navMenu}>收藏夹</div></NavLink>
+                  <NavLink to="/settings/account" activeClassName={styles.active}><div className={styles.navMenu}>个人资料</div></NavLink>
                 </div>
               }
             }
           </Sticky>
-          <div styleName="main"><h2>正在开发中...</h2></div>
+          <div styleName="main">
+            <div styleName="card"><img src="img/test/1.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/2.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/3.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/4.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/5.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/6.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/7.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/8.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/9.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/10.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/11.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/12.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/13.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/14.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/15.jpg" alt="" /></div>
+            <div styleName="card"><img src="img/test/16.jpg" alt="" /></div>
+          </div>
           <Footer />
         </StickyContainer>
       </div>
