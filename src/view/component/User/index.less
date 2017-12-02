@@ -118,16 +118,34 @@
     //border: 1px solid red;
     text-align: center;
     .card {
+      position: relative;
       border: 1px solid #E7EAF1;
       background-color: @white;
       margin-bottom: 22px;
       width: 256px;
       height: 256px;
       cursor: pointer;
+      &:hover {
+        .card-info {
+          visibility: visible;
+        }
+      }
       img {
         width: 256px;
         height: 256px;
         object-fit: cover;
+      }
+      .card-info {
+        position: absolute;
+        visibility: hidden;
+        width: 256px;
+        height: 256px;
+        line-height: 256px;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: @white;
+        text-align: center;
       }
     }
   }
