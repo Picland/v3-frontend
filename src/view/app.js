@@ -19,7 +19,8 @@ async function getInitialState () {
                 userInfo: result.data.user,
                 logining: initialState.logining,
                 otherInfo: initialState.otherInfo,
-                registering: initialState.registering
+                registering: initialState.registering,
+                logined: true
             }
         }
     }

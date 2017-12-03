@@ -2,23 +2,28 @@ import constActionType from '../constant/actionType'
 import { showFlashMessage } from './flashMessage.action'
 
 const updateInfo = result => ({
-  type: constActionType.UPDATE,
-  result
+    type: constActionType.UPDATE,
+    result
 })
 
 const updateAvatar = result => ({
-  type: constActionType.UPDATE_AVATAR,
-  result
+    type: constActionType.UPDATE_AVATAR,
+    result
 })
 
 const updateSuccess = () => ({
-  message: '更新成功',
-  type: 'success'
+    message: '更新成功',
+    type: 'success'
 })
 
 const updateFail = error => ({
-  message: error,
-  type: 'error'
+    message: error,
+    type: 'error'
+})
+
+const getUserInfoSuccess = result => ({
+    type: constActionType.USER_GET_INFO_SUCCESS,
+    result
 })
 
 /**
@@ -42,18 +47,18 @@ const updateFail = error => ({
  * @public
  */
 export const update = data => async (dispatch, getState, util) => {
-  try {
-    let result = await util.api.updateUserInfo(data)
-    if (result.status.code !== 0) {
-      dispatch(showFlashMessage(updateFail(result.status.msg)))
-    } else {
-      dispatch(updateInfo(result.data))
-      dispatch(showFlashMessage(updateSuccess()))
+    try {
+        let result = await util.api.updateUserInfo(data)
+        if (result.status.code !== 0) {
+            dispatch(showFlashMessage(updateFail(result.status.msg)))
+        } else {
+            dispatch(updateInfo(result.data))
+            dispatch(showFlashMessage(updateSuccess()))
+        }
+        return result
+    } catch (e) {
+        console.error(e)
     }
-    return result
-  } catch (e) {
-    console.error(e)
-  }
 }
 
 /**
@@ -62,7 +67,7 @@ export const update = data => async (dispatch, getState, util) => {
  * @public
  */
 export const updateAvatarUnlogined = result => dispatch => {
-  result && dispatch(updateAvatar(result.data))
+    result && dispatch(updateAvatar(result.data))
 }
 
 /**
@@ -71,8 +76,22 @@ export const updateAvatarUnlogined = result => dispatch => {
  * @public
  */
 export const updateAvatarLogined = result => dispatch => {
-  if (result) {
-    dispatch(updateInfo(result.data))
-    dispatch(showFlashMessage(updateSuccess()))
-  }
+    if (result) {
+        dispatch(updateInfo(result.data))
+        dispatch(showFlashMessage(updateSuccess()))
+    }
+}
+
+export const getUserInfo = userId => async (dispatch, getState, util) => {
+    try {
+        let result = await util.api.getUserInfo(userId)
+        if (result.status.code !== 0) {
+            dispatch(showFlashMessage(updateFail(result.status.msg)))
+        } else {
+            dispatch(getUserInfoSuccess(result.data))
+            dispatch(showFlashMessage(updateSuccess()))
+        }
+    } catch (e) {
+        console.error(e)
+    }
 }

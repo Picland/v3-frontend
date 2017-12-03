@@ -1,10 +1,14 @@
 import User from './User.presentational'
 import { connect } from 'react-redux'
+import { getUserInfo } from '../../redux/action/user.action'
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
+    logined: state.user.logined,
     userInfo: state.user.userInfo
-  }
-}
+})
 
-export default connect(mapStateToProps)(User)
+const mapDispatchToProps = dispatch => ({
+    getUserInfo: userId => dispatch(getUserInfo(userId))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(User)

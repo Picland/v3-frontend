@@ -50,7 +50,7 @@ const RedirectFromServer = ({match}) => {
 }
 
 const mapStateToProps = state => ({
-    auth: state.user.userInfo._id
+    auth: state.user.logined
 })
 
 @connect(mapStateToProps)
@@ -69,7 +69,7 @@ class App extends Component {
               <Route path="/" render={() =>
                   <Frame>
                       <Switch>
-                          <Route exact path="/user" component={User} />
+                          <Route exact path="/user/:userId" component={User} />
                           <Route exact path="/" component={Welcome} />
                           <Route path="/logout" component={Logout} />
                           <PrivateRoute path="/settings" component={UserSetting} auth={auth} />
