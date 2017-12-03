@@ -1,11 +1,14 @@
 @import '~variable';
 
 @nav-height: 50px;
+@card-width: 256px;
 @width: 1090px;
+@height: 320px;
 @avatar-size: 110px;
 
 .container {
   background-color: @lite-liter;
+  padding-top: 75px;
   .top-background {
     position: relative;
     background-color: #000;
@@ -14,9 +17,9 @@
     background-position: center;
     background-repeat: no-repeat;
     width: @width;
-    height: 320px;
+    height: @height;
     padding: 60px 40px 40px;
-    margin: 15px auto 0;
+    margin: 0 auto;
     font-size: 14px;
     line-height: 20px;
     color: #f9f9f9;
@@ -122,8 +125,8 @@
       border: 1px solid #E7EAF1;
       background-color: @white;
       margin-bottom: 22px;
-      width: 256px;
-      height: 256px;
+      width: @card-width;
+      height: @card-width;
       cursor: pointer;
       &:hover {
         .card-info {
@@ -131,16 +134,16 @@
         }
       }
       img {
-        width: 256px;
-        height: 256px;
+        width: @card-width;
+        height: @card-width;
         object-fit: cover;
       }
       .card-info {
         position: absolute;
         visibility: hidden;
-        width: 256px;
-        height: 256px;
-        line-height: 256px;
+        width: @card-width;
+        height: @card-width;
+        line-height: @card-width;
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.5);
@@ -148,5 +151,13 @@
         text-align: center;
       }
     }
+  }
+  footer {
+    font-size: 12px;
+    margin: 0 auto;
+    width: @width;
+    line-height: 28px;
+    padding: 38px 0;
+    font-weight: 600;
   }
 }

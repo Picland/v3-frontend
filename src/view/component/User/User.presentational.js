@@ -5,23 +5,30 @@ import { NavLink } from 'react-router-dom'
 import { Sticky, StickyContainer } from 'react-sticky'
 import Avatar from '_common_ui/Avatar'
 import Header from '../../layout/Header/Header.connected'
-import Footer from '../../layout/Footer/Footer.presentational'
+// import Footer from '../../layout/Footer/Footer.presentational'
 import styles from './index.less'
 
 @CSSModules(styles)
 class User extends Component {
     static propTypes = {
-        userInfo: PropTypes.object
+        userInfo: PropTypes.object,
+        getUserInfo: PropTypes.func,
+        match: PropTypes.object,
+        logined: PropTypes.bool
+    }
+    constructor (props) {
+        super(props)
+        props.getUserInfo(props.match.params.userId)
     }
     render () {
-        let { userInfo } = this.props
+        let { userInfo, logined } = this.props
         let avatarSrc = userInfo ? userInfo.avatar : ''
         const cards = new Array(16).fill('')
         return (
             <div styleName="container">
-                { avatarSrc
-                    ? <Header buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} nofixed />
-                    : <Header buttonLink="/register" buttonName="注册" nofixed />
+                { logined
+                    ? <Header buttonLink="/newphoto" buttonName="发布" avatarSrc={avatarSrc} fixed />
+                    : <Header buttonLink="/register" buttonName="注册" fixed />
                 }
                 <StickyContainer>
                     <div styleName="top-background" style={{backgroundImage: 'url(/img/common/personal_bg.jpg)'}}>
@@ -54,7 +61,7 @@ class User extends Component {
                     <div styleName="main">
                         { cards.map((card, index) =>
                             <div key={index} styleName="card">
-                                <img src={`img/test/${index + 1}.jpg`} alt="" />
+                                <img src={`/img/test/${index + 1}.jpg`} alt="" />
                                 <div styleName="card-info">
                                     <span>喜欢</span>
                                     <span>评论</span>
@@ -62,7 +69,10 @@ class User extends Component {
                             </div>)
                         }
                     </div>
-                    <Footer />
+                    {/* <Footer /> */}
+                    <footer>
+                        关于我们 支持 博客 新闻中心 API 工作 隐私条款 目录 语言
+                    </footer>
                 </StickyContainer>
             </div>
         )
