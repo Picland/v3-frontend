@@ -2,7 +2,7 @@
   "name": "Earth",
   "version": "0.0.0",
   "private": true,
-  "main": "server/server.prod.js",
+  "main": "server/server.js",
   "author": "muwenzi",
   "description": "muwenzi.com version3",
   "license": "BSD-3-Clause",
@@ -22,19 +22,21 @@
   },
   "betterScripts": {
     "webpack": {
-      "command": "webpack-dashboard -- node-dev server/server.webpack.js",
+      "command": "webpack-dashboard -- node-dev webpack/webpack.server.js",
       "env": {
         "NODE_ENV": "development",
         "HOST": "localhost",
-        "PORT": 3001,
+        "PORT": 3000,
         "TIMEOUT": 2000
       }
     },
     "dev": {
-      "command": "node $NODE_DEBUG_OPTION server/server.dev.js",
+      "command": "nodejs-dashboard --port=8002 -- node -r nodejs-dashboard $NODE_DEBUG_OPTION server/babel.register.js",
       "env": {
         "NODE_ENV": "development",
-        "PORT": 3000
+        "FRONTEND_PORT": 8890,
+        "WEBPACK_PORT": 3000,
+        "BACKEND_PORT": 8888
       }
     },
     "presandbox": {
@@ -44,14 +46,14 @@
       }
     },
     "sandbox": {
-      "command": "pm2 start server/server.prod.js --name 'earth-sanbox'",
+      "command": "pm2 start server/server.js --name 'earth-sanbox'",
       "env": {
         "NODE_ENV": "sandbox",
         "PORT": 8890
       }
     },
     "sandbox:debug": {
-      "command": "npm run presandbox && node $NODE_DEBUG_OPTION server/server.prod.js",
+      "command": "npm run presandbox && node $NODE_DEBUG_OPTION server/server.js",
       "env": {
         "NODE_ENV": "sandbox",
         "PORT": 8890
@@ -64,10 +66,10 @@
       }
     },
     "prod": {
-      "command": "pm2 start server/server.prod.js --name 'earth-production'",
+      "command": "pm2 start server/server.js --name 'earth-production'",
       "env": {
         "NODE_ENV": "production",
-        "PORT": 8892
+        "PORT": 8890
       }
     }
   },
@@ -103,7 +105,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "fetch": "^1.1.0",
     "file-loader": "^1.1.5",
-    "formidable": "^1.1.1",
+    "http-proxy-middleware": "^0.17.4",
     "invariant": "^2.2.2",
     "isomorphic-style-loader": "^4.0.0",
     "jquery": "^3.2.1",
@@ -112,10 +114,7 @@
     "less": "^2.7.3",
     "less-loader": "^3.0.0",
     "lodash": "^4.17.4",
-    "marked": "0.3.6",
-    "moment": "^2.19.2",
-    "mongolass": "^3.1.5",
-    "mysql": "^2.15.0",
+    "nodejs-dashboard": "^0.4.3",
     "objectid-to-timestamp": "1.3.0",
     "pm2": "^2.4.6",
     "postcss-loader": "^2.0.8",
