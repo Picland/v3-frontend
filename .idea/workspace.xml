@@ -1,0 +1,1722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="49fb5c54-b377-4eaf-85fc-5b6f91f5a727" name="Default" comment="remove api server code">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" afterPath="$PROJECT_DIR$/.eslintrc" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/server/babel.register.js" afterPath="$PROJECT_DIR$/server/babel.register.js" />
+      <change beforePath="$PROJECT_DIR$/server/config.js" afterPath="$PROJECT_DIR$/server/config.js" />
+      <change beforePath="$PROJECT_DIR$/server/proxy.js" afterPath="$PROJECT_DIR$/server/proxy.js" />
+      <change beforePath="$PROJECT_DIR$/server/render/template.js" afterPath="$PROJECT_DIR$/server/render/template.js" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" afterPath="$PROJECT_DIR$/src/app.js" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/api.js" afterPath="$PROJECT_DIR$/src/common/util/api.js" />
+      <change beforePath="$PROJECT_DIR$/src/component/Profile/Profile.presentational.js" afterPath="$PROJECT_DIR$/src/component/Profile/Profile.presentational.js" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/User.connected.js" afterPath="$PROJECT_DIR$/src/component/User/User.connected.js" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/User.presentational.js" afterPath="$PROJECT_DIR$/src/component/User/User.presentational.js" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Header/Header.connected.js" afterPath="$PROJECT_DIR$/src/layout/Header/Header.connected.js" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Header/Header.presentational.js" afterPath="$PROJECT_DIR$/src/layout/Header/Header.presentational.js" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/user.action.js" afterPath="$PROJECT_DIR$/src/redux/action/user.action.js" />
+      <change beforePath="$PROJECT_DIR$/src/redux/constant/actionType.js" afterPath="$PROJECT_DIR$/src/redux/constant/actionType.js" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducer/user.reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducer/user.reducer.js" />
+      <change beforePath="$PROJECT_DIR$/src/router.js" afterPath="$PROJECT_DIR$/src/router.js" />
+      <change beforePath="$PROJECT_DIR$/webpack/webpack.config.base.js" afterPath="$PROJECT_DIR$/webpack/webpack.config.base.js" />
+      <change beforePath="$PROJECT_DIR$/webpack/webpack.config.dev.js" afterPath="$PROJECT_DIR$/webpack/webpack.config.dev.js" />
+      <change beforePath="$PROJECT_DIR$/webpack/webpack.config.prod.js" afterPath="$PROJECT_DIR$/webpack/webpack.config.prod.js" />
+      <change beforePath="$PROJECT_DIR$/webpack/webpack.server.js" afterPath="$PROJECT_DIR$/webpack/webpack.server.js" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Earth" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".eslintrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.eslintrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proxy.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/proxy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>image</find>
+      <find>this.re</find>
+      <find>1500</find>
+      <find>1000</find>
+      <find>updateBodyState</find>
+      <find>cmui-modal--open</find>
+      <find>AvatarCropper-canvas</find>
+      <find>modal-body</find>
+      <find>AvatarCropper-base</find>
+      <find>AvatarCropper-edit</find>
+      <find>AvatarClip-container</find>
+      <find>AvatarCropper</find>
+      <find>updateAvatarUnlogined</find>
+      <find>eslint</find>
+      <find>file-loader</find>
+      <find>key=</find>
+      <find>PropTypes</find>
+      <find>PropTypes.oneOfType([PropTypes.string, PropTypes.number])</find>
+      <find>PropTypes.exact</find>
+      <find>footer</find>
+      <find>72b148</find>
+      <find>position</find>
+      <find>.AvatarClip-content</find>
+      <find>30</find>
+      <find>mysql</find>
+      <find>model/</find>
+      <find>otherInfo</find>
+      <find>eslint-import-resolver-webpack</find>
+      <find>server/server</find>
+      <find>CREDENTIALS</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>@unit-fourfold</replace>
+      <replace>@unit-fivefold</replace>
+      <replace>@unit-sixfold</replace>
+      <replace>@fontsize-mini</replace>
+      <replace>@fontsize-medium</replace>
+      <replace>let</replace>
+      <replace>cmui-</replace>
+      <replace>updateAvatarUnlogined</replace>
+      <replace>cmui</replace>
+      <replace>result.status.code</replace>
+      <replace>closeButtonName</replace>
+      <replace>cropButtonName</replace>
+      <replace>AvatarClip-container</replace>
+      <replace>AvatarClip-edit</replace>
+      <replace>AvatarClip-content</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/app/view/client/src</dir>
+      <dir>$PROJECT_DIR$/webpack</dir>
+      <dir>$PROJECT_DIR$/app/view</dir>
+      <dir>$PROJECT_DIR$/app</dir>
+      <dir>$PROJECT_DIR$/src/view/page/Setting</dir>
+      <dir>$PROJECT_DIR$/src/view/container/Setting</dir>
+      <dir>$PROJECT_DIR$/src/view/page</dir>
+      <dir>$PROJECT_DIR$/src/controller</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/DevTools</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/Upload</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/src/view/component</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/InputLine</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/_style</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/Form</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/Input</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/Select</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/TextOverflow</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/Tooltip</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/AvatarCropper</dir>
+      <dir>$PROJECT_DIR$/node_modules/formidable</dir>
+      <dir>$PROJECT_DIR$/src/view/common</dir>
+      <dir>$PROJECT_DIR$/src/view/common/ui/Modal</dir>
+      <dir>$PROJECT_DIR$/src/view</dir>
+      <dir>$PROJECT_DIR$/src</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/view/component/Profile/ProfileAvatar.presentational.js" />
+        <option value="$PROJECT_DIR$/server/server.dev.js" />
+        <option value="$PROJECT_DIR$/server/server.prod.js" />
+        <option value="$PROJECT_DIR$/node_modules/babel-eslint/package.json" />
+        <option value="$PROJECT_DIR$/node_modules/better-npm-run/package.json" />
+        <option value="$PROJECT_DIR$/src/util/token.js" />
+        <option value="$PROJECT_DIR$/src/service/renderService.js" />
+        <option value="$PROJECT_DIR$/server/server.webpack.js" />
+        <option value="$PROJECT_DIR$/webpack/webpack.config.dev.js" />
+        <option value="$PROJECT_DIR$/src/view/component/Account/Account.presentational.js" />
+        <option value="$PROJECT_DIR$/src/view/component/NewPhoto/NewPhoto.presentational.js" />
+        <option value="$PROJECT_DIR$/src/view/common/ui/AvatarClip/index.less" />
+        <option value="$PROJECT_DIR$/src/view/common/ui/Avatar/index.js" />
+        <option value="$PROJECT_DIR$/config/db.config.js" />
+        <option value="$PROJECT_DIR$/config/development.js" />
+        <option value="$PROJECT_DIR$/config/sandbox.js" />
+        <option value="$PROJECT_DIR$/config/production.js" />
+        <option value="$PROJECT_DIR$/server/server.base.js" />
+        <option value="$PROJECT_DIR$/src/model/mysql.js" />
+        <option value="$PROJECT_DIR$/src/service/userService.js" />
+        <option value="$PROJECT_DIR$/src/controller/userController.js" />
+        <option value="$PROJECT_DIR$/src/view/app.js" />
+        <option value="$PROJECT_DIR$/src/view/redux/constant/actionType.js" />
+        <option value="$PROJECT_DIR$/src/view/redux/action/user.action.js" />
+        <option value="$PROJECT_DIR$/src/view/common/util/api.js" />
+        <option value="$PROJECT_DIR$/src/view/redux/reducer/user.reducer.js" />
+        <option value="$PROJECT_DIR$/src/view/component/User/User.connected.js" />
+        <option value="$PROJECT_DIR$/src/view/component/Setting/Setting.presentational.js" />
+        <option value="$PROJECT_DIR$/src/view/component/Setting/Setting.connected.js" />
+        <option value="$PROJECT_DIR$/src/view/router.js" />
+        <option value="$PROJECT_DIR$/src/view/layout/Header/Header.connected.js" />
+        <option value="$PROJECT_DIR$/src/view/layout/Header/index.less" />
+        <option value="$PROJECT_DIR$/src/view/common/style/variable.less" />
+        <option value="$PROJECT_DIR$/src/view/component/User/index.less" />
+        <option value="$PROJECT_DIR$/src/view/component/User/User.presentational.js" />
+        <option value="$PROJECT_DIR$/src/view/layout/Header/Header.presentational.js" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/src/api/index.js" />
+        <option value="$PROJECT_DIR$/webpack/webpack.server.js" />
+        <option value="$PROJECT_DIR$/webpack/webpack.config.base.js" />
+        <option value="$PROJECT_DIR$/server/renderService/index.js" />
+        <option value="$PROJECT_DIR$/server/config.js" />
+        <option value="$PROJECT_DIR$/server/render/template.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/common/util/api.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/server/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/server/proxy.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.eslintrc" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="832" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>BashSupport</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issuesCSS</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Pug/Jade</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers ProjectPane="false" />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource ProjectPane="false" />
+      <autoscrollFromSource ProjectPane="false" />
+      <sortByType ProjectPane="true" />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Earth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Earth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Earth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Earth" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Earth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Earth" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Earth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Earth" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/n/bin/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/n/bin/node" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.standard" value="$USER_HOME$/n/lib/node_modules/standard" />
+    <property name="SearchEverywhereHistoryKey" value="register&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/redux/action/register.js&#10;pro&#9;null&#9;null&#10;foo&#9;null&#9;null&#10;header&#9;null&#9;null&#10;variable&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/style/variable.less&#10;variabl&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/ui/variables.less&#10;message/&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/ui/message&#10;welcome&#9;null&#9;null&#10;variable.less&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/style/variable.less&#10;usercon&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/controller/userController.js&#10;login&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/controller/loginController.js&#10;user&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/redux/reducer/user.js&#10;fetch&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/lib/fetch.js&#10;userc&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/controller/userController.js&#10;vari&#9;null&#9;null&#10;render&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/service/renderService.js&#10;acc&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/container/Setting/Account.js&#10;mon&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/model/mongo.js&#10;red&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/service/redirect.js&#10;footer/i&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/layout/Footer/index.less&#10;redi&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/service/redirect.js&#10;regis&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/controller/registerController.js&#10;header/&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/layout/Header&#10;registc&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/controller/registerController.js&#10;button/in&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/ui/Button/index.less&#10;header/in&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/layout/Header/index.js&#10;fetc&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/src/view/common/service/fetch.js&#10;base&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/server/server.base.js&#10;e&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/.eslintrc&#10;pack&#9;FILE&#9;file:///Users/Kimi/Workspace/Earth/package.json&#10;core&#9;FILE&#9;file:///Users/Kimi/Workspace/Blog-Webapp/app/view/client/src/style/core.less&#10;inpu.les&#9;FILE&#9;file:///Users/Kimi/Workspace/Blog-Webapp/app/view/client/src/component/Input/Input.less&#10;app/view/client/src/layout/Nav.jsx&#9;FILE&#9;file:///Users/Kimi/Workspace/Blog-Webapp/app/view/client/src/layout/Nav.jsx&#10;login.jsx&#9;FILE&#9;file:///Users/Kimi/Workspace/Blog-Webapp/app/view/client/src/page/Login/Login.jsx&#10;butt&#9;FILE&#9;file:///Users/Kimi/Workspace/Blog-Webapp/app/view/client/src/component/common/Button.less" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.tslint" value="" />
+    <property name="vcs.patch.path" value="$USER_HOME$/BWTS/SC-Frontend" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="editorconfig.notification" value="tab;" />
+    <property name="standardjs.codestyle.accepted" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/view/common/ui/_style/fonts" />
+      <recent name="$PROJECT_DIR$/src/view/component" />
+      <recent name="$PROJECT_DIR$/src/view/container" />
+      <recent name="$PROJECT_DIR$/src/view/common/ui" />
+      <recent name="$PROJECT_DIR$/scripts/check" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/renderService" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/webpack" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="sandbox:debug" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="sandbox:debug" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="webpack" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="webpack" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="npm.dev" />
+      <item index="1" class="java.lang.String" itemvalue="npm.sandbox:debug" />
+      <item index="2" class="java.lang.String" itemvalue="npm.webpack" />
+    </list>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49fb5c54-b377-4eaf-85fc-5b6f91f5a727" name="Default" comment="" />
+      <created>1489036771793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1489036771793</updated>
+      <workItem from="1489036773452" duration="1550000" />
+      <workItem from="1489109518258" duration="517000" />
+      <workItem from="1489333752594" duration="28924000" />
+      <workItem from="1489746944657" duration="54000" />
+      <workItem from="1489747035334" duration="1590000" />
+      <workItem from="1489936227558" duration="27948000" />
+      <workItem from="1490015763658" duration="232000" />
+      <workItem from="1490060814696" duration="16624000" />
+      <workItem from="1490113197215" duration="9454000" />
+      <workItem from="1490182187942" duration="160000" />
+      <workItem from="1490182443646" duration="250000" />
+      <workItem from="1490182709071" duration="78000" />
+      <workItem from="1490182802093" duration="67000" />
+      <workItem from="1490182881342" duration="482000" />
+      <workItem from="1490183388931" duration="129000" />
+      <workItem from="1490235043956" duration="543000" />
+      <workItem from="1490236225964" duration="11254000" />
+      <workItem from="1490284363987" duration="1295000" />
+      <workItem from="1490345191996" duration="19962000" />
+      <workItem from="1490688637679" duration="5351000" />
+      <workItem from="1490751682015" duration="41759000" />
+      <workItem from="1491372758151" duration="2026000" />
+      <workItem from="1491382161691" duration="6517000" />
+      <workItem from="1491538262478" duration="5041000" />
+      <workItem from="1491708789430" duration="90063000" />
+      <workItem from="1492144017255" duration="106000" />
+      <workItem from="1492144159930" duration="49886000" />
+      <workItem from="1492483040624" duration="14564000" />
+      <workItem from="1492586162713" duration="7000" />
+      <workItem from="1492939911794" duration="21760000" />
+      <workItem from="1493203642228" duration="3133000" />
+      <workItem from="1493256839130" duration="17559000" />
+      <workItem from="1493615371132" duration="4013000" />
+      <workItem from="1493694682480" duration="6501000" />
+      <workItem from="1493777605971" duration="3384000" />
+      <workItem from="1493787739062" duration="17754000" />
+      <workItem from="1493950865755" duration="502000" />
+      <workItem from="1494084239537" duration="15346000" />
+      <workItem from="1494207284818" duration="2904000" />
+      <workItem from="1494212679539" duration="1778000" />
+      <workItem from="1494240740275" duration="1301000" />
+      <workItem from="1494318750079" duration="12571000" />
+      <workItem from="1494414527939" duration="4053000" />
+      <workItem from="1494423526319" duration="1566000" />
+      <workItem from="1494468265309" duration="3539000" />
+      <workItem from="1494471971075" duration="12332000" />
+      <workItem from="1494508439916" duration="42000" />
+      <workItem from="1494668462242" duration="3811000" />
+      <workItem from="1494732946039" duration="3613000" />
+      <workItem from="1494763834712" duration="2323000" />
+      <workItem from="1494862314066" duration="137000" />
+      <workItem from="1494904144260" duration="595000" />
+      <workItem from="1494927520843" duration="141000" />
+      <workItem from="1495087632049" duration="3656000" />
+      <workItem from="1495731490572" duration="1193000" />
+      <workItem from="1495732926072" duration="23000" />
+      <workItem from="1495939138087" duration="1256000" />
+      <workItem from="1496022476811" duration="36000" />
+      <workItem from="1496207994537" duration="1210000" />
+      <workItem from="1496823659966" duration="23274000" />
+      <workItem from="1497251734752" duration="11779000" />
+      <workItem from="1497331221458" duration="7626000" />
+      <workItem from="1497357588822" duration="21958000" />
+      <workItem from="1497726134629" duration="12582000" />
+      <workItem from="1497809893717" duration="3217000" />
+      <workItem from="1497896203247" duration="2215000" />
+      <workItem from="1497950805485" duration="21000" />
+      <workItem from="1497955989587" duration="16000" />
+      <workItem from="1497956023433" duration="5833000" />
+      <workItem from="1498039223501" duration="3367000" />
+      <workItem from="1498107337589" duration="357000" />
+      <workItem from="1498184341909" duration="3330000" />
+      <workItem from="1498319122887" duration="969000" />
+      <workItem from="1498327272833" duration="2147000" />
+      <workItem from="1498330673097" duration="331000" />
+      <workItem from="1498331047307" duration="109891000" />
+      <workItem from="1498898023230" duration="14175000" />
+      <workItem from="1499000608180" duration="1668000" />
+      <workItem from="1499003436095" duration="476000" />
+      <workItem from="1499003925914" duration="41000" />
+      <workItem from="1499003978833" duration="4814000" />
+      <workItem from="1499047788030" duration="56678000" />
+      <workItem from="1499437087362" duration="37764000" />
+      <workItem from="1499702849372" duration="2213000" />
+      <workItem from="1500049183864" duration="53717000" />
+      <workItem from="1500620564631" duration="51000" />
+      <workItem from="1500620630701" duration="4425000" />
+      <workItem from="1500885227922" duration="272000" />
+      <workItem from="1500946922116" duration="2856000" />
+      <workItem from="1501036806875" duration="607000" />
+      <workItem from="1501040574502" duration="643000" />
+      <workItem from="1501136280744" duration="250000" />
+      <workItem from="1501344784000" duration="597000" />
+      <workItem from="1501512982078" duration="24045000" />
+      <workItem from="1501987193478" duration="98694000" />
+      <workItem from="1503639803577" duration="175431000" />
+      <workItem from="1504441884811" duration="597000" />
+      <workItem from="1504442798650" duration="77951000" />
+      <workItem from="1504709253066" duration="799000" />
+      <workItem from="1504711444969" duration="2896000" />
+      <workItem from="1504749848764" duration="24195000" />
+      <workItem from="1504859636036" duration="34130000" />
+      <workItem from="1505104880846" duration="5430000" />
+      <workItem from="1505198837962" duration="2000" />
+      <workItem from="1505375059258" duration="11280000" />
+      <workItem from="1505579688554" duration="6428000" />
+      <workItem from="1505619842841" duration="6313000" />
+      <workItem from="1505710535816" duration="2652000" />
+      <workItem from="1505731771963" duration="6991000" />
+      <workItem from="1505740965662" duration="304000" />
+      <workItem from="1505741382061" duration="39000" />
+      <workItem from="1505741697401" duration="62035000" />
+      <workItem from="1506008184671" duration="7683000" />
+      <workItem from="1506086566616" duration="49892000" />
+      <workItem from="1506393676766" duration="4980000" />
+      <workItem from="1506436919834" duration="22710000" />
+      <workItem from="1506516639921" duration="25898000" />
+      <workItem from="1506648749898" duration="2442000" />
+      <workItem from="1506660592684" duration="103300000" />
+      <workItem from="1507714327579" duration="82541000" />
+      <workItem from="1508335676947" duration="50725000" />
+      <workItem from="1508643329314" duration="13825000" />
+      <workItem from="1508842364744" duration="12808000" />
+      <workItem from="1508908864302" duration="1274000" />
+      <workItem from="1508944615913" duration="4474000" />
+      <workItem from="1508995015406" duration="12367000" />
+      <workItem from="1509114416424" duration="8963000" />
+      <workItem from="1509374267213" duration="618000" />
+      <workItem from="1509461027025" duration="70000" />
+      <workItem from="1509527004402" duration="132446000" />
+      <workItem from="1510724889586" duration="6497000" />
+      <workItem from="1511180689285" duration="4395000" />
+      <workItem from="1511266639089" duration="285000" />
+      <workItem from="1511355405488" duration="303000" />
+      <workItem from="1511401557419" duration="703000" />
+      <workItem from="1511441012716" duration="8507000" />
+      <workItem from="1511488963551" duration="16886000" />
+      <workItem from="1511932139041" duration="7714000" />
+      <workItem from="1512048680600" duration="5836000" />
+      <workItem from="1512064503232" duration="823000" />
+      <workItem from="1512092954112" duration="28855000" />
+      <workItem from="1512303397561" duration="7560000" />
+      <workItem from="1512486670121" duration="9565000" />
+      <workItem from="1512742388595" duration="20555000" />
+      <workItem from="1512922187040" duration="598000" />
+      <workItem from="1513093290546" duration="1217000" />
+      <workItem from="1513221402692" duration="1394000" />
+    </task>
+    <task id="LOCAL-00128" summary=":hammer: refactor button component">
+      <created>1506333561585</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1506333561585</updated>
+    </task>
+    <task id="LOCAL-00129" summary=":star: add basic form component">
+      <created>1506487789615</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1506487789616</updated>
+    </task>
+    <task id="LOCAL-00130" summary=":bug: fix flashMessage call too much">
+      <created>1506495674778</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1506495674778</updated>
+    </task>
+    <task id="LOCAL-00131" summary=":hammer: refactor form submit on setting page">
+      <created>1506516334342</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1506516334343</updated>
+    </task>
+    <task id="LOCAL-00132" summary=":hammer: refactor inputnew and clearableInput component">
+      <created>1506577976776</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1506577976776</updated>
+    </task>
+    <task id="LOCAL-00133" summary=":hammer: refactor clearableInput and input">
+      <created>1506593625828</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1506593625828</updated>
+    </task>
+    <task id="LOCAL-00134" summary=":bug: fix flashMessage incorrect when login first">
+      <created>1506595782008</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1506595782008</updated>
+    </task>
+    <task id="LOCAL-00135" summary=":hammer: optimize avatar upload on profile page">
+      <created>1506598698272</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1506598698272</updated>
+    </task>
+    <task id="LOCAL-00136" summary=":star: add validation in frontend">
+      <created>1506607116554</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1506607116555</updated>
+    </task>
+    <task id="LOCAL-00137" summary=":star: add IconSvg component">
+      <created>1506789139181</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1506789139185</updated>
+    </task>
+    <task id="LOCAL-00138" summary=":bug: fix form item scrollbar issue">
+      <created>1507039576234</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1507039576235</updated>
+    </task>
+    <task id="LOCAL-00139" summary=":bug: fix form item scrollbar issue">
+      <created>1507039690862</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1507039690862</updated>
+    </task>
+    <task id="LOCAL-00140" summary=":bug: fix form item scrollbar issue">
+      <created>1507039986680</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1507039986680</updated>
+    </task>
+    <task id="LOCAL-00141" summary=":hammer: remove font-awesome">
+      <created>1507086980276</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1507086980276</updated>
+    </task>
+    <task id="LOCAL-00142" summary=":hammer: remove font-awesome">
+      <created>1507087236682</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1507087236682</updated>
+    </task>
+    <task id="LOCAL-00143" summary=":hammer: refactor comments">
+      <created>1507090584060</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1507090584060</updated>
+    </task>
+    <task id="LOCAL-00144" summary=":art: theme change">
+      <created>1507257550585</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1507257550586</updated>
+    </task>
+    <task id="LOCAL-00145" summary=":fire: basic migration with ctx.body issue">
+      <created>1507308858055</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1507308858055</updated>
+    </task>
+    <task id="LOCAL-00146" summary=":star: make sub-nav can be sticky">
+      <created>1507359329264</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1507359329265</updated>
+    </task>
+    <task id="LOCAL-00147" summary=":hammer: logo text replaced by png">
+      <created>1507361536121</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1507361536122</updated>
+    </task>
+    <task id="LOCAL-00148" summary=":hammer: use react16 cdn libs">
+      <created>1507649600189</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1507649600189</updated>
+    </task>
+    <task id="LOCAL-00149" summary=":art: add basic style of new-photo page">
+      <created>1507742132048</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1507742132048</updated>
+    </task>
+    <task id="LOCAL-00150" summary=":fire: replace session with jwt">
+      <created>1508081835988</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1508081835988</updated>
+    </task>
+    <task id="LOCAL-00151" summary=":hammer: simplify some code and adjust font-size of default btn">
+      <created>1508132302450</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1508132302450</updated>
+    </task>
+    <task id="LOCAL-00152" summary=":hammer: remove express-jwt">
+      <created>1508156395791</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1508156395791</updated>
+    </task>
+    <task id="LOCAL-00153" summary=":art: the basic form of new photo page">
+      <created>1508249081504</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1508249081505</updated>
+    </task>
+    <task id="LOCAL-00154" summary=":art: the basic style of newphoto page right form and textoverflow">
+      <created>1508605993564</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1508605993564</updated>
+    </task>
+    <task id="LOCAL-00155" summary=":star: add TextOverflow and Tooltip component">
+      <created>1508606334458</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1508606334458</updated>
+    </task>
+    <task id="LOCAL-00156" summary=":art: refactor the basic style of new photo page">
+      <created>1508606409790</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1508606409790</updated>
+    </task>
+    <task id="LOCAL-00157" summary=":art: add basic style of input tag">
+      <created>1508651459060</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1508651459061</updated>
+    </task>
+    <task id="LOCAL-00158" summary=":art: refactor textarea on the bottom of newphoto">
+      <created>1508680500325</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1508680500325</updated>
+    </task>
+    <task id="LOCAL-00159" summary=":art: refactor textarea on the bottom of newphoto">
+      <created>1508680996685</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1508680996685</updated>
+    </task>
+    <task id="LOCAL-00160" summary=":star: add res.api to optimize the api response">
+      <created>1508854920503</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1508854920503</updated>
+    </task>
+    <task id="LOCAL-00161" summary=":hammer: refactor the client side api">
+      <created>1508946566069</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1508946566069</updated>
+    </task>
+    <task id="LOCAL-00162" summary=":fire: refactor structure and file names of view">
+      <created>1508948407246</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1508948407246</updated>
+    </task>
+    <task id="LOCAL-00163" summary=":wrench: remove jsx-indent-props of eslint config">
+      <created>1509724592042</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1509724592042</updated>
+    </task>
+    <task id="LOCAL-00164" summary=":fire: add avatar cropper when upload avatar image">
+      <created>1510133676764</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1510133676764</updated>
+    </task>
+    <task id="LOCAL-00165" summary=":bug: fix modal can not be removed when close modal">
+      <created>1510232041425</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1510232041425</updated>
+    </task>
+    <task id="LOCAL-00166" summary=":art: optimize a little style of avatar cropper">
+      <created>1510339668407</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1510339668409</updated>
+    </task>
+    <task id="LOCAL-00167" summary=":hammer: use react-avatar-editor to clip avatar">
+      <created>1510421305544</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1510421305545</updated>
+    </task>
+    <task id="LOCAL-00168" summary=":hammer: a little optimization of style and others">
+      <created>1510459311625</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1510459311625</updated>
+    </task>
+    <task id="LOCAL-00169" summary=":fire: migrate webpack from 2 to 3">
+      <created>1510641733378</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1510641733378</updated>
+    </task>
+    <task id="LOCAL-00170" summary=":star: add webpack dashboard for more info">
+      <created>1510669892341</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1510669892341</updated>
+    </task>
+    <task id="LOCAL-00171" summary=":bug: fix avatar clip zoom style issue in firefox">
+      <created>1511452250128</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1511452250128</updated>
+    </task>
+    <task id="LOCAL-00172" summary="add avatar on user page">
+      <created>1511798247473</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1511798247474</updated>
+    </task>
+    <task id="LOCAL-00173" summary=":art: basic style of photos waterfall on user page">
+      <created>1512055900724</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1512055900724</updated>
+    </task>
+    <task id="LOCAL-00174" summary=":wrench: use 4 spaces to replace 2 spaces index">
+      <created>1512205867659</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1512205867660</updated>
+    </task>
+    <task id="LOCAL-00175" summary=":art: add hover cover on user photo card">
+      <created>1512205914689</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1512205914689</updated>
+    </task>
+    <task id="LOCAL-00176" summary=":hammer: adjust the authority of user router">
+      <created>1512292125305</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1512292125309</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2073546000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1440" height="833" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2085976" sideWeight="0.4668471" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2924595" sideWeight="0.5264586" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1997301" sideWeight="0.5081043" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3396482" sideWeight="0.49513888" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33785617" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2085976" sideWeight="0.5298103" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.2473573" sideWeight="0.49117342" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46747968" sideWeight="0.4918957" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3416407" sideWeight="0.49536708" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.2085976" sideWeight="0.53315294" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294204" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939634" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294204" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="V8 CPU Profiling" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47165993" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30758807" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368422" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="BEK_SORT_TYPE" value="1" />
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=":art: the basic form of new photo page" />
+    <MESSAGE value=":art: the basic style of newphoto page right form and textoverflow" />
+    <MESSAGE value=":star: add TextOverflow and Tooltip component" />
+    <MESSAGE value=":art: refactor the basic style of new photo page" />
+    <MESSAGE value=":art: add basic style of input tag" />
+    <MESSAGE value=":art: refactor textarea on the bottom of newphoto" />
+    <MESSAGE value=":star: add res.api to optimize the api response" />
+    <MESSAGE value=":hammer: refactor the client side api" />
+    <MESSAGE value=":fire: refactor structure and file names of view" />
+    <MESSAGE value=":wrench: remove jsx-indent-props of eslint config" />
+    <MESSAGE value=":fire: add avatar cropper when upload avatar image" />
+    <MESSAGE value=":bug: fix modal can not be removed when close modal" />
+    <MESSAGE value=":art: optimize a little style of avatar cropper" />
+    <MESSAGE value=":hammer: use react-avatar-editor to clip avatar" />
+    <MESSAGE value=":hammer: a little optimization of style and others" />
+    <MESSAGE value=":fire: migrate webpack from 2 to 3" />
+    <MESSAGE value=":star: add webpack dashboard for more info" />
+    <MESSAGE value=":bug: fix avatar clip zoom style issue in firefox" />
+    <MESSAGE value="add avatar on user page" />
+    <MESSAGE value=":art: basic style of photos waterfall on user page" />
+    <MESSAGE value=":wrench: use 4 spaces to replace 2 spaces index" />
+    <MESSAGE value=":art: add hover cover on user photo card" />
+    <MESSAGE value=":hammer: refactor user controller" />
+    <MESSAGE value=":hammer: adjust the authority of user router" />
+    <MESSAGE value="remove api server code" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove api server code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/koa-session-mongo/index.js</url>
+          <line>215</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/koa-session-mongo/index.js</url>
+          <line>110</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/koa-session-mongo/index.js</url>
+          <line>93</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/formidable/lib/incoming_form.js</url>
+          <line>538</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/formidable/lib/incoming_form.js</url>
+          <line>361</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="220" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="26" lean-forward="true" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/ui/_shared/EventPool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/babel.register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/render/ssr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/render/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding>
+            <marker date="1513225141640" expanded="true" signature="596:1161" ph="..." />
+            <marker date="1513225141640" expanded="true" signature="611:753" ph="..." />
+            <marker date="1513225141640" expanded="true" signature="768:1147" ph="..." />
+            <marker date="1513225141640" expanded="true" signature="1227:1792" ph="..." />
+            <marker date="1513225141640" expanded="true" signature="1242:1384" ph="..." />
+            <marker date="1513225141640" expanded="true" signature="1399:1778" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/util/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/util/redirect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Profile/Profile.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Profile/ProfileAvatar.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-921">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="360">
+            <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Profile/Profile.connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Preview/PreviewItem.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Preview/PreviewList.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/NewPhoto/NewPhoto.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1341">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/NewPhoto/NewPhoto.connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Logout/Logout.connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Logout/Logout.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Login/Login.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Login/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Home/Home.connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Home/Home.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Account/Account.connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Account/Account.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/User/User.connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/User/User.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Welcome/Welcome.connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Welcome/Welcome.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/WelcomeSection/WelcomeSection.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/Footer/Footer.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/Header/Header.connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/Header/Header.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/Header/testIcon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/Frame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/action/flashMessage.action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/action/login.action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/action/logout.action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/action/register.action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/action/runtime.action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/action/user.action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-366">
+          <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/constant/actionType.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducer/flashMessage.reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducer/preview.reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducer/user.reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.config.base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.config.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.config.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/proxy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>version3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

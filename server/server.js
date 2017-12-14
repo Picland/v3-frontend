@@ -28,15 +28,15 @@ server.use(favicon(path.join(__dirname, '../static', 'favicon.ico')))
 // Success Log
 // --------------------------------------------------------------------------
 server.use(expressWinston.logger({
-    transports: [
-        new (winston.transports.Console)({
-            json: true,
-            colorize: true
-        }),
-        new winston.transports.File({
-            filename: path.join(__dirname, './log/success.log')
-        })
-    ]
+  transports: [
+    new (winston.transports.Console)({
+      json: true,
+      colorize: true
+    }),
+    new winston.transports.File({
+      filename: path.join(__dirname, './log/success.log')
+    })
+  ]
 }))
 
 // --------------------------------------------------------------------------
@@ -48,29 +48,29 @@ apiProxy(server)
 // Turn over others page to client router and render
 // --------------------------------------------------------------------------
 server.use((req, res) => {
-    if (!res.headersSent) {
-        res.status(200).send(render(req.url))
-    }
+  if (!res.headersSent) {
+    res.status(200).send(render(req.url))
+  }
 })
 
 // --------------------------------------------------------------------------
 // Error Log
 // --------------------------------------------------------------------------
 server.use(expressWinston.errorLogger({
-    transports: [
-        new winston.transports.Console({
-            json: true,
-            colorize: true
-        }),
-        new winston.transports.File({
-            filename: path.join(__dirname, './log/error.log')
-        })
-    ]
+  transports: [
+    new winston.transports.Console({
+      json: true,
+      colorize: true
+    }),
+    new winston.transports.File({
+      filename: path.join(__dirname, './log/error.log')
+    })
+  ]
 }))
 
 // --------------------------------------------------------------------------
 // Start the Server
 // --------------------------------------------------------------------------
 server.listen(config.port.frontend, () => {
-    console.log(`${pkg.name} listening on http://localhost:${config.port.frontend}`)
+  console.log(`${pkg.name} listening on http://localhost:${config.port.frontend}`)
 })
