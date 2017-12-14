@@ -11,7 +11,9 @@
   },
   "scripts": {
     "webpack": "better-npm-run webpack",
+    "webpack:dashboard": "better-npm-run webpack:dashboard",
     "dev": "better-npm-run dev",
+    "dev:dashboard": "better-npm-run dev:dashboard",
     "presandbox": "better-npm-run presandbox",
     "sandbox": "better-npm-run sandbox",
     "sandbox:debug": "better-npm-run sandbox:debug",
@@ -22,6 +24,15 @@
   },
   "betterScripts": {
     "webpack": {
+      "command": "node-dev webpack/webpack.server.js",
+      "env": {
+        "NODE_ENV": "development",
+        "HOST": "localhost",
+        "PORT": 3000,
+        "TIMEOUT": 2000
+      }
+    },
+    "webpack:dashboard": {
       "command": "webpack-dashboard -- node-dev webpack/webpack.server.js",
       "env": {
         "NODE_ENV": "development",
@@ -31,7 +42,16 @@
       }
     },
     "dev": {
-      "command": "nodejs-dashboard --port=8002 -- node -r nodejs-dashboard $NODE_DEBUG_OPTION server/babel.register.js",
+      "command": "node $NODE_DEBUG_OPTION src/server/babel.register.js",
+      "env": {
+        "NODE_ENV": "development",
+        "FRONTEND_PORT": 8890,
+        "WEBPACK_PORT": 3000,
+        "BACKEND_PORT": 8888
+      }
+    },
+    "dev:dashboard": {
+      "command": "nodejs-dashboard --port=8002 -- node -r nodejs-dashboard $NODE_DEBUG_OPTION src/server/babel.register.js",
       "env": {
         "NODE_ENV": "development",
         "FRONTEND_PORT": 8890,
@@ -46,14 +66,14 @@
       }
     },
     "sandbox": {
-      "command": "pm2 start server/server.js --name 'earth-sanbox'",
+      "command": "pm2 start src/server/server.js --name 'earth-sanbox'",
       "env": {
         "NODE_ENV": "sandbox",
         "PORT": 8890
       }
     },
     "sandbox:debug": {
-      "command": "npm run presandbox && node $NODE_DEBUG_OPTION server/server.js",
+      "command": "npm run presandbox && node $NODE_DEBUG_OPTION src/server/server.js",
       "env": {
         "NODE_ENV": "sandbox",
         "PORT": 8890
@@ -66,7 +86,7 @@
       }
     },
     "prod": {
-      "command": "pm2 start server/server.js --name 'earth-production'",
+      "command": "pm2 start src/server/server.js --name 'earth-production'",
       "env": {
         "NODE_ENV": "production",
         "PORT": 8890
@@ -92,12 +112,10 @@
     "babel-register": "^6.24.1",
     "babel-runtime": "^6.23.0",
     "better-npm-run": "^0.1.0",
-    "body-parser": "^1.17.2",
     "classlist": "^1.0.1",
     "classnames": "^2.2.5",
     "config-lite": "^1.6.0",
     "connect-flash": "0.1.1",
-    "cookie-parser": "^1.4.3",
     "css-loader": "^0.28.7",
     "ejs": "^2.5.7",
     "express": "^4.16.2",

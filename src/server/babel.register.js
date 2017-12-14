@@ -3,7 +3,7 @@ const rootDir = path.resolve(__dirname, '..')
 const fs = require('fs')
 
 // Parse the .babelrc config file
-const babelrc = fs.readFileSync(rootDir + '/.babelrc')
+const babelrc = fs.readFileSync(path.join(rootDir, '../.babelrc'))
 let config
 
 try {

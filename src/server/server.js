@@ -1,20 +1,16 @@
 import path from 'path'
 import express from 'express'
-import bodyParser from 'body-parser'
-import cookieParser from 'cookie-parser'
 import winston from 'winston'
 import expressWinston from 'express-winston'
 import favicon from 'serve-favicon'
 // import resApi from 'res.api'
-import pkg from '../package.json'
+import pkg from '../../package.json'
 import config from './config'
 import render from './render/template'
 import apiProxy from './proxy'
 
 const server = express()
 
-server.use(bodyParser.json())
-server.use(cookieParser())
 // server.use(resApi)
 
 // --------------------------------------------------------------------------
@@ -22,7 +18,7 @@ server.use(cookieParser())
 // --------------------------------------------------------------------------
 server.engine('.html', require('ejs').__express)
 server.set('view engine', 'html')
-server.use(favicon(path.join(__dirname, '../static', 'favicon.ico')))
+server.use(favicon(path.join(__dirname, '../../static', 'favicon.ico')))
 
 // --------------------------------------------------------------------------
 // Success Log

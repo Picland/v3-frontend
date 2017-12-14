@@ -3,7 +3,7 @@
 
 // import { renderToString } from 'react-dom/server'
 // <div id="root">${renderToString(renderMe)}</div>
-import pkg from '../../package.json'
+import pkg from '../../../package.json'
 import config from '../config'
 
 const reactVersion = '16.0.0' || pkg.dependencies.react.slice(1)
