@@ -12,10 +12,20 @@
 
 Earth-Front is built by ReactStack and NodeJS.
 
+### Main Tasks of `Server`
+1. API proxy
+1. Server Sider Render (SSR)
+
+### Main Tasks of `Browser`
+1. Component except common-ui ([see this repo]())
+1. State management by redux
+1. The authorization controller of frontend router
+
 ## Main Requirements
 
 * react: `^16.0.0`
 * node: `^8.0.0`
+
 
 ## Quick start
 
