@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import WelcomeSection from '../WelcomeSection/WelcomeSection.presentational'
-import Header from '../../layout/Header/Header.connected'
+import Header from '../../layout/Header/Header.container'
 import Footer from '../../layout/Footer/Footer.presentational'
 
 class Welcome extends Component {

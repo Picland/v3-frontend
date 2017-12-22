@@ -8,7 +8,7 @@ import Icon from '_common_ui/Icon'
 import { Modal, ModalHeader, ModalBody } from '_common_ui/Modal'
 import Login from '../../component/Login/Login.presentational'
 import Register from '../../component/Register/Register.presentational'
-import styles from './index.less'
+import styles from './Header.less'
 
 @CSSModules(styles)
 class Header extends PureComponent {

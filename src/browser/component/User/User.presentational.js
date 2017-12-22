@@ -4,9 +4,9 @@ import CSSModules from 'react-css-modules'
 import { NavLink } from 'react-router-dom'
 import { Sticky, StickyContainer } from 'react-sticky'
 import Avatar from '_common_ui/Avatar'
-import Header from '../../layout/Header/Header.connected'
+import Header from '../../layout/Header/Header.container'
 // import Footer from '../../layout/Footer/Footer.presentational'
-import styles from './index.less'
+import styles from './User.less'
 
 @CSSModules(styles)
 class User extends Component {

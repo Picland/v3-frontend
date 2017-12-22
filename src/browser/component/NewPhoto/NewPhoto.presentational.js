@@ -4,8 +4,8 @@ import CSSModules from 'react-css-modules'
 import update from 'react-update'
 // import Button from '_common_ui/Button/'
 import { Form, FormItem, FormInput, FormSelect, FormSubmit, FormTextarea, Option } from '_common_ui/Form'
-import Header from '../../layout/Header/Header.connected'
-import styles from './index.less'
+import Header from '../../layout/Header/Header.container'
+import styles from './NewPhoto.less'
 
 @CSSModules(styles)
 class NewPhoto extends Component {
@@ -42,8 +42,8 @@ class NewPhoto extends Component {
           </div>
           <div styleName="right">
             <Form data={formData}
-                  onSubmit={::this.handleSubmit}
-                  onChange={formData => this.update('set', { formData })}
+              onSubmit={::this.handleSubmit}
+              onChange={formData => this.update('set', { formData })}
             >
               <FormItem label="发布在" name="gender">
                 <FormSelect width={300}>

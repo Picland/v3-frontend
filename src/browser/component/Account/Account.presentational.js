@@ -4,7 +4,7 @@ import update from 'react-update'
 import CSSModules from 'react-css-modules'
 import message from '_common_ui/message'
 import { Form, FormItem, FormSubmit, FormInput } from '_common_ui/Form'
-import styles from './index.less'
+import styles from './Account.less'
 
 @CSSModules(styles)
 class Profile extends Component {
@@ -15,7 +15,7 @@ class Profile extends Component {
     this.rulesOfAccount = {
       email (v) {
         if (!/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
-            .test(v)) return '邮箱格式不正确'
+          .test(v)) return '邮箱格式不正确'
       }
     }
     this.rulesOfPassword = {
@@ -67,10 +67,10 @@ class Profile extends Component {
         <div styleName="card">
           <div styleName="title">账号</div>
           <Form size="lg"
-                data={accData}
-                rules={this.rulesOfAccount}
-                onSubmit={::this.handleSubmit}
-                onChange={accData => this.update('set', { accData })}>
+            data={accData}
+            rules={this.rulesOfAccount}
+            onSubmit={::this.handleSubmit}
+            onChange={accData => this.update('set', { accData })}>
             <FormItem label="邮箱" name="email">
               <FormInput size="lg" />
             </FormItem>
@@ -83,10 +83,10 @@ class Profile extends Component {
         <div styleName="card">
           <div styleName="title">密码</div>
           <Form size="lg"
-                data={pwdData}
-                rules={this.rulesOfPassword}
-                onSubmit={::this.handleSubmit}
-                onChange={pwdData => this.update('set', { pwdData })}>
+            data={pwdData}
+            rules={this.rulesOfPassword}
+            onSubmit={::this.handleSubmit}
+            onChange={pwdData => this.update('set', { pwdData })}>
             <FormItem label="原密码" name="password">
               <FormInput type="password" size="lg" placeholder="请输入原始密码" />
             </FormItem>

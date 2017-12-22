@@ -5,7 +5,7 @@ import CSSModules from 'react-css-modules'
 import message from '_common_ui/message'
 import { Form, FormItem, FormSubmit, FormInput, FormSelect, Option } from '_common_ui/Form'
 import ProfileAvatar from './ProfileAvatar.presentational'
-import styles from './index.less'
+import styles from './Profile.less'
 
 @CSSModules(styles)
 class Profile extends Component {

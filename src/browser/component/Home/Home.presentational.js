@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
 // import { NavLink } from 'react-router-dom'
-import Header from '../../layout/Header/Header.connected'
+import Header from '../../layout/Header/Header.container'
 import Footer from '../../layout/Footer/Footer.presentational'
-import styles from './index.less'
+import styles from './Home.less'
 
 @CSSModules(styles)
 class Home extends Component {

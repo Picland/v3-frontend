@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
 import Button from '_common_ui/Button/'
 import InputLine from '_common_ui/InputLine'
-import styles from './index.less'
+import styles from './Login.less'
 
 @CSSModules(styles)
 class Login extends Component {
@@ -70,23 +70,23 @@ class Login extends Component {
         <div>登录</div>
         <div styleName="switch-modal">还没有账号， <span onClick={::this._switchModal}>立即注册</span></div>
         <InputLine
-               placeholder="手机号码"
-               type="text"
-               name="account"
-               onChange={(event) => this.setState({account: event.target.value})}
-               onBlur={(event) => this._checkAccount(event.target.value)}
-               validationState={this.state.accountValid}
-               help={this.state.accountHelp}
-         />
+          placeholder="手机号码"
+          type="text"
+          name="account"
+          onChange={(event) => this.setState({account: event.target.value})}
+          onBlur={(event) => this._checkAccount(event.target.value)}
+          validationState={this.state.accountValid}
+          help={this.state.accountHelp}
+        />
         <InputLine
-               placeholder="密码"
-               type="password"
-               name="password"
-               onChange={(event) => this.setState({password: event.target.value})}
-               onBlur={(event) => this._checkPassword(event.target.value)}
-               validationState={this.state.pwdValid}
-               help={this.state.pwdHelp}
-         />
+          placeholder="密码"
+          type="password"
+          name="password"
+          onChange={(event) => this.setState({password: event.target.value})}
+          onBlur={(event) => this._checkPassword(event.target.value)}
+          validationState={this.state.pwdValid}
+          help={this.state.pwdHelp}
+        />
         {this.state.serverError && <div styleName="server-error">{this.state.serverError}</div>}
         <Button onClick={::this._logIn}>登录</Button>
       </div>

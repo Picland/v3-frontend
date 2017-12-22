@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import CSSModules from 'react-css-modules'
 import _ from 'lodash'
-import styles from './index.less'
+import styles from './WelcomeSection.less'
 
 @CSSModules(styles)
 class WelcomeSection extends PureComponent {
