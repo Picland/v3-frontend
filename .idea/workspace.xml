@@ -1,46 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="49fb5c54-b377-4eaf-85fc-5b6f91f5a727" name="Default" comment="">
+    <list default="true" id="49fb5c54-b377-4eaf-85fc-5b6f91f5a727" name="Default" comment="component file name changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Account/Account.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/Account/Account.container.js" />
       <change beforePath="$PROJECT_DIR$/src/browser/component/Account/Account.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Account/Account.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Account/index.less" afterPath="$PROJECT_DIR$/src/browser/component/Account/Account.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Home/Home.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/Home/Home.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Home/Home.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Home/Home.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Home/index.less" afterPath="$PROJECT_DIR$/src/browser/component/Home/Home.less" />
       <change beforePath="$PROJECT_DIR$/src/browser/component/Login/Login.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Login/Login.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Login/index.less" afterPath="$PROJECT_DIR$/src/browser/component/Login/Login.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Logout/Logout.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/Logout/Logout.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.container.js" />
       <change beforePath="$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/NewPhoto/index.less" afterPath="$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Preview/Preview.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/Preview/Preview.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Preview/PreviewItem.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Preview/PreviewItem.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Preview/index.less" afterPath="$PROJECT_DIR$/src/browser/component/Preview/Preview.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Profile/Profile.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/Profile/Profile.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Profile/Profile.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Profile/Profile.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Profile/index.less" afterPath="$PROJECT_DIR$/src/browser/component/Profile/Profile.less" />
       <change beforePath="$PROJECT_DIR$/src/browser/component/Register/Register.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Register/Register.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Register/index.less" afterPath="$PROJECT_DIR$/src/browser/component/Register/Register.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Setting/Detail.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/Setting/Detail.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Setting/Setting.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/Setting/Setting.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Setting/Setting.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Setting/Setting.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Setting/index.less" afterPath="$PROJECT_DIR$/src/browser/component/Setting/Setting.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/User/User.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/User/User.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/User/User.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/User/User.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/User/index.less" afterPath="$PROJECT_DIR$/src/browser/component/User/User.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Welcome/Welcome.connected.js" afterPath="$PROJECT_DIR$/src/browser/component/Welcome/Welcome.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Welcome/Welcome.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Welcome/Welcome.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Welcome/index.less" afterPath="$PROJECT_DIR$/src/browser/component/Welcome/Welcome.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/WelcomeSection/WelcomeSection.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/WelcomeSection/WelcomeSection.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/WelcomeSection/index.less" afterPath="$PROJECT_DIR$/src/browser/component/WelcomeSection/WelcomeSection.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/layout/Footer/Footer.presentational.js" afterPath="$PROJECT_DIR$/src/browser/layout/Footer/Footer.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/layout/Footer/index.less" afterPath="$PROJECT_DIR$/src/browser/layout/Footer/Footer.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/layout/Header/Header.connected.js" afterPath="$PROJECT_DIR$/src/browser/layout/Header/Header.container.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/layout/Header/Header.presentational.js" afterPath="$PROJECT_DIR$/src/browser/layout/Header/Header.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/layout/Header/index.less" afterPath="$PROJECT_DIR$/src/browser/layout/Header/Header.less" />
-      <change beforePath="$PROJECT_DIR$/src/browser/router.js" afterPath="$PROJECT_DIR$/src/browser/router.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,18 +55,18 @@
       <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/browser/common/util/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="77" lean-forward="false" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
+            <state relative-caret-position="315">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="router.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/browser/router.js">
+      <file leaf-file-name="Home.presentational.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/browser/component/Home/Home.presentational.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="92" column="25" lean-forward="true" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+            <state relative-caret-position="120">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -396,18 +362,22 @@
               <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="browser" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="Account" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Earth-Frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="browser" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Earth-Frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Earth-Frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -452,19 +422,19 @@
     <property name="standardjs.codestyle.accepted" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test/browser" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/server/renderService" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/server" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test/server" />
       <recent name="$PROJECT_DIR$/src/view/common/ui/_style/fonts" />
       <recent name="$PROJECT_DIR$/src/view/component" />
       <recent name="$PROJECT_DIR$/src/view/container" />
       <recent name="$PROJECT_DIR$/src/view/common/ui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/server" />
+      <recent name="$PROJECT_DIR$/test/browser" />
+      <recent name="$PROJECT_DIR$/src/server/test" />
+      <recent name="$PROJECT_DIR$/src/browser/test" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -761,14 +731,7 @@
       <workItem from="1513363649050" duration="98000" />
       <workItem from="1513572425603" duration="617000" />
       <workItem from="1513868221013" duration="2081000" />
-      <workItem from="1513929993149" duration="801000" />
-    </task>
-    <task id="LOCAL-00130" summary=":bug: fix flashMessage call too much">
-      <created>1506495674778</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1506495674778</updated>
+      <workItem from="1513929993149" duration="1140000" />
     </task>
     <task id="LOCAL-00131" summary=":hammer: refactor form submit on setting page">
       <created>1506516334342</created>
@@ -1106,11 +1069,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513868884746</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="component file name changes">
+      <created>1513930867234</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1513930867234</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2087651000" />
+    <option name="totallyTimeSpent" value="2087990000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1125,16 +1095,17 @@
     <frame x="0" y="22" width="1440" height="834" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28259337" sideWeight="0.4668471" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2924595" sideWeight="0.5264586" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30758807" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1997301" sideWeight="0.5081043" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368422" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5074425" sideWeight="0.49513888" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2085976" sideWeight="0.5298103" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33785617" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6684709" sideWeight="0.4918957" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28259337" sideWeight="0.4668471" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368422" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.2473573" sideWeight="0.49117342" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66982406" sideWeight="0.4918957" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3416407" sideWeight="0.49536708" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.2085976" sideWeight="0.53315294" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1150,7 +1121,6 @@
       <window_info id="V8 CPU Profiling" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47165993" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30758807" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1199,7 +1169,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=":star: add TextOverflow and Tooltip component" />
     <MESSAGE value=":art: refactor the basic style of new photo page" />
     <MESSAGE value=":art: add basic style of input tag" />
     <MESSAGE value=":art: refactor textarea on the bottom of newphoto" />
@@ -1224,7 +1193,8 @@
     <MESSAGE value="remove api server code" />
     <MESSAGE value="remove redundant dependencies in package.json" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="component file name changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="component file name changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,13 +1234,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Profile/Profile.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/browser/component/Profile/ProfileAvatar.presentational.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-921">
@@ -1342,13 +1305,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/browser/component/Home/Home.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Home/Home.presentational.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1592,14 +1548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Account/Account.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1910">
@@ -1608,18 +1556,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/common/util/api.js">
+    <entry file="file://$PROJECT_DIR$/test/browser/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="77" lean-forward="false" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/component/Account/Account.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="100" column="17" lean-forward="true" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/browser/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="92" column="25" lean-forward="true" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+        <state relative-caret-position="150">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/component/Home/Home.presentational.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding />
         </state>
       </provider>
