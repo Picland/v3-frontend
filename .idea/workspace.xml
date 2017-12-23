@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="49fb5c54-b377-4eaf-85fc-5b6f91f5a727" name="Default" comment="component file name changes">
+    <list default="true" id="49fb5c54-b377-4eaf-85fc-5b6f91f5a727" name="Default" comment="update config file">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest/src/RequestBuilder.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest/src/rest.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest2/Rest.browser.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest2/package-lock.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest2/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest2/src/BrowserRequestBuilder.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest2/src/RequestBuilder.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/browser/common/util/Rest2/src/rest.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Account/Account.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Account/Account.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Login/Login.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Login/Login.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.presentational.js" />
-      <change beforePath="$PROJECT_DIR$/src/browser/component/Register/Register.presentational.js" afterPath="$PROJECT_DIR$/src/browser/component/Register/Register.presentational.js" />
+      <change beforePath="$PROJECT_DIR$/src/browser/common/util/api.js" afterPath="$PROJECT_DIR$/src/browser/common/util/api.js" />
+      <change beforePath="$PROJECT_DIR$/src/browser/redux/store.js" afterPath="$PROJECT_DIR$/src/browser/redux/store.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,41 +39,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/server.js">
+      <file leaf-file-name="BrowserRequestBuilder.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest2/src/BrowserRequestBuilder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="32" column="10" lean-forward="false" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="-1015">
+              <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+              <folding>
+                <element signature="n#!!block;n#BrowserRequestBuilder#0" expanded="false" />
+                <element signature="e#443#476#0" expanded="false" />
+                <element signature="e#1192#1301#0" expanded="false" />
+                <element signature="e#2036#2104#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="proxy.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/proxy.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/browser/common/util/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="510">
+              <caret line="34" column="3" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.presentational.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/browser/component/Home/Home.presentational.js">
+      <file leaf-file-name="RequestBuilder.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest2/src/RequestBuilder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="324">
+              <caret line="356" column="9" lean-forward="true" selection-start-line="356" selection-start-column="9" selection-end-line="356" selection-end-column="9" />
+              <folding>
+                <element signature="n#!!block;n#clearCache#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#query#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#query#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#external#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#external#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#beforeSend#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#beforeSend#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#app#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#app#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#queued#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#queued#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#accepts#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#accepts#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#asText#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#asText#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#asXML#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#asXML#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#asRawResponse#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#asRawResponse#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#cache#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#cache#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#processData#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!block;n#download#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="e#7021#7794#0" expanded="false" />
+                <element signature="n#!!doc;n#send#0;n#RequestBuilderParent#0" expanded="false" />
+                <element signature="n#!!doc;n#RequestBuilder#0" expanded="false" />
+                <element signature="n#!!block;n#buildUrl#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestBuilder.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest/src/RequestBuilder.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/browser/redux/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -83,26 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>AvatarCropper-base</find>
-      <find>AvatarCropper-edit</find>
-      <find>AvatarClip-container</find>
-      <find>AvatarCropper</find>
-      <find>updateAvatarUnlogined</find>
-      <find>eslint</find>
-      <find>key=</find>
-      <find>PropTypes</find>
-      <find>PropTypes.oneOfType([PropTypes.string, PropTypes.number])</find>
-      <find>PropTypes.exact</find>
-      <find>footer</find>
-      <find>72b148</find>
-      <find>position</find>
-      <find>.AvatarClip-content</find>
-      <find>30</find>
-      <find>mysql</find>
-      <find>model/</find>
-      <find>otherInfo</find>
-      <find>eslint-import-resolver-webpack</find>
-      <find>server/server</find>
       <find>CREDENTIALS</find>
       <find>bodyParser</find>
       <find>parser</find>
@@ -113,6 +143,26 @@
       <find>jsonwebtoken</find>
       <find>objectid-to-timestamp</find>
       <find>connected</find>
+      <find>_.</find>
+      <find>lodash</find>
+      <find>getJqueryHeaders</find>
+      <find>request</find>
+      <find>_sendRequest</find>
+      <find>_common_ui</find>
+      <find>Q</find>
+      <find>addHeaders</find>
+      <find>getAllResponseHeaders</find>
+      <find>getHeaders</find>
+      <find>runtime</find>
+      <find>_resolveUrl</find>
+      <find>_fulfilled</find>
+      <find>Promise</find>
+      <find>okHandler</find>
+      <find>checkAccount</find>
+      <find>getOwnInfo</find>
+      <find>_path</find>
+      <find>contentType</find>
+      <find>this._path</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -179,15 +229,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/node_modules/babel-eslint/package.json" />
-        <option value="$PROJECT_DIR$/node_modules/better-npm-run/package.json" />
-        <option value="$PROJECT_DIR$/src/util/token.js" />
-        <option value="$PROJECT_DIR$/src/service/renderService.js" />
-        <option value="$PROJECT_DIR$/server/server.webpack.js" />
-        <option value="$PROJECT_DIR$/webpack/webpack.config.dev.js" />
-        <option value="$PROJECT_DIR$/src/view/component/Account/Account.presentational.js" />
-        <option value="$PROJECT_DIR$/src/view/component/NewPhoto/NewPhoto.presentational.js" />
-        <option value="$PROJECT_DIR$/src/view/common/ui/AvatarClip/index.less" />
         <option value="$PROJECT_DIR$/src/view/common/ui/Avatar/index.js" />
         <option value="$PROJECT_DIR$/config/db.config.js" />
         <option value="$PROJECT_DIR$/config/development.js" />
@@ -226,10 +267,19 @@
         <option value="$PROJECT_DIR$/src/common/util/api.js" />
         <option value="$PROJECT_DIR$/webpack/webpack.config.base.js" />
         <option value="$PROJECT_DIR$/src/server/babel.register.js" />
-        <option value="$PROJECT_DIR$/src/browser/common/util/api.js" />
         <option value="$PROJECT_DIR$/src/server/server.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/Rest/RequestBuilder.js" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/Rest/Rest.browser.js" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/Rest/src/BrowserRequestBuilder.js" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/Rest.js" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/Rest/rest.js" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/Rest/index.js" />
+        <option value="$PROJECT_DIR$/src/browser/redux/store.js" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/api.js" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/Rest2/src/RequestBuilder.js" />
+        <option value="$PROJECT_DIR$/src/browser/common/util/Rest/src/RequestBuilder.js" />
       </list>
     </option>
   </component>
@@ -252,12 +302,13 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/src/browser/common/util/Rest2/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="833" />
+    <option name="height" value="834" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -355,29 +406,49 @@
               <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="browser" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Earth-Frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="browser" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="Account" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Earth-Frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="browser" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="Rest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Earth-Frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="browser" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="Rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Earth-Frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="browser" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Earth-Frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Earth-Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="browser" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -430,11 +501,11 @@
       <recent name="$PROJECT_DIR$/src/view/common/ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/browser/common/util/Rest/src" />
+      <recent name="$PROJECT_DIR$/src/browser/common/util/Rest" />
       <recent name="$PROJECT_DIR$/test/server" />
       <recent name="$PROJECT_DIR$/test/browser" />
       <recent name="$PROJECT_DIR$/src/server/test" />
-      <recent name="$PROJECT_DIR$/src/browser/test" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -449,7 +520,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.webpack">
+  <component name="RunManager" selected="npm.dev">
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -731,14 +802,7 @@
       <workItem from="1513363649050" duration="98000" />
       <workItem from="1513572425603" duration="617000" />
       <workItem from="1513868221013" duration="2081000" />
-      <workItem from="1513929993149" duration="1140000" />
-    </task>
-    <task id="LOCAL-00131" summary=":hammer: refactor form submit on setting page">
-      <created>1506516334342</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1506516334343</updated>
+      <workItem from="1513929993149" duration="21977000" />
     </task>
     <task id="LOCAL-00132" summary=":hammer: refactor inputnew and clearableInput component">
       <created>1506577976776</created>
@@ -1076,11 +1140,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513930867234</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="update config file">
+      <created>1513931207962</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1513931207962</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2087990000" />
+    <option name="totallyTimeSpent" value="2108827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1169,7 +1240,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=":art: refactor the basic style of new photo page" />
     <MESSAGE value=":art: add basic style of input tag" />
     <MESSAGE value=":art: refactor textarea on the bottom of newphoto" />
     <MESSAGE value=":star: add res.api to optimize the api response" />
@@ -1194,7 +1264,8 @@
     <MESSAGE value="remove redundant dependencies in package.json" />
     <MESSAGE value="update readme" />
     <MESSAGE value="component file name changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="component file name changes" />
+    <MESSAGE value="update config file" />
+    <option name="LAST_COMMIT_MESSAGE" value="update config file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1225,7 +1296,7 @@
           <option name="timeStamp" value="214" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="220" />
+      <option name="time" value="221" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1234,118 +1305,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Profile/ProfileAvatar.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-921">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Profile/Profile.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Preview/PreviewItem.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Preview/PreviewList.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1341">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/NewPhoto/NewPhoto.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Logout/Logout.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Logout/Logout.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Login/Login.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Login/Login.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Home/Home.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Account/Account.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/User/User.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/User/User.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Welcome/Welcome.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Welcome/Welcome.presentational.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/browser/component/WelcomeSection/WelcomeSection.presentational.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1396,13 +1355,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/browser/redux/action/login.action.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/redux/action/logout.action.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1508,17 +1460,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/common/ui/xhr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/babel.register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1536,6 +1482,7 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="45">
             <caret line="0" column="194" lean-forward="true" selection-start-line="0" selection-start-column="194" selection-end-line="0" selection-end-column="194" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1545,13 +1492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1910">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1580,18 +1520,203 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/common/util/api.js">
+    <entry file="file://$PROJECT_DIR$/src/browser/component/Home/Home.presentational.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="420">
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/browser/component/Home/Home.presentational.js">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2015.promise.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="238">
+          <caret line="32" column="70" lean-forward="false" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/ui/Upload/FileList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest2/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="13733" column="38" lean-forward="true" selection-start-line="13733" selection-start-column="38" selection-end-line="13733" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest2/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/ui/xhr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2580">
+          <caret line="172" column="5" lean-forward="false" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/ui/Upload/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="101" column="29" lean-forward="false" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest2/src/rest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest2/Rest.browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest2/src/BrowserRequestBuilder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1015">
+          <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!block;n#BrowserRequestBuilder#0" expanded="false" />
+            <element signature="e#443#476#0" expanded="false" />
+            <element signature="e#1192#1301#0" expanded="false" />
+            <element signature="e#2036#2104#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/redux/action/logout.action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest/src/rest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/redirect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/redux/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest2/src/RequestBuilder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="356" column="9" lean-forward="true" selection-start-line="356" selection-start-column="9" selection-end-line="356" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!block;n#clearCache#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#query#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#query#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#external#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#external#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#beforeSend#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#beforeSend#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#app#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#app#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#queued#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#queued#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#accepts#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#accepts#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#asText#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#asText#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#asXML#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#asXML#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#asRawResponse#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#asRawResponse#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#cache#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#cache#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#processData#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!block;n#download#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="e#7021#7794#0" expanded="false" />
+            <element signature="n#!!doc;n#send#0;n#RequestBuilderParent#0" expanded="false" />
+            <element signature="n#!!doc;n#RequestBuilder#0" expanded="false" />
+            <element signature="n#!!block;n#buildUrl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/Rest/src/RequestBuilder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/browser/common/util/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="3" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
           <folding />
         </state>
       </provider>

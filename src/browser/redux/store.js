@@ -9,7 +9,7 @@ import { routerReducer } from 'react-router-redux'
 // import createFetchMiddleware from 'redux-composable-fetch'
 import ThunkMiddleware from 'redux-thunk'
 import reducer from './reducer/index'
-import api from '../common/util/api'
+import * as api from '../common/util/api'
 
 /**
  * Use middleware to make redux can parse a fair amount of actions.
