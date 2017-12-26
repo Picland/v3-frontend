@@ -8,7 +8,7 @@ import _ from 'lodash'
  * @param {object} [params]
  * @return {string} url.
  */
-function buildUrl (path, params) {
+const buildUrl = (path, params) => {
   let url = path.join('/')
 
   if (_.keys(params).length > 0) {

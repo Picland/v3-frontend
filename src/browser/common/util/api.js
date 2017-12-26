@@ -9,7 +9,7 @@ import Rest from './Rest'
  */
 const login = data => {
   const { account, password } = data
-  return Rest.req().p('api/v1/login').post({ account, password })
+  return Rest.req().path('api/v1/login').post({ account, password })
 }
 
 /**
@@ -21,7 +21,7 @@ const login = data => {
  */
 const register = data => {
   const { account, inviteCode, password } = data
-  return Rest.req().p('api/v1/register').post({ account, inviteCode, password })
+  return Rest.req().path('api/v1/register').post({ account, inviteCode, password })
 }
 
 /**
@@ -30,7 +30,7 @@ const register = data => {
  * @public
  * @return {promise} Rest Promise.
  */
-const logout = () => Rest.req().p('api/v1/logout').get()
+const logout = () => Rest.req().path('api/v1/logout').get()
 
 /**
  * Get current user info.
@@ -38,7 +38,7 @@ const logout = () => Rest.req().p('api/v1/logout').get()
  * @public
  * @return {promise} Rest Promise.
  */
-const getOwnInfo = () => Rest.req().p('api/v1/user').get()
+const getOwnInfo = () => Rest.req().path('api/v1/user').get()
 
 /**
  * Get other user info.
@@ -46,7 +46,7 @@ const getOwnInfo = () => Rest.req().p('api/v1/user').get()
  * @public
  * @return {promise} Rest Promise.
  */
-const getUserInfo = userId => Rest.req().p(`api/v1/user/${userId}`).get()
+const getUserInfo = userId => Rest.req().path(`api/v1/user/${userId}`).get()
 
 /**
  * update current user info.
@@ -56,7 +56,7 @@ const getUserInfo = userId => Rest.req().p(`api/v1/user/${userId}`).get()
  * @return {promise} Rest Promise.
  */
 const updateUserInfo = formData =>
-  Rest.req().p('api/v1/updateUserInfo').header('userId', runtime.userId).post(formData)
+  Rest.req().path('api/v1/updateUserInfo').header('userId', runtime.userId).post(formData)
 
 /**
  * @interface

@@ -13,7 +13,9 @@ import * as api from '../common/util/api'
 
 /**
  * Use middleware to make redux can parse a fair amount of actions.
+ *
  * @private
+ * @github https://github.com/jasonslyvia/redux-composable-fetch
  */
 // const FetchMiddleware = createFetchMiddleware({
 //   afterFetch ({ action, result }) {
@@ -29,6 +31,7 @@ import * as api from '../common/util/api'
 /**
  * Combine new reducers.
  * The second `routing: routerReducer` can unify router state and redux store.
+ *
  * @private
  */
 const reducers = combineReducers({
