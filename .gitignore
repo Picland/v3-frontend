@@ -37,7 +37,8 @@ jspm_packages
 .DS_STORE
 
 # IDE
-.vscode
+.vscode/
+.idea/
 
 # Project
 static/dist

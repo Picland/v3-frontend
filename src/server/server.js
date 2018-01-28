@@ -18,7 +18,7 @@ const server = express()
 // --------------------------------------------------------------------------
 server.engine('.html', require('ejs').__express)
 server.set('view engine', 'html')
-server.use(favicon(path.join(__dirname, '../../static', 'favicon.ico')))
+server.use(favicon(path.join(__dirname, './static', 'favicon.ico')))
 
 // --------------------------------------------------------------------------
 // Success Log
