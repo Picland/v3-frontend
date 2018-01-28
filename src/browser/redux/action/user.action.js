@@ -36,7 +36,7 @@ const getUserInfoSuccess = result => ({
  * @returns {Object} Data responsed from server, for example:
  *   ```js
  *   {
- *     "_id" : "59abc62fa605eea39a2e25fd",
+ *     "id" : "ef88e24b-23a7-4ad1-bf3c-912f9d66e279",
  *     "phoneNumber" : "18262608001",
  *     "name" : "",
  *     "gender" : "x",

@@ -50,7 +50,7 @@ export const login = user => async (dispatch, getState, util) => {
       dispatch(showFlashMessage(loginSuccess(result.status.msg)))
       // Please write here, showFlashMessage cannot get in Login because of redirect
       runtime = {
-        userId: result.data._id
+        userId: result.data.id
       }
     } else {
       dispatch(failLogin())

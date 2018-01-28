@@ -104,7 +104,7 @@ class Register extends Component {
       // 注册最后一步：打开上传头像的对话框
       if (this.props.flashMessage.type === 'success') {
         runtime = {
-          userId: this.props.otherInfo._id
+          userId: this.props.otherInfo.id
         }
         this.setState({
           join: true,

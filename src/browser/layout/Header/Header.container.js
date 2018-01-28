@@ -9,7 +9,7 @@ import Header from './Header.presentational'
 
 const mapStateToProps = (state) => ({
   otherInfo: state.user.otherInfo,
-  userId: state.user.userInfo._id,
+  userId: state.user.userInfo.id,
   logined: state.user.logined,
   flashMessage: state.flashMessage
 })

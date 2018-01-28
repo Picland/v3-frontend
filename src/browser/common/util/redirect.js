@@ -61,7 +61,7 @@ export const checkLoginRedirect = (WrappedComponent) => (props) => {
     }
     render () {
       return (
-        props.userInfo._id
+        props.userInfo.id
           ? <Redirect to={{pathname: '/home', state: { from: this.props.location }}} />
           : <WrappedComponent {...props} />
       )

@@ -38,7 +38,7 @@ const registerFail = (error) => ({
  *     'code': 0,
  *     'message': '注册成功',
  *     'user': {
- *        '_id': user._id
+ *        'id': user.id
  *     }
  *   }
  *   ```

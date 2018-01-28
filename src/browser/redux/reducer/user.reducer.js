@@ -24,7 +24,7 @@ const user = (state = initialState, action) => {
       return {
         userInfo: action.result,
         otherInfo: {
-          _id: action.result._id
+          id: action.result.id
         },
         logining: false,
         logined: true
@@ -67,7 +67,7 @@ const user = (state = initialState, action) => {
       return {
         ...state,
         otherInfo: {
-          _id: action.result._id,
+          id: action.result.id,
           avatar: action.result.avatar
         }
       }
