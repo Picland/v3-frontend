@@ -1,8 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const sourcePath = path.resolve(__dirname, '../src')
-const viewPath = path.resolve(__dirname, '../src/view')
+const sourcePath = path.resolve(__dirname, '../src/browser')
+const viewPath = path.resolve(__dirname, '../src/browser')
 const outputPath = path.resolve(__dirname, '../static/dist/')
 
 // -----------------------------------------------------------
@@ -41,7 +41,7 @@ module.exports = {
             'less-loader'
           ]
         }),
-        exclude: path.resolve(__dirname, '../src/view/common/ui')
+        exclude: path.resolve(viewPath, 'common/ui')
       },
       {
         test: /\.less$/,
@@ -53,7 +53,7 @@ module.exports = {
             'less-loader'
           ]
         }),
-        include: path.resolve(__dirname, '../src/view/common/ui')
+        include: path.resolve(viewPath, 'common/ui')
       },
       {
         test: /\.css$/,
