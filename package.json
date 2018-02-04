@@ -136,6 +136,7 @@
     "react-css-modules": "^4.2.0",
     "react-dom": "^16.1.1",
     "react-flexbox-grid": "^2.0.0",
+    "react-masonry-component": "^6.0.2",
     "react-redux": "^5.0.5",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
