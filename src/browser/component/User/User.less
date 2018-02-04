@@ -120,11 +120,8 @@
         .act-more {
           display: inline-block;
           position: relative;
-          cursor: pointer;
+          margin: 0 3px 0 20px;
           .act-more-icon {
-            display: inline-block;
-            position: relative;
-            margin: 0 -2px 0 20px;
             float: right;
             display: inline-block;
             width: 30px;
@@ -132,39 +129,38 @@
             vertical-align: middle;
             content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAEZJREFUWAnt0bEKACAIBUDt//+5HCMaAxvuTSGSckYIAQIECBBoFsjb/Fk561nZa696xv5px9sC7QIdZzeTAAECBAj8JbAAh9cMClonKqcAAAAASUVORK5CYII=");
           }
-          .act-list {
+          ul.act-list {
             display: none;
             position: absolute;
-            z-index: @zindex-dropdown;
-            margin-top: 0;
-            padding: 11px 0 11px 0;
-            top: -94px;
-            left: -50px;
-            flex-direction: column;
-            justify-content: center;
-            width: @unit-ninefold;
-            background-color: @theme-header-dropdown;
-            transition: height .5s ease;
-            //border: 1px solid @dark-dark;
-            //border-radius: 4px;
-            padding-left: 0;
+            margin: 0;
+            z-index: 1;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            border-bottom: 40px solid transparent;
+            text-align: center;
+            padding: 0;
             li {
               list-style: none;
-              line-height: @unit-triple;
-              text-align: center;
-              color: @white;
-              font-weight: 500;
+              padding: 5px 15px;
+              background-color: #222;
+              color: #fff;
               &:hover {
                 color: @theme;
                 //background-color: @dark-dark;
               }
             }
+            a {
+              &:first-child li {
+                padding-top: 15px;
+              }
+              &:last-child li {
+                padding-bottom: 15px;
+              }
+            }
           }
           &:hover .act-list {
-            display: flex;
-          }
-          & > .act-more-icon {
-            //padding-top: 30px;
+            display: block;
           }
         }
       }

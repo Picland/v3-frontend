@@ -1,0 +1,35 @@
+@import '~core';
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 32.66%;
+}
+
+.gutter-sizer {
+  width: 1%;
+}
+
+.grid-item {
+  float: left;
+  margin-bottom: 12px;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  cursor: pointer;
+  //&:hover {
+  //  background-color: rgba(0, 0, 0, 0.5);
+  //  color: @white;
+  //  text-align: center;
+  //}
+}
