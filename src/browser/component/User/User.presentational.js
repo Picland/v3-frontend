@@ -30,8 +30,8 @@ class User extends Component {
         columnWidth: '.grid-sizer',
         gutter: '.gutter-sizer',
         itemSelector: '.grid-item',
-        percentPosition: true
-        // transitionDuration: 0
+        percentPosition: true,
+        transitionDuration: 0
       }
       return (
         <div styleName="container">

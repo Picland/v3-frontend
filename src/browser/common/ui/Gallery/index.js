@@ -8,6 +8,7 @@ class Gallery extends Component {
     const { options } = this.props
     const childElements = this.props.elements.map((element, index) =>
       <div className="grid-item">
+        <div className="grid-item-cover" />
         <img src={`/img/test/${index + 1}.jpg`} alt="" />
       </div>
     )
