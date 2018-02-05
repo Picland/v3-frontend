@@ -1,6 +1,3 @@
 language: node_js
 node_js:
-  - "7"
-
-services:
-  - mongodb
+  - "8.9.0"

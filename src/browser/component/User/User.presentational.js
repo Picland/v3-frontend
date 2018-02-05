@@ -25,13 +25,157 @@ class User extends Component {
     render () {
       let { userInfo, logined } = this.props
       let avatarSrc = userInfo ? userInfo.avatar : ''
-      const cards = new Array(16).fill('')
+      const galleryImages = [
+        {
+          src: 'https://c7.staticflickr.com/9/8106/28941228886_86d1450016_b.jpg',
+          width: 271,
+          height: 320,
+          caption: 'Orange Macro (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg',
+          width: 320,
+          height: 190,
+          caption: '286H (gratisography.com)'
+        },
+        {
+          src: 'https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg',
+          width: 320,
+          height: 148,
+          caption: '315H (gratisography.com)'
+        },
+        {
+          src: 'https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg',
+          width: 320,
+          height: 213,
+          caption: '201H (gratisography.com)'
+        },
+        {
+          src: 'https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg',
+          width: 248,
+          height: 320,
+          caption: 'Big Ben (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c1.staticflickr.com/9/8785/28687743710_870813dfde_h.jpg',
+          width: 320,
+          height: 113,
+          caption: 'Red Zone - Paris (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_b.jpg',
+          width: 313,
+          height: 320,
+          caption: 'Wood Glass (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg',
+          width: 320,
+          height: 213,
+          caption: 'Flower Interior Macro (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c7.staticflickr.com/9/8106/28941228886_86d1450016_b.jpg',
+          width: 271,
+          height: 320,
+          caption: 'Orange Macro (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg',
+          width: 320,
+          height: 190,
+          caption: '286H (gratisography.com)'
+        },
+        {
+          src: 'https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg',
+          width: 320,
+          height: 148,
+          caption: '315H (gratisography.com)'
+        },
+        {
+          src: 'https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg',
+          width: 320,
+          height: 213,
+          caption: '201H (gratisography.com)'
+        },
+        {
+          src: 'https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg',
+          width: 248,
+          height: 320,
+          caption: 'Big Ben (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c1.staticflickr.com/9/8785/28687743710_870813dfde_h.jpg',
+          width: 320,
+          height: 113,
+          caption: 'Red Zone - Paris (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_b.jpg',
+          width: 313,
+          height: 320,
+          caption: 'Wood Glass (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg',
+          width: 320,
+          height: 213,
+          caption: 'Flower Interior Macro (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c7.staticflickr.com/9/8106/28941228886_86d1450016_b.jpg',
+          width: 271,
+          height: 320,
+          caption: 'Orange Macro (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg',
+          width: 320,
+          height: 190,
+          caption: '286H (gratisography.com)'
+        },
+        {
+          src: 'https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg',
+          width: 320,
+          height: 148,
+          caption: '315H (gratisography.com)'
+        },
+        {
+          src: 'https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg',
+          width: 320,
+          height: 213,
+          caption: '201H (gratisography.com)'
+        },
+        {
+          src: 'https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg',
+          width: 248,
+          height: 320,
+          caption: 'Big Ben (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c1.staticflickr.com/9/8785/28687743710_870813dfde_h.jpg',
+          width: 320,
+          height: 113,
+          caption: 'Red Zone - Paris (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_b.jpg',
+          width: 313,
+          height: 320,
+          caption: 'Wood Glass (Tom Eversley - isorepublic.com)'
+        },
+        {
+          src: 'https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg',
+          width: 320,
+          height: 213,
+          caption: 'Flower Interior Macro (Tom Eversley - isorepublic.com)'
+        }
+      ]
       const galleryOptions = {
-        columnWidth: '.grid-sizer',
-        gutter: '.gutter-sizer',
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        transitionDuration: 0
+        // containerWidth: 1360,
+        containerPadding: 0,
+        boxSpacing: 11,
+        targetRowHeightTolerance: 0.1
       }
       return (
         <div styleName="container">
@@ -96,7 +240,7 @@ class User extends Component {
               }
             </Sticky>
             <div styleName="main">
-              {/* { cards.map((card, index) => */}
+              {/* { galleryImages.map((card, index) => */}
               {/* <div key={index} styleName="card"> */}
               {/* <img src={`/img/test/${index + 1}.jpg`} alt="" /> */}
               {/* <div styleName="card-info"> */}
@@ -105,7 +249,7 @@ class User extends Component {
               {/* </div> */}
               {/* </div>) */}
               {/* } */}
-              <Gallery options={galleryOptions} elements={cards} />
+              <Gallery images={galleryImages} options={galleryOptions} />
             </div>
             <Footer />
           </StickyContainer>

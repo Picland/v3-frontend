@@ -1,35 +1,48 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import Masonry from 'react-masonry-component'
-import './index.less'
+import JustifiedLayout from './JustifiedLayout'
 
 class Gallery extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      containerWidth: props.options.containerWidth
+    }
+  }
+  componentDidMount () {
+    if (!this.state.containerWidth) {
+      const parentDom = ReactDOM.findDOMNode(this).parentNode
+      this.setState({ containerWidth: parentDom.offsetWidth })
+    }
+  }
   render () {
-    const { options } = this.props
-    const childElements = this.props.elements.map((element, index) =>
-      <div className="grid-item">
-        <div className="grid-item-cover" />
-        <img src={`/img/test/${index + 1}.jpg`} alt="" />
-      </div>
+    const { images, options } = this.props
+    options.containerWidth = this.state.containerWidth
+    const childElements = images.map((image, index) =>
+      <img style={{ width: image.width, height: image.height }} src={image.src} />
     )
     return (
-      <Masonry
-        className={'grid'} // default ''
-        elementType={'div'} // default 'div'
-        options={options} // default {}
-        disableImagesLoaded={false} // default false
-        updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-      >
-        <div className="grid-sizer" />
-        <div className="gutter-sizer" />
-        {childElements}
-      </Masonry>
+      options.containerWidth
+        ? <JustifiedLayout {...options}>
+          {childElements}
+        </JustifiedLayout>
+        : <div />
     )
   }
 }
 
 Gallery.propTypes = {
-  elements: PropTypes.array,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      // thumbnail: PropTypes.string.isRequired,
+      // srcset: PropTypes.array,
+      // caption: PropTypes.string,
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired
+    })
+  ).isRequired,
   options: PropTypes.object
 }
 
