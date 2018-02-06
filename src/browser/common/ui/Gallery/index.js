@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import JustifiedLayout from './JustifiedLayout'
+import './index.less'
 
 class Gallery extends Component {
   constructor (props) {
@@ -20,7 +21,11 @@ class Gallery extends Component {
     const { images, options } = this.props
     options.containerWidth = this.state.containerWidth
     const childElements = images.map((image, index) =>
-      <img style={{ width: image.width, height: image.height }} src={image.src} />
+      <div className="cmui-gallery__wrapper"
+        style={{backgroundImage: `url(${image.src})`, width: image.width, height: image.height}}
+      >
+        <div className="cmui-gallery__img-cover" />
+      </div>
     )
     return (
       options.containerWidth
