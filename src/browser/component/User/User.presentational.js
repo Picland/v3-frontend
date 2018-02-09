@@ -6,6 +6,7 @@ import { Sticky, StickyContainer } from 'react-sticky'
 import Avatar from '_common_ui/Avatar'
 import Gallery from '_common_ui/Gallery'
 import Icon from '_common_ui/Icon'
+import BackToTop from '_common_ui/BackToTop'
 import Header from '../../layout/Header/Header.container'
 import Footer from '../../layout/Footer/Footer.presentational'
 import styles from './User.less'
@@ -177,6 +178,11 @@ class User extends Component {
         boxSpacing: 11,
         targetRowHeightTolerance: 0.1
       }
+      const config = {
+        text: 'TOP',
+        topDistance: 10,
+        timing: 'easeIn'
+      }
       return (
         <div styleName="container">
           { logined
@@ -250,6 +256,7 @@ class User extends Component {
               {/* </div>) */}
               {/* } */}
               <Gallery images={galleryImages} options={galleryOptions} />
+              <BackToTop {...config} />
             </div>
             <Footer />
           </StickyContainer>
